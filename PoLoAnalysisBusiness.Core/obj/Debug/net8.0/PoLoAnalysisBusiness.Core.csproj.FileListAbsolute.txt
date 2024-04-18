@@ -1,0 +1,16 @@
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\PoLoAnalysisBusiness.Core.deps.json
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\PoLoAnalysisBusiness.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\PoLoAnalysisBusiness.Core.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.csproj.AssemblyReference.cache
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.AssemblyInfoInputs.cache
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.AssemblyInfo.cs
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.sourcelink.json
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\refint\PoLoAnalysisBusiness.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\ref\PoLoAnalysisBusiness.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\SharedLibrary.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\SharedLibrary.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.csproj.CopyComplete
