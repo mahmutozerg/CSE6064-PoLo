@@ -1,0 +1,6 @@
+@PoLoAnalysisBusinessAPI_HostAddress = http://localhost:5022
+
+GET {{PoLoAnalysisBusinessAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
