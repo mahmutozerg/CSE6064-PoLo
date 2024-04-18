@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pkPxi6dnrpFbOdeFMYLGY/7eqbWBRcubPBXiGjGVAns=",
+  "Hash": "CgNnbNFCpRdJ1YNy3yEhR75dgeVKKbHbjZP3dLC7ibQ=",
   "Source": "PoLoAnalysisMVC",
   "BasePath": "_content/PoLoAnalysisMVC",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PoLoAnalysisMVC.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\css\\report.css",
+      "SourceId": "PoLoAnalysisMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\",
+      "BasePath": "_content/PoLoAnalysisMVC",
+      "RelativePath": "css/report.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\report.css"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\css\\site.css",
       "SourceId": "PoLoAnalysisMVC",
       "SourceType": "Discovered",
@@ -74,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\download-icon.svg",
+      "SourceId": "PoLoAnalysisMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\",
+      "BasePath": "_content/PoLoAnalysisMVC",
+      "RelativePath": "download-icon.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\download-icon.svg"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\favicon.ico",
       "SourceId": "PoLoAnalysisMVC",
       "SourceType": "Discovered",
@@ -91,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\js\\PoLoGraph.js",
+      "SourceId": "PoLoAnalysisMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\",
+      "BasePath": "_content/PoLoAnalysisMVC",
+      "RelativePath": "js/PoLoGraph.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\PoLoGraph.js"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\js\\site.js",
@@ -1193,6 +1250,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\POLOWhite.svg",
+      "SourceId": "PoLoAnalysisMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\",
+      "BasePath": "_content/PoLoAnalysisMVC",
+      "RelativePath": "POLOWhite.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\POLOWhite.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\sidebar-icon.svg",
+      "SourceId": "PoLoAnalysisMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\",
+      "BasePath": "_content/PoLoAnalysisMVC",
+      "RelativePath": "sidebar-icon.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sidebar-icon.svg"
     }
   ]
 }

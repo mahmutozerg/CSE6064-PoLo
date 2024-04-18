@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\PoLoAnalysisMVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\POLOWhite.svg",
+      "PackagePath": "staticwebassets\\POLOWhite.svg"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\css\\report.css",
+      "PackagePath": "staticwebassets\\css\\report.css"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\download-icon.svg",
+      "PackagePath": "staticwebassets\\download-icon.svg"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\js\\PoLoGraph.js",
+      "PackagePath": "staticwebassets\\js\\PoLoGraph.js"
     },
     {
       "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\js\\site.js",
@@ -243,6 +259,10 @@
     {
       "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisMVC\\wwwroot\\sidebar-icon.svg",
+      "PackagePath": "staticwebassets\\sidebar-icon.svg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PoLoAnalysisMVC.Microsoft.AspNetCore.StaticWebAssets.props",

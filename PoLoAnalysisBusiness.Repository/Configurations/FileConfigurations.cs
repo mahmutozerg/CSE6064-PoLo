@@ -13,6 +13,5 @@ public class FileConfigurations : IEntityTypeConfiguration<File>
             .HasOne(f => f.Course)
             .WithOne(c => c.File)
             .HasForeignKey<Course>(c => c.Id);
-
     }
 }

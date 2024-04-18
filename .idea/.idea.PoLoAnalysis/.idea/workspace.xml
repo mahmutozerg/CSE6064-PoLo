@@ -18,7 +18,104 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e96c148-864e-4ed5-a3de-3de1cf3c157e" name="Changes" comment="" />
+    <list default="true" id="7e96c148-864e-4ed5-a3de-3de1cf3c157e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/PoLoAnalysis/PoLoAnalysis" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/POLOWhite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/report.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/download-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/PoLoGraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/sidebar-icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SharedLibrary.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SharedLibrary.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/PoLoAnalysisBusiness.API.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/SharedLibrary.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/SharedLibrary.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/PoLoAnalysisBusiness.Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Configurations/FileConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Configurations/FileConfigurations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/SharedLibrary.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/SharedLibrary.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/PoLoAnalysisBusiness.Repository.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/SharedLibrary.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/SharedLibrary.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/PoLoAnalysisBusiness.Services.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/ref/PoLoAnalysisBusiness.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/obj/Debug/net8.0/refint/PoLoAnalysisBusiness.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/PoLoAnalysisMVC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/PoLoAnalysisMVC.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/PoLoAnalysisMVC.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/ref/PoLoAnalysisMVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/ref/PoLoAnalysisMVC.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/refint/PoLoAnalysisMVC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/obj/Debug/net8.0/refint/PoLoAnalysisMVC.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/bin/Debug/net8.0/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/bin/Debug/net8.0/SharedLibrary.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/bin/Debug/net8.0/SharedLibrary.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/SharedLibrary.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/ref/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/ref/SharedLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/refint/SharedLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/obj/Debug/net8.0/refint/SharedLibrary.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,9 +131,9 @@
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2fH57ktNnMimbBF1iBM6gE9KZjI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,10 +148,13 @@
     ".NET Launch Settings Profile.PoLoAnalysisBusinessAPI: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: IIS Express.executor": "Run",
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Dev",
     "ignore.virus.scanning.warn.message": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -301,6 +401,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713444997479</updated>
       <workItem from="1713444998520" duration="5974000" />
+      <workItem from="1713451272488" duration="975000" />
     </task>
     <task id="LOCAL-00001" summary="Solutions Created">
       <option name="closed" value="true" />

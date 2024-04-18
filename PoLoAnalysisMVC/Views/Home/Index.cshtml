@@ -2,7 +2,70 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PO-LO Analytics Reporting</title>
+    <link rel="stylesheet" href="/css/report.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+    
+</head>
+
+<body>
+
+        <header>
+            <span onclick="openNav()">
+                <img src="/Images/sidebar-icon.svg" alt="Sidebar Icon" class="sidebar-icon">
+            </span>
+            <img src="/Images/POLOWhite.svg" alt="Logo" class="logo">
+        </header>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&equiv; </a>
+            <p>Hello,<br>Name Surname</p>
+            <a href="#">Import Excel File</a>
+            <a href="#">Reports In Progress</a>
+            <a href="#">Export Word File</a>
+            <a href="#">Past Reports</a>
+            <a href="#">Download Template</a>
+            <a href="#">Settings</a>
+            <div class="side-bottom">
+                <a href="#">Report Bug</a>
+                <a href="#">About</a>
+                <a href="#">Documentation</a>
+                <img src="C:\Users\ege_k\OneDrive\Masaüstü\Software Engineering\POLO Analytics\POLOGray.svg" alt="Logo" class="logo-side-bottom">
+                <p class="version">v0.0.1(Beta)</p>
+            </div>
+          </div>
+    
+
+    <div class="main-content">
+        <div class="bold-info">
+            Reporting Analytics
+        </div>
+        <div class="info">
+            Program learning outcomes are defined in terms of the knowledge, skills, and abilities that students have attained as a result of their involvement in a particular program, degree, certificate or series of learning activities leading to mastery.
+        </div>
+        <div class="word-export">
+
+                <button id="export-button">Export to Word File Here!</button>
+                <img src="/Images/download-icon.svg" alt="Download icon" class="download-icon">
+            </div>
+            
+        </div>
+        <div class="charts">
+            <div class="po-chart">
+                <p class="chart-title">LO percentage</p>
+                <div id="bar-chart"></div>
+            </div>
+            <div class="lo-chart">
+                <p class="chart-title">PO percentage</p>
+                <div id="area-chart"></div>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.48.0/apexcharts.min.js" ></script>
+            <script src="/js/PoLoGraph.js"></script>
+        </div>
+
+</body>
+</html>
