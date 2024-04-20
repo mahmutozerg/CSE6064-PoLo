@@ -1,0 +1,12 @@
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.deps.json
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.AssemblyInfoInputs.cache
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.AssemblyInfo.cs
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.sourcelink.json
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\refint\PoLoAnalysisBusiness.DTO.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\PoLoAnalysisBusiness.DTO.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.DTO\obj\Debug\net8.0\ref\PoLoAnalysisBusiness.DTO.dll
