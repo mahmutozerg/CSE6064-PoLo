@@ -32,9 +32,10 @@ public class AppFileServices:GenericService<File>,IAppFileServices
 
             if (!IsExcelFile(model))
                 return CustomResponseDto<File>.Fail(StatusCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
-            
 
-            var fileName = $"../UploadedFiles/{Guid.NewGuid().ToString()}.xlsx";
+
+            var id = Guid.NewGuid().ToString();
+            var fileName = $"../UploadedFiles/{id}.xlsx";
 
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
@@ -43,7 +44,7 @@ public class AppFileServices:GenericService<File>,IAppFileServices
 
             var file = new File()
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = id,
                 CourseId = "test",
                 Path = fileName
 
@@ -82,7 +83,7 @@ public class AppFileServices:GenericService<File>,IAppFileServices
 
         return new FileStreamResult(fileStream, contentType)
         {
-            FileDownloadName = Path.GetFileName(entity.CourseId)
+            FileDownloadName = Path.GetFileName(entity.CourseId+".xlsx")
         };
     }
 }
