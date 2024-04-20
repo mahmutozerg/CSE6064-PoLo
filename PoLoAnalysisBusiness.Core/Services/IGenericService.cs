@@ -11,4 +11,6 @@ public interface IGenericService<TEntity> where TEntity:class
     Task<CustomResponseDto<TEntity>> AddAsync(TEntity entity,string createdBy);
     IQueryable<TEntity?> Where(Expression<Func<TEntity?, bool>> expression);
     Task<CustomResponseNoDataDto> UpdateAsync(TEntity? entity,string updatedBy);
+    Task<TEntity?> GetById(string id);
+
 }

@@ -157,3 +157,4 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\ne
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\SharedLibrary.pdb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll

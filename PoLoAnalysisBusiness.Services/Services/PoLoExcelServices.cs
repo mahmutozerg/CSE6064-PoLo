@@ -33,24 +33,25 @@ public class PoLoExcelServices:IPoLoExcelServices
     {
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
     }
-
-    public void SetFilePath(string filePath)
+    public void SetFilePath(string filePath,string id)
     {
         _filePath = filePath;
         _excelPackage  = new ExcelPackage(new FileInfo(_filePath));
         _workbook = _excelPackage.Workbook;
         _worksheets = _workbook.Worksheets;
-        _resultpath = CreateResultFolder();
+        
+        var tempPath = Path.Combine(Directory.GetCurrentDirectory(), "../ResultFiles/");
+        _resultpath = tempPath+$"/{id}";
+        CreateResultFolder(_resultpath);
     }
-    public string CreateResultFolder(string path = @"C:\\Users\\Lenovo\\Downloads\\")
+    private string CreateResultFolder(string path = @"C:\\Users\\Lenovo\\Downloads\\")
     {
         try
         {
-            var folderPath = path + @"\results";
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
             
-            return folderPath;
+            return path;
 
         }
         catch (Exception e)
@@ -394,7 +395,7 @@ public class PoLoExcelServices:IPoLoExcelServices
 
         series.DataLabel.ShowValue = true;
         series.DataLabel.Format = "0.000";
-        _excelPackage.SaveAs($@"{_resultpath}\graphTest.xlsx");
+        _excelPackage.SaveAs($@"{_resultpath}/graphTest.xlsx");
 
     }
     public void ConvertWorkSheetToWord(ExcelWorksheet worksheet)

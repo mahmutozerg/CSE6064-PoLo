@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "W/kL0VaPO7PPm9OT7j/N/OgafewVjYB6C3FfLR2rx/93sBvhtLnMg2aZOmAQVFp9lHronL9/M7vFkDCgml8H9Q==",
+  "dgSpecHash": "YAz5Ya5WZvcMBN+nGgy6jUYNaYiEq38coK/S3yPtBFXF0Y1++n+nVXLAx9OiIf8iebCfiHnVrrAedORRWWm0vw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.API\\PoLoAnalysisBusiness.API.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.net.http.headers\\8.0.4\\microsoft.net.http.headers.8.0.4.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",

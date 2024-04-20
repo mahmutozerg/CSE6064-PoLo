@@ -27,7 +27,7 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
     {
         var entity = await _repository.Where(x => x!.Id == id && !x.IsDeleted).FirstOrDefaultAsync();
         if (entity is null )
-            return CustomResponseNoDataDto.Fail(404,ResponseMessages.Notfound);
+            return CustomResponseNoDataDto.Fail(404,ResponseMessages.NotFound);
         
         entity.UpdatedAt =DateTime.Now;
         entity.UpdatedBy = updatedBy;
@@ -40,7 +40,7 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
     {
         var entityExist = await _repository.AnyAsync(x => x != null && x.Id == entity.Id && !x.IsDeleted);
         if (entityExist )
-            throw new Exception(ResponseMessages.Notfound);
+            throw new Exception(ResponseMessages.NotFound);
 
 
         entity.UpdatedBy = createdBy;
@@ -48,7 +48,7 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
         entity.CreatedAt = DateTime.Now;
         await _repository.AddAsync(entity);
         await _unitOfWork.CommitAsync();
-        return CustomResponseDto<TEntity>.Success(entity, ResponseCodes.Created);
+        return CustomResponseDto<TEntity>.Success(entity, StatusCodes.Created);
     }
 
     public IQueryable<TEntity?> Where(Expression<Func<TEntity?, bool>> expression)
@@ -61,14 +61,20 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
     public async Task<CustomResponseNoDataDto> UpdateAsync(TEntity? entity,string updatedBy)
     {
         if (entity == null) 
-            return CustomResponseNoDataDto.Fail(404,ResponseMessages.Notfound);
+            return CustomResponseNoDataDto.Fail(404,ResponseMessages.NotFound);
         
         entity.UpdatedBy = updatedBy;
         entity.UpdatedAt = DateTime.Now;
         _repository.Update(entity);
         await _unitOfWork.CommitAsync();
-        return CustomResponseNoDataDto.Success(ResponseCodes.Updated);
+        return CustomResponseNoDataDto.Success(StatusCodes.Updated);
 
     }
-    
+
+    public async Task<TEntity?> GetById(string id)
+    {
+        return  await _repository.GetById(id);
+
+      
+    }
 }

@@ -680,6 +680,17 @@
           }
         }
       },
+      "Microsoft.Net.Http.Headers/8.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Net.Http.Headers.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.424.17014"
+          }
+        }
+      },
       "Microsoft.OpenApi/1.4.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -1068,6 +1079,7 @@
       "PoLoAnalysisBusiness.Services/1.0.0": {
         "dependencies": {
           "FreeSpire.XLS": "14.2.0",
+          "Microsoft.Net.Http.Headers": "8.0.4",
           "PoLoAnalysisBusiness.Repository": "1.0.0"
         },
         "runtime": {
@@ -1429,6 +1441,13 @@
       "sha512": "sha512-irv0HuqoH8Ig5i2fO+8dmDNdFdsrO+DoQcedwIlb810qpZHBNQHZLW7C/AHBQDgLLpw2T96vmMAy/aE4Yj55Sg==",
       "path": "microsoft.io.recyclablememorystream/3.0.0",
       "hashPath": "microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.Net.Http.Headers/8.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0jVeQr18PHhOKgZZNb9+uz7gpY3cFF187Vb5RIYU5iuLFbAxOMCSugYlKzagNkbYXpq55h78ExgGL/oRLNXLAQ==",
+      "path": "microsoft.net.http.headers/8.0.4",
+      "hashPath": "microsoft.net.http.headers.8.0.4.nupkg.sha512"
     },
     "Microsoft.OpenApi/1.4.3": {
       "type": "package",

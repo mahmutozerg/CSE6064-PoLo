@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Net;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
@@ -11,12 +13,12 @@ namespace PoLoAnalysisBusiness.Services.Services;
 public class AppFileServices:GenericService<File>,IAppFileServices
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IGenericService<File> _genericService;
+    private readonly IGenericService<File> _fileService;
 
-    public AppFileServices(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IGenericService<File> genericService) : base(repository, unitOfWork)
+    public AppFileServices(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IGenericService<File> fileService) : base(repository, unitOfWork)
     {
         _unitOfWork = unitOfWork;
-        _genericService = genericService;
+        _fileService = fileService;
         
     }
 
@@ -25,11 +27,11 @@ public class AppFileServices:GenericService<File>,IAppFileServices
         try
         {
             if (model == null || model.Length == 0)
-                return CustomResponseDto<File>.Fail( ResponseCodes.BadRequest,FileConstants.FILENULL);
+                return CustomResponseDto<File>.Fail( StatusCodes.BadRequest,FileConstants.FILENULL);
 
 
             if (!IsExcelFile(model))
-                return CustomResponseDto<File>.Fail(ResponseCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
+                return CustomResponseDto<File>.Fail(StatusCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
             
 
             var fileName = $"../UploadedFiles/{Guid.NewGuid().ToString()}.xlsx";
@@ -46,22 +48,41 @@ public class AppFileServices:GenericService<File>,IAppFileServices
                 Path = fileName
 
             };
-            var result =await _genericService.AddAsync(file,"mahmut");
+            var result =await _fileService.AddAsync(file,"mahmut");
             await _unitOfWork.CommitAsync();
             return result;
         }        
         catch (Exception ex)
         {
             Console.WriteLine($"Error writing Excel file: {ex.Message}");
-            return CustomResponseDto<File>.Fail(ResponseCodes.SystemFail,$"Error writing Excel file: {ex.Message}");
+            return CustomResponseDto<File>.Fail(StatusCodes.SystemFail,$"Error writing Excel file: {ex.Message}");
         }
     }
 
     public bool IsExcelFile(IFormFile file)
     {
         return file.ContentType == FileConstants.EXCELFILEFORMATEXTENTION;
-        //Path.GetExtension(file.FileName).Equals(".xlsx", StringComparison.OrdinalIgnoreCase);    
     }
 
+    public async Task<FileStreamResult> GetFileStream(string fileId)
+    {
+        var entity = await _fileService.GetById(fileId); 
 
+        if (entity == null)
+            throw new Exception("File not found."); 
+
+        var filePath = entity.Path; 
+
+        if (!System.IO.File.Exists(filePath))
+            throw new Exception("File not found on disk.");
+
+        var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+        var contentType = "application/octet-stream"; 
+
+
+        return new FileStreamResult(fileStream, contentType)
+        {
+            FileDownloadName = Path.GetFileName(entity.CourseId)
+        };
+    }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SharedLibrary;
 
-public static class ResponseCodes
+public static class StatusCodes
 {
     
     public const int Ok = 200;
