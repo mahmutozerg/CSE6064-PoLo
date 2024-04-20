@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {}
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
         "projectName": "PoLoAnalysisBusiness.DTO",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Import";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PO-LO Analytics Import</title>
+    <link rel="stylesheet" href="~/css/import.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="section-info">
+            <div class="bold-info">
+                Importing Excel File
+            </div>
+            <div class="info">
+                Import analytical data for calculation.
+            </div>
+            <div class="caution">
+                <img src="/Images/caution.svg" alt="Caution" class="caution-icon">
+                <p class="caution-info">Calculation and data processing is available only for excel files using the template provided by POLO Analytics.</p>
+            </div>
+            <div class="upload-section">
+                <div class="upload-box">
+                    <form class="upload" enctype="multipart/form-data">
+                        <input type="file" id="excel-file" name="xls" accept=".xls, .xlsx" />
+                    </form>
+                    <div class="drag-drop">
+                        or simply Drag&Drop
+                    </div>
+                </div>
+            </div>
+            <div class="template">
+                <div>
+                    <button>Upload</button>
+                </div>
+                <div class="xls-icon">
+                    <a a href="" download="template.xlsx">
+                        <img src="/Images/xls.png" alt="xls">
+                    </a>
+                </div>
+                <div>
+                    <a href="" download="template.xlsx">Click to download the template<br>(2.4 MB)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

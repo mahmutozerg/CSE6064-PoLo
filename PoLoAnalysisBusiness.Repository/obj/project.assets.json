@@ -4776,19 +4776,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\ege_k\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Repository\\PoLoAnalysisBusiness.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Repository\\PoLoAnalysisBusiness.Repository.csproj",
       "projectName": "PoLoAnalysisBusiness.Repository",
-      "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Repository\\PoLoAnalysisBusiness.Repository.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Repository\\obj\\",
+      "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Repository\\PoLoAnalysisBusiness.Repository.csproj",
+      "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4802,8 +4802,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj": {
-              "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj"
+            "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj": {
+              "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj"
             }
           }
         }
@@ -4849,7 +4849,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

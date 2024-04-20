@@ -1,40 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{E81453C5-9B6A-4FEC-971E-9C677564B47A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisMVC", "PoLoAnalysisMVC\PoLoAnalysisMVC.csproj", "{9598F10B-E53F-4016-8E0F-F9C091A82AB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisMVC", "PoLoAnalysisMVC\PoLoAnalysisMVC.csproj", "{9598F10B-E53F-4016-8E0F-F9C091A82AB8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthServer", "AuthServer", "{07106CAD-C0B7-4AA6-A369-FC18935CF6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisAuthServer", "PoLoAnalysisAuthServer\PoLoAnalysisAuthServer.csproj", "{4DF542DB-76A0-4793-B234-BEFE13C6557D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisAuthServer", "PoLoAnalysisAuthServer\PoLoAnalysisAuthServer.csproj", "{4DF542DB-76A0-4793-B234-BEFE13C6557D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessAPI", "BusinessAPI", "{D6284C75-7672-4E12-AC23-9DD1078D8E6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisBusiness.API", "PoLoAnalysisBusiness.API\PoLoAnalysisBusiness.API.csproj", "{1E50E800-8BBC-420E-9677-411CA42BB71E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisBusiness.API", "PoLoAnalysisBusiness.API\PoLoAnalysisBusiness.API.csproj", "{1E50E800-8BBC-420E-9677-411CA42BB71E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{BEE61F61-6955-42AF-9814-08E793CEDB7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{BEE61F61-6955-42AF-9814-08E793CEDB7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisBusiness.Repository", "PoLoAnalysisBusiness.Repository\PoLoAnalysisBusiness.Repository.csproj", "{53D32BF6-FFA7-4AC6-8835-60B6800A4728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisBusiness.Repository", "PoLoAnalysisBusiness.Repository\PoLoAnalysisBusiness.Repository.csproj", "{53D32BF6-FFA7-4AC6-8835-60B6800A4728}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisBusiness.Core", "PoLoAnalysisBusiness.Core\PoLoAnalysisBusiness.Core.csproj", "{7A73FC66-DE7E-4BD1-B9DB-AD2D07477C63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisBusiness.Core", "PoLoAnalysisBusiness.Core\PoLoAnalysisBusiness.Core.csproj", "{7A73FC66-DE7E-4BD1-B9DB-AD2D07477C63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisBusiness.Services", "PoLoAnalysisBusiness.Services\PoLoAnalysisBusiness.Services.csproj", "{63C550D4-AE48-4269-B13F-7DF3AB5DEA0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisBusiness.Services", "PoLoAnalysisBusiness.Services\PoLoAnalysisBusiness.Services.csproj", "{63C550D4-AE48-4269-B13F-7DF3AB5DEA0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoLoAnalysisBusiness.DTO", "PoLoAnalysisBusiness.DTO\PoLoAnalysisBusiness.DTO.csproj", "{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoLoAnalysisBusiness.DTO", "PoLoAnalysisBusiness.DTO\PoLoAnalysisBusiness.DTO.csproj", "{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{9598F10B-E53F-4016-8E0F-F9C091A82AB8} = {E81453C5-9B6A-4FEC-971E-9C677564B47A}
-		{4DF542DB-76A0-4793-B234-BEFE13C6557D} = {07106CAD-C0B7-4AA6-A369-FC18935CF6AD}
-		{1E50E800-8BBC-420E-9677-411CA42BB71E} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
-		{53D32BF6-FFA7-4AC6-8835-60B6800A4728} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
-		{7A73FC66-DE7E-4BD1-B9DB-AD2D07477C63} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
-		{63C550D4-AE48-4269-B13F-7DF3AB5DEA0F} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
-		{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9598F10B-E53F-4016-8E0F-F9C091A82AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -69,5 +63,17 @@ Global
 		{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9598F10B-E53F-4016-8E0F-F9C091A82AB8} = {E81453C5-9B6A-4FEC-971E-9C677564B47A}
+		{4DF542DB-76A0-4793-B234-BEFE13C6557D} = {07106CAD-C0B7-4AA6-A369-FC18935CF6AD}
+		{1E50E800-8BBC-420E-9677-411CA42BB71E} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
+		{53D32BF6-FFA7-4AC6-8835-60B6800A4728} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
+		{7A73FC66-DE7E-4BD1-B9DB-AD2D07477C63} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
+		{63C550D4-AE48-4269-B13F-7DF3AB5DEA0F} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
+		{FB6A5799-9856-45F7-A3DC-7ABB4227D4A0} = {D6284C75-7672-4E12-AC23-9DD1078D8E6B}
 	EndGlobalSection
 EndGlobal

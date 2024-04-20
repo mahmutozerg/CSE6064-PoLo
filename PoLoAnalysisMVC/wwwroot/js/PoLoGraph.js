@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("export-button").addEventListener("click", test);
 });
-function openNav() {
-    document.getElementById("mySidenav").style.width = "300px";
-    document.getElementById("main").style.marginLeft = "300px";
-}
 async function test() {
     try {
         const encodedFileId = encodeURIComponent("df55ec6a-7e82-4d7f-baf3-51a06c4142fc");
@@ -35,10 +31,7 @@ async function test() {
         console.error("An error occurred:", error);
     }
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-}
+
 var ColumnChartOptions = {
     series: [{
         name: 'ÖÇ Percantege',
