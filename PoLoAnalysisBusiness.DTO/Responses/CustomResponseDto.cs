@@ -1,4 +1,4 @@
-namespace SharedLibrary.DTO;
+namespace PoLoAnalysisBusiness.DTO.Responses;
 
 public class CustomResponseDto<TEntity>
 {
@@ -24,7 +24,7 @@ public class CustomResponseDto<TEntity>
     }
     
     
-    public static CustomResponseDto<TEntity> Fail(string error,int statusCode)
+    public static CustomResponseDto<TEntity> Fail(int statusCode,string error)
     {
         return new CustomResponseDto<TEntity> {Errors = new List<string>{error}, StatusCode = statusCode};
     }

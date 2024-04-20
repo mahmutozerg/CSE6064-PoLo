@@ -1,7 +1,11 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
+using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.Repository;
+using PoLoAnalysisBusiness.Repository.Repositories;
+using PoLoAnalysisBusiness.Repository.UnitOfWorks;
 using PoLoAnalysisBusiness.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +17,12 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IPoLoExcelServices), typeof(PoLoExcelServices));
 builder.Services.AddScoped(typeof(IAppFileServices), typeof(AppFileServices));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
     x.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"), options =>

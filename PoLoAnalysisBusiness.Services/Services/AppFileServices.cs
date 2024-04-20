@@ -1,22 +1,35 @@
 ﻿using Microsoft.AspNetCore.Http;
+using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
+using PoLoAnalysisBusiness.Core.UnitOfWorks;
+using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
-using SharedLibrary.DTO;
+using File = PoLoAnalysisBusiness.Core.Models.File;
 
 namespace PoLoAnalysisBusiness.Services.Services;
 
-public class AppFileServices:IAppFileServices
+public class AppFileServices:GenericService<File>,IAppFileServices
 {
-    public async Task<CustomResponseNoDataDto> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model)
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IGenericService<File> _genericService;
+
+    public AppFileServices(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IGenericService<File> genericService) : base(repository, unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+        _genericService = genericService;
+        
+    }
+
+    public async Task<CustomResponseDto<File>> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model)
     {
         try
         {
             if (model == null || model.Length == 0)
-                return CustomResponseNoDataDto.Fail(ResponseCodes.BadRequest, FileConstants.FILENULL);
+                return CustomResponseDto<File>.Fail( ResponseCodes.BadRequest,FileConstants.FILENULL);
 
 
             if (!IsExcelFile(model))
-                return CustomResponseNoDataDto.Fail(ResponseCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
+                return CustomResponseDto<File>.Fail(ResponseCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
             
 
             var fileName = $"../UploadedFiles/{Guid.NewGuid().ToString()}.xlsx";
@@ -26,12 +39,21 @@ public class AppFileServices:IAppFileServices
             await using var stream = new FileStream(filePath, FileMode.Create);
             await model.CopyToAsync(stream);
 
-            return CustomResponseNoDataDto.Success(ResponseCodes.Ok);
+            var file = new File()
+            {
+                Id = Guid.NewGuid().ToString(),
+                CourseId = "test",
+                Path = fileName
+
+            };
+            var result =await _genericService.AddAsync(file,"mahmut");
+            await _unitOfWork.CommitAsync();
+            return result;
         }        
         catch (Exception ex)
         {
             Console.WriteLine($"Error writing Excel file: {ex.Message}");
-            return CustomResponseNoDataDto.Fail(ResponseCodes.SystemFail,$"Error writing Excel file: {ex.Message}");
+            return CustomResponseDto<File>.Fail(ResponseCodes.SystemFail,$"Error writing Excel file: {ex.Message}");
         }
     }
 
@@ -40,4 +62,6 @@ public class AppFileServices:IAppFileServices
         return file.ContentType == FileConstants.EXCELFILEFORMATEXTENTION;
         //Path.GetExtension(file.FileName).Equals(".xlsx", StringComparison.OrdinalIgnoreCase);    
     }
+
+
 }
