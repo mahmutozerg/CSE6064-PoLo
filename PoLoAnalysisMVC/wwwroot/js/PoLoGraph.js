@@ -7,9 +7,9 @@ function openNav() {
 }
 async function test() {
     try {
-        const encodedFileId = encodeURIComponent("27180cee-719b-44d4-9daa-beb31a9812b6");
+        const encodedFileId = encodeURIComponent("df55ec6a-7e82-4d7f-baf3-51a06c4142fc");
 
-        const response = await fetch(`http://localhost:5022/api/Result/GetFile/${encodedFileId}`);
+        const response = await fetch(`http://localhost:5022/api/Result/GetFileByExcelId/${encodedFileId}`);
 
         if (response.ok) {
             const blob = await response.blob();
@@ -19,7 +19,7 @@ async function test() {
             const a = document.createElement("a");
             a.style.display = "none";
             a.href = url;
-            a.download = "exported_document.xlsx";
+            a.download = "exported_document.docx";
             document.body.appendChild(a);
 
             a.click();

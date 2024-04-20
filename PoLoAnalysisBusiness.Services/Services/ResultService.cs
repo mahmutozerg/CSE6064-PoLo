@@ -474,12 +474,12 @@ public class ResultService:GenericService<Result>,IResultService
     private void AppendImagesToTheWordFile()
     {
         var worksheets = _worksheets.Select(item => item.Name).ToList();
-
+        var path = $"{ResultPath}\\result.docx";
         foreach (var worksheet in worksheets)
         {
-            using var document = DocX.Create($"{ResultPath}\\{worksheet}.docx");
             var imagePoPath = Path.Combine(ResultPath, worksheet+"_po.png");
-            
+            var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
+
             var documentImagePo = document.AddImage(imagePoPath);
             var documentPicturePo = documentImagePo.CreatePicture();
 
@@ -503,6 +503,7 @@ public class ResultService:GenericService<Result>,IResultService
             loParagraph.AppendLine();
             document.Save();
         }
+
 
     }
 }

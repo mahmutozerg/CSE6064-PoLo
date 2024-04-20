@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using SharedLibrary.DTOs;
@@ -18,9 +19,11 @@ public class ResultController:CustomControllerBase
 
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetFile(string id)
+    public async Task<IActionResult> GetFileByExcelId(string id)
     {
-        var fileStream = await _resultService.GetFileStream(id);
+        var file = await _appFileServices.Where(f => !f.IsDeleted && f.Id == id).Include(f => f.Result)
+            .SingleOrDefaultAsync();
+        var fileStream = await _resultService.GetFileStream(file.Result.Id);
         
         return fileStream;
     }
