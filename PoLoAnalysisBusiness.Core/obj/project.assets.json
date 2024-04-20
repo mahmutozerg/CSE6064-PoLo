@@ -380,6 +380,16 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "PoLoAnalysisBusiness.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PoLoAnalysisBusiness.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PoLoAnalysisBusiness.DTO.dll": {}
+        }
+      },
       "SharedLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1094,6 +1104,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "PoLoAnalysisBusiness.DTO/1.0.0": {
+      "type": "project",
+      "path": "../PoLoAnalysisBusiness.DTO/PoLoAnalysisBusiness.DTO.csproj",
+      "msbuildProject": "../PoLoAnalysisBusiness.DTO/PoLoAnalysisBusiness.DTO.csproj"
+    },
     "SharedLibrary/1.0.0": {
       "type": "project",
       "path": "../SharedLibrary/SharedLibrary.csproj",
@@ -1103,6 +1118,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "EPPlus >= 7.1.0",
+      "PoLoAnalysisBusiness.DTO >= 1.0.0",
       "SharedLibrary >= 1.0.0"
     ]
   },
@@ -1133,6 +1149,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj"
+            },
             "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj"
             }

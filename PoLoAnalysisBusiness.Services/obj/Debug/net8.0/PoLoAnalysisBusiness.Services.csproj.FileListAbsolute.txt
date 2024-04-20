@@ -18,3 +18,10 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\obj\Deb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\obj\Debug\net8.0\ref\PoLoAnalysisBusiness.Services.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\SharedLibrary.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\SharedLibrary.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.pdb

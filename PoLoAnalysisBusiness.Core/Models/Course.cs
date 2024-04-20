@@ -1,4 +1,6 @@
-﻿namespace SharedLibrary.Models;
+﻿using SharedLibrary.Models;
+
+namespace PoLoAnalysisBusiness.Core.Models;
 
 public class Course:Base
 {

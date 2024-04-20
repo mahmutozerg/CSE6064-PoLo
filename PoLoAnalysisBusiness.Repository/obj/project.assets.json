@@ -1721,6 +1721,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "EPPlus": "7.1.0",
+          "PoLoAnalysisBusiness.DTO": "1.0.0",
           "SharedLibrary": "1.0.0"
         },
         "compile": {
@@ -1728,6 +1729,16 @@
         },
         "runtime": {
           "bin/placeholder/PoLoAnalysisBusiness.Core.dll": {}
+        }
+      },
+      "PoLoAnalysisBusiness.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PoLoAnalysisBusiness.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PoLoAnalysisBusiness.DTO.dll": {}
         }
       },
       "SharedLibrary/1.0.0": {
@@ -4744,6 +4755,11 @@
       "type": "project",
       "path": "../PoLoAnalysisBusiness.Core/PoLoAnalysisBusiness.Core.csproj",
       "msbuildProject": "../PoLoAnalysisBusiness.Core/PoLoAnalysisBusiness.Core.csproj"
+    },
+    "PoLoAnalysisBusiness.DTO/1.0.0": {
+      "type": "project",
+      "path": "../PoLoAnalysisBusiness.DTO/PoLoAnalysisBusiness.DTO.csproj",
+      "msbuildProject": "../PoLoAnalysisBusiness.DTO/PoLoAnalysisBusiness.DTO.csproj"
     },
     "SharedLibrary/1.0.0": {
       "type": "project",

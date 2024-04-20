@@ -11,7 +11,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\PoLoAnalysisBusiness.DTO\PoLoAnalysisBusiness.DTO.csproj" />
       <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Http.Features">
+        <HintPath>..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\8.0.1\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

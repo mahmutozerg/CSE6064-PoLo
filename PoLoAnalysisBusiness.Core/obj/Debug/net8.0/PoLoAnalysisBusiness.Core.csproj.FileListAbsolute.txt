@@ -14,3 +14,10 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\n
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\SharedLibrary.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\SharedLibrary.pdb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\obj\Debug\net8.0\PoLoAnalysisBusiness.Core.csproj.CopyComplete
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Core\bin\Debug\net8.0\PoLoAnalysisBusiness.DTO.pdb

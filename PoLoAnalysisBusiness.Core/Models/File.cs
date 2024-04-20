@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using SharedLibrary.Models;
 
-namespace SharedLibrary.Models;
+namespace PoLoAnalysisBusiness.Core.Models;
 
 public class File:Base
 {

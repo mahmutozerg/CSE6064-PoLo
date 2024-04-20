@@ -1858,6 +1858,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "EPPlus": "7.1.0",
+          "PoLoAnalysisBusiness.DTO": "1.0.0",
           "SharedLibrary": "1.0.0"
         },
         "compile": {
@@ -1865,6 +1866,16 @@
         },
         "runtime": {
           "bin/placeholder/PoLoAnalysisBusiness.Core.dll": {}
+        }
+      },
+      "PoLoAnalysisBusiness.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PoLoAnalysisBusiness.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PoLoAnalysisBusiness.DTO.dll": {}
         }
       },
       "PoLoAnalysisBusiness.Repository/1.0.0": {
@@ -5099,6 +5110,11 @@
       "path": "../PoLoAnalysisBusiness.Core/PoLoAnalysisBusiness.Core.csproj",
       "msbuildProject": "../PoLoAnalysisBusiness.Core/PoLoAnalysisBusiness.Core.csproj"
     },
+    "PoLoAnalysisBusiness.DTO/1.0.0": {
+      "type": "project",
+      "path": "../PoLoAnalysisBusiness.DTO/PoLoAnalysisBusiness.DTO.csproj",
+      "msbuildProject": "../PoLoAnalysisBusiness.DTO/PoLoAnalysisBusiness.DTO.csproj"
+    },
     "PoLoAnalysisBusiness.Repository/1.0.0": {
       "type": "project",
       "path": "../PoLoAnalysisBusiness.Repository/PoLoAnalysisBusiness.Repository.csproj",
@@ -5120,6 +5136,7 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.4",
       "Microsoft.AspNetCore.OpenApi >= 8.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.4",
+      "PoLoAnalysisBusiness.DTO >= 1.0.0",
       "PoLoAnalysisBusiness.Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -5151,6 +5168,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj"
+            },
             "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Services\\PoLoAnalysisBusiness.Services.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Services\\PoLoAnalysisBusiness.Services.csproj"
             }
