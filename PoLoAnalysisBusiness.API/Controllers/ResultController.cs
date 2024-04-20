@@ -20,7 +20,9 @@ public class ResultController:CustomControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetFile(string id)
     {
-        return CreateActionResult(await _resultService.GetById(id));
+        var fileStream = await _resultService.GetFileStream(id);
+        
+        return fileStream;
     }
     
     [HttpPost]

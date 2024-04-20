@@ -85,7 +85,4 @@ public class AppFileService:GenericService<File>,IAppFileServices
             FileDownloadName = Path.GetFileName(entity.CourseId+".xlsx")
         };
     }
-
-
- 
 }

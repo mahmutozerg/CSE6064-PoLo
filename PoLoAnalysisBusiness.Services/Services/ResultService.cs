@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Microsoft.AspNetCore.Mvc;
+using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
 using PoLoAnalysisBusiness.Core.Models;
@@ -9,10 +10,13 @@ using PoLoAnalysisBusiness.DTO.Responses;
 using Spire.Xls;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
+using static Novacode.DocX;
+
 namespace PoLoAnalysisBusiness.Services.Services;
 
 public class ResultService:GenericService<Result>,IResultService
 {
+    private readonly string _resultFilename = "result.xlsx";
     private readonly IResultRepository _resultRepository;
     private readonly IUnitOfWork _unitOfWork;
     private ExcelWorkbook _workbook;
@@ -48,6 +52,29 @@ public class ResultService:GenericService<Result>,IResultService
     {
         return ResultPath;
     }
+
+    public async Task<FileStreamResult> GetFileStream(string fileId)
+    {
+        var entity = await _resultRepository.GetById(fileId); 
+            
+        if (entity == null)
+            throw new Exception("File not found."); 
+
+        var filePath = entity.Path+$"//result.docx"; 
+
+        if (!System.IO.File.Exists(filePath))
+            throw new Exception("File not found on disk.");
+
+        var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+        var contentType = "application/octet-stream"; 
+
+
+        return new FileStreamResult(fileStream, contentType)
+        {
+            FileDownloadName = Path.GetFileName(entity.Id+".docx")
+        };    
+    }
+
     public void SetFilePath(string filePath,string id)
     {
         _filePath = filePath;
@@ -104,10 +131,11 @@ public class ResultService:GenericService<Result>,IResultService
             SetLoMatrix(worksheet);
             SetPoloGraph(worksheet,_loPos,_loQuestionMatrix,"Öğrenim Çıktıları Karşılama Yüzdesi");
             SetPoloGraph(worksheet,_poPos,_poQuestionMatrix,"Program Çıktıları Karşılama Yüzdesi");
-            ConvertWorkSheetToWord(worksheet);
+            SaveImagesFromWorkSheet(worksheet);
             Dispose();
-            
         }
+        AppendImagesToTheWordFile();
+
     }
 
     public async Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path)
@@ -298,9 +326,7 @@ public class ResultService:GenericService<Result>,IResultService
             dict[key].Add(average.ToString());
 
         }
-
     }
-
     private void SetPoMatrix(ExcelWorksheet worksheet)
     {
         if (_poPos.Count == 0)
@@ -422,25 +448,19 @@ public class ResultService:GenericService<Result>,IResultService
 
         series.DataLabel.ShowValue = true;
         series.DataLabel.Format = "0.000";
-        _excelPackage.SaveAs($@"{ResultPath}/graphTest.xlsx");
+        _excelPackage.SaveAs($@"{ResultPath}/{_resultFilename}");
 
     }
-    private void ConvertWorkSheetToWord(ExcelWorksheet worksheet)
+    private void SaveImagesFromWorkSheet(ExcelWorksheet worksheet)
     {
-        /*
-         * bu yöntem problem çıkarabilir spirexls free versiyonu 200 satır ve 5 worksheet destekliyor
-         *
-         */
         var workbook = new Workbook();
-        workbook.LoadFromFile($@"{ResultPath}\graphTest.xlsx", ExcelVersion.Version2010);
+        workbook.LoadFromFile($@"{ResultPath}\{_resultFilename}", ExcelVersion.Version2010);
         var sheet = workbook.Worksheets[worksheet.Name];
-        var poImage = workbook.SaveChartAsImage(sheet,1);
-        var loImage = workbook.SaveChartAsImage(sheet,0);
+        var poImage = workbook.SaveChartAsImage(sheet, 1);
+        var loImage = workbook.SaveChartAsImage(sheet, 0);
 
-        
         using (var fileStream = File.Create($"{ResultPath}\\{worksheet.Name}_po.png"))
         {
-            
             poImage.CopyTo(fileStream);
         }
 
@@ -449,6 +469,40 @@ public class ResultService:GenericService<Result>,IResultService
             loImage.CopyTo(fileStream2);
         }
 
-        
+    }
+
+    private void AppendImagesToTheWordFile()
+    {
+        var worksheets = _worksheets.Select(item => item.Name).ToList();
+
+        foreach (var worksheet in worksheets)
+        {
+            using var document = DocX.Create($"{ResultPath}\\{worksheet}.docx");
+            var imagePoPath = Path.Combine(ResultPath, worksheet+"_po.png");
+            
+            var documentImagePo = document.AddImage(imagePoPath);
+            var documentPicturePo = documentImagePo.CreatePicture();
+
+            
+            var poTitle = document.InsertParagraph().Append($"{worksheet} Programming Outcomes Result");
+            poTitle.Alignment = Alignment.center;
+
+            var poParagraph = document.InsertParagraph();
+            poParagraph.AppendLine().AppendPicture(documentPicturePo);
+            poParagraph.AppendLine();
+            
+            
+            var imageLoPath =  Path.Combine(ResultPath, worksheet+"_lo.png");
+            var documentImageLo = document.AddImage(imageLoPath);
+            var documentPictureLo = documentImageLo.CreatePicture();
+            var loTitle = document.InsertParagraph().Append($"{worksheet} Learning Outcomes Result");
+            loTitle.Alignment = Alignment.center;
+
+            var loParagraph = document.InsertParagraph();
+            loParagraph.AppendLine().AppendPicture(documentPictureLo);
+            loParagraph.AppendLine();
+            document.Save();
+        }
+
     }
 }

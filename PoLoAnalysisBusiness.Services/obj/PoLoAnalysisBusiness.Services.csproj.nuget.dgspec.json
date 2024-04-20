@@ -242,6 +242,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DocXCore": {
+              "target": "Package",
+              "version": "[1.0.10, )"
+            },
             "FreeSpire.XLS": {
               "target": "Package",
               "version": "[14.2.0, )"
