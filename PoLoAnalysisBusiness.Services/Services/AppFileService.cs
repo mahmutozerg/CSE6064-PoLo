@@ -10,16 +10,15 @@ using File = PoLoAnalysisBusiness.Core.Models.File;
 
 namespace PoLoAnalysisBusiness.Services.Services;
 
-public class AppFileServices:GenericService<File>,IAppFileServices
+public class AppFileService:GenericService<File>,IAppFileServices
 {
+    private readonly IAppFileRepository _fileRepository;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IGenericService<File> _fileService;
 
-    public AppFileServices(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IGenericService<File> fileService) : base(repository, unitOfWork)
+    public AppFileService(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IAppFileRepository fileRepository) : base(repository, unitOfWork)
     {
         _unitOfWork = unitOfWork;
-        _fileService = fileService;
-        
+        _fileRepository = fileRepository;
     }
 
     public async Task<CustomResponseDto<File>> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model)
@@ -49,7 +48,7 @@ public class AppFileServices:GenericService<File>,IAppFileServices
                 Path = fileName
 
             };
-            var result =await _fileService.AddAsync(file,"mahmut");
+            var result =await AddAsync(file,"mahmut");
             await _unitOfWork.CommitAsync();
             return result;
         }        
@@ -67,8 +66,8 @@ public class AppFileServices:GenericService<File>,IAppFileServices
 
     public async Task<FileStreamResult> GetFileStream(string fileId)
     {
-        var entity = await _fileService.GetById(fileId); 
-
+        var entity = await _fileRepository.GetById(fileId); 
+            
         if (entity == null)
             throw new Exception("File not found."); 
 
@@ -86,4 +85,7 @@ public class AppFileServices:GenericService<File>,IAppFileServices
             FileDownloadName = Path.GetFileName(entity.CourseId+".xlsx")
         };
     }
+
+
+ 
 }

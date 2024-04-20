@@ -1,13 +1,20 @@
-﻿using OfficeOpenXml;
+﻿using System.Net;
+using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
+using PoLoAnalysisBusiness.Core.Models;
+using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
+using PoLoAnalysisBusiness.Core.UnitOfWorks;
+using PoLoAnalysisBusiness.DTO.Responses;
 using Spire.Xls;
+using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
-
 namespace PoLoAnalysisBusiness.Services.Services;
 
-public class PoLoExcelServices:IPoLoExcelServices
+public class ResultService:GenericService<Result>,IResultService
 {
+    private readonly IResultRepository _resultRepository;
+    private readonly IUnitOfWork _unitOfWork;
     private ExcelWorkbook _workbook;
     private ExcelPackage _excelPackage;
     private ExcelWorksheets _worksheets;
@@ -27,11 +34,19 @@ public class PoLoExcelServices:IPoLoExcelServices
     private Dictionary<string,List<string>> _loQuestionMatrix =  new ();
     private List<float> _pointsAverageList = new();
     private List<float> _pointsMatchingPercentageList = new();
-    private string _resultpath;
+    public string ResultPath { get; set; }
     
-    public PoLoExcelServices()
+    public ResultService(IResultRepository resultRepository, IUnitOfWork unitOfWork) : base(resultRepository, unitOfWork)
     {
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+        _resultRepository = resultRepository;
+        _unitOfWork = unitOfWork;
+    }
+
+    public string GetResultPath()
+    {
+        return ResultPath;
     }
     public void SetFilePath(string filePath,string id)
     {
@@ -41,8 +56,8 @@ public class PoLoExcelServices:IPoLoExcelServices
         _worksheets = _workbook.Worksheets;
         
         var tempPath = Path.Combine(Directory.GetCurrentDirectory(), "../ResultFiles/");
-        _resultpath = tempPath+$"/{id}";
-        CreateResultFolder(_resultpath);
+        ResultPath = tempPath+$"/{id}";
+        CreateResultFolder(ResultPath);
     }
     private string CreateResultFolder(string path = @"C:\\Users\\Lenovo\\Downloads\\")
     {
@@ -61,7 +76,7 @@ public class PoLoExcelServices:IPoLoExcelServices
         }
         
     }
-    public void Dispose()
+    private void Dispose()
     {
         _q1StartPos.Clear();
         _qEndPos.Clear();
@@ -95,7 +110,19 @@ public class PoLoExcelServices:IPoLoExcelServices
         }
     }
 
-    public void SetFirstQuestionPosition(ExcelWorksheet worksheet)
+    public async Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path)
+    {
+        var entity = new Result()
+        {
+            Id = Guid.NewGuid().ToString(),
+            FileId = fileId,
+            Path = ResultPath
+        };
+        return await AddAsync(entity, "mahmut");
+        
+    }
+
+    private void SetFirstQuestionPosition(ExcelWorksheet worksheet)
     {
         var rowCount = worksheet.Dimension.Rows;
         var colCount = worksheet.Dimension.Columns;
@@ -122,7 +149,7 @@ public class PoLoExcelServices:IPoLoExcelServices
 
     }
 
-    public void SetLastQuestionPosition(ExcelWorksheet worksheet)
+    private void SetLastQuestionPosition(ExcelWorksheet worksheet)
     {
         if (_q1StartPos.Count == 0)
             return;
@@ -144,7 +171,7 @@ public class PoLoExcelServices:IPoLoExcelServices
         }
     }
 
-    public void SetStudentPos(ExcelWorksheet worksheet)
+    private void SetStudentPos(ExcelWorksheet worksheet)
     {
         /*
          * I know it seems ugly but when i tried to remove inner while loop somehow it crashes so if you find a solution feel free to implement it
@@ -173,7 +200,7 @@ public class PoLoExcelServices:IPoLoExcelServices
         
     }
 
-    public void SetPointMatrix(ExcelWorksheet worksheet)
+    private void SetPointMatrix(ExcelWorksheet worksheet)
     {
         if (_q1StartPos.Count == 0 || _qEndPos.Count == 0 || _studentEndcol.Count == 0)
             return;
@@ -198,7 +225,7 @@ public class PoLoExcelServices:IPoLoExcelServices
         }
     }
 
-    public void CalculatePointResults()
+    private void CalculatePointResults()
     {
         for (var i = 0; i < _questionPoints.Count; ++i)
         {
@@ -208,7 +235,7 @@ public class PoLoExcelServices:IPoLoExcelServices
         }
     }
 
-    public void SetPoloPosition(ExcelWorksheet worksheet)
+    private void SetPoloPosition(ExcelWorksheet worksheet)
     {
         
         var rowCount = worksheet.Dimension.Rows;
@@ -245,7 +272,7 @@ public class PoLoExcelServices:IPoLoExcelServices
 
     }
 
-    public void SetPoLoMatchingPercentage(ref Dictionary<string,List<string>> dict)
+    private void SetPoLoMatchingPercentage(ref Dictionary<string,List<string>> dict)
     {
         if(dict.Count == 0)
             return;
@@ -274,7 +301,7 @@ public class PoLoExcelServices:IPoLoExcelServices
 
     }
 
-    public void SetPoMatrix(ExcelWorksheet worksheet)
+    private void SetPoMatrix(ExcelWorksheet worksheet)
     {
         if (_poPos.Count == 0)
             return;
@@ -318,7 +345,7 @@ public class PoLoExcelServices:IPoLoExcelServices
 
     }
 
-    public void SetLoMatrix(ExcelWorksheet worksheet)
+    private void SetLoMatrix(ExcelWorksheet worksheet)
     {
         if (_loPos.Count == 0)
             return;
@@ -362,7 +389,7 @@ public class PoLoExcelServices:IPoLoExcelServices
         SetPoLoMatchingPercentage(ref _loQuestionMatrix);
     }
 
-    public void SetPoloGraph(ExcelWorksheet worksheet,Dictionary<string,string>dict,Dictionary<string,List<string>> matrix,string title)
+    private void SetPoloGraph(ExcelWorksheet worksheet,Dictionary<string,string>dict,Dictionary<string,List<string>> matrix,string title)
     {
         if (dict.Count == 0)
             return;
@@ -395,29 +422,29 @@ public class PoLoExcelServices:IPoLoExcelServices
 
         series.DataLabel.ShowValue = true;
         series.DataLabel.Format = "0.000";
-        _excelPackage.SaveAs($@"{_resultpath}/graphTest.xlsx");
+        _excelPackage.SaveAs($@"{ResultPath}/graphTest.xlsx");
 
     }
-    public void ConvertWorkSheetToWord(ExcelWorksheet worksheet)
+    private void ConvertWorkSheetToWord(ExcelWorksheet worksheet)
     {
         /*
          * bu yöntem problem çıkarabilir spirexls free versiyonu 200 satır ve 5 worksheet destekliyor
          *
          */
         var workbook = new Workbook();
-        workbook.LoadFromFile($@"{_resultpath}\graphTest.xlsx", ExcelVersion.Version2010);
+        workbook.LoadFromFile($@"{ResultPath}\graphTest.xlsx", ExcelVersion.Version2010);
         var sheet = workbook.Worksheets[worksheet.Name];
         var poImage = workbook.SaveChartAsImage(sheet,1);
         var loImage = workbook.SaveChartAsImage(sheet,0);
 
         
-        using (var fileStream = File.Create($"{_resultpath}\\{worksheet.Name}_po.png"))
+        using (var fileStream = File.Create($"{ResultPath}\\{worksheet.Name}_po.png"))
         {
             
             poImage.CopyTo(fileStream);
         }
 
-        using (var fileStream2 = File.Create($"{_resultpath}\\{worksheet.Name}_lo.png"))
+        using (var fileStream2 = File.Create($"{ResultPath}\\{worksheet.Name}_lo.png"))
         {
             loImage.CopyTo(fileStream2);
         }

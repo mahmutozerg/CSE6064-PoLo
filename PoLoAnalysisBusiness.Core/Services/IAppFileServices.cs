@@ -1,14 +1,11 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.DTO.Responses;
-using SharedLibrary.DTO;
-using WebProgrammingTerm.Auth.Core.DTOs;
 using File = PoLoAnalysisBusiness.Core.Models.File;
 
 namespace PoLoAnalysisBusiness.Core.Services;
 
-public interface IAppFileServices
+public interface IAppFileServices:IGenericService<File>
 {
      Task<CustomResponseDto<File>> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model);
      bool IsExcelFile(IFormFile file);

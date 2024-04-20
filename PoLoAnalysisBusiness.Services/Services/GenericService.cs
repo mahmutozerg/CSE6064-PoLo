@@ -71,9 +71,9 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
 
     }
 
-    public async Task<TEntity?> GetById(string id)
+    public async Task<CustomResponseDto<TEntity?>> GetById(string id)
     {
-        return  await _repository.GetById(id);
+        return  CustomResponseDto<TEntity>.Success(await _repository.GetById(id),StatusCodes.Ok);
 
       
     }

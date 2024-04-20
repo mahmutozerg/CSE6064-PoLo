@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PoLoAnalysisBusiness.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36375efce4b95ce18ac518966d82cd1e78080a62")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0be6d7d9f982c4f4e7860056b7b418b7e4ed9c01")]
 [assembly: System.Reflection.AssemblyProductAttribute("PoLoAnalysisBusiness.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PoLoAnalysisBusiness.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

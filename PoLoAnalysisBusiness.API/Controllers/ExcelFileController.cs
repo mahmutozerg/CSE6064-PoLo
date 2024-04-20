@@ -6,12 +6,12 @@ namespace PoLoAnalysisBusinessAPI.Controllers;
 
 public class ExcelFileController:CustomControllerBase
 {
-    private readonly IPoLoExcelServices _poLoExcelServices;
+    private readonly IResultService _resultService;
     private readonly IAppFileServices _appFileServices;
     
-    public ExcelFileController(IPoLoExcelServices poLoExcelServices, IAppFileServices appFileServices)
+    public ExcelFileController(IResultService resultService, IAppFileServices appFileServices)
     {
-        _poLoExcelServices = poLoExcelServices;
+        _resultService = resultService;
         _appFileServices = appFileServices;
     }
     
@@ -20,8 +20,9 @@ public class ExcelFileController:CustomControllerBase
     {
 
         var result =await _appFileServices.WriteExcelFileToCurrentDirectoryAsync(model);
-        _poLoExcelServices.SetFilePath(result.Data.Path,result.Data.Id);
-        _poLoExcelServices.AnalyzeExcel();
+        
+        //_poLoExcelServices.SetFilePath(result.Data.Path,result.Data.Id);
+        //_poLoExcelServices.AnalyzeExcel();
         return CreateActionResult(result);
     }
     
@@ -29,9 +30,6 @@ public class ExcelFileController:CustomControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetFile(string id)
     {
-
         return await _appFileServices.GetFileStream(id);
-
-       
     }
 }

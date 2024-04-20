@@ -15,8 +15,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped(typeof(IPoLoExcelServices), typeof(PoLoExcelServices));
-builder.Services.AddScoped(typeof(IAppFileServices), typeof(AppFileServices));
+
+builder.Services.AddScoped(typeof(IResultRepository), typeof(ResultRepository));
+builder.Services.AddScoped(typeof(IResultService), typeof(ResultService));
+
+builder.Services.AddScoped(typeof(IAppFileRepository), typeof(AppFileRepository));
+builder.Services.AddScoped(typeof(IAppFileServices), typeof(AppFileService));
+builder.Services.AddScoped(typeof(IResultRepository), typeof(ResultRepository));
+builder.Services.AddScoped(typeof(IResultService), typeof(ResultService));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
