@@ -29,11 +29,13 @@ builder.Services.AddScoped(typeof(IResultService), typeof(ResultService));
 
 builder.Services.AddScoped(typeof(IAppFileRepository), typeof(AppFileRepository));
 builder.Services.AddScoped(typeof(IAppFileServices), typeof(AppFileService));
+
 builder.Services.AddScoped(typeof(IResultRepository), typeof(ResultRepository));
 builder.Services.AddScoped(typeof(IResultService), typeof(ResultService));
 
+builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 

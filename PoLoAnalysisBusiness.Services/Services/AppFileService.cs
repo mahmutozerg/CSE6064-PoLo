@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
@@ -69,12 +71,12 @@ public class AppFileService:GenericService<File>,IAppFileServices
         var entity = await _fileRepository.GetById(fileId); 
             
         if (entity == null)
-            throw new Exception("File not found."); 
+            throw new Exception(ResponseMessages.NotFound); 
 
         var filePath = entity.Path; 
 
         if (!System.IO.File.Exists(filePath))
-            throw new Exception("File not found on disk.");
+            throw new Exception(ResponseMessages.BadRecords);
 
         var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
         var contentType = "application/octet-stream"; 
@@ -84,5 +86,14 @@ public class AppFileService:GenericService<File>,IAppFileServices
         {
             FileDownloadName = Path.GetFileName(entity.CourseId+".xlsx")
         };
+    }
+
+    public async Task<File> GetFileWithResult(string id)
+    {
+        var file = await _fileRepository.Where(f => !f.IsDeleted && f.Id == id)
+            .Include(f => f.Result)
+            .SingleOrDefaultAsync();
+
+        return file;
     }
 }

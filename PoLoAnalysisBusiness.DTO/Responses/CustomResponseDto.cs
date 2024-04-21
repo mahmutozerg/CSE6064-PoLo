@@ -28,4 +28,6 @@ public class CustomResponseDto<TEntity>
     {
         return new CustomResponseDto<TEntity> {Errors = new List<string>{error}, StatusCode = statusCode};
     }
+
+  
 }
