@@ -31,7 +31,7 @@ public class ResultController:CustomControllerBase
     public async Task<IActionResult> CalculateResultByExcelId( ResultDto resultDto)
     {
 
-        var fileResult = await _appFileServices.GetById(resultDto.ExcelFileId);
+        var fileResult = await _appFileServices.GetByIdAsync(resultDto.ExcelFileId);
         _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
         _resultService.AnalyzeExcel();
         var filePath = _resultService.GetResultPath();

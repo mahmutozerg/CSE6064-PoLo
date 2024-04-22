@@ -8,6 +8,7 @@ using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
+using SharedLibrary.DTOs.Responses;
 using File = PoLoAnalysisBusiness.Core.Models.File;
 
 namespace PoLoAnalysisBusiness.Services.Services;

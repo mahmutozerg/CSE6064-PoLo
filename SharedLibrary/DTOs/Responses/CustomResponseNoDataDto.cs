@@ -1,4 +1,4 @@
-namespace PoLoAnalysisBusiness.DTO.Responses;
+namespace SharedLibrary.DTOs.Responses;
 
 public class CustomResponseNoDataDto
 {

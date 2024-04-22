@@ -23,4 +23,12 @@ public class UserController:CustomControllerBase
  
         return CreateActionResult(await _userService.AddUserAsync(userAddDto,(ClaimsIdentity)User.Identity));
     }
+    
+    [Authorize(Policy = "AdminBypassAuthServerPolicy")]
+    [HttpPost]
+    public async Task<IActionResult> DeleteById(UserDeleteDto userDeleteDto)
+    {
+ 
+        return CreateActionResult(await _userService.DeleteUserAsync(userDeleteDto));
+    }
 }

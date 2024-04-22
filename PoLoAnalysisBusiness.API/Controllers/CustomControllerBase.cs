@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.DTO.Responses;
+using SharedLibrary.DTOs.Responses;
 
 namespace PoLoAnalysisBusinessAPI.Controllers;
 [Route("api/[controller]/[action]")]

@@ -5,6 +5,7 @@ using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
+using SharedLibrary.DTOs.Responses;
 using SharedLibrary.Models;
 
 namespace PoLoAnalysisBusiness.Services.Services;
@@ -70,7 +71,7 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
 
     }
 
-    public async Task<CustomResponseDto<TEntity?>> GetById(string id)
+    public async Task<CustomResponseDto<TEntity?>> GetByIdAsync(string id)
     {
         return  CustomResponseDto<TEntity>.Success(await _repository.GetById(id),StatusCodes.Ok);
 

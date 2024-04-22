@@ -38,7 +38,7 @@ public class UserController:CustomControllerBase
     [Authorize]
     public async Task<IActionResult> GetUser()
     {
-        var a = User.Identity;
+        var a = HttpContext.User.Identity;
         var user = await _userService.GetUserByNameAsync(User.Identity.Name);
 
         return CreateActionResult(user);
@@ -53,6 +53,4 @@ public class UserController:CustomControllerBase
         return CreateActionResult(user);
     }
     
-
-
 }

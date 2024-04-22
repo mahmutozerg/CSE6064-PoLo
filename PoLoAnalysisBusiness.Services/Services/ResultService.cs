@@ -9,6 +9,7 @@ using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
+using SharedLibrary.DTOs.Responses;
 using Spire.Xls;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;

@@ -11,4 +11,5 @@ public interface IUserService
     Task<Response<NoDataDto>> Remove(string id);
     Task<Response<NoDataDto>> AddRoleToUser(string userEmail, string roleName);
 
+
 }

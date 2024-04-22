@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.DTO.Responses;
+using SharedLibrary.DTOs.Responses;
 using File = PoLoAnalysisBusiness.Core.Models.File;
 
 namespace PoLoAnalysisBusiness.Core.Services;
