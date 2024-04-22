@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Services;
 using SharedLibrary.DTOs;
 using SharedLibrary.DTOs.User;
@@ -14,9 +16,11 @@ public class UserController:CustomControllerBase
         _userService = userService;
     }
     
+    [Authorize(Policy = "AdminBypassAuthServerPolicy")]
     [HttpPost]
-    public async Task<IActionResult> CreateUser( UserCreateDto userCreateDto)
+    public async Task<IActionResult> AddByIdAsync(UserAddDto userAddDto)
     {
-        throw new NotImplementedException();
+ 
+        return CreateActionResult(await _userService.AddUserAsync(userAddDto,(ClaimsIdentity)User.Identity));
     }
 }

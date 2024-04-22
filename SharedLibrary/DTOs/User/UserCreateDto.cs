@@ -4,14 +4,14 @@ namespace SharedLibrary.DTOs.User;
 
 public class UserCreateDto
 {
-    [EmailAddress]
-    [Required]
-    public string EMail { get; set; }
-
-    [Required]
-    public string Passwd { get; set; }
-
-    public string? Name { get; set; }
-    public string? LastName { get; set; }
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    [Required(ErrorMessage = "Email field is required")]
+    public string Email { get; set; } = "empty@testapp.com";
+    
+    [Required(ErrorMessage = "Password field is required")]
+    public string Password { get; set; } = string.Empty;
+    
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
 
 }

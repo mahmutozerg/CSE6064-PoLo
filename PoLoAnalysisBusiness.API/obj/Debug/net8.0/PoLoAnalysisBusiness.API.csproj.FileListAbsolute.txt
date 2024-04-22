@@ -160,3 +160,16 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\ne
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\DocXCore.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthServer.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthServer.Core.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthSever.Service.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthSever.Service.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.pdb

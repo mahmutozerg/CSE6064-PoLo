@@ -47,3 +47,5 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Deb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\PoLoAnalysisAuthServer.Core.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\bin\Debug\net8.0\PoLoAnalysisAuthServer.Core.pdb
