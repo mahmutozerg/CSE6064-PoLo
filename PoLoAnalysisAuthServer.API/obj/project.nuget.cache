@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SBcMZFoliO9vMbEeMFVWJ8xEWnScMADR1PyjqdMm2595nZX618A9kMvafqtDGwO7FlCqH3oRUES3Pmm6YzzwoQ==",
+  "dgSpecHash": "jbuzYBFF83TcsCZqQX+rtnU/zia0QAGVPRYKmI4ROCRgWY7fAbbTfBv0vrOORMoks6svS3JM9oPbGJWN8eGnLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,8 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\selenium.webdriver\\4.19.0\\selenium.webdriver.4.19.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\seleniumextras.waithelpers\\1.0.2\\seleniumextras.waithelpers.1.0.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

@@ -325,6 +325,10 @@
             "Microsoft.Net.Http.Headers": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "SeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [

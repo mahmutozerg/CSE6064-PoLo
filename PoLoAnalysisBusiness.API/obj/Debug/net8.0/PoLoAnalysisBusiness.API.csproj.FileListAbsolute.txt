@@ -173,3 +173,8 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\ne
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthSever.Service.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthSever.Service.pdb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.pdb
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\WebDriver.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\bin\Debug\net8.0\SeleniumExtras.WaitHelpers.dll

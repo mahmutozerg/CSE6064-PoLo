@@ -50,3 +50,6 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\obj\Deb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\obj\Debug\net8.0\refint\PoLoAnalysisAuthSever.Service.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\obj\Debug\net8.0\PoLoAnalysisAuthSever.Service.pdb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\obj\Debug\net8.0\ref\PoLoAnalysisAuthSever.Service.dll
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\bin\Debug\net8.0\selenium-manager\macos\selenium-manager
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\bin\Debug\net8.0\selenium-manager\windows\selenium-manager.exe

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BxoCWW1jx7rba2s61/57ywUJvVJiLud6rD3vEIb3MDLQU+pnROOAA1+TuVkpZ7LB3iKl2tsXeDQqBRai8YQEfA==",
+  "dgSpecHash": "YZPwvgNUuzP86Rjcj9ZUNwPO5/JvkigqOHHJY05tigOYMJ59iY7uMK+25CtCM4YL8A1OzymNi/nimhjz8iAAwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Services\\PoLoAnalysisBusiness.Services.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,9 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\selenium.webdriver\\4.0.0-beta2\\selenium.webdriver.4.0.0-beta2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\seleniumextras.waithelpers\\1.0.2\\seleniumextras.waithelpers.1.0.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\skiasharp\\1.68.0\\skiasharp.1.68.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
