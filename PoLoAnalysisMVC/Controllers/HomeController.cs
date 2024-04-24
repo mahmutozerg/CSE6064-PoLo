@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisMVC.Models;
 
@@ -17,8 +18,7 @@ public class HomeController : Controller
     {
         return View();
     }
-
-
+    
 
     public IActionResult Import()
     {

@@ -4,23 +4,25 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using PoLoAnalysisAuthServer.Core.DTOs;
 using PoLoAnalysisAuthSever.Service.Configurations;
 using PoLoAnalysisAuthSever.Service.Services;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
-using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.Repository;
 using PoLoAnalysisBusiness.Repository.Repositories;
 using PoLoAnalysisBusiness.Repository.UnitOfWorks;
 using PoLoAnalysisBusiness.Services.Services;
 using PoLoAnalysisBusinessAPI.AuthRequirements;
 using PoLoAnalysisBusinessAPI.RequirementHandlers;
+using IUnitOfWork = PoLoAnalysisBusiness.Core.UnitOfWorks.IUnitOfWork;
 using UserService = PoLoAnalysisBusiness.Services.Services.UserService;
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
+builder.Services.Configure<List<ClientLoginDto>>(builder.Configuration.GetSection("Clients"));
 
 builder.Services.AddCors(options =>
 {
@@ -76,7 +78,6 @@ builder.Services.AddAuthentication(opt =>
         ValidateIssuerSigningKey = true,
         ValidateLifetime = true,
         RoleClaimType = ClaimTypes.Role,
-        
     };
 });
 builder.Services.AddAuthorization(options =>

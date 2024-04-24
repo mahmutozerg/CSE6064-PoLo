@@ -81,6 +81,10 @@ public class ResultService:GenericService<Result>,IResultService
             SaveImagesFromWorkSheet(worksheet);
             CalculateStudentOveral(worksheet);
             AddStudentOveralToWord(worksheet.Name); 
+            AddPoQuestionsToWord(worksheet.Name);
+            AddPoImageToTheWord(worksheet.Name);
+            AddLoQuestionsToWord(worksheet.Name);
+            AddLoImageToTheWord(worksheet.Name);
             Dispose();
         }
 
@@ -563,10 +567,7 @@ public class ResultService:GenericService<Result>,IResultService
         document.InsertTable(table);
 
         document.Save();
-        AddPoQuestionsToWord(worksheetName);
-        AddPoImageToTheWord(worksheetName);
-        AddLoQuestionsToWord(worksheetName);
-        AddLoImageToTheWord(worksheetName);
+
     }
     
     private void AddPoQuestionsToWord(string worksheetName)
@@ -575,7 +576,7 @@ public class ResultService:GenericService<Result>,IResultService
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
 
         var table =document.AddTable(_poQuestionMatrix.Keys.Count, 2);
-        table.AutoFit = AutoFit.Contents;
+        table.AutoFit  = AutoFit.Fixed;
         table.Rows[0].Cells[0] .Paragraphs.First().Append("Programming Outcomes");
         table.Rows[0].Cells[1] .Paragraphs.First().Append("Question No");
 
@@ -601,7 +602,7 @@ public class ResultService:GenericService<Result>,IResultService
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
 
         var table =document.AddTable(_poQuestionMatrix.Keys.Count, 2);
-        table.AutoFit = AutoFit.Contents;
+        table.AutoFit  = AutoFit.Fixed;
         table.Rows[0].Cells[0] .Paragraphs.First().Append("Learning Outcomes");
         table.Rows[0].Cells[1] .Paragraphs.First().Append("Question No");
 
