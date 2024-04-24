@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jbuzYBFF83TcsCZqQX+rtnU/zia0QAGVPRYKmI4ROCRgWY7fAbbTfBv0vrOORMoks6svS3JM9oPbGJWN8eGnLw==",
+  "dgSpecHash": "9sk179EcKYHq9ijz/TyRPrFhHV8XEjcN/pbq3vTWpfmnCSeR82h+cTg32t6Wpab7mttBaPqsCpqiImod0gG6WQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\epplus\\7.1.0\\epplus.7.1.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\epplus\\7.1.2\\epplus.7.1.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

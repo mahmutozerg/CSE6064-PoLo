@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("export-button").addEventListener("click", test);
+    document.getElementById("export-button").addEventListener("click", getResultFile);
 });
-async function test() {
+async function getResultFile() {
     try {
-        const encodedFileId = encodeURIComponent("df55ec6a-7e82-4d7f-baf3-51a06c4142fc");
+        const encodedFileId = encodeURIComponent("2b2338fa-4221-4ebb-af93-b8bfe31ad562");
 
-        const response = await fetch(`http://localhost:5022/api/Result/GetFileByExcelId/${encodedFileId}`);
+        const response = await fetch(`https://localhost:7273/api/Result/GetFileByExcelId/${encodedFileId}`);
 
         if (response.ok) {
             const blob = await response.blob();

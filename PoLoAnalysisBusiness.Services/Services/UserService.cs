@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using Azure;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;

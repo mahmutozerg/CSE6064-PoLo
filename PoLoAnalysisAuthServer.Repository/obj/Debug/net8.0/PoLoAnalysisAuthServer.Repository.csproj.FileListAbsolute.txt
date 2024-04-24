@@ -1,4 +1,5 @@
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.deps.json
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.runtimeconfig.json
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.pdb
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\bin\Debug\net8.0\PoLoAnalysisAuthServer.Core.dll
@@ -47,6 +48,5 @@ C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj\Debug\net8.0\PoLoAnalysisAuthServer.Repository.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj\Debug\net8.0\refint\PoLoAnalysisAuthServer.Repository.dll
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj\Debug\net8.0\PoLoAnalysisAuthServer.Repository.pdb
-C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj\Debug\net8.0\ref\PoLoAnalysisAuthServer.Repository.dll
-C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\bin\Debug\net8.0\PoLoAnalysisAuthServer.Repository.runtimeconfig.json
 C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj\Debug\net8.0\PoLoAnalysisAuthServer.Repository.genruntimeconfig.cache
+C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.Repository\obj\Debug\net8.0\ref\PoLoAnalysisAuthServer.Repository.dll

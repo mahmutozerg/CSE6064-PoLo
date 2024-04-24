@@ -53,7 +53,7 @@
           }
         }
       },
-      "EPPlus/7.1.0": {
+      "EPPlus/7.1.2": {
         "dependencies": {
           "EPPlus.Interfaces": "6.1.1",
           "EPPlus.System.Drawing": "6.1.1",
@@ -65,8 +65,8 @@
         },
         "runtime": {
           "lib/net8.0/EPPlus.dll": {
-            "assemblyVersion": "7.1.0.0",
-            "fileVersion": "7.1.0.0"
+            "assemblyVersion": "7.1.2.0",
+            "fileVersion": "7.1.2.0"
           }
         }
       },
@@ -1121,7 +1121,7 @@
       },
       "PoLoAnalysisBusiness.Core/1.0.0": {
         "dependencies": {
-          "EPPlus": "7.1.0",
+          "EPPlus": "7.1.2",
           "PoLoAnalysisAuthServer.Core": "1.0.0",
           "PoLoAnalysisBusiness.DTO": "1.0.0",
           "SharedLibrary": "1.0.0"
@@ -1386,12 +1386,12 @@
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
     },
-    "EPPlus/7.1.0": {
+    "EPPlus/7.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WmkQo7fWrDInBtQiNRcnZbJumhZO5wSEQ4Eyv47af6j5cvwCyQA4vy9O4MKSHO/0DBUa8YEu7G15BRM4scZzcg==",
-      "path": "epplus/7.1.0",
-      "hashPath": "epplus.7.1.0.nupkg.sha512"
+      "sha512": "sha512-BEmY3oPCL3JotBqwJnMcLrwzcBsmasXPrONo6Ur00VaXQuasNAJPL5NAKnC56EWrsjqe0q8kmKvdyFYM5iwuTA==",
+      "path": "epplus/7.1.2",
+      "hashPath": "epplus.7.1.2.nupkg.sha512"
     },
     "EPPlus.Interfaces/6.1.1": {
       "type": "package",

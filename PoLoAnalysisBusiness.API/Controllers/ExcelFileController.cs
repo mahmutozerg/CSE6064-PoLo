@@ -16,13 +16,12 @@ public class ExcelFileController:CustomControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> UploadExcel( IFormFile model)
+    public async Task<IActionResult> UploadExcel(IFormFile model)
     {
-
-        var result =await _appFileServices.WriteExcelFileToCurrentDirectoryAsync(model);
         
-        //_poLoExcelServices.SetFilePath(result.Data.Path,result.Data.Id);
-        //_poLoExcelServices.AnalyzeExcel();
+        var result =await _appFileServices.WriteExcelFileToCurrentDirectoryAsync(model);
+
+
         return CreateActionResult(result);
     }
     

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
@@ -7,13 +6,11 @@ using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
-using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 using Spire.Xls;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
-using static Novacode.DocX;
 
 namespace PoLoAnalysisBusiness.Services.Services;
 
@@ -83,7 +80,8 @@ public class ResultService:GenericService<Result>,IResultService
     public void SetFilePath(string filePath,string id)
     {
         _filePath = filePath;
-        _excelPackage  = new ExcelPackage(new FileInfo(_filePath));
+        var np = Path.Combine(Directory.GetCurrentDirectory() , filePath);
+        _excelPackage  = new ExcelPackage(new FileInfo(np));
         _workbook = _excelPackage.Workbook;
         _worksheets = _workbook.Worksheets;
         

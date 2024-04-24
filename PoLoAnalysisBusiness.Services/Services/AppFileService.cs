@@ -37,7 +37,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
 
 
             var id = Guid.NewGuid().ToString();
-            var fileName = $"../UploadedFiles/{id}.xlsx";
+            var fileName = $"..\\UploadedFiles\\{id}.xlsx";
 
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
@@ -51,7 +51,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
                 Path = fileName
 
             };
-            var result =await AddAsync(file,"mahmut");
+            var result =await AddAsync(file,Guid.NewGuid().ToString());
             await _unitOfWork.CommitAsync();
             return result;
         }        

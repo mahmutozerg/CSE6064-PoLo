@@ -46,7 +46,7 @@
           }
         }
       },
-      "EPPlus/7.1.0": {
+      "EPPlus/7.1.2": {
         "type": "package",
         "dependencies": {
           "EPPlus.Interfaces": "6.1.1",
@@ -1953,7 +1953,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "EPPlus": "7.1.0",
+          "EPPlus": "7.1.2",
           "PoLoAnalysisAuthServer.Core": "1.0.0",
           "PoLoAnalysisBusiness.DTO": "1.0.0",
           "SharedLibrary": "1.0.0"
@@ -2030,15 +2030,15 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
-    "EPPlus/7.1.0": {
-      "sha512": "WmkQo7fWrDInBtQiNRcnZbJumhZO5wSEQ4Eyv47af6j5cvwCyQA4vy9O4MKSHO/0DBUa8YEu7G15BRM4scZzcg==",
+    "EPPlus/7.1.2": {
+      "sha512": "BEmY3oPCL3JotBqwJnMcLrwzcBsmasXPrONo6Ur00VaXQuasNAJPL5NAKnC56EWrsjqe0q8kmKvdyFYM5iwuTA==",
       "type": "package",
-      "path": "epplus/7.1.0",
+      "path": "epplus/7.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "EPPlusLogo.png",
-        "epplus.7.1.0.nupkg.sha512",
+        "epplus.7.1.2.nupkg.sha512",
         "epplus.nuspec",
         "lib/net35/EPPlus.dll",
         "lib/net35/EPPlus.xml",
