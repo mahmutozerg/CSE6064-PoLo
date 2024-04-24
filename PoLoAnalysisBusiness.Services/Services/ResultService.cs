@@ -9,6 +9,7 @@ using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 using Spire.Xls;
+using Spire.Xls.Core.Spreadsheet.AutoFilter;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
 
@@ -38,6 +39,7 @@ public class ResultService:GenericService<Result>,IResultService
     private Dictionary<string,List<string>> _loQuestionMatrix =  new ();
     private List<float> _pointsAverageList = new();
     private List<float> _pointsMatchingPercentageList = new();
+    private List<float> _studentTotalPoints = new List<float>();
     public string ResultPath { get; set; }
     
     public ResultService(IResultRepository resultRepository, IUnitOfWork unitOfWork) : base(resultRepository, unitOfWork)
@@ -46,6 +48,68 @@ public class ResultService:GenericService<Result>,IResultService
 
         _resultRepository = resultRepository;
         _unitOfWork = unitOfWork;
+    }
+    private void Dispose()
+    {
+        _q1StartPos.Clear();
+        _qEndPos.Clear();
+        _studentEndcol.Clear();
+        _loPos.Clear();
+        _poPos.Clear();
+        _poQuestionMatrix.Clear();
+        _loQuestionMatrix.Clear();
+        _questionPointMatrix.Clear();
+        _questionPoints.Clear();
+        _pointsAverageList.Clear();
+        _pointsMatchingPercentageList.Clear();
+        _studentTotalPoints.Clear();
+    }
+    public void AnalyzeExcel()
+    {
+        foreach (var worksheet in _worksheets)
+        {
+            SetFirstQuestionPosition(worksheet);
+            SetLastQuestionPosition(worksheet);
+            SetStudentPos(worksheet);
+            SetPointMatrix(worksheet);
+            CalculatePointResults();
+            SetPoloPosition(worksheet);
+            SetPoMatrix(worksheet);
+            SetLoMatrix(worksheet);
+            SetPoloGraph(worksheet,_loPos,_loQuestionMatrix,"Öğrenim Çıktıları Karşılama Yüzdesi");
+            SetPoloGraph(worksheet,_poPos,_poQuestionMatrix,"Program Çıktıları Karşılama Yüzdesi");
+            SaveImagesFromWorkSheet(worksheet);
+            CalculateStudentAverages(worksheet);
+            AppendImagesToTheWordFile(worksheet.Name); 
+            Dispose();
+        }
+
+    }
+
+    private void CalculateStudentAverages(ExcelWorksheet worksheet)
+    {
+        if (_q1StartPos.Count == 0 || _qEndPos.Count == 0 || _studentEndcol.Count == 0)
+            return;
+        
+        var colStart = int.Parse(_q1StartPos["col"]);
+        var colEnd = int.Parse(_qEndPos["col"]);
+        var rowStart = int.Parse(_q1StartPos["row"]) + 2;
+        var rowEnd = int.Parse(_studentEndcol["row"]) - 2;
+        var av = 0.0f;
+        for (var row = rowStart; row <= rowEnd; row++)
+        {
+            for (var col = colStart; col <= colEnd; col++)
+            {
+
+                var cellValue = worksheet.Cells[row, col].Value;
+                    
+                if (cellValue is not null and not "" and not " ")
+                    av +=(float.Parse(cellValue.ToString()));
+            }
+            _studentTotalPoints.Add(av);
+            av = 0;
+        }
+
     }
 
     public string GetResultPath()
@@ -105,40 +169,6 @@ public class ResultService:GenericService<Result>,IResultService
             return "";
         }
         
-    }
-    private void Dispose()
-    {
-        _q1StartPos.Clear();
-        _qEndPos.Clear();
-        _studentEndcol.Clear();
-        _loPos.Clear();
-        _poPos.Clear();
-        _poQuestionMatrix.Clear();
-        _loQuestionMatrix.Clear();
-        _questionPointMatrix.Clear();
-        _questionPoints.Clear();
-        _pointsAverageList.Clear();
-        _pointsMatchingPercentageList.Clear();
-    }
-    public void AnalyzeExcel()
-    {
-        foreach (var worksheet in _worksheets)
-        {
-            SetFirstQuestionPosition(worksheet);
-            SetLastQuestionPosition(worksheet);
-            SetStudentPos(worksheet);
-            SetPointMatrix(worksheet);
-            CalculatePointResults();
-            SetPoloPosition(worksheet);
-            SetPoMatrix(worksheet);
-            SetLoMatrix(worksheet);
-            SetPoloGraph(worksheet,_loPos,_loQuestionMatrix,"Öğrenim Çıktıları Karşılama Yüzdesi");
-            SetPoloGraph(worksheet,_poPos,_poQuestionMatrix,"Program Çıktıları Karşılama Yüzdesi");
-            SaveImagesFromWorkSheet(worksheet);
-            Dispose();
-        }
-        AppendImagesToTheWordFile();
-
     }
 
     public async Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path)
@@ -474,39 +504,34 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private void AppendImagesToTheWordFile()
+    private void AppendImagesToTheWordFile(string worksheetName)
     {
-        var worksheets = _worksheets.Select(item => item.Name).ToList();
         var path = $"{ResultPath}\\result.docx";
-        foreach (var worksheet in worksheets)
-        {
-            var imagePoPath = Path.Combine(ResultPath, worksheet+"_po.png");
-            var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
+  
+        var imagePoPath = Path.Combine(ResultPath, worksheetName+"_po.png");
+        var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
 
-            var documentImagePo = document.AddImage(imagePoPath);
-            var documentPicturePo = documentImagePo.CreatePicture();
+        var documentImagePo = document.AddImage(imagePoPath);
+        var documentPicturePo = documentImagePo.CreatePicture();
 
-            
-            var poTitle = document.InsertParagraph().Append($"{worksheet} Programming Outcomes Result");
-            poTitle.Alignment = Alignment.center;
+        
+        var poTitle = document.InsertParagraph().Append($"{worksheetName} Programming Outcomes Result");
+        poTitle.Alignment = Alignment.center;
 
-            var poParagraph = document.InsertParagraph();
-            poParagraph.AppendLine().AppendPicture(documentPicturePo);
-            poParagraph.AppendLine();
-            
-            
-            var imageLoPath =  Path.Combine(ResultPath, worksheet+"_lo.png");
-            var documentImageLo = document.AddImage(imageLoPath);
-            var documentPictureLo = documentImageLo.CreatePicture();
-            var loTitle = document.InsertParagraph().Append($"{worksheet} Learning Outcomes Result");
-            loTitle.Alignment = Alignment.center;
+        var poParagraph = document.InsertParagraph();
+        poParagraph.AppendLine().AppendPicture(documentPicturePo);
+        poParagraph.AppendLine();
+        
+        
+        var imageLoPath =  Path.Combine(ResultPath, worksheetName+"_lo.png");
+        var documentImageLo = document.AddImage(imageLoPath);
+        var documentPictureLo = documentImageLo.CreatePicture();
+        var loTitle = document.InsertParagraph().Append($"{worksheetName} Learning Outcomes Result");
+        loTitle.Alignment = Alignment.center;
 
-            var loParagraph = document.InsertParagraph();
-            loParagraph.AppendLine().AppendPicture(documentPictureLo);
-            loParagraph.AppendLine();
-            document.Save();
-        }
-
-
-    }
+        var loParagraph = document.InsertParagraph();
+        loParagraph.AppendLine().AppendPicture(documentPictureLo);
+        loParagraph.AppendLine();
+        document.Save();
+}
 }

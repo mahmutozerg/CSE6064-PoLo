@@ -20,9 +20,13 @@ public class ExcelFileController:CustomControllerBase
     {
         
         var result =await _appFileServices.WriteExcelFileToCurrentDirectoryAsync(model);
-
-
-        return CreateActionResult(result);
+        
+        var fileResult = await _appFileServices.GetByIdAsync(result.Data.Id);
+        _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
+        _resultService.AnalyzeExcel();
+        var filePath = _resultService.GetResultPath();
+        var res = await _resultService.AddAsync(fileResult.Data.Id,filePath);
+        return CreateActionResult(res);
     }
     
 
