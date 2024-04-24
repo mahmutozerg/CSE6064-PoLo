@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "SRXI1pAbswlDxir97BEhq2SXFgQ7YpNPRhkZfm79yiA=",
+  "Source": "PoLoAnalysisAuthServer",
+  "BasePath": "_content/PoLoAnalysisAuthServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
