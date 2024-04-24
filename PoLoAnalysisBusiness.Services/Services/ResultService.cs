@@ -79,35 +79,36 @@ public class ResultService:GenericService<Result>,IResultService
             SetPoloGraph(worksheet,_loPos,_loQuestionMatrix,"Öğrenim Çıktıları Karşılama Yüzdesi");
             SetPoloGraph(worksheet,_poPos,_poQuestionMatrix,"Program Çıktıları Karşılama Yüzdesi");
             SaveImagesFromWorkSheet(worksheet);
-            CalculateStudentAverages(worksheet);
-            AppendImagesToTheWordFile(worksheet.Name); 
+            CalculateStudentOveral(worksheet);
+            AddStudentOveralToWord(worksheet.Name); 
             Dispose();
         }
 
     }
 
-    private void CalculateStudentAverages(ExcelWorksheet worksheet)
+    private void CalculateStudentOveral(ExcelWorksheet worksheet)
     {
         if (_q1StartPos.Count == 0 || _qEndPos.Count == 0 || _studentEndcol.Count == 0)
             return;
-        
+
+        var a = worksheet.Name;
         var colStart = int.Parse(_q1StartPos["col"]);
         var colEnd = int.Parse(_qEndPos["col"]);
         var rowStart = int.Parse(_q1StartPos["row"]) + 2;
         var rowEnd = int.Parse(_studentEndcol["row"]) - 2;
-        var av = 0.0f;
+        var overal = 0.0f;
         for (var row = rowStart; row <= rowEnd; row++)
         {
             for (var col = colStart; col <= colEnd; col++)
             {
-
                 var cellValue = worksheet.Cells[row, col].Value;
                     
                 if (cellValue is not null and not "" and not " ")
-                    av +=(float.Parse(cellValue.ToString()));
+                    overal +=(float.Parse(cellValue.ToString()));
             }
-            _studentTotalPoints.Add(av);
-            av = 0;
+            
+            _studentTotalPoints.Add(overal);
+            overal = 0;
         }
 
     }
@@ -130,7 +131,7 @@ public class ResultService:GenericService<Result>,IResultService
             throw new Exception(ResponseMessages.BadRecords);
 
         var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-        var contentType = "application/octet-stream"; 
+        const string contentType = "application/octet-stream"; 
 
 
         return new FileStreamResult(fileStream, contentType)
@@ -504,7 +505,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private void AppendImagesToTheWordFile(string worksheetName)
+    private void AddPoImageToTheWord(string worksheetName)
     {
         var path = $"{ResultPath}\\result.docx";
   
@@ -513,7 +514,6 @@ public class ResultService:GenericService<Result>,IResultService
 
         var documentImagePo = document.AddImage(imagePoPath);
         var documentPicturePo = documentImagePo.CreatePicture();
-
         
         var poTitle = document.InsertParagraph().Append($"{worksheetName} Programming Outcomes Result");
         poTitle.Alignment = Alignment.center;
@@ -522,6 +522,15 @@ public class ResultService:GenericService<Result>,IResultService
         poParagraph.AppendLine().AppendPicture(documentPicturePo);
         poParagraph.AppendLine();
         
+        
+
+    }
+
+    private void AddLoImageToTheWord(string worksheetName)
+    {
+        var path = $"{ResultPath}\\result.docx";
+  
+        var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
         
         var imageLoPath =  Path.Combine(ResultPath, worksheetName+"_lo.png");
         var documentImageLo = document.AddImage(imageLoPath);
@@ -533,5 +542,83 @@ public class ResultService:GenericService<Result>,IResultService
         loParagraph.AppendLine().AppendPicture(documentPictureLo);
         loParagraph.AppendLine();
         document.Save();
-}
+    }
+    private void AddStudentOveralToWord(string worksheetName)
+    {
+        var path = $"{ResultPath}\\result.docx";
+        var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
+
+        var table =document.AddTable(_studentTotalPoints.Count, 2);
+        table.AutoFit = AutoFit.Contents;
+        table.Rows[0].Cells[0] .Paragraphs.First().Append("StudentId");
+        table.Rows[0].Cells[1] .Paragraphs.First().Append("Total");
+
+        for (var row = 1; row < _studentTotalPoints.Count; row++)
+        {
+
+            var cell = table.Rows[row].Cells[1];
+            cell.Paragraphs.First().Append(_studentTotalPoints[row].ToString());
+        }
+
+        document.InsertTable(table);
+
+        document.Save();
+        AddPoQuestionsToWord(worksheetName);
+        AddPoImageToTheWord(worksheetName);
+        AddLoQuestionsToWord(worksheetName);
+        AddLoImageToTheWord(worksheetName);
+    }
+    
+    private void AddPoQuestionsToWord(string worksheetName)
+    {
+        var path = $"{ResultPath}\\result.docx";
+        var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
+
+        var table =document.AddTable(_poQuestionMatrix.Keys.Count, 2);
+        table.AutoFit = AutoFit.Contents;
+        table.Rows[0].Cells[0] .Paragraphs.First().Append("Programming Outcomes");
+        table.Rows[0].Cells[1] .Paragraphs.First().Append("Question No");
+
+        for (var row = 1; row < _poQuestionMatrix.Keys.Count; row++)
+        {
+            var poCurrentKey = _poQuestionMatrix.Keys.ToList()[row];
+            var po = new List<string>(_poQuestionMatrix[poCurrentKey]);
+            po.RemoveAt(po.Count-1);
+            var text = string.Join(",", po);
+
+            table.Rows[row].Cells[0].Paragraphs[0].Append($"PO-{poCurrentKey}");
+            table.Rows[row].Cells[1].Paragraphs[0].Append($"{text}");
+
+        }
+
+        document.InsertTable(table);
+
+        document.Save();
+    }
+    private void AddLoQuestionsToWord(string worksheetName)
+    {
+        var path = $"{ResultPath}\\result.docx";
+        var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
+
+        var table =document.AddTable(_poQuestionMatrix.Keys.Count, 2);
+        table.AutoFit = AutoFit.Contents;
+        table.Rows[0].Cells[0] .Paragraphs.First().Append("Learning Outcomes");
+        table.Rows[0].Cells[1] .Paragraphs.First().Append("Question No");
+
+        for (var row = 1; row < _poQuestionMatrix.Keys.Count; row++)
+        {
+            var loCurrentKey = _poQuestionMatrix.Keys.ToList()[row];
+            var lo = new List<string>(_poQuestionMatrix[loCurrentKey]);
+            lo.RemoveAt(lo.Count-1);
+
+            var text = string.Join(",", lo);
+            table.Rows[row].Cells[0].Paragraphs[0].Append($"LO-{loCurrentKey}");
+            table.Rows[row].Cells[1].Paragraphs[0].Append($"{text}");
+
+        }
+
+        document.InsertTable(table);
+
+        document.Save();
+    }
 }
