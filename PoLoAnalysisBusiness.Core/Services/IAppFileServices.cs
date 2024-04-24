@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.DTO.Responses;
+using SharedLibrary.DTOs.Responses;
 using File = PoLoAnalysisBusiness.Core.Models.File;
 
 namespace PoLoAnalysisBusiness.Core.Services;
@@ -11,5 +13,7 @@ public interface IAppFileServices:IGenericService<File>
      bool IsExcelFile(IFormFile file);
      
      Task<FileStreamResult> GetFileStream(string filePath);
+     Task<File> GetFileWithResult(string id);
+
 
 }

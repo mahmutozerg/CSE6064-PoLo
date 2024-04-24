@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OpenQA.Selenium.Interactions;
 using PoLoAnalysisBusiness.DTO.Responses;
-using SharedLibrary.DTO;
-using WebProgrammingTerm.Auth.Core.DTOs;
+using SharedLibrary.DTOs.Responses;
 
 namespace PoLoAnalysisBusinessAPI.Controllers;
 [Route("api/[controller]/[action]")]

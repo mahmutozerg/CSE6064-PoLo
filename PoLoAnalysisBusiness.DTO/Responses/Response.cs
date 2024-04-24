@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace WebProgrammingTerm.Auth.Core.DTOs;
+namespace PoLoAnalysisBusiness.DTO.Responses;
 
 public class Response<TEntity> where TEntity : class
 {

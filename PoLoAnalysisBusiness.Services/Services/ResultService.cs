@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
@@ -7,6 +8,8 @@ using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.DTO.Responses;
+using SharedLibrary;
+using SharedLibrary.DTOs.Responses;
 using Spire.Xls;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
@@ -58,12 +61,12 @@ public class ResultService:GenericService<Result>,IResultService
         var entity = await _resultRepository.GetById(fileId); 
             
         if (entity == null)
-            throw new Exception("File not found."); 
+            throw new Exception(ResponseMessages.NotFound); 
 
         var filePath = entity.Path+$"//result.docx"; 
 
         if (!System.IO.File.Exists(filePath))
-            throw new Exception("File not found on disk.");
+            throw new Exception(ResponseMessages.BadRecords);
 
         var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
         var contentType = "application/octet-stream"; 
@@ -74,6 +77,8 @@ public class ResultService:GenericService<Result>,IResultService
             FileDownloadName = Path.GetFileName(entity.Id+".docx")
         };    
     }
+
+
 
     public void SetFilePath(string filePath,string id)
     {

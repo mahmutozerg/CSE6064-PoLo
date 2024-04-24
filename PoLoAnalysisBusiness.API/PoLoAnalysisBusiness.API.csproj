@@ -19,6 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\PoLoAnalysisAuthSever.Service\PoLoAnalysisAuthSever.Service.csproj" />
       <ProjectReference Include="..\PoLoAnalysisBusiness.DTO\PoLoAnalysisBusiness.DTO.csproj" />
       <ProjectReference Include="..\PoLoAnalysisBusiness.Services\PoLoAnalysisBusiness.Services.csproj" />
     </ItemGroup>

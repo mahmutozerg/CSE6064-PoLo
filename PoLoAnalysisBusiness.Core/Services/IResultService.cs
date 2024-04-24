@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.DTO.Responses;
+using SharedLibrary.DTOs.Responses;
 
 namespace PoLoAnalysisBusiness.Core.Services;
 

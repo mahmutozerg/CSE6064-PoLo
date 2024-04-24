@@ -23,7 +23,6 @@ async function test() {
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
 
-            console.log("Export successful!");
         } else {
             console.error("Request failed with status " + response.status);
         }
