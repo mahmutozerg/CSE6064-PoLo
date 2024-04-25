@@ -18,6 +18,7 @@ namespace PoLoAnalysisBusiness.Services.Services;
 public class ResultService:GenericService<Result>,IResultService
 {
     private readonly string _resultFilename = "result.xlsx";
+    private const string _templateFolder = "..\\TemplateFiles";
     private readonly IResultRepository _resultRepository;
     private readonly IUnitOfWork _unitOfWork;
     private ExcelWorkbook _workbook;
@@ -39,13 +40,16 @@ public class ResultService:GenericService<Result>,IResultService
     private Dictionary<string,List<string>> _loQuestionMatrix =  new ();
     private List<float> _pointsAverageList = new();
     private List<float> _pointsMatchingPercentageList = new();
-    private List<float> _studentTotalPoints = new List<float>();
+    private List<float> _studentTotalPoints = new ();
+    private Dictionary<string,float> _POPointList =  new ();
+    private Dictionary<string,int> _visits =  new ();
+    private Dictionary<string, float> _PoPointAverages = new();
+
     public string ResultPath { get; set; }
     
     public ResultService(IResultRepository resultRepository, IUnitOfWork unitOfWork) : base(resultRepository, unitOfWork)
     {
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
         _resultRepository = resultRepository;
         _unitOfWork = unitOfWork;
     }
@@ -85,9 +89,13 @@ public class ResultService:GenericService<Result>,IResultService
             AddPoImageToTheWord(worksheet.Name);
             AddLoQuestionsToWord(worksheet.Name);
             AddLoImageToTheWord(worksheet.Name);
+            SetPOAveragesToExcel(worksheetName:worksheet.Name);
+
+
             Dispose();
         }
 
+        var d = 1;
     }
 
     private void CalculateStudentOveral(ExcelWorksheet worksheet)
@@ -101,17 +109,30 @@ public class ResultService:GenericService<Result>,IResultService
         var rowStart = int.Parse(_q1StartPos["row"]) + 2;
         var rowEnd = int.Parse(_studentEndcol["row"]) - 2;
         var overal = 0.0f;
+        var safe = false;
         for (var row = rowStart; row <= rowEnd; row++)
         {
             for (var col = colStart; col <= colEnd; col++)
             {
                 var cellValue = worksheet.Cells[row, col].Value;
-                    
+
                 if (cellValue is not null and not "" and not " ")
+                {
                     overal +=(float.Parse(cellValue.ToString()));
+                    safe = true;
+
+                }
             }
-            
-            _studentTotalPoints.Add(overal);
+
+            if (safe)
+            {
+                _studentTotalPoints.Add(overal);
+
+            }else
+                _studentTotalPoints.Add(-1);
+
+
+            safe = false;
             overal = 0;
         }
 
@@ -143,8 +164,6 @@ public class ResultService:GenericService<Result>,IResultService
             FileDownloadName = Path.GetFileName(entity.Id+".docx")
         };    
     }
-
-
 
     public void SetFilePath(string filePath,string id)
     {
@@ -239,9 +258,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     private void SetStudentPos(ExcelWorksheet worksheet)
     {
-        /*
-         * I know it seems ugly but when i tried to remove inner while loop somehow it crashes so if you find a solution feel free to implement it
-         */
+
         var rowCount = worksheet.Dimension.Rows;
         var col = int.Parse(_q1StartPos["col"])-1;
         var row = int.Parse(_q1StartPos["row"]);
@@ -553,7 +570,6 @@ public class ResultService:GenericService<Result>,IResultService
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
 
         var table =document.AddTable(_studentTotalPoints.Count, 2);
-        table.AutoFit = AutoFit.Contents;
         table.Rows[0].Cells[0] .Paragraphs.First().Append("StudentId");
         table.Rows[0].Cells[1] .Paragraphs.First().Append("Total");
 
@@ -576,7 +592,7 @@ public class ResultService:GenericService<Result>,IResultService
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
 
         var table =document.AddTable(_poQuestionMatrix.Keys.Count, 2);
-        table.AutoFit  = AutoFit.Fixed;
+
         table.Rows[0].Cells[0] .Paragraphs.First().Append("Programming Outcomes");
         table.Rows[0].Cells[1] .Paragraphs.First().Append("Question No");
 
@@ -602,7 +618,6 @@ public class ResultService:GenericService<Result>,IResultService
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
 
         var table =document.AddTable(_poQuestionMatrix.Keys.Count, 2);
-        table.AutoFit  = AutoFit.Fixed;
         table.Rows[0].Cells[0] .Paragraphs.First().Append("Learning Outcomes");
         table.Rows[0].Cells[1] .Paragraphs.First().Append("Question No");
 
@@ -619,7 +634,58 @@ public class ResultService:GenericService<Result>,IResultService
         }
 
         document.InsertTable(table);
-
         document.Save();
+    }
+
+    private void SetPOAveragesToExcel(string templateName="EkTemplate.xlsx",string worksheetName = "")
+    {
+        var np = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+        
+        var path = $"{ResultPath}\\furtherResult.xlsx";
+        var excelPackage = new ExcelPackage();
+        if (!File.Exists(path))
+        {
+            excelPackage  = new ExcelPackage(new FileInfo(np));
+            excelPackage.SaveAs(new FileInfo(path));
+        }
+
+        excelPackage =
+            new ExcelPackage(path);
+        
+        var sheets = _excelPackage.Workbook.Worksheets.ToList();
+        var index = sheets.FindIndex(p=> p.Name == worksheetName);
+
+        var worksheet = excelPackage.Workbook.Worksheets[1];
+        var keys = _poQuestionMatrix.Keys.ToList();
+        
+        
+        foreach (var poKey in keys)
+        {
+            var questions = new List<String>(_poQuestionMatrix[poKey]);
+            questions.RemoveAt(questions.Count - 1);
+            var average = 0f;
+            var count =0;
+
+            _POPointList.TryAdd(poKey, 0);
+            _visits.TryAdd(poKey, 0);
+            
+            var col = int.Parse(poKey) + (11*index);
+            worksheet.Cells[3,2+col].Value = _poQuestionMatrix[poKey].Last();
+            _POPointList[poKey] += float.Parse(_poQuestionMatrix[poKey].Last());
+            _visits[poKey] += 1;
+        }
+        foreach (var poKey in _POPointList.Keys)
+        {
+            var col = int.Parse(poKey) + (11*(index+1));
+
+            var floatVar = _POPointList[poKey];
+            var visits = _visits[poKey];
+            _PoPointAverages[poKey] =((floatVar/visits));
+            worksheet.Cells[3,2+col].Value = _PoPointAverages[poKey];
+
+
+        }
+        excelPackage.Save();
+
     }
 }
