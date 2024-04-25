@@ -3,7 +3,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using SharedLibrary.DTOs.Responses;
-
 namespace PoLoAnalysisAuthSever.Service.Services;
 
 public class CatsLoginService

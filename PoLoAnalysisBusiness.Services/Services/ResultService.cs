@@ -42,10 +42,10 @@ public class ResultService:GenericService<Result>,IResultService
     private List<float> _pointsAverageList = new();
     private List<float> _pointsMatchingPercentageList = new();
     private List<float> _studentTotalPoints = new ();
-    private Dictionary<string,float> _POPointList =  new ();
-    private Dictionary<string,int> _visits =  new ();
     private Dictionary<string, float> _PoPointAverages = new();
- 
+
+    private Dictionary<string,int> _poVisits =  new ();
+
     public string ResultPath { get; set; }
     
     public ResultService(IResultRepository resultRepository, IUnitOfWork unitOfWork) : base(resultRepository, unitOfWork)
@@ -93,7 +93,10 @@ public class ResultService:GenericService<Result>,IResultService
             SetPOAveragesToExcel(worksheetName:worksheet.Name);
             Dispose();
         }
+        Final();
+
         SaveMatchingChartsAsImagesFromWorkSheet(_furtherResultExcelPackage.Workbook.Worksheets[1]);
+        var d = 1;
 
     }
 
@@ -638,54 +641,81 @@ public class ResultService:GenericService<Result>,IResultService
 
     private void SetPOAveragesToExcel(string templateName="EkTemplate.xlsx",string worksheetName = "")
     {
-        var np = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+        Dictionary<string,float> _poPointList =  new ();
+        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
         
-        var path = $"{ResultPath}\\furtherResult.xlsx";
+        var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
         _furtherResultExcelPackage = new ExcelPackage();
-        if (!File.Exists(path))
+        if (!File.Exists(furtherResultPath))
         {
-            _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(np));
-            _furtherResultExcelPackage.SaveAs(new FileInfo(path));
+            _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(templateExcelPath));
+            _furtherResultExcelPackage.SaveAs(new FileInfo(furtherResultPath));
         }
 
         _furtherResultExcelPackage =
-            new ExcelPackage(path);
+            new ExcelPackage(furtherResultPath);
         
-        var sheets = _resultExcelPackage.Workbook.Worksheets.ToList();
-        var index = sheets.FindIndex(p=> p.Name == worksheetName);
+        var resultExcelfilePath = _resultExcelPackage.Workbook.Worksheets.ToList();
+        var resultExcelWorksheetIndex = resultExcelfilePath.FindIndex(p=> p.Name == worksheetName);
 
-        var worksheet = _furtherResultExcelPackage.Workbook.Worksheets[1];
-        var keys = _poQuestionMatrix.Keys.ToList();
+        var furtherResultMatchingPercentageWorksheet = _furtherResultExcelPackage.Workbook.Worksheets[1];
+        var poQuestionNumbers = _poQuestionMatrix.Keys.ToList();
         
         
-        foreach (var poKey in keys)
+        foreach (var poQuestion in poQuestionNumbers)
         {
-            var questions = new List<String>(_poQuestionMatrix[poKey]);
+            var questions = new List<String>(_poQuestionMatrix[poQuestion]);
             questions.RemoveAt(questions.Count - 1);
-            var average = 0f;
-            var count =0;
-
-            _POPointList.TryAdd(poKey, 0);
-            _visits.TryAdd(poKey, 0);
             
-            var col = int.Parse(poKey) + (11*index);
-            worksheet.Cells[3,2+col].Value = _poQuestionMatrix[poKey].Last();
-            _POPointList[poKey] += float.Parse(_poQuestionMatrix[poKey].Last());
-            _visits[poKey] += 1;
+            _poPointList.TryAdd(poQuestion, 0);
+            _poVisits.TryAdd(poQuestion, 0);
+            
+            _poPointList[poQuestion] += float.Parse(_poQuestionMatrix[poQuestion].Last());
+            _poVisits[poQuestion] += 1;
         }
-        foreach (var poKey in _POPointList.Keys)
+        foreach (var poNumber in _poPointList.Keys)
         {
-            var col = int.Parse(poKey) + (11*(index+1));
+            var col = int.Parse(poNumber) + (11*resultExcelWorksheetIndex);
 
-            var floatVar = _POPointList[poKey];
-            var visits = _visits[poKey];
-            _PoPointAverages[poKey] =((floatVar/visits));
-            worksheet.Cells[3,2+col].Value = _PoPointAverages[poKey];
-
-
+            if (!_PoPointAverages.ContainsKey(poNumber))
+                _PoPointAverages[poNumber] = 0;
+            var poAverage = _poPointList[poNumber];
+            furtherResultMatchingPercentageWorksheet.Cells[3,2+col].Value = poAverage;
+            _PoPointAverages[poNumber] += poAverage ;
         }
+        
         _furtherResultExcelPackage.Save();
+        _poPointList.Clear();
 
+    }
+
+    private void Final(string templateName="EkTemplate.xlsx")
+    {
+        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+        
+        var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
+        _furtherResultExcelPackage = new ExcelPackage();
+        if (!File.Exists(furtherResultPath))
+        {
+            _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(templateExcelPath));
+            _furtherResultExcelPackage.SaveAs(new FileInfo(furtherResultPath));
+        }
+
+        _furtherResultExcelPackage =
+            new ExcelPackage(furtherResultPath);
+        
+        var resultExcelfilePath = _resultExcelPackage.Workbook.Worksheets.ToList();
+        var resultExcelWorksheetIndex = resultExcelfilePath.Last().Index;
+
+        var furtherResultMatchingPercentageWorksheet = _furtherResultExcelPackage.Workbook.Worksheets[1];
+
+        foreach (var (poNumber,value) in _PoPointAverages)
+        {
+            var col = int.Parse(poNumber) + (11*(resultExcelWorksheetIndex+1));
+
+            var avg = value / _poVisits[poNumber];
+            furtherResultMatchingPercentageWorksheet.Cells[3,2+col].Value = avg;
+        }
     }
     private void SaveMatchingChartsAsImagesFromWorkSheet(ExcelWorksheet worksheet,string templateName="EkTemplate.xlsx")
     {
@@ -706,6 +736,7 @@ public class ResultService:GenericService<Result>,IResultService
         chart.YAxis.MaxValue = 1.0f;
         var a = worksheet.Cells[3, 5].Value;
         var series = chart.Series.Add(worksheet.Cells[yRange], worksheet.Cells[xRange]) as ExcelBarChartSerie;
+        
         
    
         _furtherResultExcelPackage.Save();
