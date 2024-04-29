@@ -4,7 +4,7 @@ namespace SharedLibrary.DTOs.User;
 
 public class CatsUserLogin
 {
-    [Required(ErrorMessage = "UserName is required")]
+    [Required(ErrorMessage = "Username is required")]
     public string UserName { get; set; } = "empty@testapp.com";
 
     [Required(ErrorMessage = "Password field is required")]

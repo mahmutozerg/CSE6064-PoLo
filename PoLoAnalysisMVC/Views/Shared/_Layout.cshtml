@@ -1,29 +1,30 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]-POLO Analytics</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/js/site.js"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/js/site.js" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/PoLoAnalysisMVC.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/PoLoAnalysisMVC.styles.css" asp-append-version="true" />
     <link rel="icon" type="image/x-icon" href="\Images\favicon.ico">
 </head>
 <body>
-<header>
-    <span onclick="openNav()">
-        <img src="/Images/sidebar-icon.svg" alt="Sidebar Icon" class="sidebar-icon">
-    </span>
-    <img src="/Images/POLOWhite.svg" alt="Logo" class="logo">
-</header>
+    <header>
+        <span onclick="openNav()">
+            <img src="/Images/sidebar-icon.svg" alt="Sidebar Icon" class="sidebar-icon">
+        </span>
+        <img src="/Images/POLOWhite.svg" alt="Logo" class="logo">
+    </header>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&equiv; </a>
         <p>Hello,<br>Name Surname</p>
         <a href="@Url.Action("Import","Home")">Import Excel File</a>
         <a href="#">Reports In Progress</a>
-        <a href="#">Export Word File</a>
+        <a href="@Url.Action("Index","Home")">Export Word File</a>
         <a href="#">Past Reports</a>
         <a href="#">Download Template</a>
         <a href="#">Settings</a>
@@ -35,16 +36,16 @@
             <p class="version">v0.0.1(Beta)</p>
         </div>
     </div>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-@await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

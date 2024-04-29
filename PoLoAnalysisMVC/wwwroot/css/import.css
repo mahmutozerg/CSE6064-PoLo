@@ -1,119 +1,90 @@
- body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat';
-    background-color: #f2f2f2;
-  }
-  
-  header {
-    background-color: #C1272D;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-
-  .sidebar-icon {
-    width: 30px;
-    height: auto;
-    display: block;
-    cursor: pointer;
-  }
-
-  .logo {
-    width: 170px; /* Adjust width as needed */
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 30px;
-  }
-  
-  .main-content {
+.main-content {
     width: 700px;
     margin: auto;
     margin-top: 30px;
     text-align: left;
     display: flex;
     justify-content: center;
-  }
+}
 
-  .bold-info {
+.bold-info {
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 0px;
     text-align: left;
-  }
+}
 
-  .info {
+.info {
     margin-top: 0px;
     font-size: 20px;
     font-weight: 500;
     text-align: left;
-  }
+}
 
-  .caution {
+.caution {
     margin-top: 175px;
     align-content: center;
-  }
+}
 
-  .caution-info {
+.caution-info {
     margin: auto;
     font-weight: 700;
     font-size: 13px;
     height: 50px;
-  }
+}
 
-  .caution-icon {
+.caution-icon {
     width: 40px;
     float: left;
     margin-left: 20px;
     margin-right: 10px;
-  }
-  
-  .upload-box {
+}
+
+.upload-box {
     width: 100%;
     height: 150px;
     border: 4px dashed #B3B3B3;
     border-radius: 10px;
     align-content: center;
     text-align: center;
-  }
+}
 
-  .upload input{
+.upload input {
     margin-top: 60px;
     margin-left: 100px;
     font-family: 'Montserrat';
     font-weight: 700;
     cursor: pointer;
-  }
+}
 
-  .drag-drop {
+.drag-drop {
     font-size: 13px;
     font-weight: 700;
     color: #B3B3B3;
-  }
-  
-  .template {
+}
+
+.template {
     text-align: center;
     font-size: 13px;
-  }
+}
 
-  .template a{
-    margin: 0px;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-weight: 700;
-    color: #000000;
-  }
+    .template a {
+        margin: 0px;
+        text-decoration: none;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        color: #000000;
+    }
 
-  .xls-icon {
+.xls-icon {
     margin-top: 20px;
-  }
-  .xls-icon img {
-    width: 50px;
-  }
+}
 
-  .template button{
+    .xls-icon img {
+        width: 50px;
+    }
+
+.template button {
     margin-top: 10px;
     width: 200px;
     height: 30px;
@@ -124,83 +95,16 @@
     border: none;
     color: #f2f2f2;
     cursor: pointer;
-  }
+}
 
-  .template button:hover{
-    margin-top: 10px;
-    width: 200px;
-    height: 30px;
-    border-radius: 15px;
-    font-family: 'Montserrat';
-    font-weight: 700;
-    background-color: #000000;
-    border: none;
-    color: #f2f2f2;
-  }
-
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    font-weight: 700;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  }
-  
-  .sidenav a {
-    padding: 3px 3px 3px 12px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #C1272D;
-    display: block;
+    .template button:hover {
+        margin-top: 10px;
+        width: 200px;
+        height: 30px;
+        border-radius: 15px;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        background-color: #000000;
+        border: none;
+        color: #f2f2f2;
     }
-
-  .sidenav p {
-    padding: 3px 3px 3px 12px;
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #000000;
-  }
-
-  .sidenav .closebtn {
-    position: absolute;
-    top: -5px;
-    right: 25px;
-    font-size: 55px;
-    font-weight: 700;
-    margin-left: 50px;  
-  }
-
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-
-  .side-bottom {
-    margin-top: 200px;
-  }
-
-  .logo-side-bottom {
-    margin: 20px 0px 0px 15px;
-    width: 150px;
-  }
-
-  .side-bottom p {
-    color: #B3B3B3;
-    font-family: 'Montserrat';
-    font-weight: 700;
-  }
-
-  .version {
-    margin-top: 0;
-    padding-top: 0;
-    padding-left: 3px;
-  }
