@@ -10,7 +10,6 @@ using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 using Spire.Xls;
-using Spire.Xls.Core.Spreadsheet.AutoFilter;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
 
@@ -528,12 +527,12 @@ public class ResultService:GenericService<Result>,IResultService
                 {
                     try
                     {
-                        return question.Substring(1); // Return the result of Substring(1)
+                        return question.Substring(1); 
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine("Error Like q1, continue");
-                        return "missingQuestion"; // Return a special value to indicate an error
+                        return "missingQuestion"; 
                     }
                 }).Where(result => result != "missingQuestion").ToList();
 
@@ -799,12 +798,10 @@ public class ResultService:GenericService<Result>,IResultService
         sheet.Charts[0].PrimaryValueAxis.MinValue = 0.0;
         sheet.Charts[0].PrimaryValueAxis.MajorUnit =0.1 ;
         sheet.Charts[0].Height =1080 ;
-        sheet.Charts[0].Width =1080 ;
+        sheet.Charts[0].Width = 1080 ;
 
         workbook.Save();
         workbook.LoadFromFile(templateExcelPath, ExcelVersion.Version2010);
-
-        
         workbook.CalculateAllValue();
 
         var poImage = workbook.SaveChartAsImage(sheet, 0);
