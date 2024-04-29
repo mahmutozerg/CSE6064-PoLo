@@ -9,8 +9,9 @@ using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
-using File = PoLoAnalysisBusiness.Core.Models.File;
 
+using File = PoLoAnalysisBusiness.Core.Models.File;
+using StatusCodes = SharedLibrary.StatusCodes;
 namespace PoLoAnalysisBusiness.Services.Services;
 
 public class AppFileService:GenericService<File>,IAppFileServices
@@ -29,7 +30,8 @@ public class AppFileService:GenericService<File>,IAppFileServices
         try
         {
             if (model == null || model.Length == 0)
-                return CustomResponseDto<File>.Fail( StatusCodes.BadRequest,FileConstants.FILENULL);
+                return CustomResponseDto<File>.Fail
+                 (StatusCodes.BadRequest, FileConstants.FILENULL);
 
 
             if (!IsExcelFile(model))

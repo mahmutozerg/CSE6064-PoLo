@@ -13,7 +13,20 @@ using PoLoAnalysisAuthServer.Repository.Repositories;
 using PoLoAnalysisAuthSever.Service.Configurations;
 using PoLoAnalysisAuthSever.Service.Services;
 
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7298").AllowAnyHeader().AllowAnyMethod();
+        });
+});
 
 // Add services to the container.
 
@@ -24,7 +37,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<AppTokenOptions>(builder.Configuration.GetSection("TokenOptions"));
 builder.Services.Configure<List<ClientLoginDto>>(builder.Configuration.GetSection("Clients"));
-var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -70,8 +82,9 @@ builder.Services.AddAuthentication(opt =>
 
 
 var app = builder.Build();
+app.UseCors(MyAllowSpecificOrigins);
 
- if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

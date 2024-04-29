@@ -16,4 +16,5 @@ public interface IAppFileServices:IGenericService<File>
      Task<File> GetFileWithResult(string id);
 
 
+
 }

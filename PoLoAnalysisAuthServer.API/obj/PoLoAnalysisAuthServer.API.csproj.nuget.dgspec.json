@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj": {}
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
         "projectName": "PoLoAnalysisAuthServer.API",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj"
               }
             }
           }
@@ -82,21 +82,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj",
         "projectName": "PoLoAnalysisAuthServer.Core",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,8 +110,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj"
               }
             }
           }
@@ -151,21 +151,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj",
         "projectName": "PoLoAnalysisAuthServer.Repository",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Repository\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -179,11 +179,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj"
               },
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj"
               }
             }
           }
@@ -235,21 +235,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
         "projectName": "PoLoAnalysisAuthSever.Service",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthSever.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -263,11 +263,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj"
               },
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Repository\\PoLoAnalysisAuthServer.Repository.csproj"
               }
             }
           }
@@ -323,21 +323,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj",
         "projectName": "PoLoAnalysisBusiness.Core",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.Core\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\PoLoAnalysisBusiness.Core.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -351,14 +351,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisAuthServer.Core\\PoLoAnalysisAuthServer.Core.csproj"
               },
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj"
               },
-              "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj"
+              "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj": {
+                "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj"
               }
             }
           }
@@ -376,6 +376,10 @@
             "EPPlus": {
               "target": "Package",
               "version": "[7.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
             }
           },
           "imports": [
@@ -394,21 +398,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
         "projectName": "PoLoAnalysisBusiness.DTO",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisBusiness.DTO\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\PoLoAnalysisBusiness.DTO.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\PoLoAnalysisBusiness.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -449,21 +453,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj": {
+    "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj",
         "projectName": "SharedLibrary",
-        "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\SharedLibrary.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\SharedLibrary\\obj\\",
+        "projectPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\SharedLibrary.csproj",
+        "packagesPath": "C:\\Users\\ege_k\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ege_k\\OneDrive\\Masaüstü\\WebCode\\CSE6064-PoLo\\SharedLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ege_k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -504,7 +508,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

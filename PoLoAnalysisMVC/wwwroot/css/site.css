@@ -2,10 +2,106 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #C1272D;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    font-weight: 700;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.sidenav a {
+    padding: 1px 5px 1px 12px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #C1272D;
+    display: block;
+}
+
+.sidenav p {
+    padding: 0px 0px 0px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 25px;
+    font-size: 55px;
+    font-weight: 700;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.side-bottom {
+    margin-top: 200px;
+}
+
+.logo-side-bottom {
+    margin: 20px 0px 0px 15px;
+    width: 150px;
+}
+
+.side-bottom p {
+    color: #B3B3B3;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.version {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 3px;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -17,6 +113,17 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+.side-bottom {
+    margin-top: 200px;
+}
+
+.logo-side-bottom {
+    margin: 15px 0px 0px 15px;
+    width: 150px;
+}
+
+.side-bottom p {
+    color: #B3B3B3;
+    font-family: 'Montserrat';
+    font-weight: 700;
 }
