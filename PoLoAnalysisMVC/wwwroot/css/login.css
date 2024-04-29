@@ -1,0 +1,96 @@
+﻿body {
+    font-family: Montserrat;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8e4e4;
+    padding: 10px 20px;
+}
+
+#logo {
+    height: 50px;
+}
+
+#login-form {
+    display: flex;
+    gap: 10px;
+}
+
+#login-form input[type="text"], #login-form input[type="password"] {
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    font-family: Montserrat;
+}
+#login-form button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: #c1272d;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#login-form button:hover {
+    background-color: #555;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+section img {
+    height: 165px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
+
+    
+    header img{
+        margin-bottom: 15px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        width: auto;
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    font-weight: 500;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 100px
+}
+
+.rigths {
+    font-weight: 700;
+    font-size: 13px;
+    color: #858585;
+}

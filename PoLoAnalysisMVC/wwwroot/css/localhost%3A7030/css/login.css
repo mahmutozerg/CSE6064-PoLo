@@ -1,0 +1,133 @@
+.sign-in {
+    /* width: 150%; */
+    /* display: flex; */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.button-items {
+    flex: 1;
+    max-width: 45%;
+}
+
+.book-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.sign-info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 280px; */
+}
+
+.bar {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 15%;
+    left: 20%;
+    padding-bottom: 1%;
+}
+
+.login-error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.email-bar input {
+    background-color: #E6E7E8;
+    border-radius: 300px;
+    border: 8px solid rgba(0, 0, 0, 0);
+    width: 100%;
+    /* Use 100% width to fill the available space */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.password-bar input {
+    background-color: #E6E7E8;
+    border-radius: 300px;
+    border: 8px solid rgba(0, 0, 0, 0);
+    width: 100%;
+    /* Use 100% width to fill the available space */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.bar a {
+    text-decoration: none;
+    color: black;
+}
+
+.bar a i {
+    position: relative;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.image-button {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: 412px;
+    top: -31px;
+}
+
+.image-button:hover {
+    opacity: 0.7; /* Butonun üzerine gelindiğinde opaklığını düşürme örneği */
+}
+
+body > div > div > div.button-items > form > div > div.account {
+    font-family: Montserrat;
+    color: #808285;
+    display: flex;
+    font-size: 20px;
+}
+
+
+.book-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+    .book-item img {
+        width: 200%;
+        height: 200%;
+        font-size: 18px;
+        display: flex;
+        margin: 100px auto 0;
+    }
+
+
+
+.mainContent {
+    display: inline-block;
+    position: relative;
+    left: 15%;
+    width: 990px;
+    overflow: hidden;
+    height: 990px;
+}
+
+body > div > div > div.button-items > form > div.bar > input[type=submit] {
+    width: 33%;
+    height: 35px;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: #F47878;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}

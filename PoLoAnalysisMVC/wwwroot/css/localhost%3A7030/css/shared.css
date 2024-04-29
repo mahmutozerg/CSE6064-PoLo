@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist';
+    background-color: #f2f2f2;
+  }
+  
+  header {
+    background-color: #005296;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    color: #ffffff;
+    height: 40px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 20px 0px;
+  }
+
+  .logo {
+    height: 30px;
+    cursor: pointer;
+  }
+
+  input[type=text] {
+    float: right;
+    padding: 6px;
+    border-radius: 20px;
+    margin-left: 70px;
+    font-size: 15px;
+    border: none;
+    width: 250px;
+    font-family: "Urbanist";
+    font-weight: 700;
+  }
+
+  .home-button {
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .profile-icon {
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .logo-section {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    display: flex;
+  }
+
+  .home-section {
+    justify-content: center;
+    display: flex;
+    margin-right: 200px;
+  }
+
+  .profile-section {
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    display: flex;
+  }
+
+  .account {
+    margin-right: 30px;
+  }
+
+  .main-content {
+    height: 600px;
+    background-color: aqua;
+  }
+  
+  footer {
+    background-color: #ffffff;
+    height: 150px;
+  }
+
+  .footer-logocuk {
+    display: flex;
+    justify-content: center;
+    margin-top: 30p;
+  }
+
+  .footer-logocuk img{
+    height: 70px;
+  }
+  
+  .footer-info {
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+@media screen and (max-width: 1000px) {
+
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Urbanist';
+      background-color: #f2f2f2;
+    }
+    
+    header {
+      background-color: #005296;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      align-items: center;
+      color: #ffffff;
+      height: 40px;
+      box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 20px 0px;
+    }
+  
+    .logo {
+      height: 30px;
+      cursor: pointer;
+    }
+  
+    input[type=text] {
+      display: none;
+    }
+  
+    .home-button {
+      height: 30px;
+      cursor: pointer;
+    }
+  
+    .profile-icon {
+      height: 30px;
+      cursor: pointer;
+    }
+  
+    .logo-section {
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      display: flex;
+    }
+  
+    .home-section {
+      justify-content: center;
+      display: flex;
+    }
+  
+    .profile-section {
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      display: flex;
+    }
+  
+    .account {
+      display: none;
+    }
+  
+    footer {
+      background-color: #ffffff;
+      height: 150px;
+      
+    }
+  
+    .footer-logocuk {
+      justify-content: center;
+    }
+  
+    .footer-logocuk img{
+      height: 70px;
+    }
+    
+    .footer-info {
+      justify-content: flex-start;
+    }
+  }

@@ -1,6 +1,48 @@
 ﻿@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "login";
+    Layout = null;
 }
 
-<h2>title</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+    <header>
+        <img src="/Images/POLORed.svg" alt="IKU Logo" id="logo">
+        <div id="login-form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit" id="submitButton">Login</button>
+        </div>
+    </header>
+    <main>
+        <div style="margin-top:80px; display: flex;">
+            <section id="analytics">
+                <img src="/Images/graph-icon.svg" alt="Analytics Icon">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue, lectus eu placerat sodales, magna dui tincidunt ipsum, nec cursus urna sem sit amet metus. Nam sagittis, diam at dignissim rhoncus, massa turpis bibendum augue, non sodales lorem dolor ut tortor. Duis felis purus, fringilla sed metus non</p>
+            </section>
+            <section id="search">
+                <img src="/Images/magnifier-icon.svg" alt="Search Icon">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue, lectus eu placerat sodales, magna dui tincidunt ipsum, nec cursus urna sem sit amet metus. Nam sagittis, diam at dignissim rhoncus, massa turpis bibendum augue, non sodales lorem dolor ut tortor. Duis felis purus, fringilla sed metus non</p>
+            </section>
+            <section id="reports">
+                <img src="/Images/sheet-icon.svg" alt="Reports Icon">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue, lectus eu placerat sodales, magna dui tincidunt ipsum, nec cursus urna sem sit amet metus. Nam sagittis, diam at dignissim rhoncus, massa turpis bibendum augue, non sodales lorem dolor ut tortor. Duis felis purus, fringilla sed metus non</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div style="width:80%;"></div>
+        <div style="width: 20%;">
+            <img src="/Images/iku-lightgray-logo.svg" style="height: 50px;" alt="">
+            <p class="rigths">2024 All rigths belong to Istanbul Kültür University</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Style for each frame */
+  .cards,
+  .whiteLeftPart{
+    padding: 10px;
+  }
+  
+.cards {
+    flex:2;
+    display: block;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 20%;
+    padding-left: 20px;
+}
+
+.whiteLeftPart{
+    background-color: white;
+    width: 271px;
+    height: 412px;
+    border-radius: 25px;
+    margin: 25px;
+}
+.userInfo {
+    margin-left: 20px;
+}
+
+.userInfo h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.userInfo p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.userProfileFoto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userProfileFoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.userCard{
+    background-color:darkblue;
+    width:90%;
+    height: 200px;
+    margin-top: 10px;
+    padding: 5%;
+    border-radius: 25px;
+    position: relative;
+}
+
+body{
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+}
+.userContainer {
+    display: flex;
+    align-items: center;
+}
+.postTime p{
+    margin-left: auto;
+    padding-left: 0.1px;;
+}
+.bookmarkContainer{
+    bottom: 10px; 
+    right: 10px;
+    position: absolute; 
+    font-size: 30px;
+}
+.c{
+    /* margin:10px; */
+}
