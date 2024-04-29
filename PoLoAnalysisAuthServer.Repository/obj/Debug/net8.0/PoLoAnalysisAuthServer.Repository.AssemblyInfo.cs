@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PoLoAnalysisAuthServer.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9530edd9a7895d6d4fcdba052d8b8805a80f50eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09d42db0ef66b7ed0352bb81c1ace0483c616b8c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PoLoAnalysisAuthServer.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PoLoAnalysisAuthServer.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

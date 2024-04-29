@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc;
 using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
@@ -43,9 +44,15 @@ public class ResultService:GenericService<Result>,IResultService
     private List<float> _pointsMatchingPercentageList = new();
     private List<float> _studentTotalPoints = new ();
     private Dictionary<string, float> _PoPointAverages = new();
-
     private Dictionary<string,int> _poVisits =  new ();
+    private string _fileClassCode="test";
+    private string _fileClassName="test2";
+    private int _furtherExcelStartingRow=3;
+    private Regex _regexPattern = new (@"(?i)CSE\w+\s\w+\sPROJECT\sRESULTS\s+\((?:\d{4}-\d{4}\s(?:SPRING|SUMMER|FALL|WINTER)\sTERM)\)");
+    private int _furtherExcelResultStartingRow;
+    private const string templateName = "EkTemplate.xlsx";
 
+    
     public string ResultPath { get; set; }
     
     public ResultService(IResultRepository resultRepository, IUnitOfWork unitOfWork) : base(resultRepository, unitOfWork)
@@ -53,6 +60,9 @@ public class ResultService:GenericService<Result>,IResultService
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         _resultRepository = resultRepository;
         _unitOfWork = unitOfWork;
+        
+        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+        _furtherResultExcelPackage = new ExcelPackage(templateExcelPath);
     }
     private void Dispose()
     {
@@ -71,6 +81,9 @@ public class ResultService:GenericService<Result>,IResultService
     }
     public void AnalyzeExcel()
     {
+        SetExcelClassNameAndClassCode(_worksheets.First());
+        SetFurtherExcelResultStartingRow(_furtherResultExcelPackage.Workbook.Worksheets[1]);
+
         foreach (var worksheet in _worksheets)
         {
             SetFirstQuestionPosition(worksheet);
@@ -85,19 +98,77 @@ public class ResultService:GenericService<Result>,IResultService
             SetPoloGraph(worksheet,_poPos,_poQuestionMatrix,"Program Çıktıları Karşılama Yüzdesi");
             SavePoLoChartsAsImagesFromWorkSheet(worksheet);
             CalculateStudentOveral(worksheet);
-            AddStudentOveralToWord(); 
+            AddStudentOveralToResultWord(); 
             AddPoQuestionsToWord();
-            AddPoImageToTheWord(worksheet.Name);
+            AddPoImageToTheResultWord(worksheet.Name);
             AddLoQuestionsToWord();
-            AddLoImageToTheWord(worksheet.Name);
-            SetPOAveragesToExcel(worksheetName:worksheet.Name);
+            AddLoImageToTheResultWord(worksheet.Name);
+            SetPOAveragesToFurtherResultExcel(worksheetName:worksheet.Name);
             Dispose();
         }
-        Final();
-
-        SaveMatchingChartsAsImagesFromWorkSheet(_furtherResultExcelPackage.Workbook.Worksheets[1]);
+        SetPOAveragesAverageToFurtherResultExcel(templateName);
+        SaveMatchingChartsAsImagesFromWorkSheet();
+        
         var d = 1;
 
+    }
+
+    private void SetFurtherExcelResultStartingRow(ExcelWorksheet worksheet)
+    {
+        var rowCount = worksheet.Dimension.Rows;
+        var col = 1;
+        for (var row = 1; row <= rowCount; row++)
+        {
+            var cellValue = worksheet.Cells[row, col].Value;
+            if (cellValue == null ) 
+                continue;
+            
+            var cellString = cellValue.ToString().ToLower();
+
+            if (cellString.Contains("dersin kodu"))
+                continue;
+            var mergedCells = worksheet.MergedCells.ToList().SelectMany(t => t.Split(":")).ToList();
+            var address = worksheet.Cells[row, col].Address;
+         
+            while (mergedCells.Contains(address) || cellValue !=null )
+            {
+                address = worksheet.Cells[row, col].Address;
+                cellValue = worksheet.Cells[row, col].Value;
+                _furtherExcelStartingRow = row++;
+            }
+
+            break;
+
+        }
+    }
+
+    private void SetExcelClassNameAndClassCode(ExcelWorksheet worksheet)
+    {
+        var rowCount = worksheet.Dimension.Rows;
+        var colCount = worksheet.Dimension.Columns;
+
+        for (var row = 1; row <= rowCount; row++)
+        {
+            for (var col = 1; col <= colCount; col++)
+            {
+                var cellValue = worksheet.Cells[row, col].Value;
+
+                if (cellValue == null ) 
+                    continue;
+                
+                var cellString = cellValue.ToString();
+
+                var match = _regexPattern.Match(cellString.Trim());
+                
+                if (!match.Success) 
+                    continue;
+                
+                _fileClassCode = "code";
+                _fileClassName = "Name";
+                break;
+
+            }
+        }    
     }
 
     private void CalculateStudentOveral(ExcelWorksheet worksheet)
@@ -528,7 +599,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private void AddPoImageToTheWord(string worksheetName)
+    private void AddPoImageToTheResultWord(string worksheetName)
     {
         var path = $"{ResultPath}\\result.docx";
   
@@ -549,7 +620,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private void AddLoImageToTheWord(string worksheetName)
+    private void AddLoImageToTheResultWord(string worksheetName)
     {
         var path = $"{ResultPath}\\result.docx";
   
@@ -566,7 +637,7 @@ public class ResultService:GenericService<Result>,IResultService
         loParagraph.AppendLine();
         document.Save();
     }
-    private void AddStudentOveralToWord()
+    private void AddStudentOveralToResultWord()
     {
         var path = $"{ResultPath}\\result.docx";
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
@@ -577,7 +648,6 @@ public class ResultService:GenericService<Result>,IResultService
 
         for (var row = 1; row < _studentTotalPoints.Count; row++)
         {
-
             var cell = table.Rows[row].Cells[1];
             cell.Paragraphs.First().Append(_studentTotalPoints[row].ToString());
         }
@@ -639,21 +709,21 @@ public class ResultService:GenericService<Result>,IResultService
         document.Save();
     }
 
-    private void SetPOAveragesToExcel(string templateName="EkTemplate.xlsx",string worksheetName = "")
+    private void SetPOAveragesToFurtherResultExcel(string worksheetName = "")
     {
         Dictionary<string,float> _poPointList =  new ();
-        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
-        
-        var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
-        _furtherResultExcelPackage = new ExcelPackage();
-        if (!File.Exists(furtherResultPath))
-        {
-            _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(templateExcelPath));
-            _furtherResultExcelPackage.SaveAs(new FileInfo(furtherResultPath));
-        }
 
-        _furtherResultExcelPackage =
-            new ExcelPackage(furtherResultPath);
+
+        // var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
+        // _furtherResultExcelPackage = new ExcelPackage();
+        // if (!File.Exists(furtherResultPath))
+        // {
+        //     _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(templateExcelPath));
+        //     _furtherResultExcelPackage.SaveAs(new FileInfo(furtherResultPath));
+        // }
+
+        // _furtherResultExcelPackage =
+        //     new ExcelPackage(furtherResultPath);
         
         var resultExcelfilePath = _resultExcelPackage.Workbook.Worksheets.ToList();
         var resultExcelWorksheetIndex = resultExcelfilePath.FindIndex(p=> p.Name == worksheetName);
@@ -680,7 +750,7 @@ public class ResultService:GenericService<Result>,IResultService
             if (!_PoPointAverages.ContainsKey(poNumber))
                 _PoPointAverages[poNumber] = 0;
             var poAverage = _poPointList[poNumber];
-            furtherResultMatchingPercentageWorksheet.Cells[3,2+col].Value = poAverage;
+            furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,2+col].Value = poAverage;
             _PoPointAverages[poNumber] += poAverage ;
         }
         
@@ -689,57 +759,59 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private void Final(string templateName="EkTemplate.xlsx")
+    private void  SetPOAveragesAverageToFurtherResultExcel(string templateName)
     {
-        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
         
-        var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
-        _furtherResultExcelPackage = new ExcelPackage();
-        if (!File.Exists(furtherResultPath))
-        {
-            _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(templateExcelPath));
-            _furtherResultExcelPackage.SaveAs(new FileInfo(furtherResultPath));
-        }
-
-        _furtherResultExcelPackage =
-            new ExcelPackage(furtherResultPath);
+        // var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
+        // _furtherResultExcelPackage = new ExcelPackage();
+        // if (!File.Exists(furtherResultPath))
+        // {
+        //     _furtherResultExcelPackage  = new ExcelPackage(new FileInfo(templateExcelPath));
+        //     _furtherResultExcelPackage.SaveAs(new FileInfo(furtherResultPath));
+        // }
         
-        var resultExcelfilePath = _resultExcelPackage.Workbook.Worksheets.ToList();
-        var resultExcelWorksheetIndex = resultExcelfilePath.Last().Index;
+        var resultExcelWorksheets = _resultExcelPackage.Workbook.Worksheets.ToList();
+        var resultExcelWorksheetIndex = resultExcelWorksheets.Last().Index;
 
         var furtherResultMatchingPercentageWorksheet = _furtherResultExcelPackage.Workbook.Worksheets[1];
+        furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,1].Value = _fileClassCode;
+        furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,2].Value = _fileClassName;
 
         foreach (var (poNumber,value) in _PoPointAverages)
         {
             var col = int.Parse(poNumber) + (11*(resultExcelWorksheetIndex+1));
 
             var avg = value / _poVisits[poNumber];
-            furtherResultMatchingPercentageWorksheet.Cells[3,2+col].Value = avg;
+            furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,2+col].Value = avg;
         }
-    }
-    private void SaveMatchingChartsAsImagesFromWorkSheet(ExcelWorksheet worksheet,string templateName="EkTemplate.xlsx")
-    {
-        
-        var path = $"{ResultPath}\\furtherResult.xlsx";
-        var workbook = new Workbook();
-        workbook.LoadFromFile($@"{path}", ExcelVersion.Version2010);
-        
-        
-        
-        var chart = worksheet.Drawings.AddChart(Guid.NewGuid().ToString(), eChartType.Column3D)as ExcelChart;
-        chart.Title.Text = "deneme";
-        chart.SetSize(400, 250);
-        chart.SetPosition(0,0);
-
-        var yRange = $"{worksheet.Cells[2,3]}:{worksheet.Cells[2,  13].Address}";
-        var  xRange= $"{worksheet.Cells[3, 3]}:{worksheet.Cells[3, 57].Address}";
-        chart.YAxis.MaxValue = 1.0f;
-        var a = worksheet.Cells[3, 5].Value;
-        var series = chart.Series.Add(worksheet.Cells[yRange], worksheet.Cells[xRange]) as ExcelBarChartSerie;
-        
-        
-   
         _furtherResultExcelPackage.Save();
+
+    }
+    private void SaveMatchingChartsAsImagesFromWorkSheet()
+    {
+        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+
+        var workbook = new Workbook();
+        workbook.LoadFromFile(templateExcelPath, ExcelVersion.Version2010);
+        var sheet = workbook.Worksheets[1];
+        sheet.Charts[0].PrimaryValueAxis.MaxValue = 1.0;
+        sheet.Charts[0].PrimaryValueAxis.MinValue = 0.0;
+        sheet.Charts[0].PrimaryValueAxis.MajorUnit =0.1 ;
+        sheet.Charts[0].Height =1080 ;
+        sheet.Charts[0].Width =1080 ;
+
+        workbook.Save();
+        workbook.LoadFromFile(templateExcelPath, ExcelVersion.Version2010);
+
+        
+        workbook.CalculateAllValue();
+
+        var poImage = workbook.SaveChartAsImage(sheet, 0);
+        using (var fileStream = File.Create($"{ResultPath}\\Resultt.png"))
+        {
+            poImage.CopyTo(fileStream);
+        }
+
 
 
     }

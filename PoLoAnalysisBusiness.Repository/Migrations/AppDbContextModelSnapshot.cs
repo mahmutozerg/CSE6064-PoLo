@@ -22,7 +22,7 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CourseUser", b =>
+            modelBuilder.Entity("AppUserCourse", b =>
                 {
                     b.Property<string>("CoursesId")
                         .HasColumnType("nvarchar(450)");
@@ -34,7 +34,45 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("CourseUser");
+                    b.ToTable("AppUserCourse");
+                });
+
+            modelBuilder.Entity("PoLoAnalysisBusiness.Core.Models.AppUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("PoLoAnalysisBusiness.Core.Models.Course", b =>
@@ -101,8 +139,7 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseId")
-                        .IsUnique();
+                    b.HasIndex("CourseId");
 
                     b.ToTable("Files");
                 });
@@ -144,45 +181,7 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
                     b.ToTable("Result");
                 });
 
-            modelBuilder.Entity("PoLoAnalysisBusiness.Core.Models.User", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EMail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("CourseUser", b =>
+            modelBuilder.Entity("AppUserCourse", b =>
                 {
                     b.HasOne("PoLoAnalysisBusiness.Core.Models.Course", null)
                         .WithMany()
@@ -190,7 +189,7 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PoLoAnalysisBusiness.Core.Models.User", null)
+                    b.HasOne("PoLoAnalysisBusiness.Core.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -200,8 +199,8 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
             modelBuilder.Entity("PoLoAnalysisBusiness.Core.Models.File", b =>
                 {
                     b.HasOne("PoLoAnalysisBusiness.Core.Models.Course", "Course")
-                        .WithOne("File")
-                        .HasForeignKey("PoLoAnalysisBusiness.Core.Models.File", "CourseId")
+                        .WithMany("File")
+                        .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -221,8 +220,7 @@ namespace PoLoAnalysisBusiness.Repository.Migrations
 
             modelBuilder.Entity("PoLoAnalysisBusiness.Core.Models.Course", b =>
                 {
-                    b.Navigation("File")
-                        .IsRequired();
+                    b.Navigation("File");
                 });
 
             modelBuilder.Entity("PoLoAnalysisBusiness.Core.Models.File", b =>

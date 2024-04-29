@@ -2,6 +2,7 @@
 using PoLoAnalysisAuthServer.Core.Services;
 using PoLoAnalysisAuthSever.Service.Services;
 using SharedLibrary.DTOs.User;
+using StatusCodes = SharedLibrary.StatusCodes;
 
 namespace PoLoAnalysisAuthServer.API.Controllers;
 
@@ -22,14 +23,13 @@ public class CatsLoginController:CustomControllerBase
         var result = loginServices.Start();
         
         var user = await _userService.GetUserByNameAsync(userLoginDto.UserName);
-        if (user.StatusCode == 404)
+        if (user.StatusCode ==StatusCodes.NotFound)
         {
-
            await _userService.CreateUserAsync(
                 new UserCreateDto()
                 {
                     Email = userLoginDto.UserName + "@stu.iku.edu.tr",
-                    Password = userLoginDto.Password
+                    Password = Guid.NewGuid().ToString()
                 });
         }
         return CreateActionResult(result);

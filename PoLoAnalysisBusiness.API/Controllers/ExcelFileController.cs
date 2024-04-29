@@ -22,6 +22,7 @@ public class ExcelFileController:CustomControllerBase
         var result =await _appFileServices.WriteExcelFileToCurrentDirectoryAsync(model);
         
         var fileResult = await _appFileServices.GetByIdAsync(result.Data.Id);
+        
         _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
         _resultService.AnalyzeExcel();
         var filePath = _resultService.GetResultPath();
