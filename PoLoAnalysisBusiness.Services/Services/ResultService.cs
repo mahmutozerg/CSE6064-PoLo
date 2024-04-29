@@ -106,7 +106,7 @@ public class ResultService:GenericService<Result>,IResultService
             SetPOAveragesToFurtherResultExcel(worksheetName:worksheet.Name);
             Dispose();
         }
-        SetPOAveragesAverageToFurtherResultExcel(templateName);
+        SetPOAveragesAverageToFurtherResultExcel();
         SaveMatchingChartsAsImagesFromWorkSheet();
         
         var d = 1;
@@ -759,7 +759,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private void  SetPOAveragesAverageToFurtherResultExcel(string templateName)
+    private void  SetPOAveragesAverageToFurtherResultExcel()
     {
         
         // var furtherResultPath = $"{ResultPath}\\furtherResult.xlsx";
@@ -792,6 +792,7 @@ public class ResultService:GenericService<Result>,IResultService
         var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
 
         var workbook = new Workbook();
+        
         workbook.LoadFromFile(templateExcelPath, ExcelVersion.Version2010);
         var sheet = workbook.Worksheets[1];
         sheet.Charts[0].PrimaryValueAxis.MaxValue = 1.0;
@@ -807,12 +808,8 @@ public class ResultService:GenericService<Result>,IResultService
         workbook.CalculateAllValue();
 
         var poImage = workbook.SaveChartAsImage(sheet, 0);
-        using (var fileStream = File.Create($"{ResultPath}\\Resultt.png"))
-        {
-            poImage.CopyTo(fileStream);
-        }
+        using var fileStream = File.Create($"{_templateFolder}\\Result.png");
 
-
-
+        poImage.CopyTo(fileStream);
     }
 }
