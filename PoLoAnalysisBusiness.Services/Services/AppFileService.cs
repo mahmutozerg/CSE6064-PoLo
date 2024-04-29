@@ -10,7 +10,7 @@ using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 using File = PoLoAnalysisBusiness.Core.Models.File;
-
+using StatusCodes = SharedLibrary.StatusCodes;
 namespace PoLoAnalysisBusiness.Services.Services;
 
 public class AppFileService:GenericService<File>,IAppFileServices
