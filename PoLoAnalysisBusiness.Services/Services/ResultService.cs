@@ -104,12 +104,11 @@ public class ResultService:GenericService<Result>,IResultService
             AddLoImageToTheResultWord(worksheet.Name);
             SetPOAveragesToFurtherResultExcel(worksheetName:worksheet.Name);
             Dispose();
+            
         }
         SetPOAveragesAverageToFurtherResultExcel();
         SaveMatchingChartsAsImagesFromWorkSheet();
-        
-        var d = 1;
-
+        AddPOAveragesImageToTemplateFile();
     }
 
     private void SetFurtherExcelResultStartingRow(ExcelWorksheet worksheet)
@@ -809,4 +808,25 @@ public class ResultService:GenericService<Result>,IResultService
 
         poImage.CopyTo(fileStream);
     }
+
+    private void AddPOAveragesImageToTemplateFile()
+    {
+        var path = $"{_templateFolder}\\result.docx";
+
+        var imagePath = $"{_templateFolder}\\Result.png";
+        var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
+
+        var documentImagePo = document.AddImage(imagePath);
+        var documentPicturePo = documentImagePo.CreatePicture();
+
+        var poTitle = document.InsertParagraph().Append($"asdasd Test");
+        poTitle.Alignment = Alignment.center;
+
+        var poParagraph = document.InsertParagraph();
+        poParagraph.AppendLine().AppendPicture(documentPicturePo);
+        poParagraph.AppendLine();
+
+
+    }
+
 }
