@@ -38,48 +38,48 @@ namespace PoLoAnalysisMVC.Services
             }
         }
 
-        public static List<HttpCookie> AddCookies(JObject jsonResult)
-        {
-            try
-            {
-                var tokenDto = GeTokenInfo(jsonResult);
+        //public static List<HttpCookie> AddCookies(JObject jsonResult)
+        //{
+        //    try
+        //    {
+        //        var tokenDto = GeTokenInfo(jsonResult);
 
-                var accessTokenCookie = new HttpCookie("accessToken")
-                {
+        //        var accessTokenCookie = new HttpCookie("accessToken")
+        //        {
 
-                    Expires = tokenDto.AccessTokenExpiration,
-                    Value = tokenDto.AccessToken,
-                    Secure = true,
-                    SameSite = SameSiteMode.None
+        //            Expires = tokenDto.AccessTokenExpiration,
+        //            Value = tokenDto.AccessToken,
+        //            Secure = true,
+        //            SameSite = SameSiteMode.None
 
 
-                };
+        //        };
 
-                var refreshTokenCookie = new HttpCookie("refreshToken")
-                {
-                    Expires = tokenDto.RefreshTokenExpiration,
-                    Value = tokenDto.RefreshToken,
-                    Secure = true,
-                    SameSite = SameSiteMode.None
+        //        var refreshTokenCookie = new HttpCookie("refreshToken")
+        //        {
+        //            Expires = tokenDto.RefreshTokenExpiration,
+        //            Value = tokenDto.RefreshToken,
+        //            Secure = true,
+        //            SameSite = SameSiteMode.None
 
-                };
+        //        };
 
-                var cookies = new List<HttpCookie>
-            {
-                accessTokenCookie,
-                refreshTokenCookie
-            };
+        //        var cookies = new List<HttpCookie>
+        //    {
+        //        accessTokenCookie,
+        //        refreshTokenCookie
+        //    };
 
-                return cookies;
-            }
-            catch (NullReferenceException ex)
-            {
-                Console.WriteLine($"Error accessing accesssToken property: {ex.Message}");
-                // Handle the exception or log the error as needed
-            }
+        //        return cookies;
+        //    }
+        //    catch (NullReferenceException ex)
+        //    {
+        //        Console.WriteLine($"Error accessing accesssToken property: {ex.Message}");
+        //        // Handle the exception or log the error as needed
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         public static TokenDto GeTokenInfo(JObject jsonResult)
         {

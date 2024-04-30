@@ -31,11 +31,11 @@ public class LoginController : Controller
             return View("Index", loginDto);
 
         }
-        var cookies = CatsUserServices.AddCookies(result);
-        foreach (var cookie in cookies)
-        {
-            Response.Cookies.Add(cookie);
-        }
+        //var cookies = CatsUserServices.AddCookies(result);
+        //foreach (var cookie in cookies)
+        //{
+        //    Response.Cookies.Add(cookie);
+        //}
 
         return RedirectToAction("Index", "Home");
     }
