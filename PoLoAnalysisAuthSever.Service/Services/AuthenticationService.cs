@@ -32,6 +32,7 @@ public class AuthenticationService:IAuthenticationService
         _tokenOptions = tokenOptions.Value;
     }
 
+    
     public async Task<Response<TokenDto>> CreateTokenAsync(UserLoginDto loginDto)
     {
         if (loginDto is null)
@@ -42,8 +43,8 @@ public class AuthenticationService:IAuthenticationService
         if (user is null)
             return Response<TokenDto>.Fail("Email or password is wrong", 400,true);
 
-        if (! await _userManager.CheckPasswordAsync(user,loginDto.Password))
-            return Response<TokenDto>.Fail("Email or password is wrong", 400,true);
+        // if (! await _userManager.CheckPasswordAsync(user,loginDto.Password))
+        //     return Response<TokenDto>.Fail("Email or password is wrong", 400,true);
 
         var token = await _tokenService.CreateTokenAsync(user);
 

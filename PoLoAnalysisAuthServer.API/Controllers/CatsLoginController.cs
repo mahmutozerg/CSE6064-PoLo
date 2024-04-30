@@ -28,7 +28,7 @@ public class CatsLoginController:CustomControllerBase
            await _userService.CreateUserAsync(
                 new UserCreateDto()
                 {
-                    Email = userLoginDto.UserName + "@stu.iku.edu.tr",
+                    Email = userLoginDto.UserName + "@iku.edu.tr",
                     Password = Guid.NewGuid().ToString()
                 });
         }

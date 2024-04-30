@@ -31,12 +31,15 @@ public class LoginController : Controller
             return View("Index", loginDto);
 
         }
-        //var cookies = CatsUserServices.AddCookies(result);
-        //foreach (var cookie in cookies)
-        //{
-        //    Response.Cookies.Add(cookie);
-        //}
-
+        var sessionCookieOptions = CatsUserServices.GetTokenInfo(result);
+        var options = new CookieOptions()
+        {
+            SameSite = SameSiteMode.None,
+            Expires = sessionCookieOptions.AccessTokenExpiration,
+            Secure = true
+        };
+        
+        Response.Cookies.Append("session",  sessionCookieOptions.AccessToken,options);
         return RedirectToAction("Index", "Home");
     }
 }
