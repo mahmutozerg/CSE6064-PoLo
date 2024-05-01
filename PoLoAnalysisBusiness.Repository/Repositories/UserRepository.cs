@@ -16,29 +16,55 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
 
     public async Task<AppUser?> GetActiveUserWithCoursesByEmailAsync(string eMail)
     {
-        return await _users.Where(u => u.EMail == eMail && !u.IsDeleted).Include(u=> u.Courses).FirstOrDefaultAsync();
+        return await _users
+            .Where(u => u.EMail == eMail && !u.IsDeleted)
+            .Include(u=> u.Courses)
+            .FirstOrDefaultAsync();
     }
     public async Task<AppUser?> GetUserWithCoursesByEmailAsync(string eMail)
     {
-        return await _users.Where(u => u.EMail == eMail).Include(u=> u.Courses).FirstOrDefaultAsync();
+        return await _users
+            .Where(u => u.EMail == eMail)
+            .Include(u=> u.Courses)
+            .AsNoTracking()
+            .FirstOrDefaultAsync();
     }
     public async Task<List<AppUser>> GetAllUsersByPage(int page)
     {
-        return await _users.Skip(12 * page).Take(12).ToListAsync();
+        return await _users
+            .Skip(12 * page)
+            .Take(12)
+            .AsNoTracking()
+            .ToListAsync();
     }
     
     public async Task<List<AppUser>> GetActiveUsersByPage(int page)
     {
-        return await _users.Where(u=> !u.IsDeleted).Skip(12 * page).Take(12).ToListAsync();
+        return await _users.Where(u=> !u.IsDeleted)
+            .Skip(12 * page)
+            .Take(12)
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public async Task<List<AppUser>> GetActiveUsersWithCourseByPage(int page)
     {
-        return await _users.Where(u=> !u.IsDeleted).Include(u=> u.Courses).Skip(12 * page).Take(12).ToListAsync();
+        return await _users
+            .Where(u=> !u.IsDeleted)
+            .Include(u=> u.Courses)
+            .Skip(12 * page)
+            .Take(12)
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public async Task<List<AppUser>> GetAllUsersWithCourseByPage(int page)
     {
-        return await _users.Include(u=> u.Courses).Skip(12 * page).Take(12).ToListAsync();
+        return await _users
+            .Include(u=> u.Courses)
+            .Skip(12 * page)
+            .Take(12)
+            .AsNoTracking()
+            .ToListAsync();
     }
 }

@@ -82,6 +82,26 @@ public class UserService:GenericService<AppUser>,IUserService
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);
     }
 
+    public async Task<CustomResponseNoDataDto> RemoveUserFromCourse(RemoveUserFromCourseDto dto, string updatedBy)
+    {
+        var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(dto.TeacherEmail);
+        if (user is null)
+            throw new Exception("");
+
+        var targetCourseIndex = user.Courses.FindIndex(c => c.Id == dto.CourseFullName);
+        
+        if (targetCourseIndex < 0)
+            throw new Exception(ResponseMessages.UserNotBelongCourse);
+
+            
+        user.Courses.RemoveAt(targetCourseIndex);
+        user.UpdatedBy = updatedBy;
+        
+        _userRepository.Update(user);
+        await _unitOfWork.CommitAsync();
+
+        return CustomResponseNoDataDto.Success(StatusCodes.Updated);    }
+
     public async Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMail(string eMail)
     {
         var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(eMail);

@@ -13,6 +13,7 @@ public interface IUserService:IGenericService<AppUser>
     Task<CustomResponseNoDataDto> DeleteUserAsync(UserDeleteDto userDeleteDto);
     
     Task<CustomResponseNoDataDto> AddUserToCourses(AddUsersToCoursesDto dto,string updatedBy);
+    Task<CustomResponseNoDataDto> RemoveUserFromCourse(RemoveUserFromCourseDto dto,string updatedBy);
     Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMail(string eMail);
     Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMail(string eMail);
     Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPage(string page);

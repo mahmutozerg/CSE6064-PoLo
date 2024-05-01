@@ -9,5 +9,6 @@ public class ResponseMessages
     public const string CourseNotFound = "Course not found";
     public const string UserNotFound = "User not found";
     public const string OutOfIndex = "Page is out of index";
+    public const string UserNotBelongCourse = "User does not belong to the course";
 
 }

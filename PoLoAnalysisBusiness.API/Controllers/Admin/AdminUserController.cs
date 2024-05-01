@@ -26,6 +26,13 @@ public class AdminUserController:CustomControllerBase
         var updatedBy = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
         return CreateActionResult(await _userService.AddUserToCourses(dto,updatedBy));
     }
+
+    [HttpPost]
+    public async Task<IActionResult> RemoveUserFromCourse(RemoveUserFromCourseDto dto)
+    {
+        var updatedBy = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
+         return CreateActionResult(await _userService.RemoveUserFromCourse(dto,updatedBy));
+    }
     
     [HttpGet]
     public async Task<IActionResult> GetActiveUserWithCourses(string eMail)
