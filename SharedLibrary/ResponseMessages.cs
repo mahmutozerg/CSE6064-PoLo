@@ -10,5 +10,7 @@ public class ResponseMessages
     public const string UserNotFound = "User not found";
     public const string OutOfIndex = "Page is out of index";
     public const string UserNotBelongCourse = "User does not belong to the course";
+    public const string BusinessApiOutOfReach = "Authserver cannot reach api";
+    public const string WrongEmailOrPass = "Email or password is wrong";
 
 }

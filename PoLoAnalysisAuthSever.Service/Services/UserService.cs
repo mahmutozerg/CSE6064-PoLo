@@ -98,7 +98,7 @@ public class UserService : GenericService<User>, IUserService
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", clientToken.Data.AccesToken);
             var response = await client.PostAsync(url, content);
             if (response.StatusCode != HttpStatusCode.Created)
-                throw new Exception("Authserver cannot reach api ");
+                throw new Exception(ResponseMessages.BusinessApiOutOfReach);
         }
     }
 
@@ -106,7 +106,7 @@ public class UserService : GenericService<User>, IUserService
     {
         var user = await _userManager.FindByNameAsync(userName);
         if (user is null)
-            return Response<UserAppDto>.Fail(ResponseMessages.NotFound, 404, true);
+            return Response<UserAppDto>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true);
 
         return Response<UserAppDto>.Success(new UserAppDto()
         {
@@ -120,14 +120,14 @@ public class UserService : GenericService<User>, IUserService
     public async Task<Response<User>> GetUserByEmailAsync(string eMail)
     {
         var user = await _userManager.FindByEmailAsync(eMail);
-        return user is null ? Response<User>.Fail(ResponseMessages.NotFound, 404, true) : Response<User>.Success(user, 200);
+        return user is null ? Response<User>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true) : Response<User>.Success(user, 200);
     }
 
     public async Task<Response<NoDataDto>> Remove(string id)
     {
         var user = await _userManager.FindByIdAsync(id);
         if (user is null)
-            return Response<NoDataDto>.Fail(ResponseMessages.NotFound, 404, true);
+            return Response<NoDataDto>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true);
 
         _repository.Remove(user);
         await _unitOfWork.CommitAsync();
@@ -141,12 +141,12 @@ public class UserService : GenericService<User>, IUserService
         var user = await _userManager.FindByEmailAsync(userEmail);
 
         if (user is null)
-            return Response<NoDataDto>.Fail(ResponseMessages.NotFound, 404, true);
+            return Response<NoDataDto>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true);
 
         var role = await _roleManager.FindByNameAsync(roleName);
 
         if (role is null)
-            return Response<NoDataDto>.Fail(ResponseMessages.NotFound, 404, true);
+            return Response<NoDataDto>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true);
 
         await _userManager.AddToRoleAsync(user, roleName);
 
@@ -159,7 +159,11 @@ public class UserService : GenericService<User>, IUserService
         var res = int.TryParse(page, out var intPage);
         if (!res)
             throw new Exception(ResponseMessages.OutOfIndex);
-        var users = await _userManager.Users.Skip(12*intPage).Take(12).ToListAsync();
+        var users = await _userManager
+            .Users
+            .Skip(12*intPage)
+            .Take(12)
+            .ToListAsync();
         return CustomResponseListDataDto<User>.Success(users, StatusCodes.Ok);
     }
 
@@ -189,7 +193,7 @@ public class UserService : GenericService<User>, IUserService
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", clientToken.Data.AccesToken);
         var response = await client.PostAsync(url, content);
         if (response.StatusCode != HttpStatusCode.OK)
-            throw new Exception("Authserver cannot reach api ");
+            throw new Exception(ResponseMessages.BusinessApiOutOfReach);
     }
 
 

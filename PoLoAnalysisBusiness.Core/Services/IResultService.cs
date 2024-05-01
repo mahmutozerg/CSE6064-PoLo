@@ -13,5 +13,5 @@ public interface IResultService:IGenericService<Result>
     public Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path);
 
     public string GetResultPath();
-    public Task<FileStreamResult> GetFileStream(string fileId);
+    public Task<FileStreamResult> GetFileStreamAsync(string fileId);
 }

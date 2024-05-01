@@ -24,17 +24,16 @@ public class AdminCourseController:CustomControllerBase
     [HttpGet]
     public async Task<IActionResult> GetActiveCourses()
     {
-        var courses = await _courseService.Where(c => !c.IsDeleted).ToListAsync();
-        return CreateActionResult(CustomResponseListDataDto<Course>.Success(courses, StatusCodes.Ok));
+
+        return CreateActionResult(await _courseService.GetActiveCoursesAsync());
     }
     
     [HttpGet]
     public async Task<IActionResult> GetAllCourses()
     {
-        var courses = await _courseService.Where(c=> c!=null).ToListAsync();
-        return CreateActionResult(CustomResponseListDataDto<Course>.Success(courses, StatusCodes.Ok));
+        return CreateActionResult(await _courseService.GetAllCoursesAsync());
     }
-
+    
     [HttpPost]
     public async Task<IActionResult> AddCourse(CourseAddDto courseAddDto)
     {

@@ -64,7 +64,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
         return file.ContentType == FileConstants.EXCELFILEFORMATEXTENTION;
     }
 
-    public async Task<FileStreamResult> GetFileStream(string fileId)
+    public async Task<FileStreamResult> GetFileStreamAsync(string fileId)
     {
         var entity = await _fileRepository.GetById(fileId); 
             
@@ -86,7 +86,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
         };
     }
 
-    public async Task<File> GetFileWithResult(string id)
+    public async Task<File> GetFileWithResultAsync(string id)
     {
         var file = await _fileRepository.Where(f => !f.IsDeleted && f.Id == id)
             .Include(f => f.Result)

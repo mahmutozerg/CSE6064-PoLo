@@ -1,8 +1,10 @@
-﻿using PoLoAnalysisBusiness.Core.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using PoLoAnalysisBusiness.DTO.Users;
+using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 
 
@@ -19,4 +21,13 @@ public class CourseService:GenericService<Course>,ICourseService
     }
 
 
+    public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesAsync()
+    {
+        return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCoursesAsync(),StatusCodes.Ok);
+    }
+
+    public async Task<CustomResponseListDataDto<Course>> GetAllCoursesAsync()
+    {
+        return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCoursesAsync(),StatusCodes.Ok);
+    }
 }

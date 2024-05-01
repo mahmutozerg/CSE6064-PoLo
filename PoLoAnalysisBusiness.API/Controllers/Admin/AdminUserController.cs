@@ -11,12 +11,10 @@ namespace PoLoAnalysisBusinessAPI.Controllers.Admin;
 public class AdminUserController:CustomControllerBase
 {
     private readonly IUserService _userService;
-    private readonly ICourseService _courseService;
 
-    public AdminUserController(IUserService userService, ICourseService courseService)
+    public AdminUserController(IUserService userService)
     {
         _userService = userService;
-        _courseService = courseService;
     }
     
     [HttpPut]
@@ -24,53 +22,53 @@ public class AdminUserController:CustomControllerBase
     {
 
         var updatedBy = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        return CreateActionResult(await _userService.AddUserToCourses(dto,updatedBy));
+        return CreateActionResult(await _userService.AddUserToCoursesAsync(dto,updatedBy));
     }
 
     [HttpPost]
     public async Task<IActionResult> RemoveUserFromCourse(RemoveUserFromCourseDto dto)
     {
         var updatedBy = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
-         return CreateActionResult(await _userService.RemoveUserFromCourse(dto,updatedBy));
+         return CreateActionResult(await _userService.RemoveUserFromCourseAsync(dto,updatedBy));
     }
     
     [HttpGet]
     public async Task<IActionResult> GetActiveUserWithCourses(string eMail)
     {
-        return CreateActionResult(await _userService.GetActiveUserWithCoursesByEMail(eMail));
+        return CreateActionResult(await _userService.GetActiveUserWithCoursesByEMailAsync(eMail));
     }
     
     [HttpGet]
     public async Task<IActionResult> GetUserWithCourses(string eMail)
     {
-        return CreateActionResult(await _userService.GetUserWithCoursesByEMail(eMail));
+        return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
     }
     
     [HttpGet]
     public async Task<IActionResult> GetAllUsersByPage(string page)
     {
 
-        return CreateActionResult(await _userService.GetAllUsersByPage(page));
+        return CreateActionResult(await _userService.GetAllUsersByPageAsync(page));
     }
     
     [HttpGet]
     public async Task<IActionResult> GetActiveUsersByPage(string page)
     {
 
-        return CreateActionResult(await _userService.GetActiveUsersByPage(page));
+        return CreateActionResult(await _userService.GetActiveUsersByPageAsync(page));
     }
     
     [HttpGet]
     public async Task<IActionResult> GetActiveUsersWithCourseByPage(string page)
     {
 
-        return CreateActionResult(await _userService.GetActiveUsersWithCoursesByPage(page));
+        return CreateActionResult(await _userService.GetActiveUsersWithCoursesByPageAsync(page));
     }
     
     [HttpGet]
     public async Task<IActionResult> GetAllUsersWithCourseByPage(string page)
     {
 
-        return CreateActionResult(await _userService.GetAllUsersWithCoursesByPage(page));
+        return CreateActionResult(await _userService.GetAllUsersWithCoursesByPageAsync(page));
     }
 }

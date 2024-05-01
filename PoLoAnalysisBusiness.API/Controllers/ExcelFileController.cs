@@ -34,6 +34,6 @@ public class ExcelFileController:CustomControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetFile(string id)
     {
-        return await _appFileServices.GetFileStream(id);
+        return await _appFileServices.GetFileStreamAsync(id);
     }
 }

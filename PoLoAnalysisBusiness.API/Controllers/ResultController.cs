@@ -21,8 +21,8 @@ public class ResultController:CustomControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetFileByExcelId(string id)
     {
-        var file = await _appFileServices.GetFileWithResult(id);
-        var fileStream = await _resultService.GetFileStream(file.Result.Id);
+        var file = await _appFileServices.GetFileWithResultAsync(id);
+        var fileStream = await _resultService.GetFileStreamAsync(file.Result.Id);
         
         return fileStream;
     }

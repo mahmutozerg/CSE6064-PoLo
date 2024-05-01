@@ -214,7 +214,7 @@ public class ResultService:GenericService<Result>,IResultService
         return ResultPath;
     }
 
-    public async Task<FileStreamResult> GetFileStream(string fileId)
+    public async Task<FileStreamResult> GetFileStreamAsync(string fileId)
     {
         var entity = await _resultRepository.GetById(fileId); 
             

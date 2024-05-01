@@ -12,14 +12,14 @@ public interface IUserService:IGenericService<AppUser>
     Task<CustomResponseDto<AppUser>> AddUserAsync(UserAddDto userAddDto, ClaimsIdentity claimsIdentity);
     Task<CustomResponseNoDataDto> DeleteUserAsync(UserDeleteDto userDeleteDto);
     
-    Task<CustomResponseNoDataDto> AddUserToCourses(AddUsersToCoursesDto dto,string updatedBy);
-    Task<CustomResponseNoDataDto> RemoveUserFromCourse(RemoveUserFromCourseDto dto,string updatedBy);
-    Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMail(string eMail);
-    Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMail(string eMail);
-    Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPage(string page);
-    Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPage(string page);
-    Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPage(string page);
-    Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPage(string page);
+    Task<CustomResponseNoDataDto> AddUserToCoursesAsync(AddUsersToCoursesDto dto,string updatedBy);
+    Task<CustomResponseNoDataDto> RemoveUserFromCourseAsync(RemoveUserFromCourseDto dto,string updatedBy);
+    Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMailAsync(string eMail);
+    Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMailAsync(string eMail);
+    Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPageAsync(string page);
+    Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPageAsync(string page);
+    Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPageAsync(string page);
+    Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPageAsync(string page);
     
 
 

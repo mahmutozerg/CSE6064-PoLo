@@ -53,7 +53,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     }
 
-    public async Task<CustomResponseNoDataDto> AddUserToCourses(AddUsersToCoursesDto dto,string updatedBy)
+    public async Task<CustomResponseNoDataDto> AddUserToCoursesAsync(AddUsersToCoursesDto dto,string updatedBy)
     {
         var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(dto.TeacherEmail);
         var errors = new List<string>();
@@ -82,7 +82,7 @@ public class UserService:GenericService<AppUser>,IUserService
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);
     }
 
-    public async Task<CustomResponseNoDataDto> RemoveUserFromCourse(RemoveUserFromCourseDto dto, string updatedBy)
+    public async Task<CustomResponseNoDataDto> RemoveUserFromCourseAsync(RemoveUserFromCourseDto dto, string updatedBy)
     {
         var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(dto.TeacherEmail);
         if (user is null)
@@ -102,7 +102,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);    }
 
-    public async Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMail(string eMail)
+    public async Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMailAsync(string eMail)
     {
         var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(eMail);
 
@@ -112,7 +112,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     }
 
-    public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMail(string eMail)
+    public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMailAsync(string eMail)
     {
         var user = await _userRepository.GetUserWithCoursesByEmailAsync(eMail);
 
@@ -121,7 +121,7 @@ public class UserService:GenericService<AppUser>,IUserService
             : CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
 
     }
-    public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPage(string page)
+    public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPageAsync(string page)
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
@@ -132,7 +132,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     }
     
-    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPage(string page)
+    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPageAsync(string page)
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
@@ -143,7 +143,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     }
 
-    public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPage(string page)
+    public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPageAsync(string page)
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
@@ -154,7 +154,7 @@ public class UserService:GenericService<AppUser>,IUserService
         
     }
 
-    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPage(string page)
+    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPageAsync(string page)
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)

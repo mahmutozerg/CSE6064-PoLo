@@ -12,8 +12,8 @@ public interface IAppFileServices:IGenericService<File>
      Task<CustomResponseDto<File>> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model);
      bool IsExcelFile(IFormFile file);
      
-     Task<FileStreamResult> GetFileStream(string filePath);
-     Task<File> GetFileWithResult(string id);
+     Task<FileStreamResult> GetFileStreamAsync(string filePath);
+     Task<File> GetFileWithResultAsync(string id);
 
 
 }

@@ -12,4 +12,18 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
     {
         _courses = context.Set<Course>();
     }
+
+    public Task<List<Course>> GetActiveCoursesAsync()
+    {
+        return _courses
+            .Where(c=> !c.IsDeleted)
+            .AsNoTracking()
+            .ToListAsync();
+    }
+
+    public Task<List<Course>> GetAllCoursesAsync()
+    {
+        return _courses
+            .AsNoTracking()
+            .ToListAsync();    }
 }
