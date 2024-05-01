@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PoLoAnalysisAuthServer.Core\PoLoAnalysisAuthServer.Core.csproj" />
       <ProjectReference Include="..\PoLoAnalysisBusiness.DTO\PoLoAnalysisBusiness.DTO.csproj" />
       <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj" />
     </ItemGroup>

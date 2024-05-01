@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisAuthServer.Core.Services;
+using SharedLibrary;
+using SharedLibrary.DTOs.Responses;
 using SharedLibrary.DTOs.User;
+using StatusCodes = SharedLibrary.StatusCodes;
 
 namespace PoLoAnalysisAuthServer.API.Controllers;
 
@@ -26,5 +29,31 @@ public class AdminController:CustomControllerBase
 
         return CreateActionResult(userAccessToken);
     }
+    
+    
+    [HttpGet]
+    public async Task<IActionResult> GetUsers(string page)
+    {
+
+        return CreateActionResult(await _userService.GetAllUsersByPage(page));
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeleteUserByEmail(string eMail)
+    {
+        var user = await _userService.GetUserByEmailAsync(eMail);
+
+        if (user.StatusCode != StatusCodes.Ok)
+            return CreateActionResult(CustomResponseNoDataDto.Fail(StatusCodes.NotFound,
+                ResponseMessages.UserNotFound));
+        
+        await _userService.SendDeleteReqToBusinessAPI(user.Data);
+        return CreateActionResult(CustomResponseNoDataDto.Success(StatusCodes.Ok));
+
+
+
+    }
+    
+
 
 }

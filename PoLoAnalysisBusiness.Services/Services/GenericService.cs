@@ -73,8 +73,12 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
 
     public async Task<CustomResponseDto<TEntity?>> GetByIdAsync(string id)
     {
-        return  CustomResponseDto<TEntity>.Success(await _repository.GetById(id),StatusCodes.Ok);
+        var entity = await _repository.GetById(id);
+        if (entity is not null) 
+            return  CustomResponseDto<TEntity>.Success(entity,StatusCodes.Ok);
 
-      
+        throw new Exception(ResponseMessages.NotFound);
+
+
     }
 }

@@ -1,12 +1,10 @@
 using System.Reflection;
 using System.Security.Claims;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using PoLoAnalysisAuthServer.Core.DTOs;
-using PoLoAnalysisAuthSever.Service.Configurations;
-using PoLoAnalysisAuthSever.Service.Services;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Repository;
@@ -15,6 +13,7 @@ using PoLoAnalysisBusiness.Repository.UnitOfWorks;
 using PoLoAnalysisBusiness.Services.Services;
 using PoLoAnalysisBusinessAPI.AuthRequirements;
 using PoLoAnalysisBusinessAPI.RequirementHandlers;
+using SharedLibrary.Configurations;
 using IUnitOfWork = PoLoAnalysisBusiness.Core.UnitOfWorks.IUnitOfWork;
 using UserService = PoLoAnalysisBusiness.Services.Services.UserService;
 
@@ -22,7 +21,6 @@ var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
-builder.Services.Configure<List<ClientLoginDto>>(builder.Configuration.GetSection("Clients"));
 
 builder.Services.AddCors(options =>
 {
@@ -49,10 +47,14 @@ builder.Services.AddScoped(typeof(IResultService), typeof(ResultService));
 
 builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
 builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(PoLoAnalysisBusiness.Services.Services.GenericService<>));
 
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+builder.Services.AddScoped<ICourseService, CourseService>();
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
@@ -72,7 +74,7 @@ builder.Services.AddAuthentication(opt =>
     {
         ValidIssuer = tokenOptions.Issuer,
         ValidateIssuer = true,
-        IssuerSigningKey = SignService.GetSymmetricSecurityKey(tokenOptions.SecurityKey),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenOptions.SecurityKey)),
         ValidAudience = tokenOptions.Audience[0],
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
@@ -90,6 +92,9 @@ builder.Services.AddAuthorization(options =>
     
     options.AddPolicy("JSClientPolicy", policy =>
         policy.Requirements.Add(new ClientIdRequirement("jsclient")));
+    
+    options.AddPolicy("AdminBypassJSClientPolicy", policy =>
+        policy.Requirements.Add(new AdminClientIdBypassRequirement("jsclient")));
     
 });
 builder.Services.AddSingleton<IAuthorizationHandler, ClientIdRequirementHandler>();

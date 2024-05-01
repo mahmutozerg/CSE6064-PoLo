@@ -1,4 +1,4 @@
-namespace PoLoAnalysisAuthServer.Core.DTOs;
+namespace PoLoAnalysisAuthServer.Core.DTOs.Client;
 
 public class ClientTokenDto
 {

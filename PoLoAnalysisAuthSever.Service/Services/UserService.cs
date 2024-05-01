@@ -2,9 +2,11 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using PoLoAnalysisAuthServer.Core.DTOs;
+using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Repositories;
 using PoLoAnalysisAuthServer.Core.Services;
@@ -115,6 +117,12 @@ public class UserService : GenericService<User>, IUserService
         }, 200);
     }
 
+    public async Task<Response<User>> GetUserByEmailAsync(string eMail)
+    {
+        var user = await _userManager.FindByEmailAsync(eMail);
+        return user is null ? Response<User>.Fail(ResponseMessages.NotFound, 404, true) : Response<User>.Success(user, 200);
+    }
+
     public async Task<Response<NoDataDto>> Remove(string id)
     {
         var user = await _userManager.FindByIdAsync(id);
@@ -146,35 +154,42 @@ public class UserService : GenericService<User>, IUserService
 
     }
 
+    public async Task<CustomResponseListDataDto<User>> GetAllUsersByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (!res)
+            throw new Exception(ResponseMessages.OutOfIndex);
+        var users = await _userManager.Users.Skip(12*intPage).Take(12).ToListAsync();
+        return CustomResponseListDataDto<User>.Success(users, StatusCodes.Ok);
+    }
+
     public async Task SendDeleteReqToBusinessAPI(User user)
     {
-        using (var client = new HttpClient())
+        using var client = new HttpClient();
+        const string url = APIConstants.BusinessAPIIp + "/api/User/DeleteById";
+
+        var requestData = new UserDeleteDto()
         {
-            const string url = APIConstants.BusinessAPIIp + "/api/User/DeleteById";
+            Id = user.Id,
 
-            var requestData = new UserDeleteDto()
+        };
+
+        var jsonData = JsonConvert.SerializeObject(requestData);
+
+        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+        var clientToken = _authenticationService.CreateTokenByClient(
+            new ClientLoginDto()
             {
-                Id = user.Id,
-
-            };
-
-            var jsonData = JsonConvert.SerializeObject(requestData);
-
-            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-            var clientToken = _authenticationService.CreateTokenByClient(
-                new ClientLoginDto()
-                {
-                    Id = _clientTokenOptions[0].Id,
-                    Secret = _clientTokenOptions[0].Secret
-                }
-            );
-            client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", clientToken.Data.AccesToken);
-            var response = await client.PostAsync(url, content);
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception("Authserver cannot reach api ");
-        }
+                Id = _clientTokenOptions[0].Id,
+                Secret = _clientTokenOptions[0].Secret
+            }
+        );
+        client.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", clientToken.Data.AccesToken);
+        var response = await client.PostAsync(url, content);
+        if (response.StatusCode != HttpStatusCode.OK)
+            throw new Exception("Authserver cannot reach api ");
     }
 
 

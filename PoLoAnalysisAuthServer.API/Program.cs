@@ -5,13 +5,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PoLoAnalysisAuthServer.Core.DTOs;
+using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Repositories;
 using PoLoAnalysisAuthServer.Core.Services;
 using PoLoAnalysisAuthServer.Repository;
 using PoLoAnalysisAuthServer.Repository.Repositories;
-using PoLoAnalysisAuthSever.Service.Configurations;
 using PoLoAnalysisAuthSever.Service.Services;
+using SharedLibrary.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +44,8 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 builder.Services.AddIdentity<User, AppRole>(opt =>
     {
         opt.Password.RequireDigit = true;
+        opt.Password.RequireNonAlphanumeric = false; 
+        opt.Password.RequireUppercase = false; 
         opt.Password.RequiredLength = 4;
     })
     .AddEntityFrameworkStores<AppDbContext>()

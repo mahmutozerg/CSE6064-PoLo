@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using PoLoAnalysisAuthServer.Core.Configurations;
 using PoLoAnalysisAuthServer.Core.DTOs;
+using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Repositories;
 using PoLoAnalysisAuthServer.Core.Services;
@@ -131,7 +132,7 @@ public class AuthenticationService:IAuthenticationService
             return Response<NoDataDto>.Fail(ResponseMessages.AlreadyExists,409,true);
         
         var result = await _roleManager.CreateAsync(new AppRole(role));
-
+        
         return Response<NoDataDto>.Success(200);
 
     }

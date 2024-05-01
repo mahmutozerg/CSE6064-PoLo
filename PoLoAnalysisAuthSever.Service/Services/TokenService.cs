@@ -6,9 +6,10 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using PoLoAnalysisAuthServer.Core.Configurations;
 using PoLoAnalysisAuthServer.Core.DTOs;
+using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Services;
-using PoLoAnalysisAuthSever.Service.Configurations;
+using SharedLibrary.Configurations;
 using SharedLibrary.DTOs.Tokens;
 
 namespace PoLoAnalysisAuthSever.Service.Services;

@@ -2,6 +2,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisAuthServer.Core.DTOs;
+using PoLoAnalysisAuthServer.Core.DTOs.Client;
+using PoLoAnalysisAuthServer.Core.DTOs.Role;
 using SharedLibrary.DTOs.User;
 
 namespace PoLoAnalysisAuthServer.API.Controllers;
@@ -49,8 +51,9 @@ public class AuthController:CustomControllerBase
     
     [HttpPost]
     [Authorize(Roles = "Admin")]
-     public async Task<IActionResult> AddRole(string role)
-    {
+     public async Task<IActionResult> AddRole(AddRoleDto addRoleDto)
+     {
+         var role = addRoleDto.RoleName;
         var result = await _authenticationService.AddRole(role);
 
         return CreateActionResult(result);

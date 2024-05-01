@@ -1,4 +1,4 @@
-namespace PoLoAnalysisAuthSever.Service.Configurations;
+namespace SharedLibrary.Configurations;
 
 public class AppTokenOptions
 {

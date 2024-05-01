@@ -1,15 +1,13 @@
 ﻿using System.Security.Claims;
-using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
+using PoLoAnalysisBusiness.DTO.Users;
 using PoLoAnalysisBusiness.Services.Mappers;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.DTOs.User;
-using SharedLibrary.Models;
-using NoDataDto = PoLoAnalysisAuthServer.Core.DTOs.NoDataDto;
 
 namespace PoLoAnalysisBusiness.Services.Services;
 
@@ -17,10 +15,12 @@ public class UserService:GenericService<AppUser>,IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;
-    public UserService(IUserRepository repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+    private readonly ICourseService _courseService;
+    public UserService(IUserRepository repository, IUnitOfWork unitOfWork, ICourseService courseService) : base(repository, unitOfWork)
     {
         _userRepository = repository;
         _unitOfWork = unitOfWork;
+        _courseService = courseService;
     }
     
     public async Task<CustomResponseDto<AppUser>> AddUserAsync(UserAddDto userAddDto,ClaimsIdentity claimsIdentity)
@@ -44,12 +44,103 @@ public class UserService:GenericService<AppUser>,IUserService
     {
         var user = await _userRepository.GetById(userDeleteDto.Id);
         if (user == null)
-            throw new Exception(ResponseMessages.NotFound);
+            throw new Exception(ResponseMessages.UserNotFound);
         user.IsDeleted = true;
         await _unitOfWork.CommitAsync();
 
         return CustomResponseNoDataDto.Success(StatusCodes.Ok);
 
 
+    }
+
+    public async Task<CustomResponseNoDataDto> AddUserToCourses(AddUsersToCoursesDto dto,string updatedBy)
+    {
+        var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(dto.TeacherEmail);
+        var errors = new List<string>();
+        if (user is null)
+            throw new Exception("");
+
+        foreach (var coursesFullName in dto.CoursesFullNames)
+        {
+            var course = await _courseService.GetByIdAsync(coursesFullName);
+
+            if (course.Data is null)
+                errors.Add( coursesFullName + "Not found No changes made");
+            else
+                user.Courses.Add(course.Data!);
+            
+        }
+
+        if (errors.Count > 0)
+            throw new Exception(string.Concat(errors.SelectMany(e => e)));
+            
+        
+        user.UpdatedBy = updatedBy;
+        _userRepository.Update(user);
+        await _unitOfWork.CommitAsync();
+
+        return CustomResponseNoDataDto.Success(StatusCodes.Updated);
+    }
+
+    public async Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMail(string eMail)
+    {
+        var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(eMail);
+
+        return user == null
+            ? throw new Exception(ResponseMessages.UserNotFound)
+            : CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
+
+    }
+
+    public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMail(string eMail)
+    {
+        var user = await _userRepository.GetUserWithCoursesByEmailAsync(eMail);
+
+        return user == null
+            ? throw new Exception(ResponseMessages.UserNotFound)
+            : CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
+
+    }
+    public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersByPage(intPage),
+                StatusCodes.Ok);
+                
+        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
+
+    }
+    
+    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersByPage(intPage),
+                StatusCodes.Ok);
+                
+        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
+
+    }
+
+    public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersWithCourseByPage(intPage),
+                StatusCodes.Ok);
+                
+        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
+        
+    }
+
+    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersWithCourseByPage(intPage),
+                StatusCodes.Ok);
+                
+        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);    
     }
 }

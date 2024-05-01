@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using PoLoAnalysisAuthServer.Core.DTOs;
-using PoLoAnalysisAuthSever.Service.Configurations;
+using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthSever.Service.Services;
+using SharedLibrary.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<AppTokenOptions>(builder.Configuration.GetSection("TokenOptions"));
