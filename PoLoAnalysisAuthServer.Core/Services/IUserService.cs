@@ -8,7 +8,7 @@ namespace PoLoAnalysisAuthServer.Core.Services;
 public interface IUserService:IGenericService<User>
 {
     Task<Response<User>> CreateUserAsync(UserCreateDto createUserDto);
-    Task<Response<UserAppDto>> GetUserByNameAsync(string userName);
+    Task<Response<User>> GetUserByNameAsync(string userName);
     Task<Response<User>> GetUserByEmailAsync(string eMail);
     Task<Response<NoDataDto>> Remove(string id);
     Task<Response<NoDataDto>> AddRoleToUser(string userEmail, string roleName);

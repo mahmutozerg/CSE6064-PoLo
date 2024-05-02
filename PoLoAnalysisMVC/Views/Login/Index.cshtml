@@ -16,10 +16,10 @@
 <body>
     <header>
         <img src="~/Images/POLORed.svg" alt="IKU Logo" id="logo">
-        <form action="@Url.Action("SignIn", "Login")" method="post">
+        <form action="@Url.Action("Index", "Login")" method="post">
             <div class="bar">
                 <div class="email-bar">
-                    @Html.TextBoxFor(m => m.UserName, new { placeholder = "E-Mail*", required = "required" })
+                    @Html.TextBoxFor(m => m.UserName, new { placeholder = "Id", required = "required" })
 
                     <a href="#E6E7E8"></a>
                 </div>

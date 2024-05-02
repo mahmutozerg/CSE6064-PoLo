@@ -17,10 +17,13 @@ var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppToken
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
+}).AddJwtBearer( opt =>
 {
+    opt.RequireHttpsMetadata = false;
+    opt.SaveToken = true;
     opt.TokenValidationParameters = new TokenValidationParameters()
     {
         ValidIssuer = tokenOptions.Issuer,
@@ -34,22 +37,33 @@ builder.Services.AddAuthentication(options =>
     };
     opt.Events = new JwtBearerEvents()
     {
+        OnAuthenticationFailed = context =>
+        {
+
+            context.Response.Redirect("/login");
+            return Task.CompletedTask;
+        },
+
         OnMessageReceived = context =>
         {
-            if (context.Request.Cookies.ContainsKey("session"))
-            {
-                context.Token = context.Request.Cookies["session"];
-            }            return Task.CompletedTask;
-        }
+            if (!context.Request.Cookies.ContainsKey("session")) 
+                return Task.CompletedTask;
+            context.Token = context.Request.Cookies["session"];
+            //context.Request.Headers.TryAdd("Bearer", context.Token);
+
+            return Task.CompletedTask;
+        },
+
     };
-}).AddCookie(options =>
+}).AddCookie( options =>
 {
     options.Cookie.Name = "session";
-    options.Cookie.HttpOnly = true;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always; 
-    options.Cookie.SameSite = SameSiteMode.Strict;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(180);
-    options.SlidingExpiration = true; 
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(tokenOptions.AccessTokenExpiration);
+    options.LoginPath = "/login";
+    options.AccessDeniedPath = "/login";
+    
+    
 });
 builder.Services.AddAuthorization();
 
@@ -68,7 +82,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

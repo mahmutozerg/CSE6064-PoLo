@@ -102,19 +102,12 @@ public class UserService : GenericService<User>, IUserService
         }
     }
 
-    public async Task<Response<UserAppDto>> GetUserByNameAsync(string userName)
+    public async Task<Response<User>> GetUserByNameAsync(string userName)
     {
         var user = await _userManager.FindByNameAsync(userName);
-        if (user is null)
-            return Response<UserAppDto>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true);
-
-        return Response<UserAppDto>.Success(new UserAppDto()
-        {
-            Id = user.Id,
-            UserName = user.UserName!,
-            Email = user.Email!,
-
-        }, 200);
+        return user is null ? 
+            Response<User>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true) 
+            : Response<User>.Success(user,StatusCodes.Ok);
     }
 
     public async Task<Response<User>> GetUserByEmailAsync(string eMail)

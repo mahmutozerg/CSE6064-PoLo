@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SharedLibrary.DTOs.User;
-using PoLoAnalysisMVC.Models;
 using SharedLibrary.DTOs.Tokens;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.Net.Http.Headers;
-using SameSiteMode = Microsoft.AspNetCore.Http.SameSiteMode;
+
 
 namespace PoLoAnalysisMVC.Services
 {

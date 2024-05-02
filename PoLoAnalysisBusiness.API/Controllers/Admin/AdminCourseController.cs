@@ -34,7 +34,7 @@ public class AdminCourseController:CustomControllerBase
         return CreateActionResult(await _courseService.GetAllCoursesAsync());
     }
     
-    [HttpPost]
+    [HttpPut]
     public async Task<IActionResult> AddCourse(CourseAddDto courseAddDto)
     {
         var course = new Course()
