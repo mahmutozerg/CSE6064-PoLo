@@ -22,10 +22,11 @@ public class CatsLoginController:CustomControllerBase
     [HttpPost]
     public async Task<IActionResult> Login(CatsUserLogin userLoginDto)
     {
-        var loginServices = new CatsLoginService(userLoginDto.UserName.Split("@").First(),userLoginDto.Password);
+        var userName = userLoginDto.UserName.Split("@").First();
+        var loginServices = new CatsLoginService(userName,userLoginDto.Password);
         var result = loginServices.Start();
         
-        var user = await _userService.GetUserByNameAsync(userLoginDto.UserName);
+        var user = await _userService.GetUserByNameAsync(userName);
         if (user.StatusCode ==StatusCodes.NotFound)
         {
            var userResult =await _userService.CreateUserAsync(

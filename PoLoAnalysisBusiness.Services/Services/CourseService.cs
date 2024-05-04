@@ -21,13 +21,22 @@ public class CourseService:GenericService<Course>,ICourseService
     }
 
 
-    public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesAsync()
+    public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesAsync(string page)
     {
-        return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCoursesAsync(),StatusCodes.Ok);
+        var res = int.TryParse(page, out var intPage);
+        if(res)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCoursesAsync(intPage),StatusCodes.Ok);
+
+        throw new Exception(ResponseMessages.OutOfIndex);
     }
 
-    public async Task<CustomResponseListDataDto<Course>> GetAllCoursesAsync()
+    public async Task<CustomResponseListDataDto<Course>> GetAllCoursesAsync(string page)
     {
-        return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCoursesAsync(),StatusCodes.Ok);
+        var res = int.TryParse(page, out var intPage);
+
+        if(res)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCoursesAsync(intPage),StatusCodes.Ok);
+        throw new Exception(ResponseMessages.OutOfIndex);
+
     }
 }

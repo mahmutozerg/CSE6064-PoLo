@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -12,7 +13,9 @@ using PoLoAnalysisAuthServer.Core.Services;
 using PoLoAnalysisAuthServer.Repository;
 using PoLoAnalysisAuthServer.Repository.Repositories;
 using PoLoAnalysisAuthSever.Service.Services;
+using SharedLibrary.AuthRequirements;
 using SharedLibrary.Configurations;
+using SharedLibrary.RequirementHandlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,7 +73,28 @@ builder.Services.AddAuthentication(opt =>
 
     };
 });
+var cl = new List<string> { "authserver", "jsclient" };
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AuthServerPolicy", policy =>
+        policy.Requirements.Add(new ClientIdRequirement("authserver")));    
+    
+    options.AddPolicy("AdminBypassAuthServerPolicy", policy =>
+        policy.Requirements.Add(new AdminClientIdBypassRequirement("authserver")));
+    
+    options.AddPolicy("JSClientPolicy", policy =>
+        policy.Requirements.Add(new ClientIdRequirement("jsclient")));
+    
+    options.AddPolicy("AdminBypassJSClientPolicy", policy =>
+        policy.Requirements.Add(new AdminClientIdBypassRequirement("jsclient")));
 
+    options.AddPolicy("ClientsWithAdminByPassPolicy", policy =>
+        policy.Requirements.Add(new AdminClientsRequirementBypass(cl)));
+
+});
+builder.Services.AddSingleton<IAuthorizationHandler, ClientIdRequirementHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, AdminClientIdBypassRequirementHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, AdminClientsRequirementHandler>();
 
 var app = builder.Build();
 

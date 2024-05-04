@@ -14,24 +14,26 @@ namespace PoLoAnalysisBusinessAPI.Controllers.Admin;
 public class AdminCourseController:CustomControllerBase
 {
     private readonly ICourseService _courseService;
+    private readonly ILogger<AdminCourseController> _logger;
 
-    public AdminCourseController(ICourseService courseService)
+    public AdminCourseController(ICourseService courseService, ILogger<AdminCourseController> logger)
     {
         _courseService = courseService;
+        _logger = logger;
     }
 
 
     [HttpGet]
-    public async Task<IActionResult> GetActiveCourses()
+    public async Task<IActionResult> GetActiveCoursesByPage(string page)
     {
-
-        return CreateActionResult(await _courseService.GetActiveCoursesAsync());
+    
+        return CreateActionResult(await _courseService.GetActiveCoursesAsync(page));
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAllCourses()
+    public async Task<IActionResult> GetAllCoursesByPage(string page)
     {
-        return CreateActionResult(await _courseService.GetAllCoursesAsync());
+        return CreateActionResult(await _courseService.GetAllCoursesAsync(page));
     }
     
     [HttpPut]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace PoLoAnalysisBusinessAPI.AuthRequirements;
+namespace SharedLibrary.AuthRequirements;
 
 public class AdminClientIdBypassRequirement:IAuthorizationRequirement
 {

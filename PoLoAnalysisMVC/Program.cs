@@ -1,15 +1,13 @@
 using System.Security.Claims;
+using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using PoLoAnalysisAuthServer.Core.DTOs;
-using PoLoAnalysisAuthServer.Core.DTOs.Client;
-using PoLoAnalysisAuthSever.Service.Services;
 using SharedLibrary.Configurations;
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<AppTokenOptions>(builder.Configuration.GetSection("TokenOptions"));
-builder.Services.Configure<List<ClientLoginDto>>(builder.Configuration.GetSection("Clients"));
 
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
 
@@ -28,7 +26,7 @@ builder.Services.AddAuthentication(options =>
     {
         ValidIssuer = tokenOptions.Issuer,
         ValidateIssuer = true,
-        IssuerSigningKey = SignService.GetSymmetricSecurityKey(tokenOptions.SecurityKey),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenOptions.SecurityKey)),
         ValidAudience = tokenOptions.Audience[0],
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,

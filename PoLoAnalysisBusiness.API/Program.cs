@@ -11,9 +11,9 @@ using PoLoAnalysisBusiness.Repository;
 using PoLoAnalysisBusiness.Repository.Repositories;
 using PoLoAnalysisBusiness.Repository.UnitOfWorks;
 using PoLoAnalysisBusiness.Services.Services;
-using PoLoAnalysisBusinessAPI.AuthRequirements;
-using PoLoAnalysisBusinessAPI.RequirementHandlers;
+using SharedLibrary.AuthRequirements;
 using SharedLibrary.Configurations;
+using SharedLibrary.RequirementHandlers;
 using IUnitOfWork = PoLoAnalysisBusiness.Core.UnitOfWorks.IUnitOfWork;
 using UserService = PoLoAnalysisBusiness.Services.Services.UserService;
 

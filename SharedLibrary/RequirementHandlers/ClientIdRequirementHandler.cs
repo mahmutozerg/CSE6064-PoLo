@@ -1,8 +1,8 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-using PoLoAnalysisBusinessAPI.AuthRequirements;
+using SharedLibrary.AuthRequirements;
 
-namespace PoLoAnalysisBusinessAPI.RequirementHandlers;
+namespace SharedLibrary.RequirementHandlers;
 public class ClientIdRequirementHandler : AuthorizationHandler<ClientIdRequirement>
 {
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, ClientIdRequirement requirement)

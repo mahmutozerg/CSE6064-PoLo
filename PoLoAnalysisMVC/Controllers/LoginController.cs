@@ -35,7 +35,6 @@ public class LoginController : Controller
 
         if (!result.HasValues)
         {
-
             ModelState.AddModelError("LoginError", "Please Check your credentials");
             return View("Index", loginDto);
 
@@ -43,7 +42,7 @@ public class LoginController : Controller
         var sessionCookie = CatsUserServices.GetTokenInfo(result);
         var sessionCookieOptions = new CookieOptions()
         {
-            SameSite = SameSiteMode.None,
+            SameSite = SameSiteMode.Strict,
             Expires = sessionCookie.AccessTokenExpiration,
             Secure = true,
             HttpOnly = true,

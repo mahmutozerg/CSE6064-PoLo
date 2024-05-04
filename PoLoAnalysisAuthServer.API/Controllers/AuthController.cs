@@ -27,6 +27,7 @@ public class AuthController:CustomControllerBase
 
 
     [HttpPost]
+    [Authorize(Policy = "ClientsWithAdminByPassPolicy")]
     public async Task<IActionResult> CreateToken(UserLoginDto loginDto)
     {
         var result = await _authenticationService.CreateTokenAsync(loginDto);
