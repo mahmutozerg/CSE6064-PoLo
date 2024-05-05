@@ -17,7 +17,6 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -26,7 +25,6 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
 [Oo]bj/
 [Ll]og/
 
@@ -478,19 +476,16 @@ nupkg/
 *.sln.docstates
 
 # Build results
-[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
-build/
 bld/
 [Oo]ut/
 msbuild.log
 msbuild.err
 msbuild.wrn
 
-# Negate ignore rules for .mdf and .ldf files within bin/Debug/net8.0/
-!bin/Debug/net8.0/*.mdf
-!bin/Debug/net8.0/*.ldf
+
+!bin/Debug/net8.0
