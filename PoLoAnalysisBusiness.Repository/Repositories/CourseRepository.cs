@@ -33,5 +33,11 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         
     }
 
-
+    public Task<Course?> GetCourseWithUploadedFilesByIdASync(string id)
+    {
+        return _courses
+            .Where(c => !c.IsDeleted && c.Id== id)
+            .Include(c=> c.File)
+            .SingleOrDefaultAsync();
+    }
 }

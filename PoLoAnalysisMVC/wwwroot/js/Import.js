@@ -5,6 +5,7 @@
     const courseDropdown = document.getElementById('course-dropdown');
     const successPopup = document.getElementById('success-popup');
     const failPopup = document.getElementById('failure-popup');
+    
     uploadBtn.addEventListener('click', function(event) {
         event.preventDefault();
 

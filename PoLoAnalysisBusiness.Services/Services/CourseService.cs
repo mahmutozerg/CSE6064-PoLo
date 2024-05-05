@@ -40,5 +40,11 @@ public class CourseService:GenericService<Course>,ICourseService
 
     }
 
-  
+    public async Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesByIdASync(string id)
+    {
+        var course = await _courseRepository.GetCourseWithUploadedFilesByIdASync(id);
+
+        ArgumentNullException.ThrowIfNull(course);
+        return CustomResponseDto<Course>.Success(course, StatusCodes.Ok);
+    }
 }

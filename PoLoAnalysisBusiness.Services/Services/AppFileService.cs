@@ -14,15 +14,19 @@ public class AppFileService:GenericService<File>,IAppFileServices
 {
     private readonly IAppFileRepository _fileRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly ICourseService _courseService;
 
-    public AppFileService(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IAppFileRepository fileRepository) : base(repository, unitOfWork)
+    public AppFileService(IGenericRepository<File?> repository, IUnitOfWork unitOfWork, IAppFileRepository fileRepository, ICourseService courseService) : base(repository, unitOfWork)
     {
         _unitOfWork = unitOfWork;
         _fileRepository = fileRepository;
+        _courseService = courseService;
     }
+
 
     public async Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model,string courseId)
     {
+        
         try
         {
             if (model == null || model.Length == 0)
@@ -32,7 +36,17 @@ public class AppFileService:GenericService<File>,IAppFileServices
             if (!IsExcelFile(model))
                 return CustomResponseDto<File>.Fail(StatusCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
 
+            var courseWithFiles = (await _courseService.GetCourseWithUploadedFilesByIdASync(courseId)).Data;
 
+
+            if (courseWithFiles is not null)
+            {
+                courseWithFiles.File.ForEach(c => c.IsDeleted = true);
+
+            }
+
+            await _courseService.UpdateAsync(courseWithFiles,"system");
+            
             var id = Guid.NewGuid().ToString();
             var fileName = $"..\\UploadedFiles\\{id}.xlsx";
 

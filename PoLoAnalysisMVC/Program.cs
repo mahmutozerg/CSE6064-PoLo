@@ -65,16 +65,15 @@ builder.Services.AddAuthentication(options =>
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(tokenOptions.AccessTokenExpiration);
     options.LoginPath = "/login";
-    options.AccessDeniedPath = "/login";
-
-
+    options.AccessDeniedPath = "/error";
+    
 }).AddCookie(ApiConstants.RefreshCookieName, options =>
 {
     options.Cookie.Name = ApiConstants.SessionCookieName;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(tokenOptions.RefreshTokenExpiration);
     options.LoginPath = "/login";
-    options.AccessDeniedPath = "/login";
+    options.AccessDeniedPath = "/error";
 
 
 });
@@ -87,13 +86,15 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+// TODO AccesDenied bir ara yapılsın
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseRefreshTokenMiddleware();
 app.UseAuthentication();
+app.UseRefreshTokenMiddleware();
 app.UseAuthorization();
 
 app.MapControllerRoute(

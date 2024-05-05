@@ -18,6 +18,8 @@ public class RefreshTokenMiddleware
         var refreshToken = context.Request.Cookies[ApiConstants.RefreshCookieName];
         var accessToken = context.Request.Cookies[ApiConstants.SessionCookieName];
         var requestPath = context.Request.Path;
+
+
         if (!string.IsNullOrEmpty(refreshToken) && string.IsNullOrEmpty(accessToken) && (!requestPath.StartsWithSegments("/login") || context.Request.Method == "GET"))
         {
             var tokenDto = await CatsUserServices.CreateTokenByRefreshToken(refreshToken);
