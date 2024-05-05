@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using PoLoAnalysisAuthServer.Core.Configurations;
 using PoLoAnalysisAuthServer.Core.DTOs;
-using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Repositories;
 using PoLoAnalysisAuthServer.Core.Services;
 using SharedLibrary;
+using SharedLibrary.DTOs.Client;
 using SharedLibrary.DTOs.Tokens;
 using SharedLibrary.DTOs.User;
 
@@ -86,8 +86,8 @@ public class AuthenticationService:IAuthenticationService
         refreshToken.Expiration = token.RefreshTokenExpiration;
 
         await _unitOfWork.CommitAsync();
-        return Response<TokenDto>.Success(token, StatusCodes.Ok);
 
+        return Response<TokenDto>.Success(token, StatusCodes.Ok);
         
     }
     public Response<ClientTokenDto> CreateTokenByClient(ClientLoginDto clientLoginDto)
@@ -103,7 +103,7 @@ public class AuthenticationService:IAuthenticationService
                 {
                     Id = clientLoginDto.Id,
                     Secret = clientLoginDto.Secret,
-                    Audiences = APIConstants.Aud
+                    Audiences = ApiConstants.Aud
                 };
 
                 var clientTokenDto = _tokenService.CreateTokenByClient(client);

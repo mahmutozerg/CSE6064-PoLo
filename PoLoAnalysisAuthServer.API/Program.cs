@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using PoLoAnalysisAuthServer.Core.Configurations;
 using PoLoAnalysisAuthServer.Core.DTOs;
-using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Repositories;
 using PoLoAnalysisAuthServer.Core.Services;
@@ -15,6 +15,7 @@ using PoLoAnalysisAuthServer.Repository.Repositories;
 using PoLoAnalysisAuthSever.Service.Services;
 using SharedLibrary.AuthRequirements;
 using SharedLibrary.Configurations;
+using SharedLibrary.DTOs.Client;
 using SharedLibrary.RequirementHandlers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<AppTokenOptions>(builder.Configuration.GetSection("TokenOptions"));
 builder.Services.Configure<List<ClientLoginDto>>(builder.Configuration.GetSection("Clients"));
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
+var clients = builder.Configuration.GetSection("Clients").Get<List<ClientSectionDto>>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -73,7 +75,11 @@ builder.Services.AddAuthentication(opt =>
 
     };
 });
-var cl = new List<string> { "authserver", "jsclient" };
+var clientList = clients.Select(client => client.Id).ToList();
+
+
+
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AuthServerPolicy", policy =>
@@ -89,7 +95,7 @@ builder.Services.AddAuthorization(options =>
         policy.Requirements.Add(new AdminClientIdBypassRequirement("jsclient")));
 
     options.AddPolicy("ClientsWithAdminByPassPolicy", policy =>
-        policy.Requirements.Add(new AdminClientsRequirementBypass(cl)));
+        policy.Requirements.Add(new AdminClientsRequirementBypass(clientList)));
 
 });
 builder.Services.AddSingleton<IAuthorizationHandler, ClientIdRequirementHandler>();

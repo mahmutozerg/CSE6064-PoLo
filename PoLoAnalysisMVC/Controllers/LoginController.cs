@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisMVC.Services;
 using SharedLibrary.DTOs.User;
-using System.Web;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using SharedLibrary;
 
 namespace PoLoAnalysisMVC.Controllers;
 
@@ -26,30 +24,39 @@ public class LoginController : Controller
     public async Task<ActionResult> Index(CatsUserLogin loginDto)
     {
 
-        var token = Request.Cookies["session"];
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
 
         if (token is not null)
             return RedirectToAction("Index", "Home");
 
-        var result = await CatsUserServices.LoginUser(loginDto);
+        var tokenDto = await CatsUserServices.LoginUser(loginDto);
 
-        if (!result.HasValues)
+
+        if (string.IsNullOrEmpty(tokenDto.AccessToken))
         {
             ModelState.AddModelError("LoginError", "Please Check your credentials");
             return View("Index", loginDto);
 
         }
-        var sessionCookie = CatsUserServices.GetTokenInfo(result);
+
         var sessionCookieOptions = new CookieOptions()
         {
             SameSite = SameSiteMode.Strict,
-            Expires = sessionCookie.AccessTokenExpiration,
+            Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
             Secure = true,
             HttpOnly = true,
             
         };
-        
-        Response.Cookies.Append("session",  sessionCookie.AccessToken,sessionCookieOptions);
+        var refreshCookieOptions = new CookieOptions()
+        {
+            SameSite = SameSiteMode.Strict,
+            Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
+            Secure = true,
+            HttpOnly = true,
+        };
+        Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
+        Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);
+
         return RedirectToAction("Index", "Home");
     }
 }

@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisMVC.Models;
+using SharedLibrary;
 
 namespace PoLoAnalysisMVC.Controllers;
 
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-[Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]  
+[Authorize(AuthenticationSchemes = ApiConstants.SessionCookieName)]  
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

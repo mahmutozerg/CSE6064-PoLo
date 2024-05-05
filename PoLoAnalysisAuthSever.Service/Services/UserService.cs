@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using PoLoAnalysisAuthServer.Core.DTOs;
-using PoLoAnalysisAuthServer.Core.DTOs.Client;
 using PoLoAnalysisAuthServer.Core.Models;
 using PoLoAnalysisAuthServer.Core.Repositories;
 using PoLoAnalysisAuthServer.Core.Services;
 using SharedLibrary;
+using SharedLibrary.DTOs.Client;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.DTOs.Tokens;
 using SharedLibrary.DTOs.User;
@@ -24,19 +24,19 @@ public class UserService : GenericService<User>, IUserService
     private readonly IUnitOfWork _unitOfWork;
     private readonly RoleManager<AppRole> _roleManager;
     private readonly IAuthenticationService _authenticationService;
-    private readonly ITokenService _tokenService;
+    private readonly IAuthenticationService _authService;
     private readonly List<ClientLoginDto> _clientTokenOptions;
 
     public UserService(UserManager<User> userManager, IGenericRepository<User> repository, IUnitOfWork unitOfWork,
         RoleManager<AppRole> roleManager, IAuthenticationService authenticationService,
-        IOptions<List<ClientLoginDto>> clientTokenOptions, ITokenService tokenService) : base(repository, unitOfWork)
+        IOptions<List<ClientLoginDto>> clientTokenOptions, IAuthenticationService authService) : base(repository, unitOfWork)
     {
         _userManager = userManager;
         _repository = repository;
         _unitOfWork = unitOfWork;
         _roleManager = roleManager;
         _authenticationService = authenticationService;
-        _tokenService = tokenService;
+        _authService = authService;
         _clientTokenOptions = clientTokenOptions.Value;
     }
 
@@ -73,7 +73,7 @@ public class UserService : GenericService<User>, IUserService
     {
         using (var client = new HttpClient())
         {
-            const string url = APIConstants.BusinessAPIIp + "/api/User/AddById";
+            const string url = ApiConstants.BusinessAPIIp + "/api/User/AddById";
 
             var requestData = new UserAddDto()
             {
@@ -163,7 +163,7 @@ public class UserService : GenericService<User>, IUserService
     public async Task SendDeleteReqToBusinessAPI(User user)
     {
         using var client = new HttpClient();
-        const string url = APIConstants.BusinessAPIIp + "/api/User/DeleteById";
+        const string url = ApiConstants.BusinessAPIIp + "/api/User/DeleteById";
 
         var requestData = new UserDeleteDto()
         {

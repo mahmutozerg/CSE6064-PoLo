@@ -1,48 +1,113 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
+using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SharedLibrary.DTOs.User;
+using SharedLibrary.DTOs.Client;
 using SharedLibrary.DTOs.Tokens;
+using SharedLibrary.DTOs.User;
 
+namespace PoLoAnalysisMVC.Services;
 
-namespace PoLoAnalysisMVC.Services
+public static class CatsUserServices
 {
-    public static class CatsUserServices
+    private const string CreateTokenUrl = 
+        SharedLibrary.ApiConstants.AuthServerIP + "/api/CatsLogin/Login";
+
+    private const string CreateTokenByClientUrl =
+        SharedLibrary.ApiConstants.AuthServerIP + "/api/auth/CreateTokenByClient";
+
+    private const string RevokeRefreshTokenUrl =
+        SharedLibrary.ApiConstants.AuthServerIP + "/api/auth/revokerefreshtoken";
+
+    private const string CreateTokenByRefreshTokenUrl =
+        SharedLibrary.ApiConstants.AuthServerIP + "/api/auth/CreateTokenByRefreshToken";
+
+    private static ClientTokenDto ClientToken = new ClientTokenDto();
+    public static async Task<TokenDto> LoginUser(CatsUserLogin loginDto)
     {
-        private const string CreateTokenUrl = SharedLibrary.APIConstants.AuthServerIP + "/api/CatsLogin/Login";
-        public static async Task<JObject> LoginUser(CatsUserLogin loginDto)
+        using var client = new HttpClient();
+        var loginUserJsonData = JsonConvert.SerializeObject(loginDto);
+
+        var content = new StringContent(loginUserJsonData, Encoding.UTF8, "application/json");
+
+        var response = await client.PostAsync(CreateTokenUrl, content);
+
+        if (!response.IsSuccessStatusCode) 
+            return new TokenDto();
+        var jsonResult = JObject.Parse(await response.Content.ReadAsStringAsync());
+        return GetTokenInfo(jsonResult);
+    }
+
+
+    private static TokenDto GetTokenInfo(JObject jsonResult)
+    {
+        return new TokenDto()
         {
-            using (var client = new HttpClient())
+            AccessToken = jsonResult["data"]["accessToken"].ToString(),
+            AccessTokenExpiration = DateTime.TryParse(jsonResult["data"]["accessTokenExpiration"]!.ToString(), out var expirationDate) ? expirationDate : DateTime.MinValue,
+            RefreshToken = jsonResult["data"]["refreshToken"].ToString(),
+            RefreshTokenExpiration = DateTime.TryParse(jsonResult["data"]["refreshTokenExpiration"].ToString(), out var ex) ? ex : DateTime.MinValue,
+
+
+        };
+    }
+    private static async Task<Task> CreateTokenByClient(ClientLoginDto loginDto)
+    {
+        using var client = new HttpClient();
+        var tokenJsonData = JsonConvert.SerializeObject(loginDto);
+
+        var content = new StringContent(tokenJsonData, Encoding.UTF8, "application/json");
+
+        var response = await client.PostAsync(CreateTokenByClientUrl, content);
+
+        if (!response.IsSuccessStatusCode)
+            return Task.CompletedTask;
+        var jsonResult = JObject.Parse(await response.Content.ReadAsStringAsync());
+        ClientToken = jsonResult["data"].ToObject<ClientTokenDto>();
+        return Task.CompletedTask;
+
+    }
+
+    public static async Task<TokenDto> CreateTokenByRefreshToken(string token)
+    {
+
+        using var client = new HttpClient();
+        var encodedToken = WebUtility.UrlEncode(token);
+
+        if (string.IsNullOrEmpty(ClientToken.AccesToken) || DateTime.Compare(ClientToken.AccesTokenExpiration,DateTime.Now)<=0)
+        {
+            await CreateTokenByClient( new ClientLoginDto()
             {
-
-                var createUserJsonData = JsonConvert.SerializeObject(loginDto);
-
-                var content = new StringContent(createUserJsonData, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(CreateTokenUrl, content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var jsonResult = JObject.Parse(await response.Content.ReadAsStringAsync());
-                    return jsonResult;
-                }
-
-                return new JObject();
-            }
+                Id = "MVC",
+                Secret = "MVClientSecretKey"
+            });
         }
 
-
-        public static TokenDto GetTokenInfo(JObject jsonResult)
-        {
-            return new TokenDto()
-            {
-                AccessToken = jsonResult["data"]["accessToken"].ToString(),
-                AccessTokenExpiration = DateTime.TryParse(jsonResult["data"]["accessTokenExpiration"]!.ToString(), out var expirationDate) ? expirationDate : DateTime.MinValue,
-                RefreshToken = jsonResult["data"]["refreshToken"].ToString(),
-                RefreshTokenExpiration = DateTime.TryParse(jsonResult["data"]["refreshTokenExpiration"].ToString(), out var ex) ? ex : DateTime.MinValue,
+        
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",ClientToken.AccesToken);
 
 
-            };
-        }
+        var response = await client.PostAsync(CreateTokenByRefreshTokenUrl+$"?refreshToken={encodedToken}",null);
+
+        if (!response.IsSuccessStatusCode) 
+            return new TokenDto();
+        
+        var jsonResult = JObject.Parse(await response.Content.ReadAsStringAsync());
+        return GetTokenInfo(jsonResult);
+
+    }
+
+    private static async Task RevokeRefreshToken(string token)
+    {
+        using var client = new HttpClient();
+        var revokeRTokenContent = JsonConvert.SerializeObject(token);
+
+        var content = new StringContent(revokeRTokenContent, Encoding.UTF8, "application/json");
+
+        await client.PostAsync(RevokeRefreshTokenUrl, content);
+        
+        return;
+        
     }
 }

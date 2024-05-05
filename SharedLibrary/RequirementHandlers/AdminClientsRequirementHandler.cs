@@ -14,5 +14,6 @@ public class AdminClientsRequirementHandler:AuthorizationHandler<AdminClientsReq
             context.Succeed(requirementBypass);
         }
 
-        return Task.CompletedTask;    }
+        return Task.CompletedTask;    
+    }
 }

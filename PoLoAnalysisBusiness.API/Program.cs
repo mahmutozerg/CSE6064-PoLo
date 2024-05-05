@@ -11,6 +11,7 @@ using PoLoAnalysisBusiness.Repository;
 using PoLoAnalysisBusiness.Repository.Repositories;
 using PoLoAnalysisBusiness.Repository.UnitOfWorks;
 using PoLoAnalysisBusiness.Services.Services;
+using SharedLibrary;
 using SharedLibrary.AuthRequirements;
 using SharedLibrary.Configurations;
 using SharedLibrary.RequirementHandlers;
@@ -27,7 +28,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
         policy  =>
         {
-            policy.WithOrigins("https://localhost:7298");
+            policy.WithOrigins(ApiConstants.MVCIP);
         });
 });
 // Add services to the container.
@@ -64,6 +65,7 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         options.EnableRetryOnFailure();
     });
 });
+
 builder.Services.AddAuthentication(opt =>
 {
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -110,8 +112,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
-app.UseRouting(); // Add this line
-app.UseAuthorization(); // Add this line if authorization is required
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization(); 
 app.MapControllers();
 
 app.Run();

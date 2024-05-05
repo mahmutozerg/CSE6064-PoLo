@@ -3,6 +3,8 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using PoLoAnalysisMVC.Middleware;
+using SharedLibrary;
 using SharedLibrary.Configurations;
 
 
@@ -15,10 +17,10 @@ var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppToken
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = "APIConstants.SessionCookieName";
+    options.DefaultSignInScheme = "APIConstants.SessionCookieName";
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer( opt =>
+}).AddJwtBearer(opt =>
 {
     opt.RequireHttpsMetadata = false;
     opt.SaveToken = true;
@@ -37,41 +39,47 @@ builder.Services.AddAuthentication(options =>
     {
         OnAuthenticationFailed = context =>
         {
-
             context.Response.Redirect("/login");
             return Task.CompletedTask;
         },
 
         OnMessageReceived = context =>
         {
-            if (!context.Request.Cookies.ContainsKey("session")) 
+            if (!context.Request.Cookies.ContainsKey(ApiConstants.SessionCookieName))
                 return Task.CompletedTask;
-            context.Token = context.Request.Cookies["session"];
+            context.Token = context.Request.Cookies[ApiConstants.SessionCookieName];
             //context.Request.Headers.TryAdd("Bearer", context.Token);
 
             return Task.CompletedTask;
         },
 
     };
-}).AddCookie( options =>
+}).AddCookie(ApiConstants.SessionCookieName, options =>
 {
-    options.Cookie.Name = "session";
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; 
+    options.Cookie.Name = ApiConstants.SessionCookieName;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(tokenOptions.AccessTokenExpiration);
     options.LoginPath = "/login";
     options.AccessDeniedPath = "/login";
-    
-    
+
+
+}).AddCookie(ApiConstants.RefreshCookieName, options =>
+{
+    options.Cookie.Name = ApiConstants.SessionCookieName;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(tokenOptions.RefreshTokenExpiration);
+    options.LoginPath = "/login";
+    options.AccessDeniedPath = "/login";
+
+
 });
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -79,6 +87,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseRefreshTokenMiddleware();
 app.UseAuthentication();
 app.UseAuthorization();
 

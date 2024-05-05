@@ -11,39 +11,56 @@ namespace PoLoAnalysisAuthServer.API.Controllers;
 public class CatsLoginController:CustomControllerBase
 {
     private readonly IUserService _userService;
-    private readonly ITokenService _tokenService;
-    public CatsLoginController(IUserService userService, ITokenService tokenService)
+    private readonly IAuthenticationService _authenticationService;
+    public CatsLoginController(IUserService userService, IAuthenticationService authentication)
     {
         _userService = userService;
-        _tokenService = tokenService;
+        _authenticationService = authentication;
     }
 
 
     [HttpPost]
-    public async Task<IActionResult> Login(CatsUserLogin userLoginDto)
+    public async Task<IActionResult> Login(CatsUserLogin catsUserLoginDto)
     {
-        var userName = userLoginDto.UserName.Split("@").First();
-        var loginServices = new CatsLoginService(userName,userLoginDto.Password);
+        var userName = catsUserLoginDto.UserName.Split("@").First();
+        var loginServices = new CatsLoginService(userName,catsUserLoginDto.Password);
         var result = loginServices.Start();
         
         var user = await _userService.GetUserByNameAsync(userName);
+
         if (user.StatusCode ==StatusCodes.NotFound)
-        {
-           var userResult =await _userService.CreateUserAsync(
+        { 
+            var userEmail = catsUserLoginDto.UserName + "@iku.edu.tr";
+            
+            var userResult =await _userService.CreateUserAsync(
                 new UserCreateDto()
                 {
-                    Email = userLoginDto.UserName + "@iku.edu.tr",
+                    Email = userEmail,
                     Password = Guid.NewGuid().ToString()
                 });
 
-           var tokenDto =await _tokenService.CreateTokenAsync(userResult.Data);
-           return CreateActionResult(CustomResponseDto<TokenDto>.Success(tokenDto,StatusCodes.Ok));
-
+            var userLoginDto = new UserLoginDto()
+            {
+                Email = userEmail,
+                Password = "rand"
+            };
+           
+           var tokenDto =await _authenticationService.CreateTokenAsync(userLoginDto);
+           return CreateActionResult(tokenDto);
+        
         }
         else
         {
-            var tokenDto =await _tokenService.CreateTokenAsync(user.Data);
-            return CreateActionResult(CustomResponseDto<TokenDto>.Success(tokenDto,StatusCodes.Ok));
+            var userEmail = user.Data.Email;
+
+            var userLoginDto = new UserLoginDto()
+            {
+                Email = userEmail,
+                Password = "rand"
+            };
+
+            var tokenDto =await _authenticationService.CreateTokenAsync(userLoginDto);
+            return CreateActionResult(tokenDto);
 
         }
         

@@ -31,7 +31,7 @@ public class CatsLoginService
         return AnalyzePage();
     }
 
-    public void GoToLoginPage()
+    private void GoToLoginPage()
     {
         _driver.Navigate().GoToUrl("https://cats.iku.edu.tr/portal");
 
@@ -41,7 +41,8 @@ public class CatsLoginService
         passwordInput.SendKeys(_password);
         passwordInput.SendKeys(Keys.Enter);
     }
-    public CustomResponseNoDataDto AnalyzePage()
+
+    private CustomResponseNoDataDto AnalyzePage()
     {
         try
         {
