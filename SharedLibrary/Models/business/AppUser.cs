@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using SharedLibrary.Models;
 
-namespace PoLoAnalysisBusiness.Core.Models;
+namespace SharedLibrary.Models.business;
 
 public class AppUser:Base
 {

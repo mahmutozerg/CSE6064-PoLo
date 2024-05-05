@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
+using SharedLibrary.Models.business;
 using Spire.Xls;
 using File = System.IO.File;
 using LicenseContext = OfficeOpenXml.LicenseContext;
@@ -209,10 +209,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    public string GetResultPath()
-    {
-        return ResultPath;
-    }
+ 
 
     public async Task<FileStreamResult> GetFileStreamAsync(string fileId)
     {

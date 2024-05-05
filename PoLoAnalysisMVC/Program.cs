@@ -39,6 +39,11 @@ builder.Services.AddAuthentication(options =>
     {
         OnAuthenticationFailed = context =>
         {
+            if (context.Request.Cookies.ContainsKey(ApiConstants.SessionCookieName))
+                context.Response.Cookies.Delete(ApiConstants.SessionCookieName);
+
+            if (context.Request.Cookies.ContainsKey(ApiConstants.RefreshCookieName))
+                context.Response.Cookies.Delete(ApiConstants.RefreshCookieName);
             context.Response.Redirect("/login");
             return Task.CompletedTask;
         },

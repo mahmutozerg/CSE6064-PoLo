@@ -7,6 +7,7 @@ using SharedLibrary.DTOs.User;
 
 namespace PoLoAnalysisBusinessAPI.Controllers;
 
+[Authorize]
 public class UserController:CustomControllerBase
 {
     private readonly IUserService _userService;
@@ -31,4 +32,13 @@ public class UserController:CustomControllerBase
  
         return CreateActionResult(await _userService.DeleteUserAsync(userDeleteDto));
     }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetUserCourses()
+    {
+        var userId = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)!.Value;
+ 
+        return CreateActionResult(await _userService.GetUserWithCoursesByIdAsync(userId));
+    }
+    
 }

@@ -1,8 +1,8 @@
 ﻿using System.Security.Claims;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.DTO.Users;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.DTOs.User;
+using SharedLibrary.Models.business;
 
 
 namespace PoLoAnalysisBusiness.Core.Services;
@@ -20,6 +20,9 @@ public interface IUserService:IGenericService<AppUser>
     Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPageAsync(string page);
     Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPageAsync(string page);
     Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPageAsync(string page);
+    
+    Task<CustomResponseDto<AppUser>> GetUserWithCoursesByIdAsync(string id);
+
     
 
 

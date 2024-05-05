@@ -1,4 +1,4 @@
-﻿using PoLoAnalysisBusiness.Core.Models;
+﻿using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Core.Repositories;
 

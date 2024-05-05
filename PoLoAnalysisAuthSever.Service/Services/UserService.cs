@@ -73,7 +73,7 @@ public class UserService : GenericService<User>, IUserService
     {
         using (var client = new HttpClient())
         {
-            const string url = ApiConstants.BusinessAPIIp + "/api/User/AddById";
+            const string url = ApiConstants.BusinessApiIp + "/api/User/AddById";
 
             var requestData = new UserAddDto()
             {
@@ -163,7 +163,7 @@ public class UserService : GenericService<User>, IUserService
     public async Task SendDeleteReqToBusinessAPI(User user)
     {
         using var client = new HttpClient();
-        const string url = ApiConstants.BusinessAPIIp + "/api/User/DeleteById";
+        const string url = ApiConstants.BusinessApiIp + "/api/User/DeleteById";
 
         var requestData = new UserDeleteDto()
         {

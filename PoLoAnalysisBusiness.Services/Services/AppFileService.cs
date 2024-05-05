@@ -6,7 +6,7 @@ using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
-using File = PoLoAnalysisBusiness.Core.Models.File;
+using File = SharedLibrary.Models.business.File;
 using StatusCodes = SharedLibrary.StatusCodes;
 namespace PoLoAnalysisBusiness.Services.Services;
 
@@ -21,7 +21,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
         _fileRepository = fileRepository;
     }
 
-    public async Task<CustomResponseDto<File>> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model)
+    public async Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model,string courseId)
     {
         try
         {
@@ -44,7 +44,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
             var file = new File()
             {
                 Id = id,
-                CourseId = "test",
+                CourseId = courseId,
                 Path = fileName
 
             };

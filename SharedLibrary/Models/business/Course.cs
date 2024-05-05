@@ -1,7 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using SharedLibrary.Models;
 
-namespace PoLoAnalysisBusiness.Core.Models;
+namespace SharedLibrary.Models.business;
 
 public class Course:Base
 {

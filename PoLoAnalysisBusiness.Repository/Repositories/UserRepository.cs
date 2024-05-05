@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using SharedLibrary.Models;
+using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Repository.Repositories;
 
@@ -66,5 +66,14 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .Take(12)
             .AsNoTracking()
             .ToListAsync();
+    }
+
+    public async Task<AppUser?> GetUserWithCoursesById(string id)
+    {
+        return await _users
+            .Where(u => u.Id == id && !u.IsDeleted)
+            .Include(u => u.Courses.Where(c => !c.IsDeleted))
+            .AsNoTracking()
+            .FirstOrDefaultAsync();
     }
 }

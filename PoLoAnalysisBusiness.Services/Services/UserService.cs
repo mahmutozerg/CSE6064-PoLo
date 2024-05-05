@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
@@ -8,6 +7,7 @@ using PoLoAnalysisBusiness.Services.Mappers;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.DTOs.User;
+using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Services.Services;
 
@@ -162,5 +162,15 @@ public class UserService:GenericService<AppUser>,IUserService
                 StatusCodes.Ok);
                 
         return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);    
+    }
+
+    public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByIdAsync(string id)
+    {
+        var user = await _userRepository.GetUserWithCoursesById(id);
+
+        ArgumentNullException.ThrowIfNull(user);
+        
+        return CustomResponseDto<AppUser>.Success(user,
+            StatusCodes.Ok);
     }
 }

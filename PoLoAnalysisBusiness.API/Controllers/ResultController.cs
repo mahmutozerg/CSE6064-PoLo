@@ -34,8 +34,7 @@ public class ResultController:CustomControllerBase
         var fileResult = await _appFileServices.GetByIdAsync(resultDto.ExcelFileId);
         _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
         _resultService.AnalyzeExcel();
-        var filePath = _resultService.GetResultPath();
-        var result = await _resultService.AddAsync(fileResult.Data.Id,filePath);
+        var result = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}.xlsx");
         
         return CreateActionResult(result);
     }

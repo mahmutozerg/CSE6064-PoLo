@@ -1,4 +1,4 @@
-﻿using File = PoLoAnalysisBusiness.Core.Models.File;
+﻿using File = SharedLibrary.Models.business.File;
 
 namespace PoLoAnalysisBusiness.Core.Repositories;
 

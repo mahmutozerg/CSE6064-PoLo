@@ -4,12 +4,15 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisMVC.Models;
+using PoLoAnalysisMVC.Services;
 using SharedLibrary;
 
 namespace PoLoAnalysisMVC.Controllers;
 
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [Authorize(AuthenticationSchemes = ApiConstants.SessionCookieName)]  
+[ResponseCache(NoStore =true, Location =ResponseCacheLocation.None)]
+
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -19,15 +22,20 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    
+    public  IActionResult Index()
     {
+
         return View();
     }
     
 
-    public IActionResult Import()
+    public async Task<IActionResult> Import()
     {
-        return View();
+        var userToken = Request.Cookies[ApiConstants.SessionCookieName];
+        var user = await UserCourseServices.GetUserCourses(userToken);
+
+        return View(user);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

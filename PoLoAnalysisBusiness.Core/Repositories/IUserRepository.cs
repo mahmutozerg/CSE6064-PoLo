@@ -1,5 +1,5 @@
-﻿using PoLoAnalysisBusiness.Core.Models;
-using SharedLibrary.Models;
+﻿using SharedLibrary.Models;
+using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Core.Repositories;
 
@@ -12,5 +12,7 @@ public interface IUserRepository:IGenericRepository<AppUser>
 
     Task<List<AppUser>> GetActiveUsersWithCourseByPage(int page);
     Task<List<AppUser>> GetAllUsersWithCourseByPage(int page);
+
+    Task<AppUser?> GetUserWithCoursesById(string id);
 
 }

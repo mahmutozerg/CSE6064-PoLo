@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SharedLibrary.Models.business.AppUser;
+@{
     ViewData["Title"] = "Import";
 }
 
@@ -6,47 +7,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PO-LO Analytics Import</title>
-    <link rel="stylesheet" href="~/css/import.css">
-    <script src="~/js/Import.js"></script>
+    <link rel="stylesheet" href="~/css/import.css?v2">
+    <script src="~/js/Import.js?v2"></script>
 
 </head>
 
 <body>
- <div class="main-content">
-        <div class="section-info">
-            <div class="bold-info">
-                Importing Excel File
-            </div>
-            <div class="info">
-                Import analytical data for calculation.
-            </div>
+<div class="popup-container" id="success-popup" style="display:none;" >
+    <div class="popup-content">
+        <div class="checkmark">✔</div>
+        <p>Excel File Uploaded</p>
+    </div>
+</div>
+
+<div class="popup-container" id="failure-popup" style="display:none;">
+    <div class="popup-content">
+        <div class="crossmark">❌</div>
+        <p>Failed to Upload Excel File</p>
+    </div>
+</div>
+<div class="main-content">
+
+    <div class="section-info">
+        <div class="bold-info">
+            Importing Excel File
+        </div>
+        <div class="info">
+            Import analytical data for calculation.
+        </div>
+        <form class="upload" enctype="multipart/form-data">
+            <select id="course-dropdown">
+                <option value="">Select a course</option>
+                @foreach (var course in Model.Courses)
+                {
+                    <option value="@course.Id"> @course.Id</option>
+                }
+            </select>
             <div class="caution">
                 <img src="/Images/caution.svg" alt="Caution" class="caution-icon">
                 <p class="caution-info">Calculation and data processing is available only for excel files using the template provided by POLO Analytics.</p>
             </div>
+
             <div class="upload-section">
                 <div class="upload-box">
-                    <form class="upload" enctype="multipart/form-data">
-                        <input type="file" id="excel-file" name="xls" accept=".xls, .xlsx" />
-                    </form>
+                    <input type="file" id="excel-file" name="xls" accept=".xls, .xlsx"/>
+
                     <div class="drag-drop">
                         or simply Drag&Drop
                     </div>
                 </div>
             </div>
-            <div class="template">
-                <div>
-                    <button id="upload-btn">Upload</button>
-                </div>
-                <div class="xls-icon">
-                    <a href="/template.xlsx" download="template.xlsx">
-                        <img src="/Images/xls.png" alt="xls">
-                    </a>
-                </div>
-                <div>
-                    <a href="/template.xlsx" download="template.xlsx">Click to download the template<br>(2.4 MB)</a>
-                </div>
+
+        </form>
+
+        <div class="template">
+            <div>
+                <button id="upload-btn">Upload</button>
+            </div>
+            <div class="xls-icon">
+                <a href="/template.xlsx" download="template.xlsx">
+                    <img src="/Images/xls.png" alt="xls">
+                </a>
+            </div>
+            <div>
+                <a href="/template.xlsx" download="template.xlsx">Click to download the template<br>(2.4 MB)</a>
             </div>
         </div>
     </div>
+</div>
 </body>

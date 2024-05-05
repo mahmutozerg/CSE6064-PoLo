@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.Core.Repositories;
+using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Repository.Repositories;
 

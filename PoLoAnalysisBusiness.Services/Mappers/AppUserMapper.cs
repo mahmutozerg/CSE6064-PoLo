@@ -1,5 +1,5 @@
-﻿using PoLoAnalysisBusiness.Core.Models;
-using SharedLibrary.DTOs.User;
+﻿using SharedLibrary.DTOs.User;
+using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Services.Mappers;
 

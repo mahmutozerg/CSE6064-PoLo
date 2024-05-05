@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary.DTOs.Responses;
+using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Core.Services;
 
@@ -12,6 +12,5 @@ public interface IResultService:IGenericService<Result>
 
     public Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path);
 
-    public string GetResultPath();
     public Task<FileStreamResult> GetFileStreamAsync(string fileId);
 }

@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PoLoAnalysisBusiness.Core.Models;
 using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary.DTOs.Responses;
-using File = PoLoAnalysisBusiness.Core.Models.File;
+using File = SharedLibrary.Models.business.File;
 
 namespace PoLoAnalysisBusiness.Core.Services;
 
 public interface IAppFileServices:IGenericService<File>
 {
-     Task<CustomResponseDto<File>> WriteExcelFileToCurrentDirectoryAsync(IFormFile? model);
+     Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model , string courseName);
      bool IsExcelFile(IFormFile file);
      
      Task<FileStreamResult> GetFileStreamAsync(string filePath);
