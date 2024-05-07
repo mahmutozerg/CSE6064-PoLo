@@ -76,4 +76,13 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .AsNoTracking()
             .FirstOrDefaultAsync();
     }
+
+    public async Task<AppUser?> GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(string userId, string courseId)
+    {
+        return await _users
+            .Where(u => !u.IsDeleted && u.Id == userId)
+            .Include(u => u.Courses.Where(c => !c.IsDeleted && c.Id == courseId))
+            .ThenInclude(course => course.File.Where(f => !f.IsDeleted))
+            .SingleOrDefaultAsync();
+    }
 }

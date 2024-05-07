@@ -24,9 +24,8 @@ public class AppFileService:GenericService<File>,IAppFileServices
     }
 
 
-    public async Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model,string courseId)
+    public async Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model,string courseId,string createdBy)
     {
-        
         try
         {
             if (model == null || model.Length == 0)
@@ -36,14 +35,16 @@ public class AppFileService:GenericService<File>,IAppFileServices
             if (!IsExcelFile(model))
                 return CustomResponseDto<File>.Fail(StatusCodes.BadRequest, FileConstants.FILEMUSTBEEXCEL);
 
-            var courseWithFiles = (await _courseService.GetCourseWithUploadedFilesByIdASync(courseId)).Data;
+            var courseWithFiles = (await _courseService.GetCourseWithUploadedFilesWithResultFilesByIdAsync(courseId)).Data;
 
 
-            if (courseWithFiles is not null)
+            courseWithFiles?.File.ForEach(file =>
             {
-                courseWithFiles.File.ForEach(c => c.IsDeleted = true);
+                file.IsDeleted = true;
+                if (file.Result != null) 
+                    file.Result.IsDeleted = true;
+            });
 
-            }
 
             await _courseService.UpdateAsync(courseWithFiles,"system");
             
@@ -62,7 +63,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
                 Path = fileName
 
             };
-            var result =await AddAsync(file,Guid.NewGuid().ToString());
+            var result =await AddAsync(file,createdBy);
             await _unitOfWork.CommitAsync();
             return result;
         }        

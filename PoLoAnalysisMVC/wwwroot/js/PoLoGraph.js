@@ -1,35 +1,35 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("export-button").addEventListener("click", getResultFile);
-});
-async function getResultFile() {
-    try {
-        const encodedFileId = encodeURIComponent("2b2338fa-4221-4ebb-af93-b8bfe31ad562");
-
-        const response = await fetch(`https://localhost:7273/api/Result/GetFileByExcelId/${encodedFileId}`);
-
-        if (response.ok) {
-            const blob = await response.blob();
-
-            const url = window.URL.createObjectURL(blob);
-
-            const a = document.createElement("a");
-            a.style.display = "none";
-            a.href = url;
-            a.download = "exported_document.docx";
-            document.body.appendChild(a);
-
-            a.click();
-
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-
-        } else {
-            console.error("Request failed with status " + response.status);
-        }
-    } catch (error) {
-        console.error("An error occurred:", error);
-    }
-}
+// document.addEventListener("DOMContentLoaded", function() {
+//     document.getElementById("export-button").addEventListener("click", getResultFile);
+// });
+// async function getResultFile() {
+//     try {
+//         const encodedFileId = encodeURIComponent("2b2338fa-4221-4ebb-af93-b8bfe31ad562");
+//
+//         const response = await fetch(`https://localhost:7273/api/Result/GetFileByExcelId/${encodedFileId}`);
+//
+//         if (response.ok) {
+//             const blob = await response.blob();
+//
+//             const url = window.URL.createObjectURL(blob);
+//
+//             const a = document.createElement("a");
+//             a.style.display = "none";
+//             a.href = url;
+//             a.download = "exported_document.docx";
+//             document.body.appendChild(a);
+//
+//             a.click();
+//
+//             window.URL.revokeObjectURL(url);
+//             document.body.removeChild(a);
+//
+//         } else {
+//             console.error("Request failed with status " + response.status);
+//         }
+//     } catch (error) {
+//         console.error("An error occurred:", error);
+//     }
+// }
 
 var ColumnChartOptions = {
     series: [{

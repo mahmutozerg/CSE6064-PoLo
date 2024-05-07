@@ -14,6 +14,7 @@ using PoLoAnalysisBusiness.Services.Services;
 using SharedLibrary;
 using SharedLibrary.AuthRequirements;
 using SharedLibrary.Configurations;
+using SharedLibrary.DTOs.Client;
 using SharedLibrary.RequirementHandlers;
 using IUnitOfWork = PoLoAnalysisBusiness.Core.UnitOfWorks.IUnitOfWork;
 using UserService = PoLoAnalysisBusiness.Services.Services.UserService;
@@ -22,13 +23,14 @@ var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
+var clients = builder.Configuration.GetSection("Clients").Get<List<ClientSectionDto>>();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
         policy  =>
         {
-            policy.WithOrigins(ApiConstants.MVCIP);
+            policy.WithOrigins(ApiConstants.MVCIP).AllowAnyHeader().AllowAnyHeader();
         });
 });
 // Add services to the container.
@@ -84,6 +86,8 @@ builder.Services.AddAuthentication(opt =>
         RoleClaimType = ClaimTypes.Role,
     };
 });
+var clientList = clients.Select(client => client.Id).ToList();
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AuthServerPolicy", policy =>
@@ -98,9 +102,13 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AdminBypassJSClientPolicy", policy =>
         policy.Requirements.Add(new AdminClientIdBypassRequirement("jsclient")));
     
+    options.AddPolicy("ClientsWithAdminByPassPolicy", policy =>
+        policy.Requirements.Add(new AdminClientsRequirementBypass(clientList)));
+    
 });
 builder.Services.AddSingleton<IAuthorizationHandler, ClientIdRequirementHandler>();
 builder.Services.AddSingleton<IAuthorizationHandler, AdminClientIdBypassRequirementHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, AdminClientsRequirementHandler>();
 
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);

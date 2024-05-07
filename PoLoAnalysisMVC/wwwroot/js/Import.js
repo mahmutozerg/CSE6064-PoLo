@@ -1,16 +1,21 @@
-﻿document.addEventListener("DOMContentLoaded", function() {
-    const uploadForm = document.querySelector('.upload');
-    const uploadInput = document.getElementById('excel-file');
-    const uploadBtn = document.getElementById('upload-btn');
-    const courseDropdown = document.getElementById('course-dropdown');
-    const successPopup = document.getElementById('success-popup');
-    const failPopup = document.getElementById('failure-popup');
-    
-    uploadBtn.addEventListener('click', function(event) {
-        event.preventDefault();
+﻿
+let uploadForm, uploadInput, uploadBtn, courseDropdown, successPopup, failPopup;
+
+document.addEventListener("DOMContentLoaded", function() {
+     uploadForm = document.querySelector('.upload');
+     uploadInput = document.getElementById('excel-file');
+     uploadBtn = document.getElementById('upload-btn');
+     courseDropdown = document.getElementById('course-dropdown');
+     successPopup = document.getElementById('success-popup');
+     failPopup = document.getElementById('failure-popup');
+})
+
+   async function SendRequest() 
+   {
 
         const file = uploadInput.files[0];
         const courseId = encodeURIComponent(courseDropdown.value);
+        const cookie = getCookie("Session")
 
         if (file && courseId !== "") {
             const formData = new FormData();
@@ -19,7 +24,10 @@
 
             fetch('https://localhost:7273/api/ExcelFile/UploadExcel', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    "Authorization": `Bearer ${cookie}`
+                },
             })
                 .then(response => {
                     if (!response.ok) {
@@ -39,14 +47,23 @@
             console.error('No file selected or course not selected.');
             showPopUp(failPopup);
         }
-    });
+       function showPopUp(popup) {
+           popup.style.display = "block";
+           setTimeout(function() {
+               successPopup.style.display = "none";
+           }, 4000); // Hide popup after 3 seconds
+       }
+}
 
-    function showPopUp(popup) {
-        popup.style.display = "block";
-        setTimeout(function() {
-            successPopup.style.display = "none";
-        }, 4000); // Hide popup after 3 seconds
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1);
+        }
     }
-    
-    
-});
+    return null;
+}
+

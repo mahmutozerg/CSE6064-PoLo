@@ -23,7 +23,7 @@ public interface IUserService:IGenericService<AppUser>
     
     Task<CustomResponseDto<AppUser>> GetUserWithCoursesByIdAsync(string id);
 
-    
+    Task<CustomResponseDto<AppUser>> GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(string userId, string courseId);
 
 
 }

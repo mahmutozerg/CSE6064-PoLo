@@ -8,9 +8,9 @@ namespace PoLoAnalysisBusiness.Core.Services;
 public interface IResultService:IGenericService<Result>
 {
     public void SetFilePath(string filePath, string id);
-    public void AnalyzeExcel();
+    public Task AnalyzeExcel();
 
-    public Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path);
+    public Task<CustomResponseDto<Result?>> AddAsync(string fileId, string path,string createdBy);
 
     public Task<FileStreamResult> GetFileStreamAsync(string fileId);
 }

@@ -44,7 +44,6 @@ public class LoginController : Controller
             SameSite = SameSiteMode.Strict,
             Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
             Secure = true,
-            HttpOnly = true,
             
         };
         var refreshCookieOptions = new CookieOptions()
@@ -52,7 +51,7 @@ public class LoginController : Controller
             SameSite = SameSiteMode.Strict,
             Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
             Secure = true,
-            HttpOnly = true,
+            HttpOnly = true
         };
         Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
         Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);

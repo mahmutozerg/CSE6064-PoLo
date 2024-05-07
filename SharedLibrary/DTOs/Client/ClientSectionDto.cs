@@ -1,4 +1,4 @@
-﻿namespace PoLoAnalysisAuthServer.Core.DTOs;
+﻿namespace SharedLibrary.DTOs.Client;
 
 public class ClientSectionDto
 {

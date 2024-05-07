@@ -30,7 +30,6 @@ public class RefreshTokenMiddleware
                 SameSite = SameSiteMode.Strict,
                 Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
                 Secure = true,
-                HttpOnly = true,
             
             };
             var refreshCookieOptions = new CookieOptions()
@@ -38,7 +37,7 @@ public class RefreshTokenMiddleware
                 SameSite = SameSiteMode.Strict,
                 Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
                 Secure = true,
-                HttpOnly = true,
+                HttpOnly = true
             };
             context.Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
             context.Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);

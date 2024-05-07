@@ -23,10 +23,12 @@ public class HomeController : Controller
     }
 
     
-    public  IActionResult Index()
+    
+    public async Task<IActionResult> Index()
     {
-
-        return View();
+        var userToken = Request.Cookies[ApiConstants.SessionCookieName];
+        var user = await UserCourseServices.GetUserCourses(userToken);
+        return View(user);
     }
     
 

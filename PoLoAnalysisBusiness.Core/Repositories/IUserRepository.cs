@@ -15,4 +15,5 @@ public interface IUserRepository:IGenericRepository<AppUser>
 
     Task<AppUser?> GetUserWithCoursesById(string id);
 
+    Task<AppUser?> GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(string userId, string courseId);
 }

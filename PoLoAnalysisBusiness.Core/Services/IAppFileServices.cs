@@ -8,7 +8,7 @@ namespace PoLoAnalysisBusiness.Core.Services;
 
 public interface IAppFileServices:IGenericService<File>
 {
-     Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model , string courseName);
+     Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model , string courseName,string createdBy);
      bool IsExcelFile(IFormFile file);
      
      Task<FileStreamResult> GetFileStreamAsync(string filePath);

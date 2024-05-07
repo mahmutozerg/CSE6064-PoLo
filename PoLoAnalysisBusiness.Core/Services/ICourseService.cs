@@ -10,7 +10,7 @@ public interface ICourseService:IGenericService<Course>
     Task<CustomResponseListDataDto<Course>> GetActiveCoursesAsync(string page);
     Task<CustomResponseListDataDto<Course>> GetAllCoursesAsync(string page);
 
-    Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesByIdASync(string id);
-
+    Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesWithResultFilesByIdAsync(string id);
+    
 
 }

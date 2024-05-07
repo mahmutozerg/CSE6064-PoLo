@@ -6,7 +6,7 @@ public interface ICourseRepository:IGenericRepository<Course>
 {
       Task<List<Course>> GetActiveCoursesAsync(int page);
       Task<List<Course>> GetAllCoursesAsync(int page);
-      Task<Course?> GetCourseWithUploadedFilesByIdASync(string id);
+      Task<Course?> GetCourseWithUploadedFilesWithResultFilesByIdAsync(string id);
 
 
 }

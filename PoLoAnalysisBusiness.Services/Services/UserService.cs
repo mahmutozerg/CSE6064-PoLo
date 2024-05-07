@@ -173,4 +173,12 @@ public class UserService:GenericService<AppUser>,IUserService
         return CustomResponseDto<AppUser>.Success(user,
             StatusCodes.Ok);
     }
+
+    public async Task<CustomResponseDto<AppUser>> GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(string userId, string courseId)
+    {
+        var user = await _userRepository.GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync( userId,  courseId);
+        ArgumentNullException.ThrowIfNull(user);
+        
+        return CustomResponseDto<AppUser>.Success(user,StatusCodes.Ok);
+    }
 }

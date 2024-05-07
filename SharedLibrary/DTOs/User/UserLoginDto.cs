@@ -4,7 +4,6 @@ namespace SharedLibrary.DTOs.User;
 
 public class UserLoginDto
 {
-    [EmailAddress(ErrorMessage = "Invalid email format")]
     [Required(ErrorMessage = "Email field is required")]
     public string Email { get; set; } = "empty@testapp.com";
 

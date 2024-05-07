@@ -78,8 +78,6 @@ builder.Services.AddAuthentication(opt =>
 var clientList = clients.Select(client => client.Id).ToList();
 
 
-
-
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AuthServerPolicy", policy =>

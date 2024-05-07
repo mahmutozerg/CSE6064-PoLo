@@ -40,11 +40,13 @@ public class CourseService:GenericService<Course>,ICourseService
 
     }
 
-    public async Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesByIdASync(string id)
+    public async Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesWithResultFilesByIdAsync(string id)
     {
-        var course = await _courseRepository.GetCourseWithUploadedFilesByIdASync(id);
+        var course = await _courseRepository.GetCourseWithUploadedFilesWithResultFilesByIdAsync(id);
 
         ArgumentNullException.ThrowIfNull(course);
         return CustomResponseDto<Course>.Success(course, StatusCodes.Ok);
     }
+
+
 }

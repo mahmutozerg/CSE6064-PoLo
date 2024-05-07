@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Services;
 
 
 namespace PoLoAnalysisBusinessAPI.Controllers;
-
+[Authorize]
 public class ExcelFileController:CustomControllerBase
 {
     private readonly IResultService _resultService;
@@ -20,17 +22,17 @@ public class ExcelFileController:CustomControllerBase
     [HttpPost]
     public async Task<IActionResult> UploadExcel([FromForm]IFormFile file,[FromForm]string courseId)
     {
-        // TODO Kullanıcı dosya yüklediyse override etmeyi yaz
+        var userId = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         var course = await _courseService.GetByIdAsync(courseId);
         
-        var result =await _appFileServices.AddFileAsync(file,courseId);
+        var result =await _appFileServices.AddFileAsync(file,courseId,userId);
         
         var fileResult = await _appFileServices.GetByIdAsync(result.Data.Id);
         
         _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
         _resultService.AnalyzeExcel();
-        var res = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}.xlsx");
+        var res = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}.xlsx",userId);
         return CreateActionResult(res);
     }
     
@@ -40,4 +42,7 @@ public class ExcelFileController:CustomControllerBase
     {
         return await _appFileServices.GetFileStreamAsync(id);
     }
+
+    
+ 
 }
