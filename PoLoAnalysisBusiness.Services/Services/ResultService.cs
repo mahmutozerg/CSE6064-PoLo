@@ -596,7 +596,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     private void AddPoImageToTheResultWord(string worksheetName)
     {
-        var path = $"{ResultPath}\\result.docx";
+        var path = $"{ResultPath}\\{worksheetName}_result.docx";
   
         var imagePoPath = Path.Combine(ResultPath, worksheetName+"_po.png");
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
@@ -617,7 +617,7 @@ public class ResultService:GenericService<Result>,IResultService
 
     private void AddLoImageToTheResultWord(string worksheetName)
     {
-        var path = $"{ResultPath}\\result.docx";
+        var path = $"{ResultPath}\\{worksheetName}_result.docx";
   
         var document = !File.Exists(path) ? DocX.Create(path) : DocX.Load(path);
         
