@@ -24,16 +24,21 @@ public class AdminCourseController:CustomControllerBase
 
 
     [HttpGet]
+    public async Task<IActionResult> GetActiveCoursesByPageByName(string name,string page)
+    {
+    
+        return CreateActionResult(await _courseService.GetActiveCoursesByNameByPageAsync(name,page));
+    }
+    [HttpGet]
     public async Task<IActionResult> GetActiveCoursesByPage(string page)
     {
     
-        return CreateActionResult(await _courseService.GetActiveCoursesAsync(page));
+        return CreateActionResult(await _courseService.GetActiveCoursesByPageAsync(page));
     }
-    
     [HttpGet]
     public async Task<IActionResult> GetAllCoursesByPage(string page)
     {
-        return CreateActionResult(await _courseService.GetAllCoursesAsync(page));
+        return CreateActionResult(await _courseService.GetAllCoursesByPageAsync(page));
     }
     
     [HttpPut]

@@ -17,8 +17,8 @@ var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppToken
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = "APIConstants.SessionCookieName";
-    options.DefaultSignInScheme = "APIConstants.SessionCookieName";
+    options.DefaultAuthenticateScheme = ApiConstants.SessionCookieName;
+    options.DefaultSignInScheme = ApiConstants.SessionCookieName;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(opt =>
 {
@@ -77,7 +77,7 @@ builder.Services.AddAuthentication(options =>
 
 
 });
-builder.Services.AddAuthorization();
+
 
 var app = builder.Build();
 
@@ -93,8 +93,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseRefreshTokenMiddleware();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -14,7 +14,7 @@ public interface IUserService:IGenericService<User>
     Task<Response<NoDataDto>> AddRoleToUser(string userEmail, string roleName);
 
     Task<CustomResponseListDataDto<User>> GetAllUsersByPage(string page);
-    Task SendDeleteReqToBusinessAPI(User user);
+    Task SendDeleteReqToBusinessApi(User user);
 
 
 

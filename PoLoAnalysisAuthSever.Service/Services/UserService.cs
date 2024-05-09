@@ -125,13 +125,13 @@ public class UserService : GenericService<User>, IUserService
         _repository.Remove(user);
         await _unitOfWork.CommitAsync();
 
-        await SendDeleteReqToBusinessAPI(user);
+        await SendDeleteReqToBusinessApi(user);
         return Response<NoDataDto>.Success(200);
     }
 
     public async Task<Response<NoDataDto>> AddRoleToUser(string userEmail, string roleName)
     {
-        var user = await _userManager.FindByEmailAsync(userEmail);
+        var user = await _userManager.FindByNameAsync(userEmail.Split("@").First());
 
         if (user is null)
             return Response<NoDataDto>.Fail(ResponseMessages.NotFound, StatusCodes.NotFound, true);
@@ -160,7 +160,7 @@ public class UserService : GenericService<User>, IUserService
         return CustomResponseListDataDto<User>.Success(users, StatusCodes.Ok);
     }
 
-    public async Task SendDeleteReqToBusinessAPI(User user)
+    public async Task SendDeleteReqToBusinessApi(User user)
     {
         using var client = new HttpClient();
         const string url = ApiConstants.BusinessApiIp + "/api/User/DeleteById";

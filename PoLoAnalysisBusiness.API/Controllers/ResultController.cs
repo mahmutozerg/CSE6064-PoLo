@@ -1,8 +1,10 @@
-﻿using System.Security.Claims;
+﻿using System.IO.Compression;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Services;
 using SharedLibrary.DTOs;
+using SharedLibrary.DTOs.FileResult;
 
 namespace PoLoAnalysisBusinessAPI.Controllers;
 
@@ -22,14 +24,7 @@ public class ResultController:CustomControllerBase
     }
 
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetFileByExcelId(string id)
-    {
-        var file = await _appFileServices.GetFileWithResultAsync(id);
-        var fileStream = await _resultService.GetFileStreamAsync(file.Result.Id);
-        
-        return fileStream;
-    }
+
     
     [HttpGet("{id}")]
     public async Task<IActionResult> GetFileByCourseId(string id)
@@ -38,8 +33,15 @@ public class ResultController:CustomControllerBase
 
         var userWithCoursesAndFiles = (await _userService.GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(userId, id)).Data;
 
-        return Ok();
+        var test = await (_resultService
+            .GetFileStreamAsync(userWithCoursesAndFiles
+                .Courses
+                .SingleOrDefault(c => c.Id == id)
+                .File
+                .First()
+                .Result.Id));
 
+        return File(test, "application/zip", "test.zip");
 
     }
     [HttpPost]
@@ -50,7 +52,7 @@ public class ResultController:CustomControllerBase
         var fileResult = await _appFileServices.GetByIdAsync(resultDto.ExcelFileId);
         _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
         _resultService.AnalyzeExcel();
-        var result = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}.xlsx",userId);
+        var result = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}",userId);
         
         return CreateActionResult(result);
     }

@@ -47,7 +47,7 @@ public class AdminController:CustomControllerBase
             return CreateActionResult(CustomResponseNoDataDto.Fail(StatusCodes.NotFound,
                 ResponseMessages.UserNotFound));
         
-        await _userService.SendDeleteReqToBusinessAPI(user.Data);
+        await _userService.SendDeleteReqToBusinessApi(user.Data);
         return CreateActionResult(CustomResponseNoDataDto.Success(StatusCodes.Ok));
 
 

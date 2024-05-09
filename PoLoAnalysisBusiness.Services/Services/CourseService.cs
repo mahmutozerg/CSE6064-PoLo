@@ -21,23 +21,35 @@ public class CourseService:GenericService<Course>,ICourseService
     }
 
 
-    public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesAsync(string page)
+    public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesByNameByPageAsync(string name ,string page)
     {
         var res = int.TryParse(page, out var intPage);
+        
         if(res)
-            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCoursesAsync(intPage),StatusCodes.Ok);
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCoursesByNameByPageAsync(name,intPage),StatusCodes.Ok);
 
         throw new Exception(ResponseMessages.OutOfIndex);
     }
 
-    public async Task<CustomResponseListDataDto<Course>> GetAllCoursesAsync(string page)
+
+
+    public async Task<CustomResponseListDataDto<Course>> GetAllCoursesByPageAsync(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        
+        if(res)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCoursesByPageAsync(intPage),StatusCodes.Ok);
+        throw new Exception(ResponseMessages.OutOfIndex);
+
+    }
+
+    public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesByPageAsync(string page)
     {
         var res = int.TryParse(page, out var intPage);
 
         if(res)
-            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCoursesAsync(intPage),StatusCodes.Ok);
-        throw new Exception(ResponseMessages.OutOfIndex);
-
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCoursesByPageAsync(intPage),StatusCodes.Ok);
+        throw new Exception(ResponseMessages.OutOfIndex);    
     }
 
     public async Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesWithResultFilesByIdAsync(string id)

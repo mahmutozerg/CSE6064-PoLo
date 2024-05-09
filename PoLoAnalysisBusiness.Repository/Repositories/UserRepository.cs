@@ -83,6 +83,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .Where(u => !u.IsDeleted && u.Id == userId)
             .Include(u => u.Courses.Where(c => !c.IsDeleted && c.Id == courseId))
             .ThenInclude(course => course.File.Where(f => !f.IsDeleted))
+            .ThenInclude(file => file.Result)
             .SingleOrDefaultAsync();
     }
 }

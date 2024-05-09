@@ -13,17 +13,26 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         _courses = context.Set<Course>();
     }
 
-    public Task<List<Course>> GetActiveCoursesAsync(int page)
+    public Task<List<Course>> GetActiveCoursesByNameByPageAsync(string name ,int page)
     {
         return _courses
-            .Where(c=> !c.IsDeleted)
+            .Where(c=> !c.IsDeleted && c.Id.ToLowerInvariant().Contains(name))
             .Skip(12*page)
             .Take(12)
             .AsNoTracking()
             .ToListAsync();
     }
 
-    public Task<List<Course>> GetAllCoursesAsync(int page)
+    public Task<List<Course>> GetActiveCoursesByPageAsync(int page)
+    {
+        return _courses
+            .Where(c=> !c.IsDeleted )
+            .Skip(12*page)
+            .Take(12)
+            .AsNoTracking()
+            .ToListAsync();
+    }
+    public Task<List<Course>> GetAllCoursesByPageAsync(int page)
     {
         return _courses
             .Skip(12*page)

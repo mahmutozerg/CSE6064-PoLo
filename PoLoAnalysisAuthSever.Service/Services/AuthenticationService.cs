@@ -145,7 +145,7 @@ public class AuthenticationService:IAuthenticationService
 
     public async Task<UserRefreshToken> GetUserRefreshTokenByEmail(string userEmail)
     {
-        var user =await _userManager.FindByEmailAsync(userEmail);
+        var user =await _userManager.FindByNameAsync(userEmail.Split("@").First());
         if (user is null)
             throw new Exception(ResponseMessages.NotFound);
 

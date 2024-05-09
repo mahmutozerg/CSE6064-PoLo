@@ -1,5 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.IO.Compression;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
@@ -7,6 +9,7 @@ using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using SharedLibrary;
+using SharedLibrary.DTOs.FileResult;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.Models.business;
 using Spire.Xls;
@@ -19,6 +22,7 @@ public class ResultService:GenericService<Result>,IResultService
 {
     private readonly string _resultFilename = "result.xlsx";
     private const string _templateFolder = "..\\TemplateFiles";
+    private const string _resultFolder = "..\\ResultFiles";
     private readonly IResultRepository _resultRepository;
     private readonly IUnitOfWork _unitOfWork;
     private ExcelWorkbook _workbook;
@@ -211,26 +215,58 @@ public class ResultService:GenericService<Result>,IResultService
 
  
 
-    public async Task<FileStreamResult> GetFileStreamAsync(string fileId)
+    public async Task<byte[]> GetFileStreamAsync(string fileId)
     {
-        var entity = await _resultRepository.GetById(fileId); 
-            
+        var entity = await _resultRepository.GetById(fileId);
+    
         if (entity == null)
-            throw new Exception(ResponseMessages.NotFound); 
+            throw new Exception(ResponseMessages.NotFound);
 
-        var filePath = entity.Path+$"//result.docx"; 
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), entity.Path);
 
-        if (!System.IO.File.Exists(filePath))
+        if (!Directory.Exists(filePath))
             throw new Exception(ResponseMessages.BadRecords);
 
-        var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-        const string contentType = "application/octet-stream"; 
-
-
-        return new FileStreamResult(fileStream, contentType)
+        using var memoryStream = new MemoryStream();
+        using (var archive = new ZipArchive(memoryStream, ZipArchiveMode.Create, true))
         {
-            FileDownloadName = Path.GetFileName(entity.Id+".docx")
-        };    
+            try
+            {
+                foreach (var path in Directory.GetFiles(filePath, "*.docx"))
+                {
+                    var entry = archive.CreateEntry(Path.GetFileName(path));
+                    await using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+
+                    await using var entryStream = entry.Open();
+                    await fileStream.CopyToAsync(entryStream);
+                }
+
+                var excelPath = Path.Combine(filePath, "result.xlsx");
+                var excelEntry = archive.CreateEntry("result.xlsx");
+                await using var fileStreamE = new FileStream(excelPath, FileMode.Open, FileAccess.Read);
+                await using (var entryStreamE = excelEntry.Open())
+                {
+                    await fileStreamE.CopyToAsync(entryStreamE);
+                }
+            
+                foreach (var path in Directory.GetFiles(filePath, "*.png"))
+                {
+                    var entry = archive.CreateEntry(Path.GetFileName(path));
+                    await using var pngFileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+
+                    await using var entryStream = entry.Open();
+                    await pngFileStream.CopyToAsync(entryStream);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw; 
+            }
+        }
+
+        memoryStream.Seek(0, SeekOrigin.Begin);
+        return memoryStream.ToArray();
     }
 
     public void SetFilePath(string filePath,string id)
@@ -269,7 +305,7 @@ public class ResultService:GenericService<Result>,IResultService
         {
             Id = Guid.NewGuid().ToString(),
             FileId = fileId,
-            Path = path
+            Path = _resultFolder+@$"\{fileId}" 
         };
         return await AddAsync(entity, createdBy);
         
