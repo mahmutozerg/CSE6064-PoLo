@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.Extensions;
+﻿using System.Web;
+using Microsoft.AspNetCore.Http.Extensions;
 using PoLoAnalysisMVC.Services;
 using SharedLibrary;
 using SharedLibrary.DTOs.Tokens;
@@ -21,26 +22,34 @@ public class RefreshTokenMiddleware
         var requestPath = context.Request.Path;
 
 
-        if (!string.IsNullOrEmpty(refreshToken) && string.IsNullOrEmpty(accessToken) && (!requestPath.StartsWithSegments("/login") || context.Request.Method == "GET"))
+        if (!string.IsNullOrEmpty(refreshToken) && string.IsNullOrEmpty(accessToken) && requestPath != "/Login" && context.Request.Method == "GET")
         {
             var tokenDto = await CatsUserServices.CreateTokenByRefreshToken(refreshToken);
-            if(string.IsNullOrEmpty(tokenDto.AccessToken))
-                await _next(context);
-            var sessionCookieOptions = new CookieOptions()
+            if (tokenDto is not null)
             {
-                SameSite = SameSiteMode.Strict,
-                Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
-                Secure = true,
+                var sessionCookieOptions = new CookieOptions()
+                {
+                    SameSite = SameSiteMode.Strict,
+                    Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
+                    Secure = true,
+                    Path = "/"
             
-            };
-            var refreshCookieOptions = new CookieOptions()
-            {
-                SameSite = SameSiteMode.Strict,
-                Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
-                Secure = true,
-            };
-            context.Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
-            context.Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);
+                };
+                var refreshCookieOptions = new CookieOptions()
+                {
+                    SameSite = SameSiteMode.Strict,
+                    Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
+                    Secure = true,
+                    Path = "/"
+
+                };
+                
+                context.Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
+                context.Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);
+            }
+         
+            
+
         }
 
         await _next(context);

@@ -1,10 +1,12 @@
 using System.Net;
 using System.Security.Claims;
+using System.Web;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisAuthServer.Core.DTOs;
 using PoLoAnalysisAuthServer.Core.DTOs.Role;
 using SharedLibrary.DTOs.Client;
+using SharedLibrary.DTOs.Tokens;
 using SharedLibrary.DTOs.User;
 
 namespace PoLoAnalysisAuthServer.API.Controllers;
@@ -46,10 +48,10 @@ public class AuthController:CustomControllerBase
 
     [HttpPost]
     [Authorize(Policy = "ClientsWithAdminByPassPolicy")]
-    public async Task<IActionResult> CreateTokenByRefreshToken(string refreshToken)
+    public async Task<IActionResult> CreateTokenByRefreshToken(CreateTokenByRefreshTokenDto dto)
     {
 
-        var result = await _authenticationService.CreateTokenByRefreshToken(refreshToken);
+        var result = await _authenticationService.CreateTokenByRefreshToken(dto.RefreshToken);
         return CreateActionResult(result);
     }
     

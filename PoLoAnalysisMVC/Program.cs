@@ -67,6 +67,7 @@ builder.Services.AddAuthentication(options =>
     options.LoginPath = "/login";
     options.AccessDeniedPath = "/error";
     
+    
 }).AddCookie(ApiConstants.RefreshCookieName, options =>
 {
     options.Cookie.Name = ApiConstants.SessionCookieName;

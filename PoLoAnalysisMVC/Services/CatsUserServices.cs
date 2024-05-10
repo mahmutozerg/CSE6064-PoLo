@@ -71,10 +71,14 @@ public static class CatsUserServices
 
     public static async Task<TokenDto?> CreateTokenByRefreshToken(string token)
     {
-
+        var dto = new CreateTokenByRefreshTokenDto()
+        {
+            RefreshToken = token
+        };
+        
         using var client = new HttpClient();
-        var encodedToken = WebUtility.UrlEncode(token);
 
+        
         if (string.IsNullOrEmpty(ClientToken.AccesToken) || DateTime.Compare(ClientToken.AccesTokenExpiration,DateTime.Now)<=0)
         {
             await CreateTokenByClient( new ClientLoginDto()
@@ -84,11 +88,13 @@ public static class CatsUserServices
             });
         }
 
-        
+        var jsonData = JsonConvert.SerializeObject(dto);
+        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",ClientToken.AccesToken);
 
 
-        var response = await client.PostAsync(CreateTokenByRefreshTokenUrl+$"?refreshToken={encodedToken}",null);
+        var response = await client.PostAsync(CreateTokenByRefreshTokenUrl,content);
 
         if (!response.IsSuccessStatusCode) 
             return null;

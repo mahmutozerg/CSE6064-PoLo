@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisMVC.Services;
 using SharedLibrary.DTOs.User;
@@ -33,7 +34,7 @@ public class LoginController : Controller
         var tokenDto = await CatsUserServices.LoginUser(loginDto);
 
 
-        if (string.IsNullOrEmpty(tokenDto.AccessToken))
+        if (tokenDto is null)
         {
             ModelState.AddModelError("LoginError", "Please Check your credentials");
             return View("Index", loginDto);
@@ -45,6 +46,7 @@ public class LoginController : Controller
             SameSite = SameSiteMode.Strict,
             Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
             Secure = true,
+            Path = "/"
             
         };
         var refreshCookieOptions = new CookieOptions()
@@ -52,6 +54,8 @@ public class LoginController : Controller
             SameSite = SameSiteMode.Strict,
             Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
             Secure = true,
+            Path = "/"
+
         };
         Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
         Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);
@@ -60,9 +64,9 @@ public class LoginController : Controller
     }
 
     [HttpPost]
-    public async Task<ActionResult> RefreshToken(string refreshToken)
+    public async Task<ActionResult> RefreshToken([FromBody]CreateTokenByRefreshTokenDto dto)
     {
-        var tokenDto =await CatsUserServices.CreateTokenByRefreshToken(refreshToken);
+        var tokenDto =await CatsUserServices.CreateTokenByRefreshToken(dto.RefreshToken);
 
         if (tokenDto is null)
            return RedirectToAction("LogOut", "LogOut");

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="~/PoLoAnalysisMVC.styles.css" asp-append-version="true" />
     <link rel="icon" type="image/x-icon" href="\Images\favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="~/js/ClientSideRToken.js?v1"></script>
+    <script src="~/js/ClientSideRefreshToken.js?v2" defer></script>
 
 
 </head>
@@ -24,7 +25,10 @@
     </header>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&equiv; </a>
-        <p>Hello,<br>Name Surname</p>
+        @{
+            var name = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Name).Value;
+        }
+        <p>Hello,@name<br></p>
         <a href="@Url.Action("Import","Home")">Import Excel File</a>
         <a href="#">Reports In Progress</a>
         <a href="@Url.Action("Index","Home")">Export Word File</a>
