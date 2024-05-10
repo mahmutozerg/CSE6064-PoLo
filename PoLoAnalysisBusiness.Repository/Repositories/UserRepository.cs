@@ -86,4 +86,16 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .ThenInclude(file => file.Result)
             .SingleOrDefaultAsync();
     }
+
+    public async Task<AppUser?> GetResultReadyCourses(string userId)
+    {
+        return await _users
+            .Where(u => !u.IsDeleted && u.Id == userId)
+            .Include(u => u.Courses.Where(c => !c.IsDeleted && c.File.Any(f => !f.IsDeleted)))
+            .ThenInclude(course => course.File.Where(f => !f.IsDeleted))
+            .ThenInclude(file => file.Result)
+            .AsNoTracking()
+            .SingleOrDefaultAsync();
+
+    }
 }

@@ -232,10 +232,10 @@ public class ResultService:GenericService<Result>,IResultService
         {
             try
             {
-                foreach (var path in Directory.GetFiles(filePath, "*.docx"))
+                foreach (var docxPath in Directory.GetFiles(filePath, "*.docx"))
                 {
-                    var entry = archive.CreateEntry(Path.GetFileName(path));
-                    await using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                    var entry = archive.CreateEntry(Path.GetFileName(docxPath));
+                    await using var fileStream = new FileStream(docxPath, FileMode.Open, FileAccess.Read);
 
                     await using var entryStream = entry.Open();
                     await fileStream.CopyToAsync(entryStream);
@@ -243,10 +243,10 @@ public class ResultService:GenericService<Result>,IResultService
 
                 var excelPath = Path.Combine(filePath, "result.xlsx");
                 var excelEntry = archive.CreateEntry("result.xlsx");
-                await using var fileStreamE = new FileStream(excelPath, FileMode.Open, FileAccess.Read);
-                await using (var entryStreamE = excelEntry.Open())
+                await using var excelFileStream = new FileStream(excelPath, FileMode.Open, FileAccess.Read);
+                await using (var excelEntryStream = excelEntry.Open())
                 {
-                    await fileStreamE.CopyToAsync(entryStreamE);
+                    await excelFileStream.CopyToAsync(excelEntryStream);
                 }
             
                 foreach (var path in Directory.GetFiles(filePath, "*.png"))
@@ -433,27 +433,37 @@ public class ResultService:GenericService<Result>,IResultService
             for (var col = 1; col <= colCount; col++)
             {
                 var cellValue = worksheet.Cells[row, col].Value;
+                
                 if (cellValue == null ) 
                     continue;
                 
                 var cellString = cellValue.ToString().ToLower();
                 
-                if (cellString.Contains(LoSearchTerm.ToLower()) && _loPos.Count == 0)
+                if (cellString.Contains(LoSearchTerm.ToLower()) )
                 {
-                    _loPos["row"] = (row).ToString();
-                    _loPos["col"] = (col).ToString();
-                    _loPos["addr"] = ExcelCellBase.GetAddress(row, col);
-                } 
-                if (cellString.Contains(PoSearchTerm.ToLower()) && _poPos.Count == 0)
+                    if (_loPos.Count == 0)
+                    {
+                        _loPos["row"] = (row).ToString();
+                        _loPos["col"] = (col).ToString();
+                        _loPos["addr"] = ExcelCellBase.GetAddress(row, col);
+                    }else
+                        _loPos["end"] = (row).ToString();
+
+
+                }
+
+                if (!cellString.Contains(PoSearchTerm.ToLower())) continue;
+                
+                if (_poPos.Count == 0)
                 {
                     _poPos["row"] = (row).ToString();
                     _poPos["col"] = (col).ToString();
                     _poPos["addr"] = ExcelCellBase.GetAddress(row, col);
-                }
+                }else
+                    _poPos["end"] =(row).ToString();
 
-                if (_poPos.Count != 0 && _loPos.Count != 0)
-                    return;
-                
+
+
             }
         }
 
@@ -493,20 +503,23 @@ public class ResultService:GenericService<Result>,IResultService
         
         var colStart = int.Parse(_poPos["col"]);
         var rowStart = int.Parse(_poPos["row"]) + 1;
-        var rowEnd = worksheet.Dimension.Rows;
+        var rowEnd = int.Parse(_poPos["end"]);
         
-        for (var row = rowStart; row <= rowEnd; row++)
+        for (var row = rowStart; row <rowEnd; row++)
         {
             var poCellValue = worksheet.Cells[row, colStart].Value;
             var questionCellValue = worksheet.Cells[row, colStart+1].Value;
             var poMatchCellValue = worksheet.Cells[row, colStart+2].Value;
-            if (poCellValue is null || questionCellValue is null || poMatchCellValue is null)
-                continue;
+
+            if (poCellValue is null || questionCellValue is null ||
+                poMatchCellValue is null )
+                throw new Exception("Please check PO table ");
 
             var poCellString = poCellValue.ToString().ToLower();
             var questionCellString = questionCellValue.ToString().ToLower();
             var poCount = poCellString.Split("-").Last();
 
+            
             if (questionCellString.Contains(PoloAllKeyword.ToLower()))
                 _poQuestionMatrix[poCount] = [PoloAllKeyword];
             else
@@ -537,15 +550,17 @@ public class ResultService:GenericService<Result>,IResultService
         
         var colStart = int.Parse(_loPos["col"]);
         var rowStart = int.Parse(_loPos["row"]) + 1;
-        var rowEnd = worksheet.Dimension.Rows;
+        var rowEnd = int.Parse(_loPos["end"]);
         
         for (var row = rowStart; row <= rowEnd; row++)
         {
             var loCellValue = worksheet.Cells[row, colStart].Value;
             var questionCellValue = worksheet.Cells[row, colStart+1].Value;
             var loMatchCellValue = worksheet.Cells[row, colStart+2].Value;
+            
+            
             if (loCellValue is null || questionCellValue is null || loMatchCellValue is null)
-                break;
+                throw new Exception("Please check LO table ");
 
             var loCellString = loCellValue.ToString().ToLower();
             var questionCellString = questionCellValue.ToString().ToLower();

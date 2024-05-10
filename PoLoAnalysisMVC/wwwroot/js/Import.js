@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const courseId = encodeURIComponent(courseDropdown.value);
         const cookie = getCookie("Session")
 
+       
         if (file && courseId !== "") {
             const formData = new FormData();
             formData.append('file', file);
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 .then(data => {
                     console.log('File uploaded successfully:', data);
-                    showPopUp(successPopup); 
+                    showPopUp(successPopup,"File Uploaded Successfully"); 
                 })
                 .catch(error => {
                     console.error('Error uploading file:', error);
@@ -45,13 +46,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
         } else {
             console.error('No file selected or course not selected.');
-            showPopUp(failPopup);
+            showPopUp(failPopup,"No file selected or course not selected.");
         }
-       function showPopUp(popup) {
+       function showPopUp(popup,text) {
+            var p = popup.getElementById(popup.id+text)
+           p.textContent = text;
            popup.style.display = "block";
            setTimeout(function() {
-               successPopup.style.display = "none";
-           }, 4000); // Hide popup after 3 seconds
+               popup.style.display = "none";
+           }, 4000); 
        }
 }
 

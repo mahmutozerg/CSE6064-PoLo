@@ -181,4 +181,13 @@ public class UserService:GenericService<AppUser>,IUserService
         
         return CustomResponseDto<AppUser>.Success(user,StatusCodes.Ok);
     }
+
+    public async Task<CustomResponseDto<AppUser>> GetReadyResultCoursesAsync(string userId)
+    {
+        var user = await _userRepository.GetResultReadyCourses(userId);
+        
+        ArgumentNullException.ThrowIfNull(user);
+
+        return CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
+    }
 }

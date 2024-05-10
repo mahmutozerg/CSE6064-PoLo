@@ -41,4 +41,12 @@ public class UserController:CustomControllerBase
         return CreateActionResult(await _userService.GetUserWithCoursesByIdAsync(userId));
     }
     
+    [HttpGet]
+    public async Task<IActionResult> GetUserDownloadableCourses()
+    {
+        var userId = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)!.Value;
+ 
+        return CreateActionResult(await _userService.GetReadyResultCoursesAsync(userId));
+    }
+    
 }

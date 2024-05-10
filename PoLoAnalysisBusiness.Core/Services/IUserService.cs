@@ -25,5 +25,7 @@ public interface IUserService:IGenericService<AppUser>
 
     Task<CustomResponseDto<AppUser>> GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(string userId, string courseId);
 
+    Task<CustomResponseDto<AppUser>> GetReadyResultCoursesAsync(string userId);
+
 
 }

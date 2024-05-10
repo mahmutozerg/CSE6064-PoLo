@@ -27,7 +27,8 @@ public class HomeController : Controller
     public async Task<IActionResult> Index()
     {
         var userToken = Request.Cookies[ApiConstants.SessionCookieName];
-        var user = await UserCourseServices.GetUserCourses(userToken);
+        
+        var user = await UserCourseServices.GetUserDownloadableCourses(userToken);
         return View(user);
     }
     
@@ -35,7 +36,7 @@ public class HomeController : Controller
     public async Task<IActionResult> Import()
     {
         var userToken = Request.Cookies[ApiConstants.SessionCookieName];
-        var user = await UserCourseServices.GetUserCourses(userToken);
+        var user = await UserCourseServices.GetUserWithCourses(userToken);
 
         return View(user);
     }

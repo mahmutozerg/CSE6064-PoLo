@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
     <link rel="stylesheet" href="~/css/import.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.48.0/apexcharts.min.js" ></script>
-    <script src="/js/Export.js?v1"></script>
+    <script src="/js/Export.js?v3"></script>
 </head>
 
 <body>
@@ -25,16 +25,30 @@
             Program learning outcomes are defined in terms of the knowledge, skills, and abilities that students have attained as a result of their involvement in a particular program, degree, certificate or series of learning activities leading to mastery.
         </div>
         <div class="word-export">
-            <button id="export-button">Get Word File here!</button>
             <form class="export" enctype="multipart/form-data">
                 <select id="course-dropdown">
-                    <option value="">Select a course</option>
+                    @if (Model.Courses.Count > 0)
+                    {
+                        <option value="">Select a course</option>
+
+                    }
+                    else
+                    {
+
+                        <option value="">No result files here come later</option>
+
+                    }
                     @foreach (var course in Model.Courses)
                     {
                         <option value="@course.Id"> @course.Id</option>
                     }
                 </select>
             </form>
+            <br/>
+            <br/>
+            <br/>
+            <button id="export-button">Get Word File here!</button>
+
         </div>
         
         </div>

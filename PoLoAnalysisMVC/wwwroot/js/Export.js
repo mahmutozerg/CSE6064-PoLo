@@ -21,7 +21,7 @@ async function getResultFile() {
         if (!response.ok) {
             throw new Error(`Request failed with status ${response.status}`);
         }
-
+        console.log(response)
         const blob = await response.blob();
 
         const blobUrl = URL.createObjectURL(blob);
@@ -30,7 +30,7 @@ async function getResultFile() {
 
         link.href = blobUrl;
 
-        link.download = 'result.zip';
+        link.download = `${courseId}_result.zip`;
 
         document.body.appendChild(link);
 

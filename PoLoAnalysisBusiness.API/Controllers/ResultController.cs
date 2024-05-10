@@ -1,4 +1,5 @@
 ﻿using System.IO.Compression;
+using System.Net;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +34,7 @@ public class ResultController:CustomControllerBase
 
         var userWithCoursesAndFiles = (await _userService.GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(userId, id)).Data;
 
-        var test = await (_resultService
+        var zipFileByteArray = await (_resultService
             .GetFileStreamAsync(userWithCoursesAndFiles
                 .Courses
                 .SingleOrDefault(c => c.Id == id)
@@ -41,7 +42,7 @@ public class ResultController:CustomControllerBase
                 .First()
                 .Result.Id));
 
-        return File(test, "application/zip", "test.zip");
+        return File(zipFileByteArray,"application/zip","archive.zip");
 
     }
     [HttpPost]

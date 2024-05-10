@@ -58,4 +58,30 @@ public class LoginController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+
+    [HttpPost]
+    
+    public async Task<ActionResult> RefreshToken(string refreshToken)
+    {
+        var tokenDto =await CatsUserServices.CreateTokenByRefreshToken(refreshToken);
+        var sessionCookieOptions = new CookieOptions()
+        {
+            SameSite = SameSiteMode.Strict,
+            Expires = new DateTimeOffset(tokenDto.AccessTokenExpiration),
+            Secure = true,
+            
+        };
+        var refreshCookieOptions = new CookieOptions()
+        {
+            SameSite = SameSiteMode.Strict,
+            Expires = new DateTimeOffset(tokenDto.RefreshTokenExpiration),
+            Secure = true,
+            HttpOnly = true
+        };
+        Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
+        Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);
+
+        return Content("ok");
+    }
+
 }
