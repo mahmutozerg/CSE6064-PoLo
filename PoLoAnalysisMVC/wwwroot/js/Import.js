@@ -15,10 +15,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const file = uploadInput.files[0];
         const courseId = encodeURIComponent(courseDropdown.value);
-        const cookie = getCookie("Session")
+        var accessToken = getCookie("Session")
+        var refreshToken = getCookie("Refresh")
 
-       
-        if (file && courseId !== "") {
+        if (accessToken === '' && refreshToken ==='')
+            window.location.href = "logout"; 
+
+        if (accessToken ==='' && refreshToken !=='')
+        {
+            await refreshAccessToken();
+            accessToken = getCookie("Session")
+        }
+
+
+       if (file && courseId !== "") {
             const formData = new FormData();
             formData.append('file', file);
             formData.append('courseId', courseId);
@@ -56,17 +66,5 @@ document.addEventListener("DOMContentLoaded", function() {
                popup.style.display = "none";
            }, 4000); 
        }
-}
-
-function getCookie(name) {
-    const cookies = document.cookie.split(';');
-
-    for (let i = 0; i < cookies.length; i++) {
-        let cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1);
-        }
-    }
-    return null;
 }
 

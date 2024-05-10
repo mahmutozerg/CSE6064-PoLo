@@ -1,26 +1,54 @@
-﻿
-export function refreshAccessToken() {
-    var refreshToken = getCookie('Refresh');
+﻿let inactivityTimeout;
 
-    $.ajax({
-        url: 'Login/RefreshToken',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({ refreshToken: refreshToken }),
-        success: function (data) {
-            // Update the access token in cookies with the new token received from the server
-            document.cookie = `Session=${data.accessToken}; Secure; SameSite=Strict;`; // Update expiration if needed
-        },
-        error: function (xhr, status, error) {
-            console.error('Error refreshing access token:', error);
-            // Handle error (e.g., show error message)
+async function refreshAccessToken() {
+    var refreshToken = getCookie('Refresh');
+    if (refreshToken === '')
+        window.location.href = "logout";
+
+    var url = 'Login/RefreshToken?refreshToken=' + refreshToken;
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
         }
-    });
+
+        const data = await response.json();
+
+        document.cookie = `Session=${data.accessToken}; Secure; SameSite=Strict; expires=${data.accessTokenExpiration}`;
+        document.cookie = `Refresh=${data.refreshToken}; Secure; SameSite=Strict; expires=${data.refreshTokenExpiration}`;
+    } catch (error) {
+        console.error('Error refreshing access token:', error);
+    }
 }
 
-export function checkAccessTokenAndRefresh() {
-    refreshAccessToken(); // Initial refresh
-    setInterval(refreshAccessToken, 5 * 60 * 1000); // Refresh every 5 minutes (5 * 60 * 1000 ms)
+
+function checkAccessTokenAndRefresh() {
+    resetInactivityTimer(); 
+
+    document.addEventListener('click', resetInactivityTimer);
+    document.addEventListener('keypress', resetInactivityTimer);
+
+}
+
+function resetInactivityTimer() {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(promptRefresh,  10*60*1000); 
+}
+
+async function promptRefresh() {
+    if (confirm("You've been inactive for a while. Are you still there")) {
+        await refreshAccessToken();
+        resetInactivityTimer();
+    } else {
+        window.location.href = "logout"
+    }
 }
 
 function getCookie(name) {

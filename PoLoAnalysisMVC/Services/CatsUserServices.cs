@@ -24,7 +24,7 @@ public static class CatsUserServices
         SharedLibrary.ApiConstants.AuthServerIP + "/api/auth/CreateTokenByRefreshToken";
 
     private static ClientTokenDto ClientToken = new ClientTokenDto();
-    public static async Task<TokenDto> LoginUser(CatsUserLogin loginDto)
+    public static async Task<TokenDto?> LoginUser(CatsUserLogin loginDto)
     {
         using var client = new HttpClient();
         var loginUserJsonData = JsonConvert.SerializeObject(loginDto);
@@ -40,7 +40,7 @@ public static class CatsUserServices
     }
 
 
-    private static TokenDto GetTokenInfo(JObject jsonResult)
+    private static TokenDto? GetTokenInfo(JObject jsonResult)
     {
         return new TokenDto()
         {
@@ -69,7 +69,7 @@ public static class CatsUserServices
 
     }
 
-    public static async Task<TokenDto> CreateTokenByRefreshToken(string token)
+    public static async Task<TokenDto?> CreateTokenByRefreshToken(string token)
     {
 
         using var client = new HttpClient();
@@ -91,23 +91,12 @@ public static class CatsUserServices
         var response = await client.PostAsync(CreateTokenByRefreshTokenUrl+$"?refreshToken={encodedToken}",null);
 
         if (!response.IsSuccessStatusCode) 
-            return new TokenDto();
+            return null;
         
         var jsonResult = JObject.Parse(await response.Content.ReadAsStringAsync());
         return GetTokenInfo(jsonResult);
 
     }
 
-    private static async Task RevokeRefreshToken(string token)
-    {
-        using var client = new HttpClient();
-        var revokeRTokenContent = JsonConvert.SerializeObject(token);
 
-        var content = new StringContent(revokeRTokenContent, Encoding.UTF8, "application/json");
-
-        await client.PostAsync(RevokeRefreshTokenUrl, content);
-        
-        return;
-        
-    }
 }

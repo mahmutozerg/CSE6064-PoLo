@@ -9,12 +9,23 @@ document.addEventListener("DOMContentLoaded", function() {
 async function getResultFile() {
     try {
         const courseId = encodeURIComponent(courseDropdown.value);
-        const cookie = getCookie("Session");
+        var accessToken = getCookie("Session");
+        var refreshToken = getCookie("Refresh")
 
+        if (accessToken === '' && refreshToken ==='')
+            window.location.href = "logout";
+
+        if (accessToken ==='' && refreshToken !=='')
+        {
+            await refreshAccessToken();
+            accessToken = getCookie("Session");
+        }
+     
+        
         const response = await fetch(`https://localhost:7273/api/Result/GetFileByCourseId/${courseId}`, {
             method: 'GET',
             headers: {
-                "Authorization": `Bearer ${cookie}`
+                "Authorization": `Bearer ${accessToken}`
             },
         });
 
@@ -44,15 +55,3 @@ async function getResultFile() {
     }
 }
 
-
-function getCookie(name) {
-    const cookies = document.cookie.split(';');
-
-    for (let i = 0; i < cookies.length; i++) {
-        let cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1);
-        }
-    }
-    return null;
-}

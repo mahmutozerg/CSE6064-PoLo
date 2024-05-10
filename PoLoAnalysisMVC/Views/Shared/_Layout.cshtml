@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="~/PoLoAnalysisMVC.styles.css" asp-append-version="true" />
     <link rel="icon" type="image/x-icon" href="\Images\favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/ClientSideRToken.js?v1"></script>
+
 
 </head>
 <body>
@@ -48,5 +50,10 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+            $(document).ready(function () {
+            checkAccessTokenAndRefresh();
+        });
+    </script>
 </body>
 </html>
