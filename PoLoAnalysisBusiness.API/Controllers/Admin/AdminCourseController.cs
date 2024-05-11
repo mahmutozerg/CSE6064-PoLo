@@ -36,9 +36,38 @@ public class AdminCourseController:CustomControllerBase
         return CreateActionResult(await _courseService.GetActiveCoursesByPageAsync(page));
     }
     [HttpGet]
+    public async Task<IActionResult> GetAllCoursesByPageByName(string name ,string page)
+    {
+        return CreateActionResult(await _courseService.GetAllCoursesByPageByNameAsync(name,page));
+    }
+    
+    
+    [HttpGet]
     public async Task<IActionResult> GetAllCoursesByPage(string page)
     {
         return CreateActionResult(await _courseService.GetAllCoursesByPageAsync(page));
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetAllCompulsoryCoursesByPage(string page)
+    {
+        return CreateActionResult(await _courseService.GetAllCompulsoryCoursesByPage(page));
+    }
+    [HttpGet]
+    public async Task<IActionResult> GetActiveCompulsoryCoursesByPage(string page)
+    {
+        return CreateActionResult(await _courseService.GetActiveCompulsoryCoursesByPage(page));
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetAllCompulsoryCoursesByPageByName(string name,string page)
+    {
+        return CreateActionResult(await _courseService.GetAllCompulsoryCoursesByPageByName(name,page));
+    }
+    [HttpGet]
+    public async Task<IActionResult> GetActiveCompulsoryCoursesByPageByName(string name,string page)
+    {
+        return CreateActionResult(await _courseService.GetActiveCompulsoryCoursesByPageByName(name,page));
     }
     
     [HttpPut]

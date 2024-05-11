@@ -33,28 +33,27 @@ public class AdminUserController:CustomControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetActiveUserWithCourses(string eMail)
+    public async Task<IActionResult> GetActiveUserWithCourses(string eMail,string page)
     {
-        return CreateActionResult(await _userService.GetActiveUserWithCoursesByEMailAsync(eMail));
-    }
-    
-    
-    [HttpGet]
-    public async Task<IActionResult> GetUserWithCourses(string eMail)
-    {
-        return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
+        return CreateActionResult(await _userService.GetActiveUserWithCoursesByEMailByPageAsync(eMail,page));
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetUser(string eMail)
+    public async Task<IActionResult> GetUserWithCoursesByEmailByPage(string eMail , string page)
     {
-        return CreateActionResult(await _userService.GetUserAsync(eMail));
+        return CreateActionResult(await _userService.GetUserWithCoursesByEMailByPageAsync(eMail,page));
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetUser(string eMail,string page)
+    {
+        return CreateActionResult(await _userService.GetUserAsync(eMail,page));
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetActiveUser(string eMail)
+    public async Task<IActionResult> GetActiveUser(string eMail,string page)
     {
-        return CreateActionResult(await _userService.GetActiveUserAsync(eMail));
+        return CreateActionResult(await _userService.GetActiveUserAsync(eMail,page));
     }
     [HttpGet]
     public async Task<IActionResult> GetAllUsersByPage(string page)

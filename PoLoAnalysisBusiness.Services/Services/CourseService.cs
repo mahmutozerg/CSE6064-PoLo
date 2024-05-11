@@ -55,10 +55,55 @@ public class CourseService:GenericService<Course>,ICourseService
     public async Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesWithResultFilesByIdAsync(string id)
     {
         var course = await _courseRepository.GetCourseWithUploadedFilesWithResultFilesByIdAsync(id);
-
         ArgumentNullException.ThrowIfNull(course);
+        
         return CustomResponseDto<Course>.Success(course, StatusCodes.Ok);
     }
 
+    public async Task<CustomResponseListDataDto<Course>> GetAllCoursesByPageByNameAsync(string name, string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >=0)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCoursesByPageByNameAsync(name, intPage), StatusCodes.Ok);
+        
+        throw new Exception(ResponseMessages.OutOfIndex);    
+    }
 
+    public async Task<CustomResponseListDataDto<Course>> GetAllCompulsoryCoursesByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >=0)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCompulsoryCoursesByPage(intPage), StatusCodes.Ok);
+        
+        throw new Exception(ResponseMessages.OutOfIndex);  
+    }
+
+    public async Task<CustomResponseListDataDto<Course>> GetActiveCompulsoryCoursesByPage(string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >=0)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCompulsoryCoursesByPage(intPage), StatusCodes.Ok);
+        
+        throw new Exception(ResponseMessages.OutOfIndex);  
+        
+    }
+
+    public async Task<CustomResponseListDataDto<Course>> GetAllCompulsoryCoursesByPageByName(string name, string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >=0)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetAllCompulsoryCoursesByPageByName(name, intPage), StatusCodes.Ok);
+        
+        throw new Exception(ResponseMessages.OutOfIndex);   
+        
+        
+    }
+
+    public async Task<CustomResponseListDataDto<Course>> GetActiveCompulsoryCoursesByPageByName(string name, string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >=0)
+            return CustomResponseListDataDto<Course>.Success(await _courseRepository.GetActiveCompulsoryCoursesByPageByName(name, intPage), StatusCodes.Ok);
+        
+        throw new Exception(ResponseMessages.OutOfIndex);       }
 }

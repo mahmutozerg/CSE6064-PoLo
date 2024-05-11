@@ -55,7 +55,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     public async Task<CustomResponseNoDataDto> AddUserToCoursesAsync(AddUsersToCoursesDto dto,string updatedBy)
     {
-        var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(dto.TeacherEmail);
+        var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(dto.TeacherEmail);
         var errors = new List<string>();
         if (user is null)
             throw new Exception("");
@@ -84,7 +84,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     public async Task<CustomResponseNoDataDto> RemoveUserFromCourseAsync(RemoveUserFromCourseDto dto, string updatedBy)
     {
-        var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(dto.TeacherEmail);
+        var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(dto.TeacherEmail);
         if (user is null)
             throw new Exception("");
 
@@ -100,21 +100,34 @@ public class UserService:GenericService<AppUser>,IUserService
         _userRepository.Update(user.First());
         await _unitOfWork.CommitAsync();
 
-        return CustomResponseNoDataDto.Success(StatusCodes.Updated);    }
+        return CustomResponseNoDataDto.Success(StatusCodes.Updated);    
+    }
 
     public async Task<CustomResponseDto<List<AppUser>>> GetActiveUserWithCoursesByEMailAsync(string eMail)
     {
-        var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(eMail);
+        var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(eMail);
 
         return user == null
             ? throw new Exception(ResponseMessages.UserNotFound)
             : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
 
+    }
+
+    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUserWithCoursesByEMailByPageAsync(string eMail, string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseListDataDto<AppUser>.Success(
+                await _userRepository.GetActiveUserWithCoursesByEMailByPageAsync(eMail, intPage), StatusCodes.Ok); 
+
+        throw new Exception(ResponseMessages.UserNotFound);
+        
+        
     }
 
     public async Task<CustomResponseDto<List<AppUser>>> GetUserWithCoursesByEMailAsync(string eMail)
     {
-        var user = await _userRepository.GetUserWithCoursesByEmailAsync(eMail);
+        var user = await _userRepository.GetUserWithCoursesByEMilAsync(eMail);
 
         return user == null
             ? throw new Exception(ResponseMessages.UserNotFound)
@@ -122,20 +135,21 @@ public class UserService:GenericService<AppUser>,IUserService
 
     }
 
-    public async Task<CustomResponseDto<List<AppUser>>> GetUserAsync(string eMail)
+    public async Task<CustomResponseDto<List<AppUser>>> GetUserAsync(string eMail, string page)
     {
-        var user = await _userRepository.GetUserAsync(eMail);
-        return user == null
-            ? throw new Exception(ResponseMessages.UserNotFound)
-            : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseDto<List<AppUser>>.Success(await _userRepository.GetUserAsync(eMail,intPage),StatusCodes.Ok);
+        
+        throw new Exception(ResponseMessages.UserNotFound);
     }
 
-    public async Task<CustomResponseDto<List<AppUser>>> GetActiveUserAsync(string eMail)
+    public async Task<CustomResponseListDataDto<AppUser>> GetActiveUserAsync(string eMail,string page)
     {
-        var user = await _userRepository.GetActiveUserAsync(eMail);
-        return user == null
-            ? throw new Exception(ResponseMessages.UserNotFound)
-            : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+           return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUserAsync(eMail), StatusCodes.Ok);
+        throw new Exception(ResponseMessages.UserNotFound);
     }
 
     public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPageAsync(string page)
@@ -144,9 +158,8 @@ public class UserService:GenericService<AppUser>,IUserService
         if (res && intPage >= 0)
             return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersByPageAsync(intPage),
                 StatusCodes.Ok);
-                
-        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
 
+        throw new Exception(ResponseMessages.OutOfIndex);
     }
     
     public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPageAsync(string page)
@@ -155,8 +168,8 @@ public class UserService:GenericService<AppUser>,IUserService
         if (res && intPage >= 0)
             return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersByPageAsync(intPage),
                 StatusCodes.Ok);
-                
-        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
+
+        throw new Exception(ResponseMessages.OutOfIndex);
 
     }
 
@@ -166,9 +179,9 @@ public class UserService:GenericService<AppUser>,IUserService
         if (res && intPage >= 0)
             return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersWithCourseByPageAsync(intPage),
                 StatusCodes.Ok);
-                
-        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
-        
+
+        throw new Exception(ResponseMessages.OutOfIndex);
+
     }
 
     public async Task<CustomResponseListDataDto<AppUser>> GetActiveUsersWithCoursesByPageAsync(string page)
@@ -177,8 +190,8 @@ public class UserService:GenericService<AppUser>,IUserService
         if (res && intPage >= 0)
             return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersWithCourseByPageAsync(intPage),
                 StatusCodes.Ok);
-                
-        return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);    
+
+        throw new Exception(ResponseMessages.OutOfIndex);
     }
 
     public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByIdAsync(string id)
@@ -207,4 +220,13 @@ public class UserService:GenericService<AppUser>,IUserService
 
         return CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
     }
+
+    public async Task<CustomResponseListDataDto<AppUser>> GetUserWithCoursesByEMailByPageAsync(string eMail, string page)
+    {
+        var res = int.TryParse(page, out var intPage);
+        if (res && intPage >= 0)
+            return CustomResponseListDataDto<AppUser>.Success(
+                await _userRepository.GetUserWithCoursesByEMailByPageAsync(eMail, intPage), StatusCodes.Ok); 
+
+        throw new Exception(ResponseMessages.UserNotFound);    }
 }

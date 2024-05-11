@@ -2,7 +2,7 @@
 
 
 <head>
-    <link rel="stylesheet" href="~/css/AdminActiveUser.css">
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v3">
 </head>
 <title>@ViewBag.Title</title>
 
@@ -12,7 +12,15 @@
     {
         <div id="filter-options">
             <label for="search">Search:</label>
-            <input type="text" id="search" name="search" placeholder="@((string)ViewData["search"] ?? "Search By EMail")">
+            @if (ViewData["search"] is not null)
+            {
+                <input type="text" id="search" name="search" value= "@ViewData["search"]!.ToString()">
+            }
+            else
+            {
+                <input type="text" id="search" name="search" placeholder= "Search By EMail">
+
+            }
             <br><br>
             <input type="checkbox" id="withCourses" name="withCourses" value="true" @(ViewData["withCourses"] != null && (bool)ViewData["withCourses"] ? "checked" : "")>
             <label for="withCourses">With Courses</label>
@@ -63,7 +71,7 @@
 
 @{
     var currentPage = int.TryParse(ViewData["page"]?.ToString(), out var result) ? result : 0;
-    var hasNextPage = Model?.Count > 0; // Check if there are more users in the next page
+    var hasNextPage = Model?.Count > 0; 
 }
     
 
@@ -75,7 +83,7 @@
         </a>
     </div>
 }
-@if (currentPage > 0)
+@if (!hasNextPage)
 {
   <div id="prev-button" s>
         <a href="@Url.Action("Users", "Admin", new { search = ViewData["search"], withCourses = ViewData["withCourses"], getAll = ViewData["getAll"], page = currentPage - 1 })">

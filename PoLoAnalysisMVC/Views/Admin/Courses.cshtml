@@ -1,0 +1,95 @@
+@model System.Collections.Generic.List<SharedLibrary.Models.business.Course>
+
+
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v3">
+</head>
+<title>@ViewBag.Title</title>
+
+<div class="main-content">
+    
+    @using (Html.BeginForm("Courses", "Admin", FormMethod.Get))
+    {
+        <div id="filter-options">
+            <label for="search">Search:</label>
+            @if (ViewData["search"] is not null)
+            {
+                <input type="text" id="search" name="search" value= "@ViewData["search"]!.ToString()">
+            }
+            else
+            {
+                <input type="text" id="search" name="search" placeholder= "Search By Course Name">
+
+            }
+            <br><br>
+            <input type="checkbox" id="withCourses" name="isCompulsory" value="true" @(ViewData["isCompulsory"] != null && (bool)ViewData["isCompulsory"] ? "checked" : "")>
+            <label for="withCourses">Only Compulsory Courses</label>
+            <br>
+            <input type="checkbox" id="getAll" name="getAll" value="true" @(ViewData["getAll"] != null && (bool)ViewData["getAll"] ? "checked" : "")>
+            <label for="getAll">Include Deleted Courses</label>
+            <br><br>
+            <button type="submit">Apply Filters</button>
+            
+        </div>
+
+    }
+        <hr/>
+
+    @foreach (var course in Model)
+    {
+        <div class="user-info" id="@course.Id">
+            <p>Course Name: @(string.IsNullOrEmpty(course.Id) ? "Not Found" : course.Id)</p>
+            <p>Course Year:  @(!string.IsNullOrEmpty(course.Year) ? course.Year : "Not Found")</p>
+
+            @if (course.IsCompulsory)
+            {
+                <label>
+                    <input type="checkbox" checked disabled/>
+                    Is Compulsory
+                </label>
+            }
+            else
+            {
+                <label>
+                    <input type="checkbox"  disabled/>
+                    Is Compulsory
+                </label>
+            }
+            
+            @if (course.IsDeleted)
+            {
+                <label>
+                    <input type="checkbox" checked disabled/>
+                    Deleted
+                </label>
+            }
+            
+
+        </div>
+        <hr/>
+    }
+</div>
+
+@{
+    var currentPage = int.TryParse(ViewData["page"]?.ToString(), out var result) ? result : 0;
+    var hasNextPage = Model?.Count > 0; 
+}
+    
+
+@if (hasNextPage)
+{
+    <div id ="next-button">
+        <a href="@Url.Action("Courses", "Admin", new { search = ViewData["search"], isCompulsory = ViewData["isCompulsory"], getAll = ViewData["getAll"], page = currentPage + 1 })">
+            <img src="/Images/arrow_right.svg" alt="Next Page">
+        </a>
+    </div>
+}
+@if (!hasNextPage)
+{
+  <div id="prev-button" s>
+        <a href="@Url.Action("Courses", "Admin", new { search = ViewData["search"], isCompulsory = ViewData["isCompulsory"], getAll = ViewData["getAll"], page = currentPage - 1 })">
+            <img src="/Images/arrow_left.svg" alt="Next Page">
+        </a>
+    </div>
+}

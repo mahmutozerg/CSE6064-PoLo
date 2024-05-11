@@ -15,6 +15,9 @@ public interface ICourseService:IGenericService<Course>
     Task<CustomResponseDto<Course>> GetCourseWithUploadedFilesWithResultFilesByIdAsync(string id);
 
 
-
-
+    Task<CustomResponseListDataDto<Course>> GetAllCoursesByPageByNameAsync(string name, string page);
+    Task<CustomResponseListDataDto<Course>> GetAllCompulsoryCoursesByPage(string page);
+    Task<CustomResponseListDataDto<Course>> GetActiveCompulsoryCoursesByPage(string page);
+    Task<CustomResponseListDataDto<Course>> GetAllCompulsoryCoursesByPageByName(string name, string page);
+    Task<CustomResponseListDataDto<Course>> GetActiveCompulsoryCoursesByPageByName(string name, string page);
 }

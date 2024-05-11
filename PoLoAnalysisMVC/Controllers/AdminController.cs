@@ -16,7 +16,7 @@ public class AdminController : Controller
     public async Task<IActionResult> Users(string search, bool withCourses = false, bool getAll = false,string page = "0")
     {
         var token = Request.Cookies[ApiConstants.SessionCookieName];
-        var users = await AdminServices.GetUserWithFilters(search,withCourses,getAll,page,token) ?? new List<AppUser>();
+        var users = await AdminUserServices.GetUserWithFilters(search,withCourses,getAll,page,token) ?? new ();
         ViewData["getAll"] = getAll;
         ViewData["withCourses"] = withCourses;
         ViewData["page"] = page;
@@ -24,5 +24,16 @@ public class AdminController : Controller
         return View(users);
     }
     
+    [HttpGet]
+    public async Task<IActionResult> Courses(string search, bool isCompulsory = false, bool getAll = false,string page = "0")
+    {
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
+        var courses = await AdminCourseServices.GetCoursesWithFilters(search,isCompulsory,getAll,page,token) ?? new ();
+        ViewData["getAll"] = getAll;
+        ViewData["page"] = page;
+        ViewData["search"] = search;
+        ViewData["isCompulsory"] = isCompulsory;
+        return View(courses);
+    }
 
 }

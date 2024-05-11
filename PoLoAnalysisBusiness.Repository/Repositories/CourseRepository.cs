@@ -9,11 +9,13 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
     private readonly DbSet<Course> _courses;
     private readonly int _activeCoursesMaxPage;
     private readonly int _allCoursesMaxPage;
+    private const int PageEntityCount = 12;
+
     public CourseRepository(AppDbContext context) : base(context)
     {
         _courses = context.Set<Course>();
-        _activeCoursesMaxPage = _courses.Count(c => !c.IsDeleted);
-        _allCoursesMaxPage = _courses.Count();
+        _activeCoursesMaxPage = _courses.Count(c => !c.IsDeleted)/PageEntityCount;
+        _allCoursesMaxPage = _courses.Count()/PageEntityCount;
     }
 
     public Task<List<Course>> GetActiveCoursesByNameByPageAsync(string name ,int page)
@@ -21,8 +23,9 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
         return _courses
             .Where(c=> !c.IsDeleted && c.Id.ToLowerInvariant().Contains(name))
-            .Skip(12*page)
-            .Take(12)
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
             .AsNoTracking()
             .ToListAsync();
     }
@@ -33,18 +36,89 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
 
         return _courses
             .Where(c=> !c.IsDeleted )
-            .Skip(12*page)
-            .Take(12)
+            .Include(c=> c.Users.Where(u=> u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
             .AsNoTracking()
             .ToListAsync();
     }
+
+    public Task<List<Course>> GetAllCoursesByPageByNameAsync(string name, int page)
+    {
+        page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
+
+        return _courses
+            .Where(c=> !c.IsDeleted  && c.Id.Contains(name))
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
+            .AsNoTracking()
+            .ToListAsync();
+        
+    }
+
+    public Task<List<Course>> GetAllCompulsoryCoursesByPage(int page)
+    {
+        page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
+        return _courses
+            .Where(c => c.IsCompulsory)
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
+            .AsNoTracking()
+            .ToListAsync();
+    }
+
+    public Task<List<Course>> GetActiveCompulsoryCoursesByPage(int page)
+    {
+        page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
+        
+        return _courses
+            .Where(c => c.IsCompulsory && !c.IsDeleted)
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
+            .AsNoTracking()
+            .ToListAsync();
+        
+        
+    }
+
+    public Task<List<Course>> GetAllCompulsoryCoursesByPageByName(string name, int page)
+    {
+        page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
+        
+        return _courses
+            .Where(c => c.IsCompulsory && c.Id.Contains(name))
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
+            .AsNoTracking()
+            .ToListAsync();
+        
+    }
+
+    public Task<List<Course>> GetActiveCompulsoryCoursesByPageByName(string name, int page)
+    {
+        page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
+        
+        return _courses
+            .Where(c => c.IsCompulsory && !c.IsDeleted&& c.Id.Contains(name))
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
+            .AsNoTracking()
+            .ToListAsync();    
+    }
+
     public Task<List<Course>> GetAllCoursesByPageAsync(int page)
     {
         page = page > _allCoursesMaxPage ? _allCoursesMaxPage : page;
 
         return _courses
-            .Skip(12*page)
-            .Take(12)
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Skip(PageEntityCount*page)
+            .Take(PageEntityCount)
             .AsNoTracking()
             .ToListAsync();
         

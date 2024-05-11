@@ -36,10 +36,11 @@
         <a href="#">Download Template</a>
         <a href="#">Settings</a>
         @{
-            var userRole = ((ClaimsIdentity)User.Identity).FindAll(ClaimTypes.Role).Any(r => r.Value == "Admin");
-            if (userRole)
+            var isAdmin = ((ClaimsIdentity)User.Identity).FindAll(ClaimTypes.Role).Any(r => r.Value == "Admin");
+            if (isAdmin)
             {
-                <a href="@Url.Action("Users","Admin")">Admin All Users</a>
+                <a href="@Url.Action("Users","Admin")">Manage Users</a>
+                <a href="@Url.Action("Courses","Admin")">Manage Courses</a>
 
             }
 
