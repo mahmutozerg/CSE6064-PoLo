@@ -24,7 +24,7 @@ public class RefreshTokenMiddleware
 
         if (!string.IsNullOrEmpty(refreshToken) && string.IsNullOrEmpty(accessToken) && requestPath != "/Login" && context.Request.Method == "GET")
         {
-            var tokenDto = await CatsUserServices.CreateTokenByRefreshToken(refreshToken);
+            var tokenDto = await CatsUserServices.CreateTokenByRefreshTokenAsync(refreshToken);
             if (tokenDto is not null)
             {
                 var sessionCookieOptions = new CookieOptions()

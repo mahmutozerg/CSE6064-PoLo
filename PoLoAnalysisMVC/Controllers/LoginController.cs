@@ -1,5 +1,7 @@
 ﻿using System.Security.Claims;
 using System.Web;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisMVC.Services;
 using SharedLibrary.DTOs.User;
@@ -14,7 +16,7 @@ public class LoginController : Controller
     public IActionResult Index()
     {
         
-        var token = Request.Cookies["session"];
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
 
         if (token is not null)
             return RedirectToAction("Index", "Home");
@@ -31,7 +33,7 @@ public class LoginController : Controller
         if (token is not null)
             return RedirectToAction("Index", "Home");
 
-        var tokenDto = await CatsUserServices.LoginUser(loginDto);
+        var tokenDto = await CatsUserServices.LoginUserAsync(loginDto);
 
 
         if (tokenDto is null)
@@ -66,7 +68,7 @@ public class LoginController : Controller
     [HttpPost]
     public async Task<ActionResult> RefreshToken([FromBody]CreateTokenByRefreshTokenDto dto)
     {
-        var tokenDto =await CatsUserServices.CreateTokenByRefreshToken(dto.RefreshToken);
+        var tokenDto =await CatsUserServices.CreateTokenByRefreshTokenAsync(dto.RefreshToken);
 
         if (tokenDto is null)
            return RedirectToAction("LogOut", "LogOut");

@@ -24,7 +24,7 @@ public static class CatsUserServices
         SharedLibrary.ApiConstants.AuthServerIP + "/api/auth/CreateTokenByRefreshToken";
 
     private static ClientTokenDto ClientToken = new ClientTokenDto();
-    public static async Task<TokenDto?> LoginUser(CatsUserLogin loginDto)
+    public static async Task<TokenDto?> LoginUserAsync(CatsUserLogin loginDto)
     {
         using var client = new HttpClient();
         var loginUserJsonData = JsonConvert.SerializeObject(loginDto);
@@ -52,7 +52,7 @@ public static class CatsUserServices
 
         };
     }
-    private static async Task<Task> CreateTokenByClient(ClientLoginDto loginDto)
+    private static async Task<Task> CreateTokenByClientAsync(ClientLoginDto loginDto)
     {
         using var client = new HttpClient();
         var tokenJsonData = JsonConvert.SerializeObject(loginDto);
@@ -69,7 +69,7 @@ public static class CatsUserServices
 
     }
 
-    public static async Task<TokenDto?> CreateTokenByRefreshToken(string token)
+    public static async Task<TokenDto?> CreateTokenByRefreshTokenAsync(string token)
     {
         var dto = new CreateTokenByRefreshTokenDto()
         {
@@ -81,7 +81,7 @@ public static class CatsUserServices
         
         if (string.IsNullOrEmpty(ClientToken.AccesToken) || DateTime.Compare(ClientToken.AccesTokenExpiration,DateTime.Now)<=0)
         {
-            await CreateTokenByClient( new ClientLoginDto()
+            await CreateTokenByClientAsync( new ClientLoginDto()
             {
                 Id = "MVC",
                 Secret = "MVClientSecretKey"

@@ -67,7 +67,7 @@ public class UserService:GenericService<AppUser>,IUserService
             if (course.Data is null)
                 errors.Add( coursesFullName + "Not found No changes made");
             else
-                user.Courses.Add(course.Data!);
+                user.First().Courses.Add(course.Data!);
             
         }
 
@@ -75,8 +75,8 @@ public class UserService:GenericService<AppUser>,IUserService
             throw new Exception(string.Concat(errors.SelectMany(e => e)));
             
         
-        user.UpdatedBy = updatedBy;
-        _userRepository.Update(user);
+        user.First().UpdatedBy = updatedBy;
+        _userRepository.Update(user.First());
         await _unitOfWork.CommitAsync();
 
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);
@@ -88,44 +88,61 @@ public class UserService:GenericService<AppUser>,IUserService
         if (user is null)
             throw new Exception("");
 
-        var targetCourseIndex = user.Courses.FindIndex(c => c.Id == dto.CourseFullName);
+        var targetCourseIndex = user.First().Courses.FindIndex(c => c.Id == dto.CourseFullName);
         
         if (targetCourseIndex < 0)
             throw new Exception(ResponseMessages.UserNotBelongCourse);
 
             
-        user.Courses.RemoveAt(targetCourseIndex);
-        user.UpdatedBy = updatedBy;
+        user.First().Courses.RemoveAt(targetCourseIndex);
+        user.First().UpdatedBy = updatedBy;
         
-        _userRepository.Update(user);
+        _userRepository.Update(user.First());
         await _unitOfWork.CommitAsync();
 
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);    }
 
-    public async Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMailAsync(string eMail)
+    public async Task<CustomResponseDto<List<AppUser>>> GetActiveUserWithCoursesByEMailAsync(string eMail)
     {
         var user = await _userRepository.GetActiveUserWithCoursesByEmailAsync(eMail);
 
         return user == null
             ? throw new Exception(ResponseMessages.UserNotFound)
-            : CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
+            : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
 
     }
 
-    public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMailAsync(string eMail)
+    public async Task<CustomResponseDto<List<AppUser>>> GetUserWithCoursesByEMailAsync(string eMail)
     {
         var user = await _userRepository.GetUserWithCoursesByEmailAsync(eMail);
 
         return user == null
             ? throw new Exception(ResponseMessages.UserNotFound)
-            : CustomResponseDto<AppUser>.Success(user, StatusCodes.Ok);
+            : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
 
     }
+
+    public async Task<CustomResponseDto<List<AppUser>>> GetUserAsync(string eMail)
+    {
+        var user = await _userRepository.GetUserAsync(eMail);
+        return user == null
+            ? throw new Exception(ResponseMessages.UserNotFound)
+            : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
+    }
+
+    public async Task<CustomResponseDto<List<AppUser>>> GetActiveUserAsync(string eMail)
+    {
+        var user = await _userRepository.GetActiveUserAsync(eMail);
+        return user == null
+            ? throw new Exception(ResponseMessages.UserNotFound)
+            : CustomResponseDto<List<AppUser>>.Success(user, StatusCodes.Ok);
+    }
+
     public async Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPageAsync(string page)
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
-            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersByPage(intPage),
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersByPageAsync(intPage),
                 StatusCodes.Ok);
                 
         return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
@@ -136,7 +153,7 @@ public class UserService:GenericService<AppUser>,IUserService
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
-            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersByPage(intPage),
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersByPageAsync(intPage),
                 StatusCodes.Ok);
                 
         return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
@@ -147,7 +164,7 @@ public class UserService:GenericService<AppUser>,IUserService
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
-            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersWithCourseByPage(intPage),
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetAllUsersWithCourseByPageAsync(intPage),
                 StatusCodes.Ok);
                 
         return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);
@@ -158,7 +175,7 @@ public class UserService:GenericService<AppUser>,IUserService
     {
         var res = int.TryParse(page, out var intPage);
         if (res && intPage >= 0)
-            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersWithCourseByPage(intPage),
+            return CustomResponseListDataDto<AppUser>.Success(await _userRepository.GetActiveUsersWithCourseByPageAsync(intPage),
                 StatusCodes.Ok);
                 
         return CustomResponseListDataDto<AppUser>.Fail(ResponseMessages.OutOfIndex,StatusCodes.BadRequest);    
@@ -166,7 +183,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesByIdAsync(string id)
     {
-        var user = await _userRepository.GetUserWithCoursesById(id);
+        var user = await _userRepository.GetUserWithCoursesByIdAsync(id);
 
         ArgumentNullException.ThrowIfNull(user);
         
@@ -184,7 +201,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     public async Task<CustomResponseDto<AppUser>> GetReadyResultCoursesAsync(string userId)
     {
-        var user = await _userRepository.GetResultReadyCourses(userId);
+        var user = await _userRepository.GetResultReadyCoursesAsync(userId);
         
         ArgumentNullException.ThrowIfNull(user);
 

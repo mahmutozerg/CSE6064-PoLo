@@ -25,11 +25,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Pages\" />
+      <_ContentIncludedByDefault Remove="Views\Courses\Index.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Views\Courses\Index.cshtml" />
+      <Folder Include="Pages\" />
     </ItemGroup>
 
 </Project>

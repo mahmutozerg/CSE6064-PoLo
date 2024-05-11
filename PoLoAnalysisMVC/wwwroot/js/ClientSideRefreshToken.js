@@ -44,11 +44,21 @@ function resetInactivityTimer() {
 }
 
 async function promptRefresh() {
+    let confirmed = false;
+
+    const confirmationTimeout = setTimeout(async () => {
+        if (!confirmed) {
+            window.location.href = "logout";
+        }
+    }, 60000); 
+
     if (confirm("You've been inactive for a while. Are you still there?")) {
+        clearTimeout(confirmationTimeout);
+        confirmed = true;
         await refreshAccessToken();
         resetInactivityTimer();
     } else {
-        window.location.href = "logout"
+        window.location.href = "logout";
     }
 }
 

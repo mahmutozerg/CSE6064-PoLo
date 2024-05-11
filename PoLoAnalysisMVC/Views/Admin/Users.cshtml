@@ -1,0 +1,90 @@
+﻿@model List<SharedLibrary.Models.business.AppUser>
+
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css">
+</head>
+<title>@ViewBag.Title</title>
+
+<div class="main-content">
+    
+    @using (Html.BeginForm("Users", "Admin", FormMethod.Get))
+    {
+        <div id="filter-options">
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="search" placeholder="@((string)ViewData["search"] ?? "Search By EMail")">
+            <br><br>
+            <input type="checkbox" id="withCourses" name="withCourses" value="true" @(ViewData["withCourses"] != null && (bool)ViewData["withCourses"] ? "checked" : "")>
+            <label for="withCourses">With Courses</label>
+            <br>
+            <input type="checkbox" id="getAll" name="getAll" value="true" @(ViewData["getAll"] != null && (bool)ViewData["getAll"] ? "checked" : "")>
+            <label for="getAll">Include Deleted Users</label>
+            <br><br>
+            <button type="submit">Apply Filters</button>
+            
+        </div>
+
+    }
+        <hr/>
+
+    @foreach (var user in Model)
+    {
+        <div class="user-info" id="@user.Id">
+            <p>Name: @(string.IsNullOrEmpty(user.Name) ? "Not Found" : user.Name)</p>
+            <p>Last Name:  @(!string.IsNullOrEmpty(user.LastName) ? user.LastName : "Not Found")</p>
+            <p>Email: @user.EMail</p>
+
+            @if (user.IsDeleted)
+            {
+                <label>
+                    <input type="checkbox" checked disabled/>
+                    Deleted
+                </label>
+            }
+            
+            @if (user.Courses.Count >0)
+            {            
+                <select id="user-courses">
+                    <option value="">User Active Courses</option>
+                    @foreach (var course in user.Courses)
+                    {
+                        <option value="@course.Id">@course.Id</option>
+
+                    }
+                </select>
+                
+            }
+
+
+        </div>
+        <hr/>
+    }
+</div>
+
+@{
+    var currentPage = int.TryParse(ViewData["page"]?.ToString(), out var result) ? result : 0;
+    var hasNextPage = Model?.Count > 0; // Check if there are more users in the next page
+}
+    
+
+@if (hasNextPage)
+{
+    <div id ="next-button">
+        <a href="@Url.Action("Users", "Admin", new { search = ViewData["search"], withCourses = ViewData["withCourses"], getAll = ViewData["getAll"], page = currentPage + 1 })">
+            <img src="/Images/arrow_right.svg" alt="Next Page">
+        </a>
+    </div>
+}
+@if (currentPage > 0)
+{
+  <div id="prev-button" s>
+        <a href="@Url.Action("Users", "Admin", new { search = ViewData["search"], withCourses = ViewData["withCourses"], getAll = ViewData["getAll"], page = currentPage - 1 })">
+            <img src="/Images/arrow_left.svg" alt="Next Page">
+        </a>
+    </div>
+}
+
+
+
+
+

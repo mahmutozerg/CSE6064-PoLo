@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SharedLibrary;
 
 namespace PoLoAnalysisMVC.Controllers;
-
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+[Authorize(AuthenticationSchemes = ApiConstants.SessionCookieName)]  
+[ResponseCache(NoStore =true, Location =ResponseCacheLocation.None)]
 public class LogOutController : Controller
 {
     // GET

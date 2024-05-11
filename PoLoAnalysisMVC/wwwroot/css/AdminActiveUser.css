@@ -1,0 +1,69 @@
+﻿#next-button {
+    width: 5%;
+    height: 5%;
+    text-align: right;
+}
+
+.main-content {
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+#prev-button {
+    width: 5%;
+    height: 5%;
+    text-align: left;
+}
+
+#search {
+    background-color: #E6E7E8;
+    border-radius: 300px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+p {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.user-info {
+    max-width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#user-courses {
+    background-color: #E6E7E8;
+    border-radius: 30px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    font-size: 16px;
+    z-index: 1;
+}
+
+#user-courses.open {
+    margin-top: 40px; /* Adjust as needed */
+}
+
+#filter-options {
+    font-family: Montserrat;
+    border-radius: 300px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    font-size: 16px;
+    display: block;
+    position: relative; /* Use relative positioning */
+}
+
+#filter-options > button {
+    font-family: Montserrat;
+    background-color: #E6E7E8;
+    border-radius: 30px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    font-size: 16px;
+}

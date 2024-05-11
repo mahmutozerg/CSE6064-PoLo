@@ -9,28 +9,35 @@ namespace PoLoAnalysisBusiness.Repository.Repositories;
 public class UserRepository:GenericRepository<AppUser>,IUserRepository
 {
     private readonly DbSet<AppUser> _users;
+    private readonly int _activeUsersMaxPage;
+    private readonly int _allUsersMaxPage;
     public UserRepository(AppDbContext context) : base(context)
     {
         _users = context.Set<AppUser>();
+        _activeUsersMaxPage = _users.Count(u => u.IsDeleted);
+        _allUsersMaxPage = _users.Count();
+
     }
 
-    public async Task<AppUser?> GetActiveUserWithCoursesByEmailAsync(string eMail)
+    public async Task<List<AppUser>> GetActiveUserWithCoursesByEmailAsync(string eMail)
     {
         return await _users
-            .Where(u => u.EMail == eMail && !u.IsDeleted)
+            .Where(u => u.EMail.Contains(eMail)  && !u.IsDeleted)
             .Include(u=> u.Courses)
-            .FirstOrDefaultAsync();
+            .ToListAsync();
     }
-    public async Task<AppUser?> GetUserWithCoursesByEmailAsync(string eMail)
+    public async Task<List<AppUser>> GetUserWithCoursesByEmailAsync(string eMail)
     {
         return await _users
-            .Where(u => u.EMail == eMail)
+            .Where(u => u.EMail.Contains(eMail))
             .Include(u=> u.Courses)
             .AsNoTracking()
-            .FirstOrDefaultAsync();
+            .ToListAsync();
     }
-    public async Task<List<AppUser>> GetAllUsersByPage(int page)
+    public async Task<List<AppUser>> GetAllUsersByPageAsync(int page)
     {
+        page = page > _allUsersMaxPage ? _allUsersMaxPage : page;
+        
         return await _users
             .Skip(12 * page)
             .Take(12)
@@ -38,8 +45,9 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .ToListAsync();
     }
     
-    public async Task<List<AppUser>> GetActiveUsersByPage(int page)
+    public async Task<List<AppUser>> GetActiveUsersByPageAsync(int page)
     {
+        page = page > _activeUsersMaxPage ? _activeUsersMaxPage : page;
         return await _users.Where(u=> !u.IsDeleted)
             .Skip(12 * page)
             .Take(12)
@@ -47,8 +55,11 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .ToListAsync();
     }
 
-    public async Task<List<AppUser>> GetActiveUsersWithCourseByPage(int page)
+    public async Task<List<AppUser>> GetActiveUsersWithCourseByPageAsync(int page)
     {
+        page = page > _activeUsersMaxPage ? _activeUsersMaxPage : page;
+
+        
         return await _users
             .Where(u=> !u.IsDeleted)
             .Include(u=> u.Courses)
@@ -58,8 +69,10 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .ToListAsync();
     }
 
-    public async Task<List<AppUser>> GetAllUsersWithCourseByPage(int page)
+    public async Task<List<AppUser>> GetAllUsersWithCourseByPageAsync(int page)
     {
+        page = page > _allUsersMaxPage ? _activeUsersMaxPage : page;
+
         return await _users
             .Include(u=> u.Courses)
             .Skip(12 * page)
@@ -68,7 +81,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .ToListAsync();
     }
 
-    public async Task<AppUser?> GetUserWithCoursesById(string id)
+    public async Task<AppUser?> GetUserWithCoursesByIdAsync(string id)
     {
         return await _users
             .Where(u => u.Id == id && !u.IsDeleted)
@@ -87,7 +100,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .SingleOrDefaultAsync();
     }
 
-    public async Task<AppUser?> GetResultReadyCourses(string userId)
+    public async Task<AppUser?> GetResultReadyCoursesAsync(string userId)
     {
         return await _users
             .Where(u => !u.IsDeleted && u.Id == userId)
@@ -96,6 +109,21 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .ThenInclude(file => file.Result)
             .AsNoTracking()
             .SingleOrDefaultAsync();
+
+    }
+
+    public async Task<List<AppUser>> GetUserAsync(string eMail)
+    {
+        return await _users.Where(u => u.EMail.Contains(eMail) )
+            .AsNoTracking()
+            .ToListAsync();
+    }
+
+    public async Task<List<AppUser>> GetActiveUserAsync(string eMail)
+    {
+        return await _users.Where(u => !u.IsDeleted && u.EMail.Contains(eMail))
+            .AsNoTracking()
+            .ToListAsync();
 
     }
 }

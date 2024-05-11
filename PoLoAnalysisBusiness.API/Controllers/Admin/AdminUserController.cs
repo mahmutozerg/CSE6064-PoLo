@@ -38,12 +38,24 @@ public class AdminUserController:CustomControllerBase
         return CreateActionResult(await _userService.GetActiveUserWithCoursesByEMailAsync(eMail));
     }
     
+    
     [HttpGet]
     public async Task<IActionResult> GetUserWithCourses(string eMail)
     {
         return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
     }
     
+    [HttpGet]
+    public async Task<IActionResult> GetUser(string eMail)
+    {
+        return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetActiveUser(string eMail)
+    {
+        return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
+    }
     [HttpGet]
     public async Task<IActionResult> GetAllUsersByPage(string page)
     {

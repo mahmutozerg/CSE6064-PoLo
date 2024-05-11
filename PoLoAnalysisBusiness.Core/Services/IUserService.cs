@@ -14,8 +14,10 @@ public interface IUserService:IGenericService<AppUser>
     
     Task<CustomResponseNoDataDto> AddUserToCoursesAsync(AddUsersToCoursesDto dto,string updatedBy);
     Task<CustomResponseNoDataDto> RemoveUserFromCourseAsync(RemoveUserFromCourseDto dto,string updatedBy);
-    Task<CustomResponseDto<AppUser>> GetActiveUserWithCoursesByEMailAsync(string eMail);
-    Task<CustomResponseDto<AppUser>> GetUserWithCoursesByEMailAsync(string eMail);
+    Task<CustomResponseDto<List<AppUser>>> GetActiveUserWithCoursesByEMailAsync(string eMail);
+    Task<CustomResponseDto<List<AppUser>>> GetUserWithCoursesByEMailAsync(string eMail);
+    Task<CustomResponseDto<List<AppUser>>> GetUserAsync(string eMail);
+    Task<CustomResponseDto<List<AppUser>>> GetActiveUserAsync(string eMail);
     Task<CustomResponseListDataDto<AppUser>> GetAllUsersByPageAsync(string page);
     Task<CustomResponseListDataDto<AppUser>> GetActiveUsersByPageAsync(string page);
     Task<CustomResponseListDataDto<AppUser>> GetAllUsersWithCoursesByPageAsync(string page);
