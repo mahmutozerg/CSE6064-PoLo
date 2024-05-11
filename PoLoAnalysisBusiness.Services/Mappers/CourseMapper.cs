@@ -1,4 +1,5 @@
 ﻿using PoLoAnalysisBusiness.DTO.Courses;
+using SharedLibrary.DTOs;
 using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Services.Mappers;
@@ -12,5 +13,18 @@ public static class CourseMapper
         course.Id = courseCode + courseYear;
         course.IsCompulsory = updateDto.UpdatedCourseIsCompulsory ?? course.IsCompulsory;
         
-    }    
+    }
+
+    public static CourseWithUsersDto CourseToCourseWithUserMapper(Course course )
+    {
+        return new CourseWithUsersDto()
+        {
+            Year = course.Year,
+            IsCompulsory = course.IsCompulsory,
+            Users = course.Users,
+            File = course.File
+        };
+    }
+
+    
 }

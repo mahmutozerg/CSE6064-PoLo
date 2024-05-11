@@ -64,7 +64,18 @@
                     Deleted
                 </label>
             }
-            
+          @if (course.Users is not null && course.Users.Count >0)
+            {            
+                <select id="user-courses">
+                    <option value="">Course Active Users</option>
+                    @foreach (var user in course.Users)
+                    {
+                        <option value="@user.Id">@user.EMail</option>
+
+                    }
+                </select>
+                
+            }
 
         </div>
         <hr/>

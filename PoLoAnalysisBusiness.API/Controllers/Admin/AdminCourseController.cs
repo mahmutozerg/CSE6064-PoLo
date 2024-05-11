@@ -31,7 +31,7 @@ public class AdminCourseController:CustomControllerBase
     }
     [HttpGet]
     public async Task<IActionResult> GetActiveCoursesByPage(string page)
-    {
+    {   
     
         return CreateActionResult(await _courseService.GetActiveCoursesByPageAsync(page));
     }

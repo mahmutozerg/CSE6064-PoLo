@@ -36,7 +36,7 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
 
         return _courses
             .Where(c=> !c.IsDeleted )
-            .Include(c=> c.Users.Where(u=> u.IsDeleted))
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
             .AsNoTracking()
@@ -49,7 +49,7 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
 
         return _courses
             .Where(c=> !c.IsDeleted  && c.Id.Contains(name))
-            .Include(c=> c.Users.Where(u=> !u.IsDeleted))
+            .Include(c=> c.Users.Where(u=> !u.IsDeleted && u.Courses.Exists(uc=> uc.Id == name && !uc.IsDeleted)))
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
             .AsNoTracking()
