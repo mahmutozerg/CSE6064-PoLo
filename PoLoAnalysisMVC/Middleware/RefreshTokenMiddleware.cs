@@ -22,7 +22,7 @@ public class RefreshTokenMiddleware
         var requestPath = context.Request.Path;
 
 
-        if (!string.IsNullOrEmpty(refreshToken) && string.IsNullOrEmpty(accessToken) && requestPath != "/Login" && context.Request.Method == "GET")
+        if (!string.IsNullOrEmpty(refreshToken) && string.IsNullOrEmpty(accessToken) && (!requestPath.StartsWithSegments("/login") || !requestPath.StartsWithSegments("/login"))  && context.Request.Method == "GET")
         {
             var tokenDto = await CatsUserServices.CreateTokenByRefreshTokenAsync(refreshToken);
             if (tokenDto is not null)

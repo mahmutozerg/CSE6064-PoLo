@@ -48,13 +48,13 @@ public class AdminUserController:CustomControllerBase
     [HttpGet]
     public async Task<IActionResult> GetUser(string eMail)
     {
-        return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
+        return CreateActionResult(await _userService.GetUserAsync(eMail));
     }
 
     [HttpGet]
     public async Task<IActionResult> GetActiveUser(string eMail)
     {
-        return CreateActionResult(await _userService.GetUserWithCoursesByEMailAsync(eMail));
+        return CreateActionResult(await _userService.GetActiveUserAsync(eMail));
     }
     [HttpGet]
     public async Task<IActionResult> GetAllUsersByPage(string page)

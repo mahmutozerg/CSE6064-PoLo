@@ -29,6 +29,7 @@ public static class AdminServices
     
     private const string GetActiveUserUrl =
         ApiConstants.BusinessApiIp +"/api/AdminUser/GetActiveUser";
+    
     public static async Task<List<AppUser>?> GetUserWithFilters(string search, bool withCourses, bool getAll ,string page,string token)
     {
         return withCourses switch
