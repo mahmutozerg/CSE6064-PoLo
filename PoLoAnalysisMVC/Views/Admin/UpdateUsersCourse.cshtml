@@ -1,0 +1,170 @@
+@using SharedLibrary
+@model PoLoAnalysisMVC.DTOS.UserWithExistingCoursesDto
+
+@{
+    Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v6">
+</head>
+<div class="popup-container" id="success-popup" style="display:none;" >
+    <div class="popup-content">
+        <div class="checkmark">✔</div>
+        <p id="success-popup-text">Courses Updated</p>
+    </div>
+</div>
+
+<div class="popup-container" id="failure-popup" style="display:none;">
+    <div class="popup-content">
+        <div class="crossmark">❌</div>
+        <p id="failure-popup-text">Failed to Update courses</p>
+    </div>
+</div>
+<div class="main-content">
+
+    <div class="user-info" id="@Model.AppUser.Id">
+        <p>Name: @(string.IsNullOrEmpty(Model.AppUser.Name) ? "Not Found" : Model.AppUser.Name)</p>
+        <p>Last Name:  @(!string.IsNullOrEmpty(Model.AppUser.LastName) ? Model.AppUser.LastName : "Not Found")</p>
+        <p>Email: @Model.AppUser.EMail</p>
+    
+        @if (Model.AppUser.IsDeleted)
+        {
+            <label>
+                <input type="checkbox" checked disabled/>
+                Deleted
+            </label>
+        }
+        
+        @if (Model.FreeCourses.Count > 0)
+        {          
+            <input type="hidden" name="id" value="@Model.AppUser.Id" />
+            <div class="dual-listbox">
+                <select id="available-options" name="freeCourses" multiple>
+                    <option disabled>All active courses</option>
+
+                    @foreach (var course in Model.FreeCourses)
+                    {
+                        <option value="@course.Id">@course.Id</option>
+                    }
+                </select>
+                <div class="controls">
+                    <button id="add-btn">&raquo;</button>
+                    <button id="remove-btn">&laquo;</button>
+                </div>
+                <select id="selected-options" name="selectedCourses" multiple>
+                    <option disabled>User active courses</option>
+
+                    @foreach (var course in Model.AppUser.Courses)
+                    {
+                        <option value="@course.Id">@course.Id</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" onclick="saveCourses('@Model.AppUser.Id')">Save Courses</button>
+        }
+        else
+        {
+            <input type="hidden" name="id" value="@Model.AppUser.Id" />
+            <div class="dual-listbox">
+                <select id="available-options" name="freeCourses" multiple>
+                    <option disabled>All active courses</option>
+                    
+                </select>
+                <div class="controls">
+                    <button id="add-btn">&raquo;</button>
+                    <button id="remove-btn">&laquo;</button>
+                </div>
+                <select id="selected-options" name="selectedCourses" multiple>
+                    <option disabled>User active courses</option>
+
+                    @foreach (var course in Model.AppUser.Courses)
+                    {
+                        <option value="@course.Id">@course.Id</option>
+                    }
+                </select>
+            </div>
+            <button id="saveCourses" type="submit" onclick="saveCourses('@Model.AppUser.Id')">Save Courses</button>
+        }
+    </div>
+    
+    
+</div>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    
+        const addBtn = document.getElementById("add-btn");
+        const removeBtn = document.getElementById("remove-btn");
+    
+        addBtn.addEventListener("click", function() {
+            moveOptions("available-options", "selected-options");
+        });
+    
+        removeBtn.addEventListener("click", function() {
+            moveOptions("selected-options", "available-options");
+        });
+    
+        function moveOptions(sourceId, targetId) {
+            const sourceSelect = document.getElementById(sourceId);
+            const targetSelect = document.getElementById(targetId);
+            
+            Array.from(sourceSelect.selectedOptions).forEach(option => {
+                targetSelect.appendChild(option);
+            });
+        }
+    });
+    
+async function saveCourses(uid) {
+    var successPopup = document.getElementById('success-popup');
+    var failPopup = document.getElementById('failure-popup');
+    
+    var token = getCookie("@ApiConstants.SessionCookieName");
+    if (token === '') {
+        await refreshAccessToken();
+        token = getCookie("@ApiConstants.SessionCookieName");
+    }
+
+    const freeCoursesSelect = document.getElementById("available-options");
+    const selectedCoursesSelect = document.getElementById("selected-options");
+
+    const freeCourses = Array.from(freeCoursesSelect.options).map(option => option.value);
+    const selectedCourses = Array.from(selectedCoursesSelect.options).map(option => option.value);
+
+    const payload = {
+        freeCourses: freeCourses.slice(1),
+        selectedCourses: selectedCourses.slice(1),
+        id: uid
+    };
+
+    await fetch(`/Admin/UpdateUsersCourse`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (!response.ok) {
+            showPopUp(failPopup)
+
+            throw new Error("Network response was not ok");
+        }
+        showPopUp(successPopup)
+        local.reload()
+        
+    })
+    .catch(error => {
+    });
+}
+    function showPopUp(popup) {
+
+        popup.style.display = "block";
+        setTimeout(function() {
+            popup.style.display = "none";
+        }, 4000);
+    }
+
+    
+</script>

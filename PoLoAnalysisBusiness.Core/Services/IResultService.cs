@@ -1,6 +1,5 @@
 ﻿using System.IO.Compression;
 using Microsoft.AspNetCore.Mvc;
-using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary.DTOs.FileResult;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.Models.business;

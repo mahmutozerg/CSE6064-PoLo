@@ -1,16 +1,12 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.DTO.Courses;
-using SharedLibrary.DTOs.Responses;
 using SharedLibrary.Models.business;
-using StatusCodes = SharedLibrary.StatusCodes;
 
 namespace PoLoAnalysisBusinessAPI.Controllers.Admin;
 [Authorize(Roles = "Admin")]
-
 public class AdminCourseController:CustomControllerBase
 {
     private readonly ICourseService _courseService;

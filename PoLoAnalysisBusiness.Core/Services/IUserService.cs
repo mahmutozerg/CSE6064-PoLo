@@ -1,5 +1,4 @@
 ﻿using System.Security.Claims;
-using PoLoAnalysisBusiness.DTO.Users;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.DTOs.User;
 using SharedLibrary.Models.business;
@@ -31,4 +30,5 @@ public interface IUserService:IGenericService<AppUser>
 
 
     Task<CustomResponseListDataDto<AppUser>> GetUserWithCoursesByEMailByPageAsync(string eMail, string page);
+    Task<CustomResponseDto<AppUser>> GetUserWithCoursesById(string id);
 }

@@ -21,7 +21,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PoLoAnalysisAuthServer.Core\PoLoAnalysisAuthServer.Core.csproj" />
-      <ProjectReference Include="..\PoLoAnalysisBusiness.Core\PoLoAnalysisBusiness.Core.csproj" />
     </ItemGroup>
 
 </Project>

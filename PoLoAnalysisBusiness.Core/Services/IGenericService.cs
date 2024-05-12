@@ -1,5 +1,4 @@
 using System.Linq.Expressions;
-using PoLoAnalysisBusiness.DTO.Responses;
 using SharedLibrary.DTOs.Responses;
 
 namespace PoLoAnalysisBusiness.Core.Services;

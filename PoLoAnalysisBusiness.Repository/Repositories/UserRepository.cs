@@ -15,7 +15,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
     public UserRepository(AppDbContext context) : base(context)
     {
         _users = context.Set<AppUser>();
-        _activeUsersMaxPage = _users.Count(u => u.IsDeleted)/PageEntityCount;
+        _activeUsersMaxPage = _users.Count(u => !u.IsDeleted)/PageEntityCount;
         _allUsersMaxPage = _users.Count()/PageEntityCount;
 
     }
@@ -160,5 +160,14 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .Take(PageEntityCount)
             .Include(u=> u.Courses)
             .ToListAsync();
+    }
+
+    public async Task<AppUser?> GetUserWithCoursesById(string id)
+    {
+        return await _users
+            .Where(u => !u.IsDeleted && u.Id == id)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
+            .AsNoTracking()
+            .SingleOrDefaultAsync();
     }
 }

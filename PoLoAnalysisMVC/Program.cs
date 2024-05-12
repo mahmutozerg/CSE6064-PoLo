@@ -20,6 +20,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = ApiConstants.SessionCookieName;
     options.DefaultSignInScheme = ApiConstants.SessionCookieName;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    
 }).AddJwtBearer(opt =>
 {
     opt.RequireHttpsMetadata = false;
@@ -53,10 +54,16 @@ builder.Services.AddAuthentication(options =>
             if (!context.Request.Cookies.ContainsKey(ApiConstants.SessionCookieName))
                 return Task.CompletedTask;
             context.Token = context.Request.Cookies[ApiConstants.SessionCookieName];
-            //context.Request.Headers.TryAdd("Bearer", context.Token);
 
             return Task.CompletedTask;
         },
+        OnForbidden = context =>
+        {
+            context.Response.Redirect("/login");
+            return Task.CompletedTask;
+
+        }
+        
 
     };
 }).AddCookie(ApiConstants.SessionCookieName, options =>
@@ -97,7 +104,6 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseRefreshTokenMiddleware();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

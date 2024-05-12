@@ -2,7 +2,6 @@
 using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
-using PoLoAnalysisBusiness.DTO.Users;
 using PoLoAnalysisBusiness.Services.Mappers;
 using SharedLibrary;
 using SharedLibrary.DTOs.Responses;
@@ -58,7 +57,8 @@ public class UserService:GenericService<AppUser>,IUserService
         var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(dto.TeacherEmail);
         var errors = new List<string>();
         if (user is null)
-            throw new Exception("");
+            throw new Exception(ResponseMessages.UserNotFound);
+
 
         foreach (var coursesFullName in dto.CoursesFullNames)
         {
@@ -82,19 +82,30 @@ public class UserService:GenericService<AppUser>,IUserService
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);
     }
 
+    
     public async Task<CustomResponseNoDataDto> RemoveUserFromCourseAsync(RemoveUserFromCourseDto dto, string updatedBy)
     {
-        var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(dto.TeacherEmail);
-        if (user is null)
-            throw new Exception("");
-
-        var targetCourseIndex = user.First().Courses.FindIndex(c => c.Id == dto.CourseFullName);
         
-        if (targetCourseIndex < 0)
-            throw new Exception(ResponseMessages.UserNotBelongCourse);
+        var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(dto.TeacherEmail);
+        var errors = new List<string>();
 
+        if (user is null)
+            throw new Exception(ResponseMessages.UserNotFound);
+
+        foreach (var coursesFullName in dto.CoursesFullNames)
+        {
+            var course = await _courseService.GetByIdAsync(coursesFullName);
+
+            if (course.Data is null)
+                errors.Add( coursesFullName + "Not found No changes made");
+            else
+                user.First().Courses.Remove(course.Data!);
             
-        user.First().Courses.RemoveAt(targetCourseIndex);
+        }
+        if (errors.Count > 0)
+            throw new Exception(string.Concat(errors.SelectMany(e => e)));
+        
+            
         user.First().UpdatedBy = updatedBy;
         
         _userRepository.Update(user.First());
@@ -229,4 +240,13 @@ public class UserService:GenericService<AppUser>,IUserService
                 await _userRepository.GetUserWithCoursesByEMailByPageAsync(eMail, intPage), StatusCodes.Ok); 
 
         throw new Exception(ResponseMessages.UserNotFound);    }
+
+    public async Task<CustomResponseDto<AppUser>> GetUserWithCoursesById(string id)
+    {
+        var user = await _userRepository.GetUserWithCoursesById(id);
+        
+        ArgumentNullException.ThrowIfNull(user);
+        
+        return CustomResponseDto<AppUser>.Success(user,StatusCodes.Ok);
+    }
 }

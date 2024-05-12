@@ -51,11 +51,12 @@ async function SendRequest()
             })
             .catch(error => {
                 console.error('Error uploading file:', error);
-                
+                showPopUp(failPopup);
+
             });
     } else {
         console.error('No file selected or course not selected.');
-        showPopUp(failPopup,"No file selected or course not selected.");
+        showPopUp(failPopup);
     }
     function showPopUp(popup) {
     

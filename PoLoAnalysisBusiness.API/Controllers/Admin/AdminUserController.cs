@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Services;
-using PoLoAnalysisBusiness.DTO.Users;
+using SharedLibrary.DTOs.User;
 using IUserService = PoLoAnalysisBusiness.Core.Services.IUserService;
 
 namespace PoLoAnalysisBusinessAPI.Controllers.Admin;
@@ -81,5 +81,13 @@ public class AdminUserController:CustomControllerBase
     {
 
         return CreateActionResult(await _userService.GetAllUsersWithCoursesByPageAsync(page));
+    }
+    
+        
+    [HttpGet]
+    public async Task<IActionResult> GetUserWithCoursesById(string id)
+    {
+
+        return CreateActionResult(await _userService.GetUserWithCoursesById(id));
     }
 }

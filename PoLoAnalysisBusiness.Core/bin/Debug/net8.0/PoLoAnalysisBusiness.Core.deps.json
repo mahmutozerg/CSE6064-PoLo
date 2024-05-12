@@ -10,7 +10,6 @@
         "dependencies": {
           "EPPlus": "7.1.2",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "PoLoAnalysisBusiness.DTO": "1.0.0",
           "SharedLibrary": "1.0.0"
         },
         "runtime": {
@@ -784,11 +783,6 @@
           "System.Xml.ReaderWriter": "4.0.11"
         }
       },
-      "PoLoAnalysisBusiness.DTO/1.0.0": {
-        "runtime": {
-          "PoLoAnalysisBusiness.DTO.dll": {}
-        }
-      },
       "SharedLibrary/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.4"
@@ -1462,11 +1456,6 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
-    },
-    "PoLoAnalysisBusiness.DTO/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "SharedLibrary/1.0.0": {
       "type": "project",

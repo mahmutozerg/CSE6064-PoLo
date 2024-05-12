@@ -344,7 +344,7 @@ public class ResultService:GenericService<Result>,IResultService
             return;
         var colCount = worksheet.Dimension.Columns;
         var colStart = int.Parse(_q1StartPos["col"]);
-        
+        var lastQuestion = 0;
         for (var col =colStart; col <= colCount-1; col++)
         {
             var cellValue = worksheet.Cells[int.Parse(_q1StartPos["row"]), col].Value;
@@ -352,6 +352,14 @@ public class ResultService:GenericService<Result>,IResultService
                 continue;
             
             var questionPoint = worksheet.Cells[int.Parse(_q1StartPos["row"])+1, col].Value;
+            var currentQuestion = int.Parse(worksheet.Cells[int.Parse(_q1StartPos["row"]), col].Value.ToString().Substring(1));
+
+            if (currentQuestion - lastQuestion  != 1)
+            {
+                throw new Exception("Please Check question numbers");
+            }
+
+            lastQuestion = currentQuestion;
             _questionPoints.Add(float.Parse(questionPoint.ToString()));
             _qEndPos["row"] = int.Parse(_q1StartPos["row"]).ToString();
             _qEndPos["col"] = col.ToString();

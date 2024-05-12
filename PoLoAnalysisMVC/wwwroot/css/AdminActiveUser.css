@@ -14,7 +14,49 @@
     height: 5%;
     text-align: left;
 }
+.plus-button,.minus-button
+{
+    border-radius: 30px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+.plus-button
+{
+    background-color: limegreen; 
+    margin-right: 15px;
+}
+.minus-button
+{
+    background-color: red;
+}
+.plus-button img,
+.minus-button img {
+    color : #C1272D;
+    width: 20px; 
+    height: 20px; 
+}
+.plus-button:hover,
+.minus-button:hover {
+    background-color: #ccc; 
+}
 
+
+.plus-button:hover::before,
+.minus-button:hover::before {
+    content: attr(title);
+    display: block;
+    position: absolute;
+    background-color: #333; 
+    color: #fff; 
+    padding: 5px;
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #search {
     background-color: #E6E7E8;
     border-radius: 300px;
@@ -37,6 +79,8 @@ p {
 }
 
 #user-courses {
+    border: 0;
+    width: 200px;
     background-color: #E6E7E8;
     border-radius: 30px;
     border: 4px solid rgba(0, 0, 0, 0);
@@ -66,4 +110,84 @@ p {
     border: 4px solid rgba(0, 0, 0, 0);
     box-sizing: border-box;
     font-size: 16px;
+}
+select:focus {
+    outline: none;
+    border: none;
+}
+
+.dual-listbox {
+    display: flex;
+    align-items: center;
+}
+
+.controls {
+    background-color: #E6E7E8;
+    margin: 0 10px;
+}
+.controls button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+.controls button:hover {
+    background-color: #f0f0f0; 
+}
+
+#selected-options,#available-options{
+    padding-top: 15px;
+    padding-left: 10px;
+    font-family: Montserrat;
+    background-color: #E6E7E8;
+    border-radius: 30px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 200px;
+    height: 150px;
+
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
+    -ms-overflow-style: none; 
+}
+
+select::-webkit-scrollbar {
+    width: 8px;
+}
+
+select::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 4px; 
+}
+
+.popup-container {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#saveCourses
+{
+    background-color: #E6E7E8;
+margin-top: 15px;
+    border-radius: 30px;
+    font-family: Montserrat;
+    border: none;
+
 }

@@ -1,11 +1,9 @@
 ﻿@using System.Security.Claims
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]-POLO Analytics</title>
-    <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/js/site.js" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -14,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/js/ClientSideRefreshToken.js?v2" defer></script>
 
+    <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
 <body>
@@ -26,9 +25,10 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&equiv; </a>
         @{
-            var name = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Name).Value;
+            var name = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.Name)?.Value ?? "Something Went Wrong";
+            
         }
-        <p>Hello,@name<br></p>
+        <p><br>Hello,@name<br/></p>
         <a href="@Url.Action("Import","Home")">Import Excel File</a>
         <a href="#">Reports In Progress</a>
         <a href="@Url.Action("Index","Home")">Export Word File</a>

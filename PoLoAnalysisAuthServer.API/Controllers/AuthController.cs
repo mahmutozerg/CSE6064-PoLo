@@ -38,7 +38,7 @@ public class AuthController:CustomControllerBase
     }
     
     [HttpPost]
-    [Authorize]
+    [Authorize(Policy = "ClientsWithAdminByPassPolicy")]
     public async Task<IActionResult> RevokeRefreshToken(string refreshToken)
     {
         var result = await _authenticationService.RevokeRefreshToken(refreshToken);

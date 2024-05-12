@@ -1063,16 +1063,10 @@
         "dependencies": {
           "EPPlus": "7.1.2",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "PoLoAnalysisBusiness.DTO": "1.0.0",
           "SharedLibrary": "1.0.0"
         },
         "runtime": {
           "PoLoAnalysisBusiness.Core.dll": {}
-        }
-      },
-      "PoLoAnalysisBusiness.DTO/1.0.0": {
-        "runtime": {
-          "PoLoAnalysisBusiness.DTO.dll": {}
         }
       },
       "SharedLibrary/1.0.0": {
@@ -1820,11 +1814,6 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "PoLoAnalysisBusiness.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "PoLoAnalysisBusiness.DTO/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

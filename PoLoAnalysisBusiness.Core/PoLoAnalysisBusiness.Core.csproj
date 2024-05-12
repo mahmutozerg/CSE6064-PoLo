@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PoLoAnalysisBusiness.DTO\PoLoAnalysisBusiness.DTO.csproj" />
       <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj" />
     </ItemGroup>
 
@@ -27,6 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="DTOS\Users\" />
       <Folder Include="Models\" />
     </ItemGroup>
 

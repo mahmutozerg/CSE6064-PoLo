@@ -31,8 +31,7 @@ async function refreshAccessToken() {
 
 
 function checkAccessTokenAndRefresh() {
-    resetInactivityTimer(); 
-
+    resetInactivityTimer();
     document.addEventListener('click', resetInactivityTimer);
     document.addEventListener('keypress', resetInactivityTimer);
 

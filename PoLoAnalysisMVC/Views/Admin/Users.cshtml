@@ -2,7 +2,7 @@
 
 
 <head>
-    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v3">
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v4">
 </head>
 <title>@ViewBag.Title</title>
 
@@ -52,7 +52,7 @@
             
             @if (user.Courses.Count >0)
             {            
-                <select id="user-courses">
+                <select id="user-courses" style="margin-bottom: 10px; ">
                     <option value="">User Active Courses</option>
                     @foreach (var course in user.Courses)
                     {
@@ -60,8 +60,15 @@
 
                     }
                 </select>
-                
+                <br/>
             }
+        @if (!user.IsDeleted)
+        {
+            <button type="button" class="plus-button" title="Update User's Courses" onclick="location.href='@Url.Action("UpdateUsersCourse", "Admin", new { id = user.Id })'">
+                <img src="/Images/edit icon_4643109.png" alt="Update">
+            </button>     
+        }
+   
 
 
         </div>

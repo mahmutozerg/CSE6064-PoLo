@@ -23,7 +23,7 @@ public static class CatsUserServices
     private const string CreateTokenByRefreshTokenUrl =
         SharedLibrary.ApiConstants.AuthServerIP + "/api/auth/CreateTokenByRefreshToken";
 
-    private static ClientTokenDto ClientToken = new ClientTokenDto();
+    public static ClientTokenDto ClientToken = new ClientTokenDto();
     public static async Task<TokenDto?> LoginUserAsync(CatsUserLogin loginDto)
     {
         using var client = new HttpClient();
@@ -52,7 +52,7 @@ public static class CatsUserServices
 
         };
     }
-    private static async Task<Task> CreateTokenByClientAsync(ClientLoginDto loginDto)
+    public static async Task<Task> CreateTokenByClientAsync(ClientLoginDto loginDto)
     {
         using var client = new HttpClient();
         var tokenJsonData = JsonConvert.SerializeObject(loginDto);

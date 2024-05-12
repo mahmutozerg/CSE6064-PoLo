@@ -1,4 +1,5 @@
-﻿using SharedLibrary.Models;
+﻿using SharedLibrary.DTOs.Responses;
+using SharedLibrary.Models;
 using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisBusiness.Core.Repositories;
@@ -22,4 +23,5 @@ public interface IUserRepository:IGenericRepository<AppUser>
     Task<List<AppUser>> GetActiveUserAsync(string eMail);
     Task<List<AppUser>> GetActiveUserWithCoursesByEMailByPageAsync(string eMail,int page);
     Task<List<AppUser>> GetUserWithCoursesByEMailByPageAsync(string eMail, int page);
+    Task<AppUser?> GetUserWithCoursesById(string id);
 }

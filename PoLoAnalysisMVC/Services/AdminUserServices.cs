@@ -1,5 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Text;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SharedLibrary;
+using SharedLibrary.DTOs.User;
 using SharedLibrary.Models.business;
 
 namespace PoLoAnalysisMVC.Services;
@@ -29,7 +33,15 @@ public static class AdminUserServices
     
     private const string GetActiveUserByEMailByPageUrl =
         ApiConstants.BusinessApiIp +"/api/AdminUser/GetActiveUser";
-    
+
+    private const string GetUserWithCoursesByIdUrl =
+        ApiConstants.BusinessApiIp + "/api/AdminUser/GetUserWithCoursesById";
+
+    private const string AddUserToCoursesUrl =
+        ApiConstants.BusinessApiIp + "/api/AdminUser/AddUserToCourses";
+
+    private const string RemoveUserFromCoursesUrl =
+        ApiConstants.BusinessApiIp + "/api/AdminUser/RemoveUserFromCourse";
     public static async Task<List<AppUser>?> GetUserWithFilters(string search, bool withCourses, bool getAll ,string page,string token)
     {
         return withCourses switch
@@ -66,7 +78,52 @@ public static class AdminUserServices
         using var client = new HttpClient();
         client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
         var response = await client.GetAsync(url+$"?eMail={search}&page={page}");
-        
         return !response.IsSuccessStatusCode ? null : JObject.Parse(await response.Content.ReadAsStringAsync())["data"].ToObject<List<AppUser>>();
     }
+    
+    public static async Task<AppUser?> GetUserWithCoursesByIdAsync(string id,string token)
+    {
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
+        var response = await client.GetAsync(GetUserWithCoursesByIdUrl+$"?id={id}");
+        return !response.IsSuccessStatusCode ? null : JObject.Parse(await response.Content.ReadAsStringAsync())["data"].ToObject<AppUser>();
+    }
+
+
+    public static async Task<bool> AddUserToCourseAsync(List<string> courses, string eMail, string token)
+    {
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
+
+        var dto = new AddUsersToCoursesDto()
+        {
+            CoursesFullNames = courses,
+            TeacherEmail = eMail
+        };
+        
+        var jsonData = JsonConvert.SerializeObject(dto);
+        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+        var response = await client.PutAsync(AddUserToCoursesUrl,content);
+
+        return response.IsSuccessStatusCode;
+    }
+    
+    public static async Task<bool> RemoveUserFromCoursesAsync(List<string> courses, string eMail, string token)
+    {
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
+
+        var dto = new RemoveUserFromCourseDto()
+        {
+            CoursesFullNames = courses,
+            TeacherEmail = eMail
+        };
+        
+        var jsonData = JsonConvert.SerializeObject(dto);
+        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+        var response = await client.PostAsync(RemoveUserFromCoursesUrl,content);
+
+        return response.IsSuccessStatusCode;
+    }
+
 }

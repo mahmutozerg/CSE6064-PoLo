@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PoLoAnalysisMVC.DTOS;
 using PoLoAnalysisMVC.Services;
 using SharedLibrary;
 using SharedLibrary.Models.business;
@@ -8,7 +10,7 @@ using SharedLibrary.Models.business;
 namespace PoLoAnalysisMVC.Controllers;
 
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-[Authorize(AuthenticationSchemes = ApiConstants.SessionCookieName ,Roles = "Admin")]  
+[Authorize(AuthenticationSchemes = ApiConstants.SessionCookieName)]  
 public class AdminController : Controller
 {
     
@@ -36,4 +38,68 @@ public class AdminController : Controller
         return View(courses);
     }
 
+    
+    [HttpGet]
+    public async Task<IActionResult> UpdateUsersCourse(string id)
+    {
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
+        var user = await AdminUserServices.GetUserWithCoursesByIdAsync(id, token);
+        if (user is null)
+            return Redirect($"Error/Index/");
+        
+        var courses = new List<Course>();
+        var page = 0;
+
+        do
+        {
+            var currentCourse = await AdminCourseServices.GetCoursesWithFilters(string.Empty, false, false,page.ToString() , token);
+            page += 1;
+            if (currentCourse is not null && currentCourse.Count >0)
+            {
+                courses.AddRange(currentCourse);
+                continue;
+            }
+            break;
+            
+        } while (true);
+        
+        foreach (var userCourse in user.Courses)
+        {
+            var existingCourse = courses.FirstOrDefault(c => c.Id == userCourse.Id);
+            if (existingCourse != null)
+            {
+                courses.Remove(existingCourse);
+            }
+        }
+  
+        return View(new UserWithExistingCoursesDto()
+        {
+            AppUser = user,
+            FreeCourses = courses,
+            Courses = user.Courses
+            
+        });
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> UpdateUsersCourse([FromBody] CourseUpdateDto model)
+    {
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
+        var user = await AdminUserServices.GetUserWithCoursesByIdAsync(model.Id,token);
+
+        if (user is null)
+            return Redirect($"Error/Index/");
+        
+        var coursesToBeAdded = model.SelectedCourses.Where(course => !user.Courses.Exists(c => c.Id == course)).ToList();
+        var coursesToBeRemoved = model.FreeCourses.Where(course => user.Courses.Exists(c => c.Id == course)).ToList();
+
+        var results = new List<bool>();
+        if (coursesToBeAdded.Count > 0)
+            results.Add(await AdminUserServices.AddUserToCourseAsync(coursesToBeAdded, user.EMail, token));
+            
+        results.Add( await AdminUserServices.RemoveUserFromCoursesAsync(coursesToBeRemoved, user.EMail, token));
+
+       
+        return  results.All(c => c) ? Ok() : Problem();
+    }
 }
