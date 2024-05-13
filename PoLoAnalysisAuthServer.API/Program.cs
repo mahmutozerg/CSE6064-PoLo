@@ -37,6 +37,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+AppDomain.CurrentDomain.SetData("DataDirectory",Directory.GetParent(Directory.GetCurrentDirectory()).ToString());
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {

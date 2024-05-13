@@ -61,12 +61,15 @@ builder.Services.AddScoped(typeof(IGenericService<>), typeof(PoLoAnalysisBusines
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 
+AppDomain.CurrentDomain.SetData("DataDirectory",Directory.GetParent(Directory.GetCurrentDirectory()).ToString());
+
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
     x.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"), options =>
     {
         options.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
         options.EnableRetryOnFailure();
+        
     });
 });
 
