@@ -25,355 +25,113 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/4b44c5a0-fde7-4772-abc1-5630d5698dfc.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/623f32fb-8658-4f5c-8920-ce33156070fd.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/ba7a9e04-8294-4f71-96cf-7b82f460970f.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/baa976cb-30f3-482b-8910-29af74baa33b.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/d95b36c3-04d5-487a-8ae9-3897feb402be.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/PoLoAnalysis/v17/.wsuo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Azure.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Azure.Identity.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Humanizer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Extensions.Options.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Identity.Client.Extensions.Msal.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.SqlServer.Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Mono.TextTemplating.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthServer.API.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthServer.API.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthServer.API.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthServer.API.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthServer.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthServer.Repository.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAnalysisAuthSever.Service.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAuthDB.mdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/PoLoAuthDB_log.ldf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/SeleniumExtras.WaitHelpers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.CodeDom.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Composition.AttributedModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Composition.Convention.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Composition.Hosting.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Composition.Runtime.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Composition.TypedParts.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Memory.Data.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Security.Permissions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/System.Windows.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/WebDriver.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/selenium-manager/linux/selenium-manager" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/selenium-manager/macos/selenium-manager" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/selenium-manager/windows/selenium-manager.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Core/bin/Debug/net8.0/PoLoAnalysisAuthServer.Core.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Core/bin/Debug/net8.0/PoLoAnalysisAuthServer.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Core/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Repository/bin/Debug/net8.0/PoLoAnalysisAuthServer.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Repository/bin/Debug/net8.0/PoLoAnalysisAuthServer.Repository.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Repository/bin/Debug/net8.0/PoLoAnalysisAuthServer.Repository.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Repository/bin/Debug/net8.0/PoLoAnalysisAuthServer.Repository.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.Repository/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/PoLoAnalysisAuthServer.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/PoLoAnalysisAuthServer.Repository.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/PoLoAnalysisAuthSever.Service.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/PoLoAnalysisAuthSever.Service.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/selenium-manager/linux/selenium-manager" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/selenium-manager/macos/selenium-manager" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/bin/Debug/net8.0/selenium-manager/windows/selenium-manager.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Azure.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Azure.Identity.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/DocXCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/EPPlus.Interfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/EPPlus.System.Drawing.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/EPPlus.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Humanizer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IO.RecyclableMemoryStream.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Identity.Client.Extensions.Msal.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Net.Http.Headers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.SqlServer.Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Mono.TextTemplating.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.API.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SeleniumExtras.WaitHelpers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/SkiaSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Spire.XLS.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.CodeDom.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Composition.AttributedModel.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Composition.Convention.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Composition.Hosting.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Composition.Runtime.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Composition.TypedParts.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.IO.Packaging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Memory.Data.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Security.Permissions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/System.Windows.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/WebDriver.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/osx/native/libSkiaSharp.dylib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/tizen-armel/native/libSkiaSharp.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/tizen-x86/native/libSkiaSharp.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win-x64/native/libSkiaSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win-x86/native/libSkiaSharp.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/runtimes/win/lib/net7.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Repository.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/PoLoAnalysisBusiness.Services.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/PoLoAnalysisMVC.staticwebassets.runtime.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedLibrary/bin/Debug/net8.0/SharedLibrary.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedLibrary/bin/Debug/net8.0/SharedLibrary.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chromedriver123.exe" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/AddNewCourse.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/Images/red-trash-can-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/AdminAddCourse.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/CoursesDeleteAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021_result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/2727e8cb-a909-4e19-97ba-b190e652a01b.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/61ed026d-3325-4727-8d34-dc971c8bfb57.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/f984ef83-ccae-434a-9787-456f3c86d0bd.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ResultController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ResultController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/DTOS/Courses/CourseAddDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/Models/business/CourseAddDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/DTOS/Courses/CourseDeleteDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/DTOS/Courses/CourseDeleteDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/ICourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/ICourseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/ICourseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/ICourseService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IResultService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IResultService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/CourseRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/CourseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/CourseService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Middleware/RefreshTokenMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Middleware/RefreshTokenMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Courses.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Courses.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/UpdateUsersCourse.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/UpdateUsersCourse.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Users.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Users.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Import.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Import.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/AdminActiveUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/AdminActiveUser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/import.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/import.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/ClientSideRefreshToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/ClientSideRefreshToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/Export.js" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/Export.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemplateFiles/EkTemplate.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateFiles/EkTemplate.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemplateFiles/Result.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemplateFiles/result.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemplateFiles/test.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UploadedFiles/753aecca-e327-46f7-acbf-0d0abe787714.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -416,6 +174,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/Microsoft.Extensions.Options/src/ConfigureNamedOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/Microsoft.Extensions.Options/src/OptionsFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ActivatorUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Int32.cs" root0="SKIP_HIGHLIGHTING" />
@@ -429,18 +188,6 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.Xml/src/System/Xml/Dom/XmlDocument.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0706dcfabddf4241b89dd5a90ab7061526a828/62/1014f485/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0706dcfabddf4241b89dd5a90ab7061526a828/8f/04b538b1/DbContextOptions`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2158f4f04358416a9be3e74eb2b544461de8a0/ea/01d07214/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/38362e0ec276494b821e1c6cef4f01cb3b8a0/88/7183d14d/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/477b4e826ead4ecf86f19cf2ddbb4649c8f910/bf/ba0ab274/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63dacdca0d03468abce09bcc8a9a8fef10910/a2/912a68bb/IAuthenticationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/768ffd8826aa497fb5b91d2a59f785af4e910/df/32a8765f/HttpResponse.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9912e9dd155f4f90886f876f6d33c93f1a920/23/169e98f4/AuthorizationHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9b1e5560b396430b8be50d78eaf2f5d535e200/60/1973114a/ExcelPackage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/caba63bbbf1b47198c8fe5563f86e76cb0918/91/586e2733/Controller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3684e888fd93508450e2f4b0d7d38bee648cba98882592491596fc79375185f/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/781ebca67bd71532948352c2c24f8db410449e3c21f7191a17bf21348cd4fed4/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisAuthServer.API/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -452,6 +199,7 @@
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lenovo/RiderProjects/PoLoAnalysis/PoLoAnalysisMVC/Views/Admin/UpdateUsersCourse.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -471,9 +219,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: IIS Express.executor": "Debug",
-    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Run",
+    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Debug",
     ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: http.executor": "Run",
-    ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Debug",
+    ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: http.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: https.executor": "Run",
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -705,7 +453,9 @@
       <workItem from="1715542413637" duration="3539000" />
       <workItem from="1715547970370" duration="1470000" />
       <workItem from="1715549706548" duration="1234000" />
-      <workItem from="1715592964104" duration="1193000" />
+      <workItem from="1715592964104" duration="12518000" />
+      <workItem from="1715606920838" duration="837000" />
+      <workItem from="1715610930469" duration="11353000" />
     </task>
     <task id="LOCAL-00001" summary="File constants file uploads file upload controller created">
       <option name="closed" value="true" />
@@ -835,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714932899728</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Git ignore updated">
+      <option name="closed" value="true" />
+      <created>1715595470186</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715595470186</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -873,7 +631,8 @@
     <MESSAGE value="mvc authorization from cookies" />
     <MESSAGE value="pç karşılama yüzdeleri hesaplama bugfix" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Git ignore updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Git ignore updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -931,32 +690,6 @@
           <option name="timeStamp" value="183" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>21</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCoursesByPageByName'">
-            <startOffsets>
-              <option value="664" />
-            </startOffsets>
-            <endOffsets>
-              <option value="757" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="198" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
-          <line>344</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'SetLastQuestionPosition'">
-            <startOffsets>
-              <option value="12357" />
-            </startOffsets>
-            <endOffsets>
-              <option value="12400" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="242" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
           <line>23</line>
           <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'AddUserToCourses'">
@@ -971,29 +704,120 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs</url>
-          <line>102</line>
+          <line>129</line>
           <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\AdminController.cs" containingFunctionPresentation="Method 'UpdateUsersCourse'">
             <startOffsets>
-              <option value="3783" />
+              <option value="4654" />
             </startOffsets>
             <endOffsets>
-              <option value="3830" />
+              <option value="4701" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="248" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Program.cs</url>
-          <line>63</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Program.cs" containingFunctionPresentation="">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
+          <line>75</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'GetCoursesWithSearchAsync'">
             <startOffsets>
-              <option value="2735" />
+              <option value="3634" />
             </startOffsets>
             <endOffsets>
-              <option value="2805" />
+              <option value="3670" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="249" />
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
+          <line>26</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCoursesByPageByName'">
+            <startOffsets>
+              <option value="830" />
+            </startOffsets>
+            <endOffsets>
+              <option value="923" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/CourseService.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\CourseService.cs" containingFunctionPresentation="Method 'GetActiveCoursesByNameByPageAsync'">
+            <startOffsets>
+              <option value="1470" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1516" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\ExcelFileController.cs" containingFunctionPresentation="Method 'UploadExcel'">
+            <startOffsets>
+              <option value="824" />
+            </startOffsets>
+            <endOffsets>
+              <option value="913" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="299" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
+          <line>77</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'GetCoursesWithSearchAsync'">
+            <startOffsets>
+              <option value="3803" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3875" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs</url>
+          <line>51</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\AdminController.cs" containingFunctionPresentation="Method 'AddNewCourse'">
+            <startOffsets>
+              <option value="1880" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1955" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
+          <line>93</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'AddCourseAsync'">
+            <startOffsets>
+              <option value="4533" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4569" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="305" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
+          <line>72</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'AddCourse'">
+            <startOffsets>
+              <option value="2529" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2744" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="306" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

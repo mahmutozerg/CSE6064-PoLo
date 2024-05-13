@@ -7,6 +7,7 @@ namespace PoLoAnalysisBusiness.Core.Services;
 public interface ICourseService:IGenericService<Course>
 {
 
+    Task<CustomResponseNoDataDto> DeleteCourseWithFilesWithResultByIdAsync(string id,string updatedBy);
     Task<CustomResponseListDataDto<Course>> GetActiveCoursesByNameByPageAsync(string name,string page);
     Task<CustomResponseListDataDto<Course>> GetAllCoursesByPageAsync(string page);
     Task<CustomResponseListDataDto<Course>> GetActiveCoursesByPageAsync(string page);

@@ -1,9 +1,11 @@
-﻿let exportForm;
+﻿let exportForm, failurePopUp,successPopUp;
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("export-button").addEventListener("click", getResultFile);
     exportForm = document.querySelector('.export');
     courseDropdown = document.getElementById('course-dropdown');
+    failurePopUp = document.getElementById("failure-popup");
+    successPopUp = document.getElementById("success-popup");
 
 });
 async function getResultFile() {
@@ -29,10 +31,14 @@ async function getResultFile() {
             },
         });
 
-        if (!response.ok) {
-            throw new Error(`Request failed with status ${response.status}`);
+        if (!response.ok)
+        {
+            showPopUp(failurePopUp)
+        }else
+        {
+            showPopUp(successPopUp)
+
         }
-        console.log(response)
         const blob = await response.blob();
 
         const blobUrl = URL.createObjectURL(blob);
@@ -52,6 +58,14 @@ async function getResultFile() {
         URL.revokeObjectURL(blobUrl);
     } catch (error) {
         console.error('An error occurred:', error);
+    }
+
+    function showPopUp(popup) {
+
+        popup.style.display = "block";
+        setTimeout(function() {
+            popup.style.display = "none";
+        }, 4000);
     }
 }
 

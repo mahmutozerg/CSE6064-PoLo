@@ -25,13 +25,13 @@ public class ExcelFileController:CustomControllerBase
         var userId = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         var course = await _courseService.GetByIdAsync(courseId);
-        
+
         var result =await _appFileServices.AddFileAsync(file,courseId,userId);
         
         var fileResult = await _appFileServices.GetByIdAsync(result.Data.Id);
         
         _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
-        _resultService.AnalyzeExcel();
+        await _resultService.AnalyzeExcel(course.Data);
         var res = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}",userId);
         return CreateActionResult(res);
     }

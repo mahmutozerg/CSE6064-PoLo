@@ -3,9 +3,24 @@
 
 
 <head>
-    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v3">
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v9">
+    <script src="~/js/CoursesDeleteAdd.js?v1" ></script>
 </head>
 <title>@ViewBag.Title</title>
+
+<div class="popup-container" id="success-popup" style="display:none;" >
+    <div class="popup-content">
+        <div class="checkmark">✔</div>
+        <p id="success-popup-text">Courses Updated</p>
+    </div>
+</div>
+
+<div class="popup-container" id="failure-popup" style="display:none;">
+    <div class="popup-content">
+        <div class="crossmark">❌</div>
+        <p id="failure-popup-text">Failed to Update courses</p>
+    </div>
+</div>
 
 <div class="main-content">
     
@@ -30,14 +45,21 @@
             <label for="getAll">Include Deleted Courses</label>
             <br><br>
             <button type="submit">Apply Filters</button>
-            
+            <br/>
         </div>
 
+
     }
-        <hr/>
+
+    <button type="button" class="add-button" title="Add New Course" onclick="window.location.href='@Url.Action("AddNewCourse")'">
+        <img src="/Images/circularplusbutton_121982.png" alt="Update">
+    </button>
+    <hr/>
+
 
     @foreach (var course in Model)
     {
+        
         <div class="user-info" id="@course.Id">
             <p>Course Name: @(string.IsNullOrEmpty(course.Id) ? "Not Found" : course.Id)</p>
             <p>Course Year:  @(!string.IsNullOrEmpty(course.Year) ? course.Year : "Not Found")</p>
@@ -48,6 +70,7 @@
                     <input type="checkbox" checked disabled/>
                     Is Compulsory
                 </label>
+                <br/>
             }
             else
             {
@@ -55,6 +78,9 @@
                     <input type="checkbox"  disabled/>
                     Is Compulsory
                 </label>
+                <br/>
+                <br/>
+
             }
             
             @if (course.IsDeleted)
@@ -63,20 +89,29 @@
                     <input type="checkbox" checked disabled/>
                     Deleted
                 </label>
+                <br/>
+                <br/>
             }
           @if (course.Users is not null && course.Users.Count >0)
             {            
                 <select id="user-courses">
-                    <option value="">Course Active Users</option>
+                    <option  value="">Course Active Users</option>
                     @foreach (var user in course.Users)
                     {
-                        <option value="@user.Id">@user.EMail</option>
+                        <option disabled>@user.EMail</option>
 
                     }
                 </select>
                 
             }
-
+        @if (!course.IsDeleted)
+        {
+            <br/>
+            <button type="button" class="delete-button" style="margin-right: 15px" title="Delete This Course" onclick="showConfirmationPopUp('@course.Id')">
+                <img src="/Images/red-trash-can-icon.png" alt="Update">
+            </button>
+            
+        }
         </div>
         <hr/>
     }

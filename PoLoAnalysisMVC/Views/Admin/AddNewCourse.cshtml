@@ -1,0 +1,74 @@
+@model SharedLibrary.Models.business.CourseAddDto
+
+@{
+    Layout = "_Layout";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/css/AdminActiveUser.css?v9">
+    <link rel="stylesheet" href="~/css/AdminAddCourse.css">
+    <script src="~/js/CoursesDeleteAdd.js?v1" ></script>
+</head>
+<title>@ViewBag.Title</title>
+
+<div class="popup-container" id="success-popup" style="display:none;" >
+    <div class="popup-content">
+        <div class="checkmark">✔</div>
+        <p id="success-popup-text">Courses Updated</p>
+    </div>
+</div>
+
+<div class="popup-container" id="failure-popup" style="display:none;">
+    <div class="popup-content">
+        <div class="crossmark">❌</div>
+        <p id="failure-popup-text">Failed to Update courses</p>
+    </div>
+</div>
+
+
+<div class="main-content">
+
+
+    @using (Html.BeginForm("AddNewCourse", "Admin", FormMethod.Post,new {id="add-course-form"}))
+    {
+        <div id="CourseInformation">
+            <div id ="course-code" class="input">
+
+                @Html.LabelFor(model => Model.CourseCode, "Course Name: ")
+                @Html.TextBoxFor(model => model.CourseCode, new { placeholder = "CSEXXXX", required = "required", oninput = "limitDigits(this,7)" ,@class="tbox" })
+                @Html.ValidationMessageFor(model => model.CourseCode)
+            </div>
+
+            <br/>
+            <div id="CourseYear" class="input">
+
+                @Html.LabelFor(model => model.CourseYear, "Course Year:")
+                @Html.TextBoxFor(model => model.CourseYear, new { required = "required", placeholder = "2024-2025", type = "text", oninput = "limitDigits(this,9)" ,@class="tbox"})
+                @Html.ValidationMessageFor(model => model.CourseYear)
+            </div>
+
+            <br/>
+            <div id="IsCompulsory" class="input">
+
+                @Html.LabelFor(model => model.IsCompulsory, "Is Compulsory")
+                @Html.CheckBoxFor(model => model.IsCompulsory)
+             </div>
+
+            <br/>
+
+            <button type="submit">Add The Course</button>
+            <br/>
+        </div>
+
+
+
+    }
+</div>
+<script>
+    function limitDigits(element, maxLength) {
+        if (element.value.length > maxLength) {
+            element.value = element.value.slice(0, maxLength);
+        }
+    }
+</script>

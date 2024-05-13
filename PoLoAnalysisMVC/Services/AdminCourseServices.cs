@@ -1,3 +1,5 @@
+using System.Text;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SharedLibrary;
 using SharedLibrary.Models.business;
@@ -76,5 +78,26 @@ public static class AdminCourseServices
         var response = await client.GetAsync(url+$"?name={search}&page={page}");
         
         return !response.IsSuccessStatusCode ? null : JObject.Parse(await response.Content.ReadAsStringAsync())["data"].ToObject<List<Course>>();
+    }
+    
+    public static async Task<bool> DeleteCourseByIdAsync(string id,string token)
+    {
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
+        var response = await client.DeleteAsync(DeleteCourseUrl+$"/{id}");
+        
+        return response.IsSuccessStatusCode;
+    }
+    
+    public static async Task<bool> AddCourseAsync(CourseAddDto dto,string token)
+    {
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
+        var jsonData = JsonConvert.SerializeObject(dto);
+        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+        
+        var response = await client.PutAsync(AddCourseUrl,content);
+        
+        return response.IsSuccessStatusCode;
     }
 }

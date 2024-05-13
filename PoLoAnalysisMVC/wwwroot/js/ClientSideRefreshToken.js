@@ -6,7 +6,7 @@ async function refreshAccessToken() {
         window.location.href = "logout";
 
     var url = `${location.protocol}//${location.hostname}:${location.port}/Login/RefreshToken`;
-
+    
     try {
         const response = await fetch(url, {
             method: 'POST',

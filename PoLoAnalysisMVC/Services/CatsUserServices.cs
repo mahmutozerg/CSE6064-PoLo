@@ -33,8 +33,8 @@ public static class CatsUserServices
 
         var response = await client.PostAsync(CreateTokenUrl, content);
 
-        if (!response.IsSuccessStatusCode) 
-            return new TokenDto();
+        if (!response.IsSuccessStatusCode)
+            return null;
         var jsonResult = JObject.Parse(await response.Content.ReadAsStringAsync());
         return GetTokenInfo(jsonResult);
     }

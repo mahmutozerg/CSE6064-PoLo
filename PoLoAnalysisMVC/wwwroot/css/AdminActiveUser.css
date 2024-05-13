@@ -185,9 +185,26 @@ select::-webkit-scrollbar-thumb {
 #saveCourses
 {
     background-color: #E6E7E8;
-margin-top: 15px;
+    margin-top: 15px; 
     border-radius: 30px;
     font-family: Montserrat;
     border: none;
 
+}
+
+.delete-button,.add-button
+{
+    color : #C1272D;
+    margin-top: 15px;
+    border-radius: 30px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+.delete-button img,.add-button img {
+    color : #C1272D;
+    width: 20px;
+    height: 20px;
 }

@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PoLoAnalysisBusiness.Core.DTOS.Courses;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.DTO.Courses;
 using SharedLibrary.Models.business;
@@ -67,12 +68,12 @@ public class AdminCourseController:CustomControllerBase
     }
     
     [HttpPut]
-    public async Task<IActionResult> AddCourse(CourseAddDto courseAddDto)
+    public async Task<IActionResult> AddCourse([FromBody]CourseAddDto courseAddDto)
     {
         var course = new Course()
         {
             IsCompulsory = courseAddDto.IsCompulsory,
-            Id = courseAddDto.CourseCode + courseAddDto.CourseYear,
+            Id = courseAddDto.CourseCode +" "+ courseAddDto.CourseYear,
             Year = courseAddDto.CourseYear
         };
         var createdBy = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -82,12 +83,11 @@ public class AdminCourseController:CustomControllerBase
     }
     
     
-    [HttpDelete]
-    public async Task<IActionResult> DeleteCourse(CourseDeleteDto courseDeleteDto)
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteCourse(string id)
     {
-        var courseId = courseDeleteDto.CourseCode + courseDeleteDto.CourseYear;
         var updatedBy = ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        var res =await _courseService.Remove(courseId, updatedBy);
+        var res =await _courseService.DeleteCourseWithFilesWithResultByIdAsync(id, updatedBy);
 
         return CreateActionResult(res);
     }

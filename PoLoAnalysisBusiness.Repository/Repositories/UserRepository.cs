@@ -20,17 +20,27 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
 
     }
 
-    public async Task<List<AppUser>> GetActiveUserWithCoursesByEMailAsync(string eMail)
+    public async Task<List<AppUser>> SearchActiveUserWithCoursesByEMailAsync(string eMail)
     {
         return await _users
-            .Where(u => u.EMail.Contains(eMail)  && !u.IsDeleted)
+            .Where(u => u.EMail.ToLower().Contains(eMail.ToLower())  && !u.IsDeleted)
             .Include(u=> u.Courses)
             .ToListAsync();
     }
+
+    public async Task<AppUser?> GetActiveUserWithCoursesByEMailAsync(string eMail)
+    {
+        return await _users
+            .Where(u => u.EMail.ToLower() == eMail.ToLower() && !u.IsDeleted)
+            .Include(u=> u.Courses)
+            .SingleOrDefaultAsync();
+        
+    }
+
     public async Task<List<AppUser>> GetUserWithCoursesByEMilAsync(string eMail)
     {
         return await _users
-            .Where(u => u.EMail.Contains(eMail))
+            .Where(u => u.EMail.ToLower().Contains(eMail.ToLower()))
             .Include(u=> u.Courses)
             .AsNoTracking()
             .ToListAsync();
@@ -120,7 +130,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
         //page = page > _allUsersMaxPage ? _allUsersMaxPage : page;
 
         return await _users
-            .Where(u => u.EMail.Contains(eMail) )
+            .Where(u => u.EMail.ToLower().Contains(eMail.ToLower()) )
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
             .AsNoTracking()
@@ -130,7 +140,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
     public async Task<List<AppUser>> GetActiveUserAsync(string eMail)
     {
         return await _users
-            .Where(u => !u.IsDeleted && u.EMail.Contains(eMail))
+            .Where(u => !u.IsDeleted && u.EMail.ToLower().Contains(eMail.ToLower()))
             .AsNoTracking()
             .ToListAsync();
 
@@ -141,7 +151,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
         page = page > _allUsersMaxPage ? _activeUsersMaxPage : page;
 
         return await _users
-            .Where(u => u.EMail.Contains(eMail)  && !u.IsDeleted)
+            .Where(u => u.EMail.ToLower().Contains(eMail.ToLower())  && !u.IsDeleted)
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
             .Include(u=> u.Courses)
@@ -155,7 +165,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
         page = page > _allUsersMaxPage ? _activeUsersMaxPage : page;
 
         return await _users
-            .Where(u => u.EMail.Contains(eMail) )
+            .Where(u => u.EMail.ToLower().Contains(eMail.ToLower()) )
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
             .Include(u=> u.Courses)

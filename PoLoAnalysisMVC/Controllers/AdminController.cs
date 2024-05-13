@@ -37,7 +37,34 @@ public class AdminController : Controller
         ViewData["isCompulsory"] = isCompulsory;
         return View(courses);
     }
+    
+    [HttpGet]
+    public IActionResult AddNewCourse()
+    {
+        return View(new CourseAddDto());
 
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> AddNewCourse(CourseAddDto courseAddDto)
+    {
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
+        var result = await AdminCourseServices.AddCourseAsync(courseAddDto, token);
+
+        return result
+            ? RedirectToAction("Courses", new { search = (courseAddDto.CourseCode +" "+ courseAddDto.CourseYear), isCompulsory=courseAddDto.IsCompulsory })
+            : RedirectToAction("Index", "Error");
+
+    }
+    [HttpDelete]
+    public async Task<IActionResult> DeleteCourse(string id)
+    {
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
+        var response = await AdminCourseServices.DeleteCourseByIdAsync(id, token);
+
+        return response ? Ok() : Problem();
+
+    }
     
     [HttpGet]
     public async Task<IActionResult> UpdateUsersCourse(string id)
@@ -102,4 +129,7 @@ public class AdminController : Controller
        
         return  results.All(c => c) ? Ok() : Problem();
     }
+
+ 
+    
 }

@@ -11,16 +11,24 @@
     <title>PO-LO Analytics Reporting</title>
     <link rel="stylesheet" href="/css/report.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
-    <link rel="stylesheet" href="~/css/import.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.48.0/apexcharts.min.js" ></script>
     <script src="/js/Export.js?v6"></script>
+    <link rel="stylesheet" href="~/css/import.css?v6">
+
 </head>
 
 <body>
+<div class="popup-container" id="success-popup" style="display:none;" >
+    <div class="popup-content">
+        <div class="checkmark">✔</div>
+        <p id="success-popup-text">File Downloaded Successfully</p>
+    </div>
+</div>
+
 <div class="popup-container" id="failure-popup" style="display:none;">
     <div class="popup-content">
         <div class="crossmark">❌</div>
-        <p id="failure-popup-text">Failed to Download Result File</p>
+        <p id="failure-popup-text">Something Failed Contact IT</p>
     </div>
 </div>
 <div class="main-content">
@@ -35,14 +43,11 @@
             <select id="course-dropdown">
                 @if (Model.Courses.Count > 0)
                 {
-                    <option value="">Select a course</option>
-
+                    <option value="" disabled selected >Select a course</option>
                 }
                 else
                 {
-
-                    <option value="">No result files here come later</option>
-
+                    <option  value="">No result files here come later</option>
                 }
                 @foreach (var course in Model.Courses)
                 {
@@ -53,7 +58,7 @@
         <br/>
         <br/>
         <br/>
-        <button id="export-button">Get Word File here!</button>
+        <button id="export-button">Get Your Result File here!</button>
 
     </div>
 

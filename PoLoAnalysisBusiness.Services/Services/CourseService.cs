@@ -20,6 +20,25 @@ public class CourseService:GenericService<Course>,ICourseService
     }
 
 
+    public async Task<CustomResponseNoDataDto> DeleteCourseWithFilesWithResultByIdAsync(string id, string updatedBy)
+    {
+        var course = await _courseRepository.GetActiveCoursesWithFilesWithResultByNameAsync(id);
+        ArgumentNullException.ThrowIfNull(course);
+        course.IsDeleted = true;
+        foreach (var files in course.File)
+        {
+            files.IsDeleted = true;
+            if (files.Result is not null)
+                files.Result.IsDeleted = true;
+        }
+
+        await UpdateAsync(course, updatedBy);
+        await _unitOfWork.CommitAsync();
+
+        return CustomResponseNoDataDto.Success(StatusCodes.Ok);
+
+    }
+
     public async Task<CustomResponseListDataDto<Course>> GetActiveCoursesByNameByPageAsync(string name ,string page)
     {
         var res = int.TryParse(page, out var intPage);

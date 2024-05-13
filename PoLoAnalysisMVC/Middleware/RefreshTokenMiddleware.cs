@@ -47,8 +47,6 @@ public class RefreshTokenMiddleware
                 context.Response.Cookies.Append(ApiConstants.SessionCookieName,  tokenDto.AccessToken,sessionCookieOptions);
                 context.Response.Cookies.Append(ApiConstants.RefreshCookieName,  tokenDto.RefreshToken,refreshCookieOptions);
             }
-         
-            
 
         }
 

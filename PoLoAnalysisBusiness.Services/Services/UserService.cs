@@ -67,7 +67,7 @@ public class UserService:GenericService<AppUser>,IUserService
             if (course.Data is null)
                 errors.Add( coursesFullName + "Not found No changes made");
             else
-                user.First().Courses.Add(course.Data!);
+                user.Courses.Add(course.Data!);
             
         }
 
@@ -75,8 +75,8 @@ public class UserService:GenericService<AppUser>,IUserService
             throw new Exception(string.Concat(errors.SelectMany(e => e)));
             
         
-        user.First().UpdatedBy = updatedBy;
-        _userRepository.Update(user.First());
+        user.UpdatedBy = updatedBy;
+        _userRepository.Update(user);
         await _unitOfWork.CommitAsync();
 
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);
@@ -99,16 +99,16 @@ public class UserService:GenericService<AppUser>,IUserService
             if (course.Data is null)
                 errors.Add( coursesFullName + "Not found No changes made");
             else
-                user.First().Courses.Remove(course.Data!);
+                user.Courses.Remove(course.Data!);
             
         }
         if (errors.Count > 0)
             throw new Exception(string.Concat(errors.SelectMany(e => e)));
         
             
-        user.First().UpdatedBy = updatedBy;
+        user.UpdatedBy = updatedBy;
         
-        _userRepository.Update(user.First());
+        _userRepository.Update(user);
         await _unitOfWork.CommitAsync();
 
         return CustomResponseNoDataDto.Success(StatusCodes.Updated);    
@@ -116,7 +116,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     public async Task<CustomResponseDto<List<AppUser>>> GetActiveUserWithCoursesByEMailAsync(string eMail)
     {
-        var user = await _userRepository.GetActiveUserWithCoursesByEMailAsync(eMail);
+        var user = await _userRepository.SearchActiveUserWithCoursesByEMailAsync(eMail);
 
         return user == null
             ? throw new Exception(ResponseMessages.UserNotFound)

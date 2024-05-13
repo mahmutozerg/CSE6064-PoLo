@@ -6,7 +6,8 @@ namespace PoLoAnalysisBusiness.Core.Repositories;
 
 public interface IUserRepository:IGenericRepository<AppUser>
 {
-    Task<List<AppUser>> GetActiveUserWithCoursesByEMailAsync(string eMail);
+    Task<List<AppUser>> SearchActiveUserWithCoursesByEMailAsync(string eMail);
+    Task<AppUser?> GetActiveUserWithCoursesByEMailAsync(string eMail);
     Task<List<AppUser>> GetUserWithCoursesByEMilAsync(string eMail);
     Task<List<AppUser>> GetAllUsersByPageAsync(int page);
     Task<List<AppUser>> GetActiveUsersByPageAsync(int page);

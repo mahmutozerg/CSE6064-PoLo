@@ -20,7 +20,7 @@ namespace PoLoAnalysisBusiness.Services.Services;
 
 public class ResultService:GenericService<Result>,IResultService
 {
-    private readonly string _resultFilename = "result.xlsx";
+    private const string _resultFilename = "result.xlsx";
     private const string _templateFolder = "..\\TemplateFiles";
     private const string _resultFolder = "..\\ResultFiles";
     private readonly IResultRepository _resultRepository;
@@ -48,13 +48,13 @@ public class ResultService:GenericService<Result>,IResultService
     private List<float> _studentTotalPoints = new ();
     private Dictionary<string, float> _PoPointAverages = new();
     private Dictionary<string,int> _poVisits =  new ();
-    private string _fileClassCode="test";
-    private string _fileClassName="test2";
+    private string _fileClassYear="test2";
     private int _furtherExcelStartingRow=3;
-    private Regex _regexPattern = new (@"(?i)CSE\w+\s\w+\sPROJECT\sRESULTS\s+\((?:\d{4}-\d{4}\s(?:SPRING|SUMMER|FALL|WINTER)\sTERM)\)");
+    private Regex _regexPattern = new (@"(?<Prefix>[A-Z]{3})(?<CourseNumber>\d{4})\s+(?<CourseName>[\w\s]+)\((?<YearRange>\d{4}-\d{4})\s+(?<Term>(SPRING|FALL))\s+TERM\)");
     private int _furtherExcelResultStartingRow;
     private const string templateName = "EkTemplate.xlsx";
-
+    private Dictionary<string, string> _courseInformation = new Dictionary<string, string>();
+    private  Course _course;
     
     public string ResultPath { get; set; }
     
@@ -63,9 +63,6 @@ public class ResultService:GenericService<Result>,IResultService
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         _resultRepository = resultRepository;
         _unitOfWork = unitOfWork;
-        
-        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
-        _furtherResultExcelPackage = new ExcelPackage(templateExcelPath);
     }
     private void Dispose()
     {
@@ -82,11 +79,16 @@ public class ResultService:GenericService<Result>,IResultService
         _pointsMatchingPercentageList.Clear();
         _studentTotalPoints.Clear();
     }
-    public async Task AnalyzeExcel()
+    public async Task AnalyzeExcel(Course course)
     {
-        SetExcelClassNameAndClassCode(_worksheets.First());
-        SetFurtherExcelResultStartingRow(_furtherResultExcelPackage.Workbook.Worksheets[1]);
-
+        _course = course;
+        if (course.IsCompulsory)
+        {
+            SetExcelClassNameAndClassCode(_worksheets.First());
+            await CreateFurtherExcelFileIfNotExist();
+            SetFurtherExcelResultStartingRow(_furtherResultExcelPackage.Workbook.Worksheets[1]);
+        }
+        
         foreach (var worksheet in _worksheets)
         {
             SetFirstQuestionPosition(worksheet);
@@ -110,9 +112,32 @@ public class ResultService:GenericService<Result>,IResultService
             Dispose();
             
         }
-        await SetPOAveragesAverageToFurtherResultExcel();
-        SaveMatchingChartsAsImagesFromWorkSheet();
-        AddPOAveragesImageToTemplateFile();
+
+        if (course.IsCompulsory)
+        {
+            await SetPoAveragesAverageToFurtherResultExcel();
+            AddPOOutputsToWord();
+            SaveMatchingChartsAsImagesFromWorkSheet();
+            AddPOAveragesImageToTemplateFile();
+        }
+
+    }
+
+    private async Task CreateFurtherExcelFileIfNotExist()
+    {
+        var files = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(),_templateFolder));
+        var tName = _courseInformation["Year"] + ".xlsx";
+        var newTempateExcelPath = Path.Combine(Directory.GetCurrentDirectory(), _templateFolder + "\\" + tName);
+
+        if (!files.Any(f => f.Contains(tName)))
+        {
+            var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+
+            _furtherResultExcelPackage = new ExcelPackage(templateExcelPath);
+            await _furtherResultExcelPackage.SaveAsAsync(newTempateExcelPath);
+
+        }
+        _furtherResultExcelPackage = new ExcelPackage(newTempateExcelPath);
     }
 
     private void SetFurtherExcelResultStartingRow(ExcelWorksheet worksheet)
@@ -130,6 +155,7 @@ public class ResultService:GenericService<Result>,IResultService
             if (cellString.Contains("dersin kodu"))
                 continue;
             var mergedCells = worksheet.MergedCells.ToList().SelectMany(t => t.Split(":")).ToList();
+            
             var address = worksheet.Cells[row, col].Address;
          
             while (mergedCells.Contains(address) || cellValue !=null )
@@ -165,9 +191,12 @@ public class ResultService:GenericService<Result>,IResultService
                 if (!match.Success) 
                     continue;
                 
-                _fileClassCode = "code";
-                _fileClassName = "Name";
-                break;
+                _courseInformation["Code"]=match.Groups["Prefix"].Value.TrimEnd();
+                _courseInformation["Number"]= match.Groups["CourseNumber"].Value.TrimEnd();
+                _courseInformation["Name"]= match.Groups["CourseName"].Value.TrimEnd();
+                _courseInformation["Year"]= match.Groups["YearRange"].Value.TrimEnd().Replace("(","").Replace(")","").Replace("-","_");
+                _courseInformation["Term"]= match.Groups["Term"].Value.TrimEnd();
+                return;
 
             }
         }    
@@ -352,9 +381,9 @@ public class ResultService:GenericService<Result>,IResultService
                 continue;
             
             var questionPoint = worksheet.Cells[int.Parse(_q1StartPos["row"])+1, col].Value;
-            var currentQuestion = int.Parse(worksheet.Cells[int.Parse(_q1StartPos["row"]), col].Value.ToString().Substring(1));
+            var res =int.TryParse(worksheet.Cells[int.Parse(_q1StartPos["row"]), col].Value.ToString().Substring(1),out var currentQuestion);
 
-            if (currentQuestion - lastQuestion  != 1)
+            if (res && currentQuestion - lastQuestion  != 1)
             {
                 throw new Exception("Please Check question numbers");
             }
@@ -460,7 +489,8 @@ public class ResultService:GenericService<Result>,IResultService
 
                 }
 
-                if (!cellString.Contains(PoSearchTerm.ToLower())) continue;
+                if (!cellString.Contains(PoSearchTerm.ToLower()))
+                    continue;
                 
                 if (_poPos.Count == 0)
                 {
@@ -513,14 +543,12 @@ public class ResultService:GenericService<Result>,IResultService
         var rowStart = int.Parse(_poPos["row"]) + 1;
         var rowEnd = int.Parse(_poPos["end"]);
         
-        for (var row = rowStart; row <rowEnd; row++)
+        for (var row = rowStart; row <=rowEnd; row++)
         {
             var poCellValue = worksheet.Cells[row, colStart].Value;
             var questionCellValue = worksheet.Cells[row, colStart+1].Value;
-            var poMatchCellValue = worksheet.Cells[row, colStart+2].Value;
 
-            if (poCellValue is null || questionCellValue is null ||
-                poMatchCellValue is null )
+            if (poCellValue is null || questionCellValue is null )
                 throw new Exception("Please check PO table ");
 
             var poCellString = poCellValue.ToString().ToLower();
@@ -564,10 +592,9 @@ public class ResultService:GenericService<Result>,IResultService
         {
             var loCellValue = worksheet.Cells[row, colStart].Value;
             var questionCellValue = worksheet.Cells[row, colStart+1].Value;
-            var loMatchCellValue = worksheet.Cells[row, colStart+2].Value;
             
             
-            if (loCellValue is null || questionCellValue is null || loMatchCellValue is null)
+            if (loCellValue is null || questionCellValue is null )
                 throw new Exception("Please check LO table ");
 
             var loCellString = loCellValue.ToString().ToLower();
@@ -768,8 +795,6 @@ public class ResultService:GenericService<Result>,IResultService
     private async Task SetPOAveragesToFurtherResultExcel(string worksheetName = "")
     {
         Dictionary<string,float> _poPointList =  new ();
-
-
         
         var resultExcelfilePath = _resultExcelPackage.Workbook.Worksheets.ToList();
         var resultExcelWorksheetIndex = resultExcelfilePath.FindIndex(p=> p.Name == worksheetName);
@@ -805,15 +830,16 @@ public class ResultService:GenericService<Result>,IResultService
 
     }
 
-    private async Task  SetPOAveragesAverageToFurtherResultExcel()
+    private async Task  SetPoAveragesAverageToFurtherResultExcel()
     {
         
         var resultExcelWorksheets = _resultExcelPackage.Workbook.Worksheets.ToList();
         var resultExcelWorksheetIndex = resultExcelWorksheets.Last().Index;
 
+        var c = _furtherResultExcelPackage.File.Directory;
         var furtherResultMatchingPercentageWorksheet = _furtherResultExcelPackage.Workbook.Worksheets[1];
-        furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,1].Value = _fileClassCode;
-        furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,2].Value = _fileClassName;
+        furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,1].Value = _courseInformation["Code"];
+        furtherResultMatchingPercentageWorksheet.Cells[_furtherExcelStartingRow,2].Value = _courseInformation["Name"];
 
         foreach (var (poNumber,value) in _PoPointAverages)
         {
@@ -827,7 +853,7 @@ public class ResultService:GenericService<Result>,IResultService
     }
     private void SaveMatchingChartsAsImagesFromWorkSheet()
     {
-        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+templateName);
+        var templateExcelPath = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+_courseInformation["Year"]+".xlsx");
 
         var workbook = new Workbook();
         
@@ -844,22 +870,48 @@ public class ResultService:GenericService<Result>,IResultService
         workbook.CalculateAllValue();
 
         var poImage = workbook.SaveChartAsImage(sheet, 0);
-        using var fileStream = File.Create($"{_templateFolder}\\Result.png");
+        using var fileStream = File.Create($"{_templateFolder}\\{_courseInformation["Year"]}_result.png");
 
         poImage.CopyTo(fileStream);
     }
 
+    private void AddPOOutputsToWord()
+    {
+        var path = Path.Combine(Directory.GetCurrentDirectory() , _templateFolder+"\\"+_courseInformation["Year"]+".docx");
+        var document = DocX.Create(path);
+
+        // Program çıktılarını metin olarak ekleyin
+        const string programOutputs = @"
+              Program Çıktıları
+                PÇ-1    Matematik, fen bilimleri ve ilgili mühendislik disiplinine özgü konularda yeterli bilgi birikimi; bu alanlardaki kuramsal ve uygulamalı bilgileri, karmaşık mühendislik problemlerinde kullanabilme becerisi.
+                PÇ-2    Karmaşık mühendislik problemlerini saptama, tanımlama, formüle etme ve çözme becerisi; bu amaçla uygun analiz ve modelleme yöntemlerini seçme ve uygulama becerisi.
+                PÇ-3    Karmaşık bir sistemi, süreci, cihazı veya ürünü gerçekçi kısıtlar ve koşullar altında, belirli gereksinimleri karşılayacak şekilde tasarlama becerisi; bu amaçla modern tasarım yöntemlerini uygulama becerisi.
+                PÇ-4    Mühendislik uygulamalarında karşılaşılan karmaşık problemlerin analizi ve çözümü için gerekli olan modern teknik ve araçları geliştirme, seçme ve kullanma becerisi; bilişim teknolojilerini etkin bir şekilde kullanma becerisi.
+                PÇ-5    Karmaşık mühendislik problemlerinin veya disipline özgü araştırma konularının incelenmesi için deney tasarlama, deney yapma, veri toplama, sonuçları analiz etme ve yorumlama becerisi.
+                PÇ-6    Disiplin içi ve çok disiplinli takımlarda etkin biçimde çalışabilme becerisi; bireysel çalışma becerisi.
+                PÇ-7    Sözlü ve yazılı etkin iletişim kurma becerisi; en az bir yabancı dil bilgisi; etkin rapor yazma ve yazılı raporları anlama, tasarım ve üretim raporları hazırlayabilme, etkin sunum yapabilme, açık ve anlaşılır talimat verme ve alma becerisi.
+                PÇ-8    Yaşam boyu öğrenmenin gerekliliği bilinci; bilgiye erişebilme, bilim ve teknolojideki gelişmeleri izleme ve kendini sürekli yenileme becerisi.
+                PÇ-9    Etik ilkelerine uygun davranma, mesleki ve etik sorumluluk bilinci; mühendislik uygulamalarında kullanılan standartlar hakkında bilgi.
+                PÇ-10    Proje yönetimi, risk yönetimi ve değişiklik yönetimi gibi, iş hayatındaki uygulamalar hakkında bilgi; girişimcilik, yenilikçilik hakkında farkındalık; sürdürülebilir kalkınma hakkında bilgi.
+                PÇ-11    Mühendislik uygulamalarının evrensel ve toplumsal boyutlarda sağlık, çevre ve güvenlik üzerindeki etkileri ve çağın mühendislik alanına yansıyan sorunları hakkında bilgi;mühendislik çözümlerinin hukuksal sonuçları konusunda farkındalık.
+";
+
+        var poParagraph = document.InsertParagraph();
+        poParagraph.Append(programOutputs);
+
+        document.Save();
+
+    }
     private void AddPOAveragesImageToTemplateFile()
     {
-        var path = $"{_templateFolder}\\result.docx";
+        var path = $"{_templateFolder}\\{_courseInformation["Year"]}.docx";
 
-        var imagePath = $"{_templateFolder}\\Result.png";
-        var document =  DocX.Create(path);
+        var imagePath = $"{_templateFolder}\\{_courseInformation["Year"]}_result.png";
+        var document =  DocX.Load(path);
 
         var documentImagePo = document.AddImage(imagePath);
         var documentPicturePo = documentImagePo.CreatePicture();
-
-        var poTitle = document.InsertParagraph().Append($"Merhaba");
+        var poTitle = document.InsertParagraph().Append("Genel PO");
         poTitle.Alignment = Alignment.center;
 
         var poParagraph = document.InsertParagraph();

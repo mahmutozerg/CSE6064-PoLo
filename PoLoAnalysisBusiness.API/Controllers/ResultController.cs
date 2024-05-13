@@ -45,16 +45,5 @@ public class ResultController:CustomControllerBase
         return File(zipFileByteArray,"application/zip","archive.zip");
 
     }
-    [HttpPost]
-    public async Task<IActionResult> CalculateResultByExcelId( ResultDto resultDto)
-    {
-        var userId =  ((ClaimsIdentity)User.Identity).FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        var fileResult = await _appFileServices.GetByIdAsync(resultDto.ExcelFileId);
-        _resultService.SetFilePath(fileResult.Data.Path,fileResult.Data.Id);
-        _resultService.AnalyzeExcel();
-        var result = await _resultService.AddAsync(fileResult.Data.Id,$"..\\UploadedFiles\\{fileResult.Data.Id}",userId);
-        
-        return CreateActionResult(result);
-    }
 }

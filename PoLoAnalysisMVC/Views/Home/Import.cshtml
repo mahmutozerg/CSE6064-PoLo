@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PO-LO Analytics Import</title>
-    <link rel="stylesheet" href="~/css/import.css?v2">
+    <link rel="stylesheet" href="~/css/import.css?v6">
     <script src="~/js/Import.js?v10"></script>
 
 </head>
@@ -39,7 +39,7 @@
         </div>
         <form class="upload" enctype="multipart/form-data">
             <select id="course-dropdown">
-                <option value="">Select a course</option>
+                <option  value="">Select a course</option>
                 @foreach (var course in Model.Courses)
                 {
                     <option value="@course.Id"> @course.Id</option>
@@ -47,7 +47,7 @@
             </select>
             <div class="caution">
                 <img src="/Images/caution.svg" alt="Caution" class="caution-icon">
-                <p class="caution-info">Calculation and data processing is available only for excel files using the template provided by POLO Analytics.</p>
+                <p class="caution-info">Calculation and data processing is available only for Excel files using the template provided by POLO Analytics.</p>
             </div>
 
             <div class="upload-section">

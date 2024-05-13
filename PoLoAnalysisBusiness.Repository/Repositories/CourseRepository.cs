@@ -18,11 +18,20 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         _allCoursesMaxPage = _courses.Count()/PageEntityCount;
     }
 
+    public Task<Course?> GetActiveCoursesWithFilesWithResultByNameAsync(string name)
+    {
+        return _courses
+            .Where(c => !c.IsDeleted && c.Id == name)
+            .Include(c=> c.File.Where(f=> !f.IsDeleted))
+            .ThenInclude(f=> f.Result)
+            .SingleOrDefaultAsync();
+    }
+
     public Task<List<Course>> GetActiveCoursesByNameByPageAsync(string name ,int page)
     {
         //page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
         return _courses
-            .Where(c=> !c.IsDeleted && c.Id.ToLowerInvariant().Contains(name))
+            .Where(c=> !c.IsDeleted && c.Id.ToLower().Contains(name.ToLower()))
             .Include(c=> c.Users.Where(u=> !u.IsDeleted))
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
@@ -48,7 +57,7 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         //page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
 
         return _courses
-            .Where(c=> !c.IsDeleted  && c.Id.Contains(name))
+            .Where(c=> !c.IsDeleted  && c.Id.ToLower().Contains(name.ToLower()))
             .Include(c=> c.Users.Where(u=> !u.IsDeleted && u.Courses.Exists(uc=> uc.Id == name && !uc.IsDeleted)))
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
@@ -89,7 +98,7 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         //page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
         
         return _courses
-            .Where(c => c.IsCompulsory && c.Id.Contains(name))
+            .Where(c => c.IsCompulsory && c.Id.ToLower().Contains(name.ToLower()))
             .Include(c=> c.Users.Where(u=> !u.IsDeleted))
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
@@ -103,7 +112,7 @@ public class CourseRepository:GenericRepository<Course>,ICourseRepository
         //page = page > _activeCoursesMaxPage ? _activeCoursesMaxPage : page;
         
         return _courses
-            .Where(c => c.IsCompulsory && !c.IsDeleted&& c.Id.Contains(name))
+            .Where(c => c.IsCompulsory && !c.IsDeleted && c.Id.ToLower().Contains(name.ToLower()))
             .Include(c=> c.Users.Where(u=> !u.IsDeleted))
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)

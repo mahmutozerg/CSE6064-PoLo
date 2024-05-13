@@ -1,13 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PoLoAnalysisBusiness.DTO.Courses;
+namespace PoLoAnalysisBusiness.Core.DTOS.Courses;
 
 public class CourseDeleteDto
 {
     [Required(ErrorMessage = "Coursecode field is required")]
-    public string CourseCode { get; set; }
+    public string CourseId { get; set; }
     
-    [Required(ErrorMessage = "CourseYear field is required")]
-    public string CourseYear { get; set; }
+ 
 
 }
