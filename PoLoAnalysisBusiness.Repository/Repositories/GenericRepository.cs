@@ -44,7 +44,7 @@ public class GenericRepository<TEntity>:IGenericRepository<TEntity> where TEntit
         _dbSet.Update(entity);
     }
 
-    public async Task<TEntity?> GetById(string id)
+    public async Task<TEntity?> GetByIdAsync(string id)
     {
         return await _dbSet.Where(e => e.IsDeleted == false && e.Id == id).SingleOrDefaultAsync();
     }

@@ -1,5 +1,5 @@
 ﻿
-let uploadForm, uploadInput, uploadBtn, courseDropdown, successPopup, failPopup;
+let uploadForm, uploadInput, uploadBtn, courseDropdown, successPopup, failPopup,failPopUpText;
 
 document.addEventListener("DOMContentLoaded", function() {
      uploadForm = document.querySelector('.upload');
@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
      courseDropdown = document.getElementById('course-dropdown');
      successPopup = document.getElementById('success-popup');
      failPopup = document.getElementById('failure-popup');
+     failPopUpText = document.getElementById("failure-popup-text");
+
 })
 
 async function SendRequest() 
@@ -32,30 +34,44 @@ async function SendRequest()
         const formData = new FormData();
         formData.append('file', file);
         formData.append('courseId', courseId);
-    
-        await fetch('https://localhost:7273/api/ExcelFile/UploadExcel', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                "Authorization": `Bearer ${accessToken}`
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                showPopUp(successPopup,"File Uploaded Successfully"); 
-            })
-            .catch(error => {
-                console.error('Error uploading file:', error);
-                showPopUp(failPopup);
-
+        try {
+            const response = await fetch('https://localhost:7273/api/ExcelFile/UploadExcel', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    "Authorization": `Bearer ${accessToken}`
+                },
             });
+
+            if (!response.ok) {
+                throw new Error(await response.text());
+            }
+
+            const data = await response.json();
+            showPopUp(successPopup, "File Uploaded Successfully");
+        } catch (error) {
+
+            const text = error.message;
+            const startIndex = text.indexOf('System.Exception:');
+            const newlineIndex = text.indexOf('\n', startIndex);
+            let substring;
+
+            if (startIndex !== -1 && newlineIndex !== -1) {
+                substring = text.substring(startIndex + 'System.Exception:'.length, newlineIndex);
+            } else if (startIndex !== -1) {
+                substring = text.substring(startIndex + 'System.Exception:'.length);
+            } else {
+                substring = text;
+            }
+
+
+            failPopUpText.innerText = substring;
+            showPopUp(failPopup);
+        }
+
+
     } else {
-        console.error('No file selected or course not selected.');
+        failPopUpText.innerText = "Please Select A Course";
         showPopUp(failPopup);
     }
     function showPopUp(popup) {

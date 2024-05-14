@@ -25,98 +25,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/AddNewCourse.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/Images/red-trash-can-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/AdminAddCourse.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/CoursesDeleteAdd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/2727e8cb-a909-4e19-97ba-b190e652a01b/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/61ed026d-3325-4727-8d34-dc971c8bfb57/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/f984ef83-ccae-434a-9787-456f3c86d0bd/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/48e8d506-d677-45fc-a2e9-db492093726a/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/c051b526-979d-4c5d-a1bf-381703ada486/result.xlsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.docx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.xlsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021_result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/2727e8cb-a909-4e19-97ba-b190e652a01b.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/61ed026d-3325-4727-8d34-dc971c8bfb57.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/bb0230f0-265c-43de-ab2b-89c6bccdff7e.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/f984ef83-ccae-434a-9787-456f3c86d0bd.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/0081fe0b-3cef-4746-8ac3-7a3c8f12c814.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/48e8d506-d677-45fc-a2e9-db492093726a.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/c051b526-979d-4c5d-a1bf-381703ada486.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ResultController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ResultController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/DTOS/Courses/CourseAddDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/Models/business/CourseAddDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/DTOS/Courses/CourseDeleteDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/DTOS/Courses/CourseDeleteDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/ICourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/ICourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/ICourseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/ICourseService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IResultService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IResultService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/CourseRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/CourseRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/CourseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/CourseService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IAppFileServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IAppFileServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IGenericService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IGenericService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/GenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/AppFileService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/AppFileService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/GenericService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/GenericService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Middleware/RefreshTokenMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Middleware/RefreshTokenMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Courses.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Courses.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/UpdateUsersCourse.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/UpdateUsersCourse.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Users.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/Users.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/AddNewCourse.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Admin/AddNewCourse.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Import.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Import.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/AdminActiveUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/AdminActiveUser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/import.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/import.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/ClientSideRefreshToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/ClientSideRefreshToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/Export.js" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/Export.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/Import.js" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/js/Import.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/EkTemplate.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateFiles/EkTemplate.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/Result.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/result.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/test.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UploadedFiles/753aecca-e327-46f7-acbf-0d0abe787714.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +150,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/Microsoft.Extensions.Options/src/OptionsFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ActivatorUtilities.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Int32.cs" root0="SKIP_HIGHLIGHTING" />
@@ -199,7 +175,6 @@
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Lenovo/RiderProjects/PoLoAnalysis/PoLoAnalysisMVC/Views/Admin/UpdateUsersCourse.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -219,7 +194,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: IIS Express.executor": "Debug",
-    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Debug",
+    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: http.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: http.executor": "Run",
@@ -455,7 +430,11 @@
       <workItem from="1715549706548" duration="1234000" />
       <workItem from="1715592964104" duration="12518000" />
       <workItem from="1715606920838" duration="837000" />
-      <workItem from="1715610930469" duration="11353000" />
+      <workItem from="1715610930469" duration="11470000" />
+      <workItem from="1715624889814" duration="363000" />
+      <workItem from="1715673537090" duration="1867000" />
+      <workItem from="1715675730288" duration="1231000" />
+      <workItem from="1715681994700" duration="8581000" />
     </task>
     <task id="LOCAL-00001" summary="File constants file uploads file upload controller created">
       <option name="closed" value="true" />
@@ -601,6 +580,12 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.Identity.Client" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Abstractions" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Relational" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -677,19 +662,6 @@
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/LoginController.cs</url>
-          <line>76</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\LoginController.cs" containingFunctionPresentation="Method 'RefreshToken'">
-            <startOffsets>
-              <option value="2215" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2479" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="183" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
           <line>23</line>
           <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'AddUserToCourses'">
@@ -707,117 +679,52 @@
           <line>129</line>
           <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\AdminController.cs" containingFunctionPresentation="Method 'UpdateUsersCourse'">
             <startOffsets>
-              <option value="4654" />
+              <option value="4675" />
             </startOffsets>
             <endOffsets>
-              <option value="4701" />
+              <option value="4722" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="248" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>75</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'GetCoursesWithSearchAsync'">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
+          <line>727</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'AddLoImageToTheResultWord'">
             <startOffsets>
-              <option value="3634" />
+              <option value="26680" />
             </startOffsets>
             <endOffsets>
-              <option value="3670" />
+              <option value="26736" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="291" />
+          <option name="timeStamp" value="313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCoursesByPageByName'">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
+          <line>818</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'SetPOAveragesToFurtherResultExcel'">
             <startOffsets>
-              <option value="830" />
+              <option value="30193" />
             </startOffsets>
             <endOffsets>
-              <option value="923" />
+              <option value="30241" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="292" />
+          <option name="timeStamp" value="314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/CourseService.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\CourseService.cs" containingFunctionPresentation="Method 'GetActiveCoursesByNameByPageAsync'">
+          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
+          <line>129</line>
+          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'CreateFurtherExcelFileIfNotExist'">
             <startOffsets>
-              <option value="1470" />
+              <option value="5249" />
             </startOffsets>
             <endOffsets>
-              <option value="1516" />
+              <option value="5351" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="294" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs</url>
-          <line>24</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\ExcelFileController.cs" containingFunctionPresentation="Method 'UploadExcel'">
-            <startOffsets>
-              <option value="824" />
-            </startOffsets>
-            <endOffsets>
-              <option value="913" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="299" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>77</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'GetCoursesWithSearchAsync'">
-            <startOffsets>
-              <option value="3803" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3875" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="301" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs</url>
-          <line>51</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\AdminController.cs" containingFunctionPresentation="Method 'AddNewCourse'">
-            <startOffsets>
-              <option value="1880" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1955" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="304" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>93</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'AddCourseAsync'">
-            <startOffsets>
-              <option value="4533" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4569" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="305" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>72</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'AddCourse'">
-            <startOffsets>
-              <option value="2529" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2744" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="306" />
+          <option name="timeStamp" value="315" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

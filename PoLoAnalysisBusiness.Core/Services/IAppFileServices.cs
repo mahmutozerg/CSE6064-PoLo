@@ -12,6 +12,8 @@ public interface IAppFileServices:IGenericService<File>
      
      Task<FileStreamResult> GetFileStreamAsync(string filePath);
      Task<File> GetFileWithResultAsync(string id);
+     
 
+     new Task<CustomResponseNoDataDto> RemoveAsync(string id, string updatedBy);
 
 }

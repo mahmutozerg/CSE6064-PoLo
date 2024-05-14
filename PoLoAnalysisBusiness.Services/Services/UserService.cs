@@ -41,7 +41,7 @@ public class UserService:GenericService<AppUser>,IUserService
 
     public async Task<CustomResponseNoDataDto> DeleteUserAsync(UserDeleteDto userDeleteDto)
     {
-        var user = await _userRepository.GetById(userDeleteDto.Id);
+        var user = await _userRepository.GetByIdAsync(userDeleteDto.Id);
         if (user == null)
             throw new Exception(ResponseMessages.UserNotFound);
         user.IsDeleted = true;

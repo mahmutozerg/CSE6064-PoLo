@@ -22,7 +22,7 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
     }
 
 
-    public async Task<CustomResponseNoDataDto> Remove(string id,string updatedBy)
+    public async Task<CustomResponseNoDataDto> RemoveAsync(string id,string updatedBy)
     {
         var entity = await _repository.Where(x => x!.Id == id && !x.IsDeleted).FirstOrDefaultAsync();
         if (entity is null )
@@ -72,7 +72,7 @@ public class GenericService<TEntity> : IGenericService<TEntity> where TEntity :B
 
     public async Task<CustomResponseDto<TEntity?>> GetByIdAsync(string id)
     {
-        var entity = await _repository.GetById(id);
+        var entity = await _repository.GetByIdAsync(id);
         
         ArgumentNullException.ThrowIfNull(entity);
         

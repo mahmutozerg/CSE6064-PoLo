@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using PoLoAnalysisBusiness.Core.Services;
 using SharedLibrary.DTOs;
 using SharedLibrary.DTOs.FileResult;
+using SharedLibrary.DTOs.Responses;
 
 namespace PoLoAnalysisBusinessAPI.Controllers;
 
@@ -34,15 +35,18 @@ public class ResultController:CustomControllerBase
 
         var userWithCoursesAndFiles = (await _userService.GetUserWithCourseWithFilesWithResultByUserIdByCourseIdAsync(userId, id)).Data;
 
-        var zipFileByteArray = await (_resultService
-            .GetFileStreamAsync(userWithCoursesAndFiles
-                .Courses
-                .SingleOrDefault(c => c.Id == id)
-                .File
-                .First()
-                .Result.Id));
+        var resultId = userWithCoursesAndFiles
+            .Courses
+            .SingleOrDefault(c => c.Id == id)
+            .File
+            .First()
+            .Result.Id;
+        
+            var zipFileByteArray = await (_resultService
+                .GetFileStreamAsync(resultId));
+            return File(zipFileByteArray,"application/zip","archive.zip");
 
-        return File(zipFileByteArray,"application/zip","archive.zip");
+        
 
     }
 

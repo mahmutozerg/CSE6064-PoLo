@@ -23,6 +23,15 @@ public class AppFileService:GenericService<File>,IAppFileServices
         _courseService = courseService;
     }
 
+    public new async Task<CustomResponseNoDataDto> RemoveAsync(string id, string updatedBy)
+    {
+        var file = await _fileRepository.GetByIdAsync(id);
+        ArgumentNullException.ThrowIfNull(file);
+        file.IsDeleted = true;
+
+        await UpdateAsync(file, updatedBy);
+        return CustomResponseNoDataDto.Success(StatusCodes.Ok);
+    }
 
     public async Task<CustomResponseDto<File>> AddFileAsync(IFormFile? model,string courseId,string createdBy)
     {
@@ -81,7 +90,7 @@ public class AppFileService:GenericService<File>,IAppFileServices
 
     public async Task<FileStreamResult> GetFileStreamAsync(string fileId)
     {
-        var entity = await _fileRepository.GetById(fileId); 
+        var entity = await _fileRepository.GetByIdAsync(fileId); 
             
         if (entity == null)
             throw new Exception(ResponseMessages.NotFound); 

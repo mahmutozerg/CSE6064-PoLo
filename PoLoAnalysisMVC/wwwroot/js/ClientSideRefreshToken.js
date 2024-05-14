@@ -22,8 +22,8 @@ async function refreshAccessToken() {
 
         const data = await response.json();
         
-        document.cookie = `Session=${data.accessToken}; Secure;Path=/; SameSite=Strict; expires=${data.accessTokenExpiration}`;
-        document.cookie = `Refresh=${data.refreshToken}; Secure; Path=/;SameSite=Strict; expires=${data.refreshTokenExpiration}`;
+        document.cookie = `Session=${data.accessToken}; Secure;Path=/; SameSite=Strict; expires=${new Date(data.accessTokenExpiration)}`;
+        document.cookie = `Refresh=${data.refreshToken}; Secure; Path=/;SameSite=Strict; expires=${new Date(data.refreshTokenExpiration)}`;
     } catch (error) {
         console.error('Error refreshing access token:', error);
     }

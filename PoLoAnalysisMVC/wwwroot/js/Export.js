@@ -1,4 +1,4 @@
-﻿let exportForm, failurePopUp,successPopUp;
+﻿let exportForm, failurePopUp,successPopUp,failpopupText;
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("export-button").addEventListener("click", getResultFile);
@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     courseDropdown = document.getElementById('course-dropdown');
     failurePopUp = document.getElementById("failure-popup");
     successPopUp = document.getElementById("success-popup");
+    failpopupText = document.getElementById("failure-popup-text");
 
 });
 async function getResultFile() {
@@ -33,11 +34,11 @@ async function getResultFile() {
 
         if (!response.ok)
         {
-            showPopUp(failurePopUp)
+            throw new Error(await response.text())
+            
         }else
         {
             showPopUp(successPopUp)
-
         }
         const blob = await response.blob();
 
@@ -47,7 +48,7 @@ async function getResultFile() {
 
         link.href = blobUrl;
 
-        link.download = `${courseId}_result.zip`;
+        link.download = `${courseId.replace("","_").replace("%20","_")}_result.zip`;
 
         document.body.appendChild(link);
 
@@ -57,8 +58,22 @@ async function getResultFile() {
 
         URL.revokeObjectURL(blobUrl);
     } catch (error) {
-        console.error('An error occurred:', error);
-    }
+        const text = error.message;
+        const startIndex = text.indexOf('System.Exception:');
+        const newlineIndex = text.indexOf('\n', startIndex);
+        let substring;
+
+        if (startIndex !== -1 && newlineIndex !== -1) {
+            substring = text.substring(startIndex + 'System.Exception:'.length, newlineIndex);
+        } else if (startIndex !== -1) {
+            substring = text.substring(startIndex + 'System.Exception:'.length);
+        } else {
+            substring = text;
+        }
+
+
+        failpopupText.innerText = substring;
+        showPopUp(failPopup);    }
 
     function showPopUp(popup) {
 
