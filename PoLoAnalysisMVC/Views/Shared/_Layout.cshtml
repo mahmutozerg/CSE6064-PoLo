@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="~/js/site.js" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/PoLoAnalysisMVC.styles.css" asp-append-version="true" />
-    <link rel="icon" type="image/x-icon" href="\Images\favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/js/ClientSideRefreshToken.js?v3" defer></script>
-
     <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
@@ -30,10 +29,7 @@
         }
         <p><br>Hello,@name<br/></p>
         <a href="@Url.Action("Import","Home")">Import Excel File</a>
-        <a href="#">Reports In Progress</a>
         <a href="@Url.Action("Index","Home")">Export Result File</a>
-        <a href="#">Past Reports</a>
-        <a href="#">Download Template</a>
         <a href="#">Settings</a>
         @{
             var isAdmin = ((ClaimsIdentity)User.Identity).FindAll(ClaimTypes.Role).Any(r => r.Value == "Admin");
@@ -46,12 +42,11 @@
 
         }
         <div class="side-bottom">
-            <a href="#">Report Bug</a>
             <a href="#">About</a>
             <a href="#">Documentation</a>
 
             <img src="~/Images/POLOGray.svg" alt="Logo" class="logo-side-bottom">
-            <p class="version">v0.0.1(Beta)</p>
+            <p class="version">v1.0.0</p>
         </div>
     </div>
     <div class="container">
