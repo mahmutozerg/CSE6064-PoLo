@@ -29,8 +29,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<AppTokenOptions>(builder.Configuration.GetSection("TokenOptions"));
 builder.Services.Configure<List<ClientLoginDto>>(builder.Configuration.GetSection("Clients"));
+
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<AppTokenOptions>();
 var clients = builder.Configuration.GetSection("Clients").Get<List<ClientSectionDto>>();
+
+
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITokenService, TokenService>();

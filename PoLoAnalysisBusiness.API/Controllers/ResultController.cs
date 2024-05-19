@@ -42,9 +42,9 @@ public class ResultController:CustomControllerBase
             .First()
             .Result.Id;
         
-            var zipFileByteArray = await (_resultService
-                .GetFileStreamAsync(resultId));
-            return File(zipFileByteArray,"application/zip","archive.zip");
+        var zipFileByteArray = await (_resultService
+            .GetFileStreamAsync(resultId));
+        return File(zipFileByteArray,"application/zip","archive.zip");
 
         
 

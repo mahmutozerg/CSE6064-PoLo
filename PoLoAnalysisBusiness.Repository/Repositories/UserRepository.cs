@@ -69,13 +69,12 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
     public async Task<List<AppUser>> GetActiveUsersWithCourseByPageAsync(int page)
     {
         page = page > _activeUsersMaxPage ? _activeUsersMaxPage : page;
-
         
         return await _users
             .Where(u=> !u.IsDeleted)
             .Skip(PageEntityCount * page)
             .Take(PageEntityCount)
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .AsNoTracking()
             .ToListAsync();
     }
@@ -154,7 +153,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .Where(u => u.EMail.ToLower().Contains(eMail.ToLower())  && !u.IsDeleted)
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .ToListAsync();
         
         

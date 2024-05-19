@@ -53,7 +53,6 @@ public class CatsLoginService
             usernameButton.Click();
             var userNameElement =
                 wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[contains(@class,'Mrphs-userNav__submenuitem--fullname')]")));
-            var userNameText = userNameElement.Text.Trim();
             return CustomResponseNoDataDto.Success(200);
         }
         catch (Exception ex)

@@ -1,7 +1,5 @@
 ﻿using System.IO.Compression;
 using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Net.Http.Headers;
 using Novacode;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing.Chart;
@@ -9,7 +7,6 @@ using PoLoAnalysisBusiness.Core.Repositories;
 using PoLoAnalysisBusiness.Core.Services;
 using PoLoAnalysisBusiness.Core.UnitOfWorks;
 using SharedLibrary;
-using SharedLibrary.DTOs.FileResult;
 using SharedLibrary.DTOs.Responses;
 using SharedLibrary.Models.business;
 using Spire.Xls;
@@ -84,7 +81,6 @@ public class ResultService:GenericService<Result>,IResultService
         if (course.IsCompulsory)
         {
             SetExcelClassNameAndClassCode(_worksheets.First());
-
             await CreateGenelExcelResultFileIfNotExist();
             SetGenelExcelResultStartingRow(_genelResultExcelPackage.Workbook.Worksheets[1]);
         }
@@ -111,7 +107,6 @@ public class ResultService:GenericService<Result>,IResultService
             if (course.IsCompulsory)
             {
                 await SetPOAveragesToGenelExcelResult(worksheetName:worksheet.Name);
-
             }
             Dispose();
             
@@ -211,38 +206,36 @@ public class ResultService:GenericService<Result>,IResultService
         if (_q1StartPos.Count == 0 || _qEndPos.Count == 0 || _studentEndcol.Count == 0)
             return;
 
-        var a = worksheet.Name;
         var colStart = int.Parse(_q1StartPos["col"]);
         var colEnd = int.Parse(_qEndPos["col"]);
         var rowStart = int.Parse(_q1StartPos["row"]) + 2;
         var rowEnd = int.Parse(_studentEndcol["row"]) - 2;
         var overal = 0.0f;
-        var safe = false;
+        var isNumerical = false;
+        
         for (var row = rowStart; row <= rowEnd; row++)
         {
             for (var col = colStart; col <= colEnd; col++)
             {
                 var cellValue = worksheet.Cells[row, col].Value;
-
-                if (cellValue is not null and not "" and not " ")
-                {
-                    overal +=(float.Parse(cellValue.ToString()));
-                    safe = true;
-
-                }
+                
+                if (cellValue is null or "" or " ")
+                    continue;
+                overal +=(float.Parse(cellValue.ToString()));
+                isNumerical = true;
             }
 
-            if (safe)
+            if (isNumerical)
             {
                 _studentTotalPoints.Add(overal);
 
             }else
                 _studentTotalPoints.Add(-1);
 
-
-            safe = false;
+            isNumerical = false;
             overal = 0;
         }
+
 
     }
 
@@ -431,14 +424,16 @@ public class ResultService:GenericService<Result>,IResultService
             var isOrtalamaTag = cellString.ToLower().Contains("Ortalama".ToLower());
             var isYuzdesiTag = cellString.Contains("yüzdesi");
 
-            if (!isYuzdesiTag)
-            {
-                if (!isStudentId  && !isOrtalamaTag && !isStudentIdTag)
-                    throw new Exception($"Please check Student numbers at {ExcelCellBase.GetAddress(row,col)}");
-                continue;
+         
+            if (!isYuzdesiTag && !isStudentId  && !isOrtalamaTag && !isStudentIdTag)
+                throw new Exception($"Please check Student numbers at {ExcelCellBase.GetAddress(row,col)}");
 
-            }
-            
+
+            if (isStudentId)
+                _studentIdList.Add(cellString);
+
+            if (!isYuzdesiTag)
+                continue;
             _studentEndcol["row"] = (row-1).ToString();
             _studentEndcol["col"] = col.ToString();
             _studentEndcol["addr"] = ExcelCellBase.GetAddress(row-1, col);
@@ -468,6 +463,7 @@ public class ResultService:GenericService<Result>,IResultService
                 if (cellValue is not null and not "" and not " ")
                     columnPoints.Add(float.Parse(cellValue.ToString()));
             }
+            
             _questionPointMatrix.Add(new List<float>(columnPoints)); 
             columnPoints.Clear();
         }
@@ -588,7 +584,7 @@ public class ResultService:GenericService<Result>,IResultService
                 {
                     try
                     {
-                        return question.Substring(1); // Return the result of Substring(1)
+                        return question.Substring(1);  
                     }
                     catch (Exception e)
                     {
@@ -838,6 +834,7 @@ public class ResultService:GenericService<Result>,IResultService
             _poPointList[poQuestion] += float.Parse(_poQuestionMatrix[poQuestion].Last());
             _poVisits[poQuestion] += 1;
         }
+        
         foreach (var poNumber in _poPointList.Keys)
         {
             var col = int.Parse(poNumber) + (11*resultExcelWorksheetIndex);
@@ -945,5 +942,7 @@ public class ResultService:GenericService<Result>,IResultService
         document.Save();
 
     }
+    
+    
 
 }
