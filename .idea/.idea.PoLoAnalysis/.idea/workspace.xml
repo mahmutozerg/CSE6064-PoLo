@@ -25,240 +25,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ResultFiles/0b169fca-d9d4-40be-94d6-a68034dd3eca/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/0b169fca-d9d4-40be-94d6-a68034dd3eca/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/0b169fca-d9d4-40be-94d6-a68034dd3eca/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/4946d0ed-9b84-4d82-9e51-2594c1e241f6/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/4946d0ed-9b84-4d82-9e51-2594c1e241f6/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/4946d0ed-9b84-4d82-9e51-2594c1e241f6/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/50c0ee3b-265d-408d-967d-f830cd8f6025/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/621ff7b7-64c1-4717-a743-d80858fe2077/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/952c74ff-8981-424c-90c2-394faf2d9fba/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/c1ac298d-e6ec-44c4-9465-eb4ce0d703f3/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/c1ac298d-e6ec-44c4-9465-eb4ce0d703f3/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/c1ac298d-e6ec-44c4-9465-eb4ce0d703f3/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d159f161-2386-40c3-a513-03d7cc88279d/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d976a0b3-a1c2-4c7e-b0f8-0ab607318d98/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d976a0b3-a1c2-4c7e-b0f8-0ab607318d98/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/d976a0b3-a1c2-4c7e-b0f8-0ab607318d98/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e678793c-60e8-4edf-8406-f674ae09f297/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/e978721e-b054-4400-ac16-7bef32938bda/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/0b169fca-d9d4-40be-94d6-a68034dd3eca.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/155d2907-4dc1-40d7-ab5a-6e400fbda549.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/1cc3e7a9-bdca-4ffd-9bf2-c73693d0ca8e.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/31bacbbd-00dc-4cbb-9914-b54ad1efecf5.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/42e3b2a2-766c-4f91-b0f2-7d689503fe08.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/4946d0ed-9b84-4d82-9e51-2594c1e241f6.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/50c0ee3b-265d-408d-967d-f830cd8f6025.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/5170b0ce-c15c-4a2a-a495-ee5e984a49df.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/621ff7b7-64c1-4717-a743-d80858fe2077.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/628912a3-6d0e-4727-b40a-b1842f6b0aa7.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/6e6fb529-dce6-4144-9963-c7d07b7f73f9.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/704d4815-65d9-4eb4-a283-e230e6eb3ad0.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/7eac8a57-b4f3-4a01-bfb6-d9ae0c05f417.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/7ef3c3d9-5003-44aa-b55d-6c8e9332c642.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/952c74ff-8981-424c-90c2-394faf2d9fba.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/a48c8d90-0b11-482e-bb17-839836c65f63.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/a56e100d-3c22-4198-b300-c3aad67e8fc1.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/a586218a-bbff-4efa-a3a8-ab7192d7c428.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/c1ac298d-e6ec-44c4-9465-eb4ce0d703f3.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/d159f161-2386-40c3-a513-03d7cc88279d.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/d976a0b3-a1c2-4c7e-b0f8-0ab607318d98.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/e678793c-60e8-4edf-8406-f674ae09f297.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/e978721e-b054-4400-ac16-7bef32938bda.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/eed2f12a-164e-45c5-845b-2bff8e94e4ac.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/f0a91c7e-7e9a-4af9-ac05-251d16c12923.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/f6e64d06-7c81-4e90-8527-1f4922efc722.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Final_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Final_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Final_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Midterm_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Midterm_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Midterm_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Proje_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Proje_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Proje_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Quiz_lo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Quiz_po.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Quiz_result.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/result.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2023_2024.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2023_2024.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemplateFiles/2023_2024_result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/4cae32e9-60ce-4c4d-a99d-87a84790f27e.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UploadedFiles/97a45c1e-9cb9-43f5-96d9-6633b5e89d0e.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/Services/CatsLoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/Services/CatsLoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ResultController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ResultController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Repository/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/LogOutController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/LogOutController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/2020_2021.docx" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/2020_2021.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateFiles/EkTemplate.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateFiles/EkTemplate.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,11 +154,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: IIS Express.executor": "Debug",
-    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Debug",
+    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: http.executor": "Run",
-    ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Debug",
+    ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: http.executor": "Run",
-    ".NET Launch Settings Profile.PoLoAnalysisMVC: https.executor": "Debug",
+    ".NET Launch Settings Profile.PoLoAnalysisMVC: https.executor": "Run",
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -613,7 +405,9 @@
       <workItem from="1716034369646" duration="344000" />
       <workItem from="1716061982182" duration="4043000" />
       <workItem from="1716076750656" duration="5896000" />
-      <workItem from="1716121086797" duration="3597000" />
+      <workItem from="1716121086797" duration="4078000" />
+      <workItem from="1716125285747" duration="130000" />
+      <workItem from="1716134167876" duration="1228000" />
     </task>
     <task id="LOCAL-00001" summary="File constants file uploads file upload controller created">
       <option name="closed" value="true" />

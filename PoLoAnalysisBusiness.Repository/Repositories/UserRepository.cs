@@ -24,7 +24,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
     {
         return await _users
             .Where(u => u.EMail.ToLower().Contains(eMail.ToLower())  && !u.IsDeleted)
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .ToListAsync();
     }
 
@@ -32,7 +32,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
     {
         return await _users
             .Where(u => u.EMail.ToLower() == eMail.ToLower() && !u.IsDeleted)
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .SingleOrDefaultAsync();
         
     }
@@ -41,7 +41,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
     {
         return await _users
             .Where(u => u.EMail.ToLower().Contains(eMail.ToLower()))
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .AsNoTracking()
             .ToListAsync();
     }
@@ -86,7 +86,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
         return await _users
             .Skip(PageEntityCount * page)
             .Take(PageEntityCount)
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .AsNoTracking()
             .ToListAsync();
     }
@@ -167,7 +167,7 @@ public class UserRepository:GenericRepository<AppUser>,IUserRepository
             .Where(u => u.EMail.ToLower().Contains(eMail.ToLower()) )
             .Skip(PageEntityCount*page)
             .Take(PageEntityCount)
-            .Include(u=> u.Courses)
+            .Include(u=> u.Courses.Where(c=> !c.IsDeleted))
             .ToListAsync();
     }
 

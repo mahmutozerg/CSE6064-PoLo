@@ -31,7 +31,6 @@
         <a href="@Url.Action("Import","Home")">Import Excel File</a>
         <a href="@Url.Action("Index","Home")">Export Result File</a>
         <a href="#">Settings</a>
-        <a href="@Url.Action("LogOut","LogOut")">Log Out</a>
 
         @{
             var isAdmin = ((ClaimsIdentity)User.Identity).FindAll(ClaimTypes.Role).Any(r => r.Value == "Admin");
@@ -43,6 +42,8 @@
             }
 
         }
+        <a href="@Url.Action("LogOut","LogOut")">Log Out</a>
+
         <div class="side-bottom">
             <a href="#">About</a>
             <a href="#">Documentation</a>
