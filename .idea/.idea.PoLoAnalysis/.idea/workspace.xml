@@ -25,30 +25,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Final_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Final_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Final_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Midterm_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Midterm_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Midterm_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Proje_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Proje_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Proje_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Quiz_lo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Quiz_po.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/Quiz_result.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2/result.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateFiles/2020_2021.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateFiles/2023_2024.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateFiles/2023_2024.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemplateFiles/2023_2024_result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/46b092ab-8b13-407c-9e22-fd2d2dc210b2.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/4cae32e9-60ce-4c4d-a99d-87a84790f27e.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UploadedFiles/97a45c1e-9cb9-43f5-96d9-6633b5e89d0e.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Login/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Login/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
     </list>
@@ -407,7 +388,7 @@
       <workItem from="1716076750656" duration="5896000" />
       <workItem from="1716121086797" duration="4078000" />
       <workItem from="1716125285747" duration="130000" />
-      <workItem from="1716134167876" duration="1228000" />
+      <workItem from="1716134167876" duration="4208000" />
     </task>
     <task id="LOCAL-00001" summary="File constants file uploads file upload controller created">
       <option name="closed" value="true" />

@@ -5,7 +5,11 @@
     padding: 0;
     background-color: #ffffff;
 }
-
+body
+{
+    padding: 0;
+    margin: 0;
+}
 header {
     display: flex;
     justify-content: space-between;
