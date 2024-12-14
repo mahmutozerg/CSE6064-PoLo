@@ -4,51 +4,25 @@
     <projectFile profileName="IIS Express">PoLoAnalysisAuthServer.API/PoLoAnalysisAuthServer.API.csproj</projectFile>
     <projectFile profileName="http">PoLoAnalysisAuthServer.API/PoLoAnalysisAuthServer.API.csproj</projectFile>
     <projectFile profileName="https">PoLoAnalysisAuthServer.API/PoLoAnalysisAuthServer.API.csproj</projectFile>
-    <projectFile profileName="IIS Express">PoLoAnalysisAuthServer/PoLoAnalysisAuthServer.csproj</projectFile>
-    <projectFile profileName="http">PoLoAnalysisAuthServer/PoLoAnalysisAuthServer.csproj</projectFile>
-    <projectFile profileName="https">PoLoAnalysisAuthServer/PoLoAnalysisAuthServer.csproj</projectFile>
     <projectFile profileName="IIS Express">PoLoAnalysisBusiness.API/PoLoAnalysisBusiness.API.csproj</projectFile>
     <projectFile profileName="http">PoLoAnalysisBusiness.API/PoLoAnalysisBusiness.API.csproj</projectFile>
     <projectFile profileName="https">PoLoAnalysisBusiness.API/PoLoAnalysisBusiness.API.csproj</projectFile>
-    <projectFile profileName="IIS Express">PoLoAnalysisBusinessAPI/PoLoAnalysisBusinessAPI.csproj</projectFile>
-    <projectFile profileName="http">PoLoAnalysisBusinessAPI/PoLoAnalysisBusinessAPI.csproj</projectFile>
-    <projectFile profileName="https">PoLoAnalysisBusinessAPI/PoLoAnalysisBusinessAPI.csproj</projectFile>
     <projectFile profileName="IIS Express">PoLoAnalysisMVC/PoLoAnalysisMVC.csproj</projectFile>
     <projectFile profileName="http">PoLoAnalysisMVC/PoLoAnalysisMVC.csproj</projectFile>
     <projectFile profileName="https">PoLoAnalysisMVC/PoLoAnalysisMVC.csproj</projectFile>
-    <projectFile profileName="IIS Express">WebApplication1/WebApplication1.csproj</projectFile>
-    <projectFile profileName="http">WebApplication1/WebApplication1.csproj</projectFile>
-    <projectFile profileName="https">WebApplication1/WebApplication1.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Login/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Login/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
-    </list>
+    <list default="true" id="123ac256-768c-45d9-88ab-8deb486b1ee5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" show_ignored="true" />
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="CSS File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,110 +39,37 @@
     &quot;accountId&quot;: &quot;57f7f368-f442-4d2f-a358-65c489ac9703&quot;
   }
 }</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8486d31e24f30e3fa1809a95699a0adc16f448d7/src/Security/Authentication/JwtBearer/src/JwtBearerEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8486d31e24f30e3fa1809a95699a0adc16f448d7/src/Security/Authentication/JwtBearer/src/JwtBearerHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Http/Authentication.Core/src/AuthenticationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Http/Http.Features/src/CookieOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Middleware/Diagnostics/src/DeveloperExceptionPage/DeveloperExceptionPageMiddlewareImpl.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Mvc/Mvc.Core/src/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Mvc/Mvc.Core/src/FileStreamResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Mvc/Mvc.Core/src/Infrastructure/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Razor/Razor.Runtime/src/Runtime/TagHelpers/TagHelperExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authentication/Cookies/src/CookieAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authentication/Core/src/AuthAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authentication/Core/src/AuthenticationHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authentication/Core/src/Events/BaseContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authorization/Core/src/DefaultAuthorizationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authorization/Policy/src/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authorization/Policy/src/AuthorizationMiddlewareResultHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Security/Authorization/Policy/src/PolicyEvaluator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/8e941eb42f819adb116b881195158b3887a70a1c/src/Servers/Kestrel/Core/src/Internal/Http/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/Microsoft.Extensions.Options/src/ConfigureNamedOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/1381d5ebd2ab1f292848d5b19b80cf71ac332508/src/libraries/Microsoft.Extensions.Options/src/OptionsFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ActivatorUtilities.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Net/WebUtility.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/DefaultInterpolatedStringHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Runtime/ExceptionServices/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Future.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/bf5e279d9239bfef5bb1b8d6212f1b971c434606/src/libraries/System.Private.Xml/src/System/Xml/Dom/XmlDocument.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisAuthServer.API/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/ExcelFileController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Repositories/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IGenericService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Core/Services/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/CatsUserServices.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2fMfcCCtaz9RI1FeyLIIaiZ3niH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2ghGzBwAKEpkjTiz4ssOEupngtZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: IIS Express.executor": "Debug",
     ".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https.executor": "Run",
-    ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: http.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Run",
-    ".NET Launch Settings Profile.PoLoAnalysisMVC: http.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: https.executor": "Run",
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.59698683",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "IdeDpaMemoryAllocationsPageId",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
-    ],
     "rider.external.source.directories": [
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lenovo\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\ege_k\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\ege_k\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\ege_k\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
-  <component name="RiderProblemsViewState">
-    <option name="autoscrollToSource" value="true" />
-  </component>
   <component name="RunManager" selected="Compound.Unnamed">
     <configuration name="Unnamed" type="CompoundRunConfigurationType">
       <toRun name="PoLoAnalysisAuthServer.API: https" type="LaunchSettings" />
@@ -221,10 +122,70 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="PoLoAnalysisBusiness.API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PoLoAnalysisBusiness.API/PoLoAnalysisBusiness.API.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="PoLoAnalysisBusiness.API: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PoLoAnalysisBusiness.API/PoLoAnalysisBusiness.API.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="PoLoAnalysisBusiness.API: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PoLoAnalysisBusiness.API/PoLoAnalysisBusiness.API.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="PoLoAnalysisMVC: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PoLoAnalysisMVC/PoLoAnalysisMVC.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="PoLoAnalysisMVC: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PoLoAnalysisMVC/PoLoAnalysisMVC.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -255,278 +216,27 @@
       <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: http" />
       <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisAuthServer.API: https" />
+      <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisBusiness.API: http" />
       <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https" />
+      <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisBusiness.API: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisMVC: http" />
       <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisMVC: https" />
+      <item itemvalue=".NET Launch Settings Profile.PoLoAnalysisMVC: IIS Express" />
       <item itemvalue="Compound.Unnamed" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="" />
-      <created>1713615944391</created>
+      <changelist id="123ac256-768c-45d9-88ab-8deb486b1ee5" name="Changes" comment="" />
+      <created>1716142656361</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713615944391</updated>
-      <workItem from="1713615945439" duration="456000" />
-      <workItem from="1713616574143" duration="19591000" />
-      <workItem from="1713636739418" duration="49000" />
-      <workItem from="1713686053041" duration="823000" />
-      <workItem from="1713690995077" duration="1361000" />
-      <workItem from="1713791851194" duration="5702000" />
-      <workItem from="1713797833926" duration="539000" />
-      <workItem from="1713798582417" duration="52000" />
-      <workItem from="1713799156244" duration="8357000" />
-      <workItem from="1713950966313" duration="674000" />
-      <workItem from="1713952457738" duration="12841000" />
-      <workItem from="1713972400456" duration="60000" />
-      <workItem from="1713973497898" duration="2764000" />
-      <workItem from="1713977876134" duration="5466000" />
-      <workItem from="1713986633031" duration="22419000" />
-      <workItem from="1714036992929" duration="3738000" />
-      <workItem from="1714040998871" duration="1117000" />
-      <workItem from="1714042977421" duration="203000" />
-      <workItem from="1714044110564" duration="48000" />
-      <workItem from="1714045652563" duration="1325000" />
-      <workItem from="1714067165471" duration="797000" />
-      <workItem from="1714070117314" duration="2472000" />
-      <workItem from="1714073283736" duration="911000" />
-      <workItem from="1714074706344" duration="826000" />
-      <workItem from="1714117412761" duration="2821000" />
-      <workItem from="1714121346292" duration="2266000" />
-      <workItem from="1714124447298" duration="1447000" />
-      <workItem from="1714126683134" duration="4000" />
-      <workItem from="1714144000614" duration="1055000" />
-      <workItem from="1714146184284" duration="28000" />
-      <workItem from="1714148298186" duration="68000" />
-      <workItem from="1714215630842" duration="1265000" />
-      <workItem from="1714321554563" duration="48000" />
-      <workItem from="1714321627404" duration="338000" />
-      <workItem from="1714399821416" duration="14583000" />
-      <workItem from="1714416159094" duration="3000" />
-      <workItem from="1714417348799" duration="104000" />
-      <workItem from="1714419929674" duration="37000" />
-      <workItem from="1714464533439" duration="2827000" />
-      <workItem from="1714552243788" duration="1340000" />
-      <workItem from="1714553699335" duration="117000" />
-      <workItem from="1714554455051" duration="592000" />
-      <workItem from="1714555209479" duration="5691000" />
-      <workItem from="1714572064735" duration="50000" />
-      <workItem from="1714584933159" duration="101000" />
-      <workItem from="1714589463417" duration="8731000" />
-      <workItem from="1714599124478" duration="55000" />
-      <workItem from="1714600523038" duration="6699000" />
-      <workItem from="1714607352177" duration="858000" />
-      <workItem from="1714636964406" duration="189000" />
-      <workItem from="1714661306276" duration="848000" />
-      <workItem from="1714674755480" duration="498000" />
-      <workItem from="1714677830531" duration="253000" />
-      <workItem from="1714826067599" duration="1616000" />
-      <workItem from="1714828905531" duration="79000" />
-      <workItem from="1714855165153" duration="11189000" />
-      <workItem from="1714867274971" duration="812000" />
-      <workItem from="1714868122303" duration="4217000" />
-      <workItem from="1714908525671" duration="3286000" />
-      <workItem from="1714915102508" duration="703000" />
-      <workItem from="1714916559848" duration="1022000" />
-      <workItem from="1714928153604" duration="289000" />
-      <workItem from="1714928999909" duration="20000" />
-      <workItem from="1714930141548" duration="4059000" />
-      <workItem from="1714944756532" duration="4884000" />
-      <workItem from="1714950503986" duration="774000" />
-      <workItem from="1714951467270" duration="146000" />
-      <workItem from="1714983549073" duration="40000" />
-      <workItem from="1714995642465" duration="281000" />
-      <workItem from="1714996144085" duration="1033000" />
-      <workItem from="1714997238495" duration="438000" />
-      <workItem from="1715004627631" duration="9881000" />
-      <workItem from="1715069043815" duration="1384000" />
-      <workItem from="1715111805053" duration="5037000" />
-      <workItem from="1715148723154" duration="543000" />
-      <workItem from="1715149933599" duration="1368000" />
-      <workItem from="1715202949970" duration="7816000" />
-      <workItem from="1715210838952" duration="2924000" />
-      <workItem from="1715213835644" duration="110000" />
-      <workItem from="1715257687579" duration="2899000" />
-      <workItem from="1715352510129" duration="1151000" />
-      <workItem from="1715353687836" duration="2559000" />
-      <workItem from="1715360506524" duration="6392000" />
-      <workItem from="1715378322455" duration="6888000" />
-      <workItem from="1715416931472" duration="149000" />
-      <workItem from="1715425974817" duration="10877000" />
-      <workItem from="1715437626850" duration="7000" />
-      <workItem from="1715437647205" duration="3473000" />
-      <workItem from="1715456187061" duration="9284000" />
-      <workItem from="1715465615939" duration="177000" />
-      <workItem from="1715465837550" duration="971000" />
-      <workItem from="1715467669499" duration="112000" />
-      <workItem from="1715512244870" duration="25000" />
-      <workItem from="1715512301636" duration="75000" />
-      <workItem from="1715518712440" duration="11660000" />
-      <workItem from="1715534227090" duration="1473000" />
-      <workItem from="1715536533819" duration="1716000" />
-      <workItem from="1715539820706" duration="878000" />
-      <workItem from="1715542413637" duration="3539000" />
-      <workItem from="1715547970370" duration="1470000" />
-      <workItem from="1715549706548" duration="1234000" />
-      <workItem from="1715592964104" duration="12518000" />
-      <workItem from="1715606920838" duration="837000" />
-      <workItem from="1715610930469" duration="11470000" />
-      <workItem from="1715624889814" duration="363000" />
-      <workItem from="1715673537090" duration="1867000" />
-      <workItem from="1715675730288" duration="1231000" />
-      <workItem from="1715681994700" duration="8581000" />
-      <workItem from="1715701831414" duration="4523000" />
-      <workItem from="1715877959683" duration="190000" />
-      <workItem from="1715900681287" duration="82000" />
-      <workItem from="1715943658639" duration="4643000" />
-      <workItem from="1715979111274" duration="514000" />
-      <workItem from="1715983726199" duration="775000" />
-      <workItem from="1715987647234" duration="847000" />
-      <workItem from="1716034369646" duration="344000" />
-      <workItem from="1716061982182" duration="4043000" />
-      <workItem from="1716076750656" duration="5896000" />
-      <workItem from="1716121086797" duration="4078000" />
-      <workItem from="1716125285747" duration="130000" />
-      <workItem from="1716134167876" duration="4208000" />
+      <updated>1716142656361</updated>
+      <workItem from="1716142658678" duration="32000" />
+      <workItem from="1716142769739" duration="76000" />
+      <workItem from="1734177766756" duration="375000" />
     </task>
-    <task id="LOCAL-00001" summary="File constants file uploads file upload controller created">
-      <option name="closed" value="true" />
-      <created>1713616394381</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1713616394381</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fileupload database connections completed">
-      <option name="closed" value="true" />
-      <created>1713619702158</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1713619702158</updated>
-    </task>
-    <task id="LOCAL-00003" summary="File save upload done">
-      <option name="closed" value="true" />
-      <created>1713622825761</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1713622825761</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Excel file download bugfix">
-      <option name="closed" value="true" />
-      <created>1713623281258</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1713623281258</updated>
-    </task>
-    <task id="LOCAL-00005" summary="reformatting and ResultController.cs">
-      <option name="closed" value="true" />
-      <created>1713627786255</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1713627786255</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Docx image append implemented.">
-      <option name="closed" value="true" />
-      <created>1713634603061</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1713634603061</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Docx image append and retreival done">
-      <option name="closed" value="true" />
-      <created>1713636360528</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1713636360528</updated>
-    </task>
-    <task id="LOCAL-00008" summary="user repository services controller">
-      <option name="closed" value="true" />
-      <created>1713692330027</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1713692330027</updated>
-    </task>
-    <task id="LOCAL-00009" summary="AuthServer implemented">
-      <option name="closed" value="true" />
-      <created>1713796745077</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1713796745077</updated>
-    </task>
-    <task id="LOCAL-00010" summary="user deelte bugfix">
-      <option name="closed" value="true" />
-      <created>1713802036117</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1713802036117</updated>
-    </task>
-    <task id="LOCAL-00011" summary="yasin login">
-      <option name="closed" value="true" />
-      <created>1713807455534</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1713807455534</updated>
-    </task>
-    <task id="LOCAL-00012" summary="student point averages">
-      <option name="closed" value="true" />
-      <created>1713959581274</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1713959581274</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Word">
-      <option name="closed" value="true" />
-      <created>1713971836609</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1713971836609</updated>
-    </task>
-    <task id="LOCAL-00014" summary="mvc authorization from cookies">
-      <option name="closed" value="true" />
-      <created>1713975307536</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1713975307536</updated>
-    </task>
-    <task id="LOCAL-00015" summary="pç karşılama yüzdeleri hesaplama bugfix">
-      <option name="closed" value="true" />
-      <created>1714040631770</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1714040631770</updated>
-    </task>
-    <task id="LOCAL-00016" summary="test">
-      <option name="closed" value="true" />
-      <created>1714932899728</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1714932899728</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Git ignore updated">
-      <option name="closed" value="true" />
-      <created>1715595470186</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1715595470186</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,516 +244,7 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.Identity.Client" />
-    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Abstractions" />
-    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Relational" />
-    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="File constants file uploads file upload controller created" />
-    <MESSAGE value="fileupload database connections completed" />
-    <MESSAGE value="File save upload done" />
-    <MESSAGE value="Excel file download bugfix" />
-    <MESSAGE value="reformatting and ResultController.cs" />
-    <MESSAGE value="Docx image append implemented." />
-    <MESSAGE value="Docx image append and retreival done" />
-    <MESSAGE value="user repository services controller" />
-    <MESSAGE value="AuthServer implemented" />
-    <MESSAGE value="user deelte bugfix" />
-    <MESSAGE value="yasin login" />
-    <MESSAGE value="student point averages" />
-    <MESSAGE value="Word" />
-    <MESSAGE value="mvc authorization from cookies" />
-    <MESSAGE value="pç karşılama yüzdeleri hesaplama bugfix" />
-    <MESSAGE value="test" />
-    <MESSAGE value="Git ignore updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Git ignore updated" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisAuthServer.API/Controllers/AdminController.cs</url>
-          <line>25</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthServer.API\Controllers\AdminController.cs" containingFunctionPresentation="Method 'AddUserToRole'">
-            <startOffsets>
-              <option value="812" />
-            </startOffsets>
-            <endOffsets>
-              <option value="900" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/Services/AuthenticationService.cs</url>
-          <line>147</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\Services\AuthenticationService.cs" containingFunctionPresentation="Method 'GetUserRefreshTokenByEmail'">
-            <startOffsets>
-              <option value="5586" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5661" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/Services/AuthenticationService.cs</url>
-          <line>148</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisAuthSever.Service\Services\AuthenticationService.cs" containingFunctionPresentation="Method 'GetUserRefreshTokenByEmail'">
-            <startOffsets>
-              <option value="5670" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5687" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>23</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'AddUserToCourses'">
-            <startOffsets>
-              <option value="648" />
-            </startOffsets>
-            <endOffsets>
-              <option value="740" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs</url>
-          <line>129</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\AdminController.cs" containingFunctionPresentation="Method 'UpdateUsersCourse'">
-            <startOffsets>
-              <option value="4675" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4722" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="248" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
-          <line>723</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'AddLoImageToTheResultWord'">
-            <startOffsets>
-              <option value="26602" />
-            </startOffsets>
-            <endOffsets>
-              <option value="26658" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="313" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>46</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'GetCoursesWithFilters'">
-            <startOffsets>
-              <option value="1822" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1868" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="335" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>66</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'GetCoursesAsync'">
-            <startOffsets>
-              <option value="3104" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3140" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="336" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>84</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'DeleteCourseByIdAsync'">
-            <startOffsets>
-              <option value="4137" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4173" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="337" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminCourseServices.cs</url>
-          <line>93</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminCourseServices.cs" containingFunctionPresentation="Method 'AddCourseAsync'">
-            <startOffsets>
-              <option value="4533" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4569" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="338" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/UserCourseServices.cs</url>
-          <line>32</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\UserCourseServices.cs" containingFunctionPresentation="Method 'GetUserWithCourses'">
-            <startOffsets>
-              <option value="1079" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1115" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="339" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Controllers/AdminController.cs</url>
-          <line>19</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Controllers\AdminController.cs" containingFunctionPresentation="Method 'Users'">
-            <startOffsets>
-              <option value="694" />
-            </startOffsets>
-            <endOffsets>
-              <option value="754" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="340" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminUserServices.cs</url>
-          <line>46</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminUserServices.cs" containingFunctionPresentation="Method 'GetUserWithFilters'">
-            <startOffsets>
-              <option value="1880" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3053" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="341" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminUserServices.cs</url>
-          <line>77</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminUserServices.cs" containingFunctionPresentation="Method 'GetUsersWithSearchAsync'">
-            <startOffsets>
-              <option value="3702" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3738" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="342" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminUserServices.cs</url>
-          <line>68</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminUserServices.cs" containingFunctionPresentation="Method 'GetUsersAsync'">
-            <startOffsets>
-              <option value="3172" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3208" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="343" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisMVC/Services/AdminUserServices.cs</url>
-          <line>85</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisMVC\Services\AdminUserServices.cs" containingFunctionPresentation="Method 'GetUserWithCoursesByIdAsync'">
-            <startOffsets>
-              <option value="4208" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4244" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="344" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>37</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetAllCoursesByPageByName'">
-            <startOffsets>
-              <option value="1245" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1335" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="345" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>44</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetAllCoursesByPage'">
-            <startOffsets>
-              <option value="1450" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1529" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="346" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>50</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetAllCompulsoryCoursesByPage'">
-            <startOffsets>
-              <option value="1649" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1733" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="347" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>55</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCompulsoryCoursesByPage'">
-            <startOffsets>
-              <option value="1851" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1938" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="348" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>61</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetAllCompulsoryCoursesByPageByName'">
-            <startOffsets>
-              <option value="2076" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2171" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="349" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>66</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCompulsoryCoursesByPageByName'">
-            <startOffsets>
-              <option value="2307" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2405" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="350" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>32</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCoursesByPage'">
-            <startOffsets>
-              <option value="1039" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1121" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="351" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminCourseController.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminCourseController.cs" containingFunctionPresentation="Method 'GetActiveCoursesByPageByName'">
-            <startOffsets>
-              <option value="830" />
-            </startOffsets>
-            <endOffsets>
-              <option value="923" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="352" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>90</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetUserWithCoursesById'">
-            <startOffsets>
-              <option value="2891" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2964" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="353" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>82</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetAllUsersWithCourseByPage'">
-            <startOffsets>
-              <option value="2684" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2770" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="354" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>75</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetActiveUsersWithCourseByPage'">
-            <startOffsets>
-              <option value="2476" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2565" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="355" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>68</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetActiveUsersByPage'">
-            <startOffsets>
-              <option value="2276" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2354" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="356" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>61</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetAllUsersByPage'">
-            <startOffsets>
-              <option value="2089" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2164" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="357" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>55</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetActiveUser'">
-            <startOffsets>
-              <option value="1908" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1985" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="358" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>49</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetUser'">
-            <startOffsets>
-              <option value="1724" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1795" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="359" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetUserWithCoursesByEmailByPage'">
-            <startOffsets>
-              <option value="1518" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1613" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="361" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.API/Controllers/Admin/AdminUserController.cs</url>
-          <line>37</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'GetActiveUserWithCourses'">
-            <startOffsets>
-              <option value="1280" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1381" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="362" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
-          <line>389</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'SetLastQuestionPosition'">
-            <startOffsets>
-              <option value="14538" />
-            </startOffsets>
-            <endOffsets>
-              <option value="14569" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="363" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/PoLoAnalysisBusiness.Services/Services/ResultService.cs</url>
-          <line>386</line>
-          <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.Services\Services\ResultService.cs" containingFunctionPresentation="Method 'SetLastQuestionPosition'">
-            <startOffsets>
-              <option value="14457" />
-            </startOffsets>
-            <endOffsets>
-              <option value="14510" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="364" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="Type#PoLoAnalysisBusiness.DTO.Responses.CustomResponseDto`1" memberName="Data" />
-        <PinnedItemInfo parentTag="Type#System.Collections.Generic.KeyValuePair`2" memberName="Value" />
-        <PinnedItemInfo parentTag="Type#SharedLibrary.Models.business.AppUser" memberName="Courses" />
-        <PinnedItemInfo parentTag="Type#Microsoft.AspNetCore.Http.FormFile" memberName="Headers" />
-      </pinned-members>
-    </pin-to-top-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
