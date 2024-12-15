@@ -15,14 +15,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="123ac256-768c-45d9-88ab-8deb486b1ee5" name="Changes" comment="" />
+    <list default="true" id="123ac256-768c-45d9-88ab-8deb486b1ee5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DpaMonitoringSettings">
-    <option name="autoShow" value="false" />
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,20 +61,15 @@
     ".NET Launch Settings Profile.PoLoAnalysisBusiness.API: https.executor": "Run",
     ".NET Launch Settings Profile.PoLoAnalysisMVC: https.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "ege2",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\ege_k\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ege_k\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\ege_k\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected="Compound.Unnamed">
@@ -236,6 +238,7 @@
       <workItem from="1716142658678" duration="32000" />
       <workItem from="1716142769739" duration="76000" />
       <workItem from="1734177766756" duration="375000" />
+      <workItem from="1734259549179" duration="149000" />
     </task>
     <servers />
   </component>
