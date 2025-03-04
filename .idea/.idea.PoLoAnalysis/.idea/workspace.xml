@@ -25,13 +25,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6fffed9-2545-4914-821d-2ff622b8d574" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAPPDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAPPDB_log.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Login/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/Views/Login/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisMVC/wwwroot/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAuthDB.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAuthDB_log.ldf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/projectSettingsUpdater.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoLoAnalysis/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/4b44c5a0-fde7-4772-abc1-5630d5698dfc.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/623f32fb-8658-4f5c-8920-ce33156070fd.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/ba7a9e04-8294-4f71-96cf-7b82f460970f.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/baa976cb-30f3-482b-8910-29af74baa33b.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PoLoAnalysis/FileContentIndex/d95b36c3-04d5-487a-8ae9-3897feb402be.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PoLoAnalysis/v17/.wsuo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/Controllers/CatsLoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/Controllers/CatsLoginController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthServer.API/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/Services/CatsLoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PoLoAnalysisAuthSever.Service/Services/CatsLoginService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisBusiness.API/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoLoAnalysisMVC/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +155,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "XThreadsFramesViewSplitterKey": "0.59698683",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -158,11 +171,6 @@
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "PLAIN_TEXT"
-    ],
-    "rider.external.source.directories": [
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lenovo\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -389,6 +397,7 @@
       <workItem from="1716121086797" duration="4078000" />
       <workItem from="1716125285747" duration="130000" />
       <workItem from="1716134167876" duration="4208000" />
+      <workItem from="1741078487368" duration="575000" />
     </task>
     <task id="LOCAL-00001" summary="File constants file uploads file upload controller created">
       <option name="closed" value="true" />
@@ -620,10 +629,10 @@
           <line>23</line>
           <properties documentPath="C:\Users\Lenovo\RiderProjects\PoLoAnalysis\PoLoAnalysisBusiness.API\Controllers\Admin\AdminUserController.cs" containingFunctionPresentation="Method 'AddUserToCourses'">
             <startOffsets>
-              <option value="648" />
+              <option value="655" />
             </startOffsets>
             <endOffsets>
-              <option value="740" />
+              <option value="747" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="244" />

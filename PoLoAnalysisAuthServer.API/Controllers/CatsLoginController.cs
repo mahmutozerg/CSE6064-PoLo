@@ -30,7 +30,7 @@ public class CatsLoginController:CustomControllerBase
 
         if (user.StatusCode ==StatusCodes.NotFound)
         { 
-            var userEmail = catsUserLoginDto.UserName + "@iku.edu.tr";
+            var userEmail = catsUserLoginDto.UserName + "@stu.iku.edu.tr";
             
             var userResult =await _userService.CreateUserAsync(
                 new UserCreateDto()

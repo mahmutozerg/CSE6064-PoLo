@@ -15,9 +15,8 @@ public class CatsLoginService
         _userName = userName;
         _password = password;
 
-        var path = Directory.GetCurrentDirectory()+@"//..//chromedriver123.exe";
-        var chromeDriverService = ChromeDriverService
-            .CreateDefaultService(path);
+        var path = Directory.GetCurrentDirectory();
+        var chromeDriverService = ChromeDriverService.CreateDefaultService();
         chromeDriverService.HideCommandPromptWindow = true;
         
         var chromeOptions = new ChromeOptions();
@@ -35,9 +34,9 @@ public class CatsLoginService
     {
         _driver.Navigate().GoToUrl("https://cats.iku.edu.tr/portal");
 
-        var userNameInput = _driver.FindElement(By.Id("eid"));
+        var userNameInput = _driver.FindElement(By.XPath(@"/html/body/div[2]/div[1]/div/header/nav/form/input[1]"));
         userNameInput.SendKeys(_userName);
-        var passwordInput = _driver.FindElement(By.Id("pw"));
+        var passwordInput = _driver.FindElement(By.XPath(@"/html/body/div[2]/div[1]/div/header/nav/form/input[2]"));
         passwordInput.SendKeys(_password);
         passwordInput.SendKeys(Keys.Enter);
     }

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A6BFD05-AAF9-4442-8C4E-AD64DA966299}|PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj|c:\\users\\lenovo\\riderprojects\\poloanalysis\\poloanalysisauthsever.service\\services\\catsloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A6BFD05-AAF9-4442-8C4E-AD64DA966299}|PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj|solutionrelative:poloanalysisauthsever.service\\services\\catsloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A6BFD05-AAF9-4442-8C4E-AD64DA966299}|PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj|c:\\users\\lenovo\\riderprojects\\poloanalysis\\poloanalysisauthsever.service\\poloanalysisauthsever.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8A6BFD05-AAF9-4442-8C4E-AD64DA966299}|PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj|solutionrelative:poloanalysisauthsever.service\\poloanalysisauthsever.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959DD30F-59ED-46B6-BA9C-7ADE4568B019}|PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj|c:\\users\\lenovo\\riderprojects\\poloanalysis\\poloanalysisauthserver.api\\controllers\\catslogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{959DD30F-59ED-46B6-BA9C-7ADE4568B019}|PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj|solutionrelative:poloanalysisauthserver.api\\controllers\\catslogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{959DD30F-59ED-46B6-BA9C-7ADE4568B019}|PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj|c:\\users\\lenovo\\riderprojects\\poloanalysis\\poloanalysisauthserver.api\\poloanalysisauthserver.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{959DD30F-59ED-46B6-BA9C-7ADE4568B019}|PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj|solutionrelative:poloanalysisauthserver.api\\poloanalysisauthserver.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CatsLoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\Services\\CatsLoginService.cs",
+              "RelativeDocumentMoniker": "PoLoAnalysisAuthSever.Service\\Services\\CatsLoginService.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\Services\\CatsLoginService.cs",
+              "RelativeToolTip": "PoLoAnalysisAuthSever.Service\\Services\\CatsLoginService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAIAwwCQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:02:34.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PoLoAnalysisAuthSever.Service",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
+              "RelativeDocumentMoniker": "PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
+              "ToolTip": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
+              "RelativeToolTip": "PoLoAnalysisAuthSever.Service\\PoLoAnalysisAuthSever.Service.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-04T09:02:30.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CatsLoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\Controllers\\CatsLoginController.cs",
+              "RelativeDocumentMoniker": "PoLoAnalysisAuthServer.API\\Controllers\\CatsLoginController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\Controllers\\CatsLoginController.cs",
+              "RelativeToolTip": "PoLoAnalysisAuthServer.API\\Controllers\\CatsLoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:02:10.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PoLoAnalysisAuthServer.API",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
+              "RelativeDocumentMoniker": "PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
+              "ToolTip": "C:\\Users\\Lenovo\\RiderProjects\\PoLoAnalysis\\PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
+              "RelativeToolTip": "PoLoAnalysisAuthServer.API\\PoLoAnalysisAuthServer.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-04T09:02:05.848Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
