@@ -42,6 +42,19 @@ public static class AdminUserServices
 
     private const string RemoveUserFromCoursesUrl =
         ApiConstants.BusinessApiIp + "/api/AdminUser/RemoveUserFromCourse";
+
+    private const string AddUserToRoleUrl =
+        ApiConstants.AuthServerIP + "/api/Admin/AddUserToRole";
+
+    public static async Task<HttpResponseMessage> AddUserToRole(string email, string roleName,string token)
+    {
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",token);
+        var jsonData = JsonConvert.SerializeObject(new UserRoleDto(){RoleName = roleName, UserMail = email});
+        var res = await client.PostAsync(AddUserToRoleUrl, new StringContent(jsonData, Encoding.UTF8, "application/json"));
+
+        return res;
+    }
     public static async Task<List<AppUser>?> GetUserWithFilters(string search, bool withCourses, bool getAll ,string page,string token)
     {
         return withCourses switch

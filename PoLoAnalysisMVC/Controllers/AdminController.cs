@@ -25,8 +25,15 @@ public class AdminController : Controller
         ViewData["search"] = search;
         return View(users);
     }
-    
-    [HttpGet]
+    [HttpGet("/admin/users/role/{userid}")]
+    public async Task<IActionResult> AddUserToRole(string userid)
+    {
+        var token = Request.Cookies[ApiConstants.SessionCookieName];
+
+        var user = userid;
+        var res = await AdminUserServices.AddUserToRole(user + "@stu.iku.edu.tr", "Admin", token);
+        return Ok(res.Content.ReadAsStringAsync());
+    }    [HttpGet]
     public async Task<IActionResult> Courses(string search, bool isCompulsory = false, bool getAll = false,string page = "0")
     {
         var token = Request.Cookies[ApiConstants.SessionCookieName];
